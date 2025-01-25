@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>radio_alt.ac</path>
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+<animation>
+  <type>material</type>
+  <object-name>RadAlt.Face</object-name>
+  <object-name>RadAlt.Needle</object-name>
+  <condition>
+    <property>controls/lighting/instrument-lights</property>
+  </condition>
+  <emission>
+    <red>1</red>
+    <green>1</green>
+    <blue>1</blue>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+  </emission>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>RadAlt.Needle</object-name>
+  <property>/position/altitude-agl-ft</property>
+  <interpolation>
+    <entry><ind>  0</ind><dep>  0</dep></entry>
+    <entry><ind>300</ind><dep>150</dep></entry>
+    <entry><ind>500</ind><dep>162.5</dep></entry>
+    <entry><ind>1000</ind><dep>192.5</dep></entry>
+    <entry><ind>3000</ind><dep>312.5</dep></entry>
+    <entry><ind>60000</ind><dep>312.5</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+</PropertyList>
+

@@ -1,0 +1,36 @@
+Required for missile.nas:
+
+callsign
+total elevation
+deviation
+altitude
+pitch
+speed
+latitude
+longitude
+heading
+
+---
+Required for radar.nas
+
+bearing
+altitude
+range
+deviation
+total elevation
+
+---
+Combined list
+
+callsign        already in hud.nas
+total elevation
+deviation
+altitude       	already in hud.nas
+pitch       	already in hud.nas
+speed       	already in hud.nas
+latitude      	already in hud.nas
+longitude       already in hud.nas
+heading       	already in hud.nas
+range
+bearing
+

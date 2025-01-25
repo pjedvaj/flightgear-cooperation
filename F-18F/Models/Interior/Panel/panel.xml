@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- GROUND MAP -->
+  <model>
+    <name>TMap</name>
+    <path>Instruments/map/map.xml</path>
+    <offsets>
+      <x-m> -0.000 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m>  0.155 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 1.90 </x-offset>
+        <y-offset> 1.90 </y-offset>
+        <z-offset> 1.90 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <model>
+    <path>Instruments/pfd/boeing747-400-pfd-jw.xml</path>
+    <offsets>
+      <x-m> -0.000 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m> -0.050 </z-m>
+      <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Instruments/pfd/boeing747-400-enav-jw.xml</path>
+    <offsets>
+      <x-m> -0.000 </x-m>
+      <y-m>  0.210 </y-m>
+      <z-m> -0.050 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>engines</name>
+    <path>Instruments/engines/engines.xml</path>
+    <offsets>
+      <x-m>  0.010 </x-m>
+      <y-m> -0.145 </y-m>
+      <z-m> -0.050 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <object-name>engines</object-name>
+    <type>scale</type>
+    <x-offset>1.37</x-offset>
+    <y-offset>1.37</y-offset>
+    <z-offset>1.37</z-offset>
+  </animation>
+
+  <model>
+    <path>Instruments/aoa/aoa.xml</path>
+    <offsets>
+      <x-m> -0.025 </x-m>
+      <y-m>  0.220 </y-m>
+      <z-m>  0.190 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>scale</type>
+    <object-name>GD</object-name>
+    <center>
+      <x-m> -0.025 </x-m>
+      <y-m> -0.220 </y-m>
+      <z-m>  0.189 </z-m>
+    </center>
+    <x-offset>1.0</x-offset>
+    <y-offset>0.8</y-offset>
+    <z-offset>0.8</z-offset>
+  </animation>
+
+  <model>
+    <name>GD</name>
+    <path>Instruments/gear_display/gear_display.xml</path>
+    <offsets>
+      <x-m> -0.025 </x-m>
+      <y-m> -0.220 </y-m>
+      <z-m>  0.189 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Instruments/radio_alt/radio_alt.xml</path>
+    <offsets>
+      <x-m> -0.015 </x-m>
+      <y-m>  0.140 </y-m>
+      <z-m>  0.105 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Instruments/altitude/alt.xml</path>
+    <offsets>
+      <x-m> -0.015 </x-m>
+      <y-m>  0.230 </y-m>
+      <z-m>  0.105 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Instruments/mach/mach.xml</path>
+    <offsets>
+      <x-m> -0.025 </x-m>
+      <y-m> -0.140 </y-m>
+      <z-m>  0.198 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Instruments/airspeed/asi.xml</path>
+    <offsets>
+      <x-m> -0.025 </x-m>
+      <y-m>  0.140 </y-m>
+      <z-m>  0.198 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>scale</type>
+    <object-name>FUEL</object-name>
+    <center>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.140 </y-m>
+      <z-m>  0.105 </z-m>
+    </center>
+    <x-offset>1.0</x-offset>
+    <y-offset>1.5</y-offset>
+    <z-offset>1.5</z-offset>
+  </animation>
+
+  <model>
+    <path>Instruments/fuel/screws.ac</path>
+    <offsets>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.140 </y-m>
+      <z-m>  0.105 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>FUEL</name>
+    <path>Instruments/fuel/fuel.xml</path>
+    <offsets>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.140 </y-m>
+      <z-m>  0.105 </z-m>
+     <pitch-deg>-7.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>scale</type>
+    <object-name>CLOCK</object-name>
+    <center>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.105 </z-m>
+    </center>
+    <x-offset>0.50</x-offset>
+    <y-offset>1.75</y-offset>
+    <z-offset>1.75</z-offset>
+  </animation>
+
+  <model>
+    <path>Instruments/clock/screws.ac</path>
+    <offsets>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.105 </z-m>
+     <pitch-deg>-5.0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>CLOCK</name>
+    <path>Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.105 </z-m>
+     <pitch-deg>-20</pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

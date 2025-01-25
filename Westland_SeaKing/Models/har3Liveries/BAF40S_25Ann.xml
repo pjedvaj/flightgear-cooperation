@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Belgian Air Force 40 Sqn, 25 Ann.</name>
+        <texture>har3Liveries/BAF40S_25Ann.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.25</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>

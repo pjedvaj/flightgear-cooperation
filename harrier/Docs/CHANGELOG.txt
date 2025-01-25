@@ -1,0 +1,142 @@
+List of changes between versions.
+
+Initial version	Original Harrier.
+Andy R 
+Steve H
+????
+
+Interim		Harrier upgraded with two new liveries
+?
+????
+
+Version 0.2.0	Updated the sound pack with some new effects.
+Stuart C     	MP sound for FG 2.8+ added.
+????		Added a Rembrandt version.
+ 		Landing light added.
+
+Version 0.2.1	Bug fix?	
+Stuart C ? 
+????
+
+Version 0.3.0	Guided Missiles added.
+Red Leader	HUD is now clipped and shows weapon information.
+early 2014	HUD gunsight fitted.
+		Initialization and running of aircraft-specific Nasal scripts are now centralized.
+
+Version 0.4.0	Correct stores and weapons added.
+Red Leader	FGCamera versions added.
+12/3/2014	Other minor improvements.
+
+Version 0.4.5	Auto Rembrandt support added.
+Red Leader	Help updated.	
+13/3/2014
+
+Version 1.0.0	Full Checklist and Tutorial system added.	
+Red Leader	Electrical system added with switchable instruments.
+24/3/2014	Limits added.
+		Gone into "early production".
+
+Version 1.0.5	Various minor improvements.	
+Red Leader	HELP.txt finished and full, updated, in-sim help.
+5/4/2014
+
+Version 1.1.0	Various minor improvements.	
+Red Leader	Rembrandt lights added, with auto-detection.
+11/4/2014	Deleted unused files and property nodes.
+
+Version 1.2.0	Various minor improvements.	
+Red Leader	New dialogs for Nasal update loop speed, failures and autopilot.	
+1/5/2014	Canvas HDD made.
+		New, more realistic autopilot.
+
+Version 1.3.0	Minor restructuring.
+Red Leader	OSG info text added.	
+10/5/2014	Updated license to GNU GPL v3.
+		Tuned autopilot.
+		Help updated.
+
+Version 1.3.5	Bug fix.
+Red Leader		
+12/5/2014
+
+Version 1.4.0	HUD changes.
+Red Leader	New systems.	
+14/5/2014
+
+Version 1.5.0	Better failures.
+Red Leader	Better sounds.	
+18/5/2014
+
+Version 1.6.0	Various minor improvements.	
+Red Leader
+Unknown
+
+Version 1.7.0	CCIP bombing system added.
+Red Leader	Realistic gun behaviour added.
+7/6/2014	RWR added.
+		Bug fixes.
+
+Version 1.8.0	Better sounds.	
+Red Leader	Many improvements.
+25/6/2014	More efficient Nasal scripts.
+		Bombable-compatible AI version added.
+		Targeting diamond added.
+		Weapon system improvements.
+
+Version 1.9.0	Crashing and explosions.
+Red Leader	More MP transmission.
+14/7/2014	Missile improvements.
+
+Version 2.0.0	Fuel System added.	
+Red Leader	Better MP sound.
+8/9/2014	Updated documentation.
+		New Options dialog.
+		Minor restructuring.
+		New splash screen & thumbnail.
+
+Version 2.1.0	Minor Nasal improvements.
+Red Leader	Added Instant replay support.
+29/9/2014
+
+Version 2.2.0	Restructuring of Nasal code.
+Red Leader	HDD scripting improved.
+12/10/2014	New Mission Computer scripting.
+		Cleaned up for public release.
+
+Version 2.3.0	Updated limits
+Red Leader	Added red-out and black-out parameters
+20/12/2014	New custom failures based on the new Failure Management framework.
+		Better built-in backwards compatibility.
+		Fixed TACAN
+		Various minor improvements
+		Added Canvas MapStructure map as mission computer.
+
+Version 2.4.0	Pushback truck fixed and now working
+Red Leader	Fixed backwards compatibility bugs
+17/2/2015	Sound fixes (silent startup)
+		Added PDFs on weapons and HDD
+		
+
+Version 2.5.0	
+Red Leader	
+??/??/????
+
+Version 2.6.0	
+Red Leader	
+??/??/????
+
+Version 2.7.0	
+Red Leader	
+??/??/????
+
+Version 2.8.0	
+Red Leader	
+??/??/????
+
+Version 2.9.0	
+Red Leader	
+??/??/????
+
+Version 3.0.0	
+Red Leader	
+??/??/????

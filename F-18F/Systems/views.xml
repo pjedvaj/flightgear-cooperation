@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <chase-distance-m type="double" archive="y">-30</chase-distance-m>
+
+  <view n="100">
+    <name>WSO View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <from-model type="bool">true</from-model>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <x-offset-m archive="y">  0.0 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y">  3.175 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -2.32 </z-offset-m> <!-- Back  -->
+      <pitch-offset-deg type="double">-10</pitch-offset-deg>
+      <default-field-of-view-deg type="double">65</default-field-of-view-deg>
+    </config>
+  </view>
+
+  <view n="0">
+    <name>Cockpit View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <x-offset-m archive="y"> -0.0 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y">  3.026 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -3.70 </z-offset-m> <!-- Back  -->
+      <pitch-offset-deg type="double">-10</pitch-offset-deg>
+      <default-field-of-view-deg type="double">65</default-field-of-view-deg>
+    </config>
+  </view>
+
+  <view n="1">
+    <config>
+      <target-y-offset-m archive="y" type="double"> 2 </target-y-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="2">
+    <config>
+      <target-y-offset-m archive="y" type="double"> 2 </target-y-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="3">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="4">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="5">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="6">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+</PropertyList>

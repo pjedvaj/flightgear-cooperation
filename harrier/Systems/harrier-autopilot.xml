@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+ 
+<!-- British Aerospace Sea Harrier FA2 autopilot
+	For modes see [http://largescaleplanes.com/walkaround/images/61/DSCF0568.jpg]
+ -->
+
+<PropertyList>
+
+<!-- Wing leveler : Activates when autopilot is active -->
+<pid-controller>
+	<name>Wing leveler</name>
+	<debug>false</debug>
+		<enable>
+			<condition>
+				<greater-than>
+					<property>autopilot/volts</property>
+					<value>20</value>
+				</greater-than>
+
+				<property>autopilot/enabled</property>
+
+				<or>
+					<equals>
+						<property>autopilot/locks/altitude</property>
+						<value>pitch-hold</value>
+					</equals>
+
+					<equals>
+						<property>autopilot/locks/altitude</property>
+						<value>altitude-hold</value>
+					</equals>
+				</or>
+			</condition>
+		</enable>
+	<input>
+		<prop>/orientation/roll-deg</prop>
+	</input>
+	<reference>0</reference>
+	<output>
+		<prop>/autopilot/internal/aileron-cmd</prop>
+	</output>
+	<config>
+		<Kp>0.005</Kp>
+		<Ti>10.0</Ti>
+		<Td>0.0</Td>
+		<u_min>-1.0</u_min>
+		<u_max>1.0</u_max>
+	</config>
+</pid-controller>
+
+ <!-- Simple pitch hold --> 
+ <pid-controller>
+    <name>Pitch hold</name>
+    <debug>false</debug>
+    <enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+
+				<equals>
+   					<property>autopilot/locks/altitude</property>
+   					<value>pitch-hold</value>
+				</equals>
+			<greater-than>
+				<property>/orientation/roll-deg</property>
+   				<value>-10</value>
+			</greater-than>
+			<less-than>
+				<property>/orientation/roll-deg</property>
+   				<value>10</value>
+			</less-than>
+		</condition>
+    </enable>
+    <input>
+      <prop>/orientation/pitch-deg</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/settings/target-pitch-deg</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/elevator-cmd</prop>
+    </output>
+    <config>
+      <Kp>-0.02</Kp>      <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>100.0</Ti>        <!-- integrator time -->
+      <Td>0.00001</Td>    <!-- derivator time -->
+      <u_min>-1.0</u_min> <!-- minimum output clamp -->
+      <u_max>1.0</u_max>  <!-- maximum output clamp -->
+    </config>
+   </pid-controller>
+
+  <!-- Altitude hold.  2 stage cascade controller. -->
+
+  <!-- Stage #1 sets target rate of climb based on diff between current alt -->
+  <!-- and target altitude. -->
+  <pi-simple-controller>
+    <name>Altitude Hold (Altimeter based) Stage 1</name>
+    <debug>false</debug>
+    <enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+   				<equals>
+					<property>autopilot/locks/altitude</property>
+   					<value>altitude-hold</value>
+				</equals>
+			<greater-than>
+				<property>/orientation/roll-deg</property>
+   				<value>-10</value>
+			</greater-than>
+			<less-than>
+				<property>/orientation/roll-deg</property>
+   				<value>10</value>
+			</less-than>
+		</condition>
+    </enable>
+    <input>
+      <prop>/position/altitude-ft</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/settings/target-altitude-ft</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+    </output>
+    <config>
+      <Kp>0.5</Kp>          <!-- proportional gain -->
+      <Ki>0.0</Ki>          <!-- integral gain -->
+      <u_min>-100</u_min> <!-- minimum output clamp -->
+      <u_max>100</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+  <!-- Stage #2 drives the elevator-trim to achieve the desired climb rate. -->
+  <pid-controller>
+    <name>Altitude Hold (Altimeter based) Stage 2</name>
+    <debug>false</debug>
+    <enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+   				<equals>
+					<property>autopilot/locks/altitude</property>
+   					<value>altitude-hold</value>
+				</equals>
+			<greater-than>
+				<property>/orientation/roll-deg</property>
+   				<value>-10</value>
+			</greater-than>
+			<less-than>
+				<property>/orientation/roll-deg</property>
+   				<value>10</value>
+			</less-than>
+		</condition>
+    </enable>
+    <input>
+      <prop>/velocities/vertical-speed-fps</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/elevator-cmd</prop>
+    </output>
+    <config>
+      <Kp>-0.0005</Kp>      <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>100.0</Ti>       <!-- integrator time -->
+      <Td>0.00001</Td>    <!-- derivator time -->
+      <u_min>-1.0</u_min> <!-- minimum output clamp -->
+      <u_max>1.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+
+ 
+
+
+ <filter>
+	<name>SERVO-DRIVER:elevator</name>
+  	<debug>false</debug>
+  	<feedback-if-disabled>false</feedback-if-disabled>
+  	<enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+			<or> 
+   				<equals>
+					<property>autopilot/locks/altitude</property>
+   					<value>altitude-hold</value>
+				</equals>
+
+				<equals>
+   					<property>autopilot/locks/altitude</property>
+   					<value>pitch-hold</value>
+				</equals>
+
+   				<equals>
+					<property>autopilot/locks/heading</property>
+   					<value>dg-heading-hold</value>
+				</equals>
+			</or>
+		</condition>
+  	</enable>
+  	<input>/autopilot/internal/elevator-cmd</input>
+  	<output>/controls/flight/elevator</output>
+  	<type>noise-spike</type>
+  	<max-rate-of-change>2</max-rate-of-change>
+</filter>
+
+<filter>
+	<name>SERVO-DRIVER:aileron</name>
+  	<debug>false</debug>
+  	<feedback-if-disabled>false</feedback-if-disabled>
+  	<enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+			<or> 
+   				<equals>
+					<property>autopilot/locks/altitude</property>
+   					<value>altitude-hold</value>
+				</equals>
+
+				<equals>
+   					<property>autopilot/locks/altitude</property>
+   					<value>pitch-hold</value>
+				</equals>
+
+   				<equals>
+					<property>autopilot/locks/heading</property>
+   					<value>dg-heading-hold</value>
+				</equals>
+			</or>
+		</condition>
+  	</enable>
+  	<input>/autopilot/internal/aileron-cmd</input>
+  	<output>/controls/flight/aileron</output>
+  	<type>noise-spike</type>
+  	<max-rate-of-change>2</max-rate-of-change>
+</filter>
+
+ <filter>
+  <name>Heading Offset Computer</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>/autopilot/settings/heading-bug-deg</input>
+  <reference>/orientation/heading-magnetic-deg</reference>
+  <output>/autopilot/internal/heading-offset-deg</output>
+  <period>
+   <min>-180</min>
+   <max>180</max>
+  </period>
+ </filter>
+
+ <filter>
+  <name>Target Roll Computer</name>
+  <debug>false</debug>
+  	<enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+				<equals>		
+					<property>/autopilot/locks/heading</property>
+   					<value>dg-heading-hold</value>
+				</equals>
+		</condition>
+  	</enable>
+  <type>gain</type>
+  <input>/autopilot/internal/heading-offset-deg</input>
+  <output>/autopilot/internal/target-roll-deg</output>
+  <gain>2.5</gain>
+  <min>-30.0</min>
+  <max>30.0</max>
+ </filter>
+
+
+ <pid-controller>
+  <name>Heading hold computer</name>
+  <debug>false</debug>
+  	<enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+				<equals>		
+					<property>/autopilot/locks/heading</property>
+   					<value>dg-heading-hold</value>
+				</equals>
+		</condition>
+  	</enable>
+  <input>
+   <prop>/orientation/roll-deg</prop>
+  </input>
+  <reference>
+   <prop>/autopilot/internal/target-roll-deg</prop>
+  </reference>
+  <output>
+   <prop>/autopilot/internal/aileron-cmd</prop>
+  </output>
+  <config>
+   <Kp>0.005</Kp>
+   <Ti>10.0</Ti>
+   <Td>0.0</Td>
+   <u_min>-1.0</u_min>
+   <u_max>1.0</u_max>
+  </config>
+ </pid-controller>
+
+
+<pid-controller>
+  <name>Pitch leveler</name>
+  <debug>false</debug>
+  	<enable>
+		<condition>
+			<greater-than>
+				<property>autopilot/volts</property>
+   				<value>20</value>
+			</greater-than>
+
+   			<property>autopilot/enabled</property>
+			<equals>		
+				<property>/autopilot/locks/heading</property>
+   				<value>dg-heading-hold</value>
+			</equals>
+		</condition>
+  	</enable>
+  <input>
+   <prop>/orientation/pitch-deg</prop>
+  </input>
+  <reference>0.0</reference>
+  <output>
+   <prop>/autopilot/internal/elevator-cmd</prop>
+  </output>
+  <config>
+   <Kp>-0.02</Kp>
+   <Ti>100.0</Ti>
+   <Td>0.0</Td>
+   <u_min>-1.0</u_min>
+   <u_max>1.0</u_max>
+  </config>
+ </pid-controller>
+
+</PropertyList>

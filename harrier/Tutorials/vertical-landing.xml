@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+
+
+ 
+<name>Vertical landing</name>
+<description>This tutorial tells you how to perform a vertical landing in the Harrier.</description>
+
+<step>
+	<message>{Set the thrust vector to around 85 degrees.|}</message>
+ 	<error>                    
+              	<message>Decrease the thrust vector.</message>
+              	<condition>
+			 <greater-than>
+           			<property>/controls/engines/engine[0]/mixture</property>
+				<value>0.19</value>
+      			</greater-than>
+              	</condition> 
+		<interval>2</interval>      
+	</error>
+	<exit>
+		<condition>
+        		<less-than>
+          			<property>/controls/engines/engine[0]/mixture</property>
+				<value>0.19</value>
+        		</less-than>
+      		</condition>
+	</exit>
+</step>
+ 
+<step>
+	<message>{90% or higher throttle.|}</message>
+ 	<error>                    
+              	<message>Increase the thrust!</message>
+              	<condition>
+			 <less-than>
+ 				<property>/controls/engines/engine[0]/throttle</property>
+				<value>85</value>
+      			</less-than>
+              	</condition> 
+		<interval>2</interval>      
+	</error>
+	<exit>
+		<condition>
+			<greater-than>
+				<property>/controls/engines/engine[0]/throttle</property>
+				<value>86</value>
+			</greater-than>			
+              	</condition>
+	</exit>
+</step>
+
+<step>
+	<message>{Set your flaps as desired.|}</message>
+	<marker>
+        	<x-m>-15.7140</x-m>
+        	<y-m>-0.2256</y-m>
+        	<z-m>-5.4347</z-m>
+        	<scale>1.1157</scale>
+      	</marker>
+	<wait>2</wait>
+</step>
+
+<step>
+	<message>{Set airbrake as desired.|}</message>
+	<wait>2</wait>
+</step>
+     
+
+</PropertyList>

@@ -1,0 +1,162 @@
+<?xml version="1.0" ?>
+
+<PropertyList>
+    <path>caution2.ac</path>
+
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>10</max-m>
+    </animation>
+	
+	<!--  basic red lighting -->
+	<animation>
+    <type>material</type>
+    <object-name>exppwr</object-name>
+    <object-name>nosedoor</object-name>
+	 <object-name>parkingbrake</object-name>
+    <object-name>rotorbrake</object-name>
+	 <object-name>cargodoor</object-name>
+    <object-name>passdoor</object-name>
+	 <object-name>spare</object-name>
+    <object-name>spare3</object-name>
+	 <object-name>dcgen</object-name>
+    <object-name>cabin</object-name>
+	 
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
+     
+    </emission>
+  </animation>
+ 
+
+<!--  warning animations -->
+
+ <!-- spare -->
+ <animation>
+        <type>select</type>
+        <object-name>spare</object-name>
+        <object-name>nosedoor</object-name>
+		<object-name>cabin</object-name>
+		<object-name>spare3</object-name>
+		<object-name>exppwr</object-name>
+		<object-name>dcgen</object-name>
+        <condition>
+		
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+  
+			</condition>
+ </animation>
+
+
+
+<!-- cargo door -->
+	<animation>
+        <type>select</type>
+        <object-name>cargodoor</object-name>
+        
+        <condition>
+		<or>
+			<greater-than>
+				<property>sim/model/bk117/door-positions/rightBackDoor/position-norm</property>
+						<value>0</value>
+					</greater-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+
+<!-- passenger door -->
+	<animation>
+        <type>select</type>
+        <object-name>passdoor</object-name>
+        
+        <condition>
+		<or>
+			<greater-than>
+				<property>sim/model/bk117/door-positions/leftFrontDoor/position-norm</property>
+						<value>0</value>
+					</greater-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+	<!-- passenger door -->
+	<animation>
+        <type>select</type>
+        <object-name>passdoor</object-name>
+        
+        <condition>
+		<or>
+			<greater-than>
+				<property>sim/model/bk117/door-positions/leftFrontDoor/position-norm</property>
+						<value>0</value>
+					</greater-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+
+
+  <!-- rotor brake -->
+	<animation>
+        <type>select</type>
+        <object-name>rotorbrake</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>controls/rotor/brake</property>
+						<value>1</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+	
+	
+	<!-- parking brake -->
+	<animation>
+        <type>select</type>
+        <object-name>parkingbrake</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>controls/gear/brake-parking</property>
+						<value>1</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+</PropertyList>

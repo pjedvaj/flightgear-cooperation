@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>contrailL.xml</path>
+    <condition>
+      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+    </condition>
+    <offsets>
+      <x-m> 12.98 </x-m>
+      <y-m> -0.48 </y-m>
+      <z-m>  2.21 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>contrailR.xml</path>
+    <condition>
+      <not><property>/controls/engines/engine[1]/cutoff</property></not>
+    </condition>
+    <offsets>
+      <x-m> 12.98 </x-m>
+      <y-m>  0.48 </y-m>
+      <z-m>  2.21 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

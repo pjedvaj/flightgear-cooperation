@@ -1,0 +1,1608 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>seaharrierfa2.ac</path>
+ 
+<offsets>
+	<x-m>19.0</x-m>
+	<y-m>0.05889</y-m>
+	<z-m>5.90</z-m>
+	<pitch-deg>0.0</pitch-deg>
+</offsets>
+	
+<!-- MP sound -->
+<sound>
+	<path>Aircraft/harrier/Sound/harrier-mp-sound.xml</path>
+</sound>
+
+<!-- panel -->
+<panel>
+	<path>Aircraft/harrier/Models/Cockpit/panel-hotspots.xml</path>
+	<bottom-left>
+		<x-m>-15.58</x-m>
+		<y-m>-0.40</y-m>
+		<z-m>-5.8</z-m>
+	</bottom-left>
+	<bottom-right>
+		<x-m>-15.58</x-m>
+		<y-m> 0.40</y-m>
+		<z-m>-5.8</z-m>
+	</bottom-right>
+	<top-left>
+		<x-m>-15.59</x-m>
+		<y-m>-0.40</y-m>
+		<z-m>-5.1</z-m>
+	</top-left>
+</panel>
+
+<!-- Nasal -->	
+ <nasal>
+      <load>
+	  	 var self = cmdarg();
+
+       var float_6 = self.getNode("sim/multiplay/generic/float[6]", 1);
+       var float_7 = self.getNode("sim/multiplay/generic/float[7]", 1);
+       <!--  var float_8 = self.getNode("sim/multiplay/generic/float[8]", 1);
+	      var float_9 = self.getNode("sim/multiplay/generic/float[9]", 1);-->
+
+       
+       var frontnoz = self.getNode("controls/engines/engine/mixture", 1);
+	     <!-- var backnoz = self.getNode("controls/engines/engine/mixture", 1);
+	     var inlet = self.getNode("controls/engines/engine/mixture", 1);-->
+      
+	     frontnoz.alias(float_7);
+	     <!-- backnoz.alias(float_8);
+	     inlet.alias(float_9)-->
+
+
+
+       var livery_update = aircraft.livery_update.new("Aircraft/harrier/Models/Liveries");
+
+            var root = cmdarg();
+            var rootindex = root.getIndex();
+            var mpPath = "/ai/models/multiplayer["~ rootindex ~"]/";
+
+            var lightsPath = mpPath~"lightpack/"; #path to the property node, where all internal values are placed
+
+            props.globals.initNode(mpPath~"sim/is-MP-Aircraft", 1, "BOOL");
+
+            srand();
+            #wherever you want to add randomization of time, use something like:  + rand()*0.05-0.025 (included by default where appropriate)
+
+
+            #list of switches for lights - if you don't intend to use some light, assign it nil value instead, like whateverSwitch = nil; and you don't need to care about anything else
+            #IMPORTANT: don't put / on the start of the string, it's already included in the mpPath property
+            var navSwitch = mpPath~"controls/lighting/nav-lights-switch";
+            var beaconSwitch = mpPath~"controls/lighting/beacon-switch";
+            var strobeSwitch = mpPath~"controls/lighting/strobe-switch";
+            var landingSwitch = mpPath~"controls/lighting/landing-lights-switch";
+            var taxiSwitch = mpPath~"controls/lighting/taxi-light-switch";
+            var probeSwitch = mpPath~"controls/lighting/probe-light-switch";
+            var whiteSwitch = mpPath~"controls/lighting/white-light-switch";
+
+            #switch this from 1 to 0 if you want to use advanced cyclical fading animation of the the nav lights instead of being stable on when the switch is on
+            navStillOn = 1;
+
+
+            #I need to set listener on some MP transferred properties; this doesn't seem to work well sometimes, so I mirror them to the original location on any change
+            #This also simplifies work as I can use almost the same code for MP as is the local Nasal. Furthermore, I can use meaningful property names in the model XML files instead of referencing the MP properties.
+            var mpVar = {
+            new: func(propIn, propOut) {
+            var m = { parents: [mpVar] };
+            m.propIn = propIn;
+            m.propOut = propOut;
+            if(propIn==nil) return m;
+            m.value = getprop(propIn);
+            setprop(propOut, m.value);
+            return m;
+            },
+            check: func {
+            if(me.propIn==nil) return;
+            var newValue = getprop(me.propIn);
+            if(newValue != me.value) {
+            setprop(me.propOut, newValue);
+            me.value = newValue;
+            #print("value of "~me.propOut~" changed: "~newValue);
+            }
+            },
+            };
+            #init any property copy object needed in this array (anything you need to transfer over MP, but you are using the original paths in your xmls)
+            #also used for properties you are using a listener on, or properties which you maybe want to manipulate during the unload
+            #if you're just using the pack, change the values according to the MP bindings in the -set.xml file
+            #you don't need to delete the entries if the path is nil - it gets skipped automatically and the MP path is just ignored
+            var mirrorValues = [
+            mpVar.new(mpPath~"sim/multiplay/generic/int[7]", mpPath~"sim/crashed"),
+            mpVar.new(mpPath~"sim/multiplay/generic/int[0]", navSwitch),
+            mpVar.new(mpPath~"sim/multiplay/generic/int[1]", beaconSwitch),
+            mpVar.new(mpPath~"sim/multiplay/generic/int[1]", strobeSwitch),
+            mpVar.new(mpPath~"sim/multiplay/generic/int[3]", landingSwitch),
+            mpVar.new(mpPath~"sim/multiplay/generic/int[4]", taxiSwitch),
+            mpVar.new(mpPath~"sim/multiplay/generic/int[4]", probeSwitch),
+            mpVar.new(mpPath~"sim/multiplay/generic/int[0]", whiteSwitch),
+            ];
+            #loop at the default MP transfer frequency (10Hz)
+            var mirrorTimer = maketimer(0.1, func {
+            foreach(var mir; mirrorValues) {
+            mir.check();
+            }
+            });
+            mirrorTimer.start();
+
+
+
+            #### NAV LIGHTS ####
+
+            #class for a periodic fade in/out animation - for flashing, use rather standard aircraft.light.new(), as in Beacon and Strobe section
+            var lightCycle = {
+            #constructor
+            new: func(propSwitch, propOut) {
+            m = { parents: [lightCycle] };
+            props.globals.initNode(propOut, 0, "DOUBLE");
+            props.globals.initNode(propSwitch, 1, "BOOL");
+            m.fadeIn = 0.4 + rand()*0.05-0.025; #fade in time
+            m.fadeOut = 0.4 + rand()*0.05-0.025; #fade out time
+            m.stayOn = 1.5 + rand()*0.05-0.025; #stable on period
+            m.stayOff = 1 + rand()*0.05-0.025; #stable off period
+            m.turnOff = 0.12; #fade out time when turned off
+            m.phase = 0; #phase to be run on next timer call: 0 -> fade in, 1 -> stay on, 2 -> fade out, 3 -> stay off
+            m.cycleTimer = maketimer(0.1, func {
+            if(getprop(propSwitch)) {
+            if(m.phase == 0) {
+            interpolate(propOut, 1, m.fadeIn);
+            m.phase = 1;
+            m.cycleTimer.restart(m.fadeIn);
+            }
+            else if(m.phase == 1){
+            m.phase = 2;
+            m.cycleTimer.restart(m.stayOn);
+            }
+            else if(m.phase == 2){
+            interpolate(propOut, 0, m.fadeOut);
+            m.phase = 3;
+            m.cycleTimer.restart(m.fadeOut);
+            }
+            else if(m.phase == 3){
+            m.phase = 0;
+            m.cycleTimer.restart(m.stayOff);
+            }
+            }
+            else {
+            interpolate(propOut, 0, m.turnOff); #kills any currently ongoing interpolation
+            m.phase = 0;
+            }
+            });
+            m.cycleTimer.singleShot = 1;
+            if(propSwitch==nil) {
+            m.listen = nil;
+            return m;
+            }
+            m.listen = setlistener(propSwitch, func{m.cycleTimer.restart(0);}); #handle switch changes
+            m.cycleTimer.restart(0); #start the looping
+            return m;
+            },
+            #destructor
+            del: func {
+            if(me.listen!=nil) removelistener(me.listen);
+            me.cycleTimer.stop();
+            },
+            };
+
+            #By default, the switch property is initialized to 1 (only if no value is already assigned). Don't change the class implementation! To override this, set the property manually. You don't need to care if any other code already does it for you.
+            var navLights = nil;
+            if(!navStillOn) {
+            navLights = lightCycle.new(navSwitch, lightsPath~"nav-lights-intensity");
+            ### Uncomment and tune those to customize times ###
+            #navLights.fadeIn = 0.4; #fade in time
+            #navLights.fadeOut = 0.4; #fade out time
+            #navLights.stayOn = 3 + rand()*0.05-0.025; #stable on period
+            #navLights.stayOff = 0.6; #stable off period
+            #navLights.turnOff = 0.12; #fade out time when turned off
+            }
+
+
+            ### BEACON ###
+            var beacon = nil;
+            if(beaconSwitch!=nil) {
+            props.globals.initNode(beaconSwitch, 1, "BOOL");
+            beacon = aircraft.light.new(lightsPath~"beacon-state",
+            [0.0, 1.0 + rand()*0.05-0.025], beaconSwitch);
+            }
+
+
+            ### STROBE ###
+            var strobe = nil;
+            if(strobeSwitch!=nil) {
+            props.globals.initNode(strobeSwitch, 1, "BOOL");
+            strobe = aircraft.light.new(lightsPath~"strobe-state",
+            [0.0, 0.87 + rand()*0.05-0.025], strobeSwitch);
+            }
+
+
+            ### LIGHT FADING ###
+
+            #class for controlling fade in/out behavior - propIn is a control property (handled as a boolean) and propOut is interpolated
+            #all light brightness animations in xmls depend on propOut (Rembrandt brightness, material emission, flares transparency, ...)
+            var lightFadeInOut = {
+            #constructor
+            new: func(propSwitch, propOut) {
+            m = { parents: [lightFadeInOut] };
+            m.fadeIn = 0.3; #some sane defaults
+            m.fadeOut = 0.4;
+            if(propSwitch==nil) {
+            m.listen = nil;
+            return m;
+            }
+            props.globals.initNode(propSwitch, 1, "BOOL");
+            m.isOn = getprop(propSwitch);
+            props.globals.initNode(propOut, m.isOn, "DOUBLE");
+            m.listen = setlistener(propSwitch,
+            func {
+            if(m.isOn and !getprop(propSwitch)) {
+            interpolate(propOut, 0, m.fadeOut);
+            m.isOn = 0;
+            }
+            if(!m.isOn and getprop(propSwitch)) {
+            interpolate(propOut, 1, m.fadeIn);
+            m.isOn = 1;
+            }
+            }
+            );
+            return m;
+            },
+            #destructor
+            del: func {
+            if(me.listen!=nil) removelistener(me.listen);
+            },
+            };
+
+            fadeLanding = lightFadeInOut.new(landingSwitch, lightsPath~"landing-lights-intensity");
+            fadeTaxi = lightFadeInOut.new(taxiSwitch, lightsPath~"taxi-light-intensity");
+            fadeProbe = lightFadeInOut.new(probeSwitch, lightsPath~"probe-light-intensity");
+            fadeWhite = lightFadeInOut.new(whiteSwitch, lightsPath~"white-light-intensity");
+            if(navStillOn) {
+            navLights = lightFadeInOut.new(navSwitch, lightsPath~"nav-lights-intensity");
+            navLights.fadeIn = 0.1;
+            navLights.fadeOut = 0.12;
+            }
+            #manipulate times if defaults don't fit your needs:
+            #fadeLanding.fadeIn = 0.5;
+            #fadeLanding.fadeOut = 0.8;
+
+
+            ### the rest of your model load embedded Nasal code ###
+      </load>
+      <unload>
+       stopFire();
+            disintegrated = 0;
+            removelistener(listenCrash);
+
+            #prevent multiple timers and listeners from running and fighting on next connect
+            #cleanly destroy MP property mirroring
+            mirrorTimer.stop();
+            mirrorTimer = nil;
+            mirrorValues = nil;
+
+            #cleanly destroy nav lights
+            if(navStillOn) {
+            navLights.del();
+            }
+            else {
+            if(navSwitch!=nil) setprop(navSwitch, 0);
+            navLights.del();
+            if(navSwitch!=nil) navLights.cycleTimer = nil;
+            navLights = nil;
+            }
+
+            #cleanly destroy beacon
+            if(beaconSwitch!=nil) setprop(beaconSwitch, 0);
+            beacon.del();
+            beacon = nil;
+
+            #cleanly destroy strobe
+            if(strobeSwitch!=nil) setprop(strobeSwitch, 0);
+            strobe.del();
+            strobe = nil;
+
+            #cleanly destroy light fade in/out animation objects
+            fadeLanding.del();
+            fadeTaxi.del();
+            fadeProbe.del();
+            fadeWhite.del();
+
+            ### the rest of your model unload embedded Nasal code ###
+            livery_update.stop();
+			      pilot_door.unalias();
+           
+            frontnoz.unalias();
+            backnoz.unalias();
+            inlet.unalias();
+      </unload>
+    </nasal>
+
+<!-- ++++++++++++++++ --> 
+<!--  Include models  -->   
+<!-- ++++++++++++++++ -->
+	
+ 
+<!--
+<model>
+	<path>Aircraft/Instruments-3d/canvas-test/CMDU.ac</path>
+    	<offsets>
+      		<x-m>-15.7091</x-m>
+      		<y-m>0.1</y-m> 
+	    	<z-m>-5.5099</z-m>
+		<pitch-deg>90</pitch-deg>
+		<roll-deg>90</roll-deg>
+    	</offsets>
+	<condition>		
+		<property>sim/use-hdd</property>
+  	</condition>
+</model>
+	
+<model>
+	<path>Aircraft/harrier/Models/Cockpit/ccip/ccip.xml</path>
+    	<offsets>
+      		<x-m>-15.9</x-m>
+      		<y-m>0.0</y-m> 
+	    	<z-m>-5.2802</z-m> 
+    	</offsets>
+</model> 
+-->
+
+<!-- Lights -->
+    <model>
+        <path>Aircraft/harrier/Models/Lights/LightPack.xml</path>
+    </model>
+	
+
+
+<model>
+	<name>Pushback</name>
+  	<path>Aircraft/harrier/Models/Pushback/Military.xml</path>
+  	<offsets>
+   		<x-m>-13.7488</x-m>
+   		<y-m>0.0</y-m>
+   		<z-m>-7.718</z-m>
+  	</offsets>
+</model>
+
+<model>	
+	<path>Models/Aircraft/marker.xml</path>
+</model>
+
+<model>	
+	<path>Aircraft/harrier/Models/text.xml</path>
+</model>
+
+<model>
+	<path>Aircraft/harrier/Models/Cockpit/harrier-panel.xml</path>
+	<offsets>
+   		<x-m>0.15</x-m>
+   		<y-m>-0.05</y-m>
+   		<z-m>0</z-m>
+  	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/harrier/Models/tub.ac</path>
+	<offsets>
+   		<x-m>0.15</x-m>
+   		<y-m>-0.05</y-m>
+   		<z-m>0</z-m>
+  	</offsets>
+</model>
+
+
+
+<model>
+	<path>Aircraft/harrier/Models/Loads.xml</path>
+	<offsets>
+   		<x-m>0</x-m>
+   		<y-m>0</y-m>
+   		<z-m>-0.07</z-m>
+  	</offsets>
+</model>
+
+
+<model>
+		<name>FuselagePylon</name>
+		<path>Aircraft/harrier/Models/Stores/optionalPylon.ac</path>
+		<offsets>
+			<x-m>-12.2</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.8</z-m>
+		</offsets>
+	</model>
+
+<model>
+	<path>Aircraft/harrier/Models/Effects/effects.xml</path>
+</model>
+	
+<model>
+	<path>Aircraft/harrier/Models/pilot.xml</path>
+	<offsets>
+		<x-m>-15.15</x-m>
+		<y-m>0</y-m>
+		<z-m>-5.86</z-m>
+		<pitch-deg>6.0</pitch-deg>
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/harrier/Models/Lightsold/Panel-lights.xml</path>
+	<offsets>
+		<x-m>-15.7372</x-m>
+		<y-m>0.0</y-m>
+		<z-m>-5.5</z-m>
+		<pitch-deg>0.0</pitch-deg>
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/harrier/Models/Lightsold/Panel-lights.xml</path>
+	<offsets>
+		<x-m>-15.7182</x-m>
+		<y-m>-0.3</y-m>
+		<z-m>-5.5</z-m>
+		<roll-deg>55</roll-deg>
+		<heading-deg>5</heading-deg>
+	</offsets>
+</model>
+<!--
+<model>
+	<path>Aircraft/harrier/Models/seat.xml</path>
+	<offsets>
+		<x-m>-15.25</x-m>
+		<y-m>0</y-m>
+		<z-m>-5.8</z-m>
+		<pitch-deg>6.0</pitch-deg>
+	</offsets>
+</model>
+-->
+
+
+<!-- ++++++++++++ -->
+<!--  ANIMATIONS  -->
+<!-- ++++++++++++ -->
+
+<animation>
+	<type>pick</type>
+   	<object-name>HUD</object-name>
+   	<action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+    		<binding>
+			<command>property-toggle</command>
+			<property>instrumentation/hud/on</property>
+		</binding>
+   	</action>
+	<hovered>
+       		<binding>
+        		<command>set-tooltip</command>
+         		<label>HUD: %s</label>
+         		<measure-text>HUD: OFF</measure-text>
+         		<tooltip-id>hud</tooltip-id>
+         		<mapping>on-off</mapping>
+         		<property>instrumentation/hud/on</property>
+       		</binding>
+     	</hovered>
+</animation>
+
+<animation>
+	<type>pick</type>
+   	<object-name>ThrottleLever</object-name>
+   	<action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+    		<binding>
+			<command>nasal</command>
+			<script>engines.Pegasus_mk106.autostart();</script>		
+		</binding>
+   	</action>
+	<!-- <hovered>
+    		<binding>
+      			<command>set-tooltip</command>
+      			<tooltip-id>engine</tooltip-id>
+      			<label>%s</label>
+      			<property>instrumentation/kt-70/inputs/knob-mode</property>
+      			<mapping>nasal</mapping>
+      			<script>	
+				if(arg[0] > ){
+        				return "Engine: ON";
+				}elsif(arg[0] == 0.0){
+        				return "Engine: OFF";
+				}elsif(){
+					var key = 100 * getprop("");
+					return "Engine starting: " ~ int(getprop("") * key) ~ "%";
+				}elsif(){
+					var key = 100 * getprop("");
+					return "Engine stopping: " ~ int(getprop("") * key) ~ "%";
+				}
+      			</script>
+    		</binding>
+  	</hovered> -->
+</animation>
+
+<animation>
+	<type>pick</type>
+   	<object-name>RedButton</object-name>
+   	<action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+		  	<command>nasal</command>
+		  	<script>load.eject_all();</script>
+	  	</binding>
+	  	<binding>
+			<command>property-toggle</command>
+			<property>sim/model/click</property>
+		</binding>
+   	</action>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>Shaders</object-name>
+	<object-name>GunR</object-name>
+	<object-name>GunL</object-name>
+	<object-name>FuelProbe</object-name>
+	<property-base>sim/model/livery</property-base>
+	<texture-prop>texture</texture-prop>
+	<texture>Aircraft/harrier/Models/Liveries/Diffuse.jpg</texture>
+</animation>
+
+<!-- Normal Map -->
+
+		<effect>
+			<inherits-from>Aircraft/harrier/Models/Effects/Normal</inherits-from>
+			<object-name>Shaders</object-name>
+			<object-name>GunR</object-name>
+			<object-name>GunL</object-name>
+			<object-name>FuelProbe</object-name>
+		</effect>
+		
+	<!-- Specular Map -->
+
+		<effect>
+			<inherits-from>Aircraft/harrier/Models/Effects/Specular</inherits-from>
+			<object-name>Shaders</object-name>
+			<object-name>GunR</object-name>
+			<object-name>GunL</object-name>
+			<object-name>FuelProbe</object-name>
+		</effect>
+
+	<!-- glass -->
+<animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>HUD</object-name>
+	<object-name>Glass</object-name>
+  </animation>
+	
+	<effect>
+      <inherits-from>Effects/model-transparent</inherits-from>
+       <object-name>Glass</object-name>
+		<object-name>condensation-left</object-name>
+	<object-name>condensation-right</object-name>
+   </effect>
+<animation>
+	<type>translate</type>
+	<object-name>CanopyGlass</object-name>
+	<object-name>Canopy.</object-name>
+	<property>canopy/position-norm</property>
+	<factor>-0.5</factor>
+	<axis>
+		<x>-15.46</x>
+		<y>0.00</y>
+		<z>-5.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>CanopyGlass</object-name>
+	<object-name>Canopy.</object-name>
+	<condition>
+		<not>
+			<property>sim/model/canopy-broken</property>
+		</not>
+	</condition>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<type>select</type>
+	<object-name>CanopyGlass</object-name>
+	<object-name>Canopy.</object-name>
+	<action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+ 			<command>nasal</command>
+			<script>harrier.switch_canopy(2);</script>
+		</binding>
+	</action>
+</animation>
+
+<!-- Landing Lights
+<animation>
+	<type>select</type>
+	<object-name>FLandLight</object-name>
+	<condition>
+		<equals>
+			<property>gear/gear[0]/position-norm</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>FLandLight</object-name>
+	<emission>
+		<factor-prop>controls/lighting/landing</factor-prop>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+</animation>   -->
+
+<!-- Gear extend or retract -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>FrontTire</object-name>
+		<object-name>FrontUpperStrut</object-name>
+		<object-name>FrontMiddleStrut</object-name>
+		<object-name>FrontLowerStrut</object-name>
+		<object-name>LandingLightGlass</object-name>
+		<object-name>FLandLight</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<factor>-115</factor>
+		<offset-deg>115</offset-deg>
+		<center>
+			<x-m>-13.74524</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.54021</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>MiddleTires6</object-name>
+		<object-name>MStrut</object-name>
+		<object-name>MAxle</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<factor>-115</factor>
+		<offset-deg>115</offset-deg>
+		<center>
+			<x-m>-10.2515</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.47704</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RightWheel</object-name>
+		<object-name>MainStrutR</object-name>
+		<object-name>StrutDownR</object-name>
+		<object-name>UpMainStrutR</object-name>	
+		<object-name>StrutUpR</object-name> 
+		<property>gear/gear[2]/position-norm</property>
+		<factor>-90</factor>
+		<offset-deg>90</offset-deg>
+		<center>
+			<x-m>-9.4469</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.08711</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>LTire66</object-name>
+		<object-name>LTireAxis</object-name>
+		<object-name>StrutDownL</object-name>
+		<object-name>UpMainStrutL</object-name>	
+		<object-name>StrutUpL</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<factor>-90</factor>
+		<offset-deg>90</offset-deg>
+		<center>
+			<x-m>-9.44986</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.08711</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+	
+	<!-- Gear Doors -->
+	<animation>
+		<type>rotate</type>
+		<object-name>FBGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>120</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>120</dep>
+    			</entry>
+		</interpolation>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-13.71326</x-m>
+			<y-m>-0.05763</y-m>
+			<z-m>-6.71</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>	
+	<animation>
+		<type>rotate</type>
+		<object-name>FLGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-14.64404</x-m>
+			<y-m>-0.28739</y-m>
+			<z-m>-6.62977</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>FRGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-14.64384</x-m>
+			<y-m>0.17296</y-m>
+			<z-m>-6.62974</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>MRGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-9.54453</x-m>
+			<y-m>0.29468</y-m>
+			<z-m>-6.42409</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>MLGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-9.54485</x-m>
+			<y-m>-0.41371</y-m>
+			<z-m>-6.42413</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<!-- Steering-->
+	<animation>
+		<type>rotate</type>
+		<object-name>FrontTire</object-name>
+		<object-name>FrontLowerStrut</object-name>
+		<object-name>FrontMiddleStrut</object-name>
+		<property>gear/gear[0]/caster-angle-deg</property>
+		<factor>0.6</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-13.72997</x-m>
+			<y-m>-0.05761</y-m>
+			<z-m>-6.93269</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- Gear Compression (shocks)-->
+	<animation>
+		<type>rotate</type>
+		<object-name>FrontTire</object-name>
+		<object-name>FrontLowerStrut</object-name>	 
+		<property>gear/gear[0]/compression-norm</property>
+		<factor>100</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-13.90231</x-m>
+			<y-m>0</y-m>
+			<z-m>-7.18351</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>	
+	<animation>
+		<type>translate</type>
+		<object-name>MiddleTires6</object-name>
+		<object-name>MAxle</object-name>
+		<property>gear/gear[1]/compression-norm</property>
+		<factor>0.3</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>	
+	<animation>
+		<type>translate</type>
+		<object-name>LTire66</object-name>
+		<object-name>LTireAxis</object-name>
+		<object-name>StrutDownL</object-name>
+		<property>gear/gear[2]/compression-norm</property>
+		<factor>0.3</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>RightWheel</object-name>
+		<object-name>MainStrutR</object-name>	
+		<object-name>StrutDownR</object-name>
+		<property>gear/gear[3]/compression-norm</property>
+		<factor>0.3</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- Control Surfaces-->	
+	<animation>
+		<type>rotate</type>
+		<object-name>Rudder</object-name> 
+		<property>controls/flight/rudder</property>
+		<factor>30</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-5.69906</x-m>
+			<y-m>-0.06144</y-m>
+			<z-m>-4.57336</z-m>
+		</center>
+		<axis>
+			<x>0.3</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>	
+	<animation>
+		<type>rotate</type>
+		<object-name>Elevator</object-name> 
+		<property>controls/flight/elevator</property>
+		<factor>20</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-6.25807</x-m>
+			<y-m>-0.06106</y-m>
+			<z-m>-5.20389</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>AileronL</object-name> 
+		<property>controls/flight/aileron</property>
+		<factor>25</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-9.4614</x-m>
+			<y-m>-2.80477</y-m>
+			<z-m>-5.89191</z-m>
+		</center>
+		<axis>
+			<x>-0.2</x>
+			<y>1</y>
+			<z>.25</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>AileronR</object-name> 
+		<property>controls/flight/aileron</property>
+		<factor>25</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-9.45894</x-m>
+			<y-m>2.6856</y-m>
+			<z-m>-5.8916</z-m>
+		</center>
+		<axis>
+			<x>-0.2</x>
+			<y>-1</y>
+			<z>.25</z>
+		</axis>
+	</animation>	
+	<animation>
+		<type>rotate</type>
+		<object-name>FlapL</object-name> 
+		<property>controls/flight/flaps</property>
+		<factor>50</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-9.75788</x-m>
+			<y-m>-1.64052</y-m>
+			<z-m>-5.64197</z-m>
+		</center>
+		<axis>
+			<x>-0.25</x>
+			<y>1</y>
+			<z>0.25</z>
+		</axis>
+	</animation>	
+	<animation>
+		<type>rotate</type>
+		<object-name>FlapR</object-name> 
+		<property>controls/flight/flaps</property>
+		<factor>-50</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-9.75646</x-m>
+			<y-m>1.52159</y-m>
+			<z-m>-5.64179</z-m>
+		</center>
+		<axis>
+			<x>-0.25</x>
+			<y>-1</y>
+			<z>0.25</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>FlapL</object-name> 
+		<object-name>FlapR</object-name>
+		<condition>
+			<not>
+				<property>/sim/model/flaps-broken</property>
+			</not>
+		</condition>
+	</animation>	
+	
+	<!-- Nozzle Rotation -->
+	<animation>
+		<type>rotate</type>
+		<object-name>NozzleFront</object-name>
+		<property>controls/engines/engine/mixture</property>
+		<factor>-100</factor>
+		<offset-deg>98</offset-deg>
+		<center>
+			<x-m>-12.4936</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.95082</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>NozzleBack</object-name>
+		<property>controls/engines/engine/mixture</property>
+		<factor>-100</factor>
+		<offset-deg>98</offset-deg>
+		<center>
+			<x-m>-10.69132</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.02102</z-m>
+		</center>
+		<axis>A
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- FlightStick -->
+	<animation>
+		<type>rotate</type>
+		<object-name>Button1</object-name>
+		<object-name>Button2</object-name>
+		<object-name>Handle</object-name>
+		<object-name>Stick.001</object-name>
+		<object-name>SwitchCover</object-name>	 
+		<property>controls/flight/aileron</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.55411</x-m>
+			<y-m>-0.0049</y-m>
+			<z-m>-5.92246</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Button1</object-name>
+		<object-name>Button2</object-name>
+		<object-name>Handle</object-name>
+		<object-name>Stick.001</object-name>
+		<object-name>SwitchCover</object-name>	 	 
+		<property>controls/flight/elevator</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.55411</x-m>
+			<y-m>-0.0049</y-m>
+			<z-m>-5.92246</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- Weapon Fire -->
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>Button2</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+      				<command>nasal</command>
+      				<script>weapons.fire_MG()</script>
+    			</binding>
+    			<mod-up>
+      				<binding>
+        				<command>nasal</command>
+        				<script>weapons.stop_MG()</script>
+      				</binding>
+    			</mod-up>
+	    </action>
+    </animation>
+	
+	<animation>
+	    <type>translate</type>
+	    <object-name>Button2</object-name>
+	    <property>controls/armament/trigger</property>
+		<factor>0.002</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+	
+	<!-- Weapon Mode Selector -->
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>Button1</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+ 				<command>property-cycle</command>
+ 				<property>controls/armament/stick-selector</property>
+ 				<value type="int">0</value>
+ 				<value type="int">1</value>
+ 				<value type="int">2</value>
+			</binding>  
+	    </action>
+    </animation>
+	
+	<animation>
+	    <type>translate</type>
+	    <object-name>Button1</object-name>
+	    <property>controls/armament/stick-selector</property>
+		<factor>0.001</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+	
+	<!-- SwitchCover -->
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>SwitchCover</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		    <binding>
+				<command>nasal</command>
+				<script>main_loop.ctrl_w();</script>
+			</binding> 
+	    </action>
+    </animation>
+	
+	<animation>
+	    <type>rotate</type>
+	    <object-name>SwitchCover</object-name>
+	    <property>controls/armament/station/armed</property>
+		<factor>90</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.57205</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.5909</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- Rudder Pedals -->	
+	<animation>
+		<type>translate</type>
+		<object-name>RRudderPed.001</object-name>
+		<object-name>RToeBrake</object-name>
+		<property>controls/flight/rudder</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>LRudderPed.001</object-name>
+		<object-name>LToeBrake</object-name>
+		<property>controls/flight/rudder</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- Wiper 
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>Wiper</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		    <binding>
+				<command>nasal</command>
+				<script>surface-positions/wiper</script>
+			</binding> 
+	    </action>
+    </animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Wiper</object-name>
+		<property>controls/electric/wiper</property>
+		<factor>22</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-16.21405</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.48705</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation> -->
+
+	
+	<!-- THROTTLE LEVER -->
+	<animation>
+		<type>rotate</type>
+		<object-name>ThrottleLever.001</object-name>
+		<object-name>ThrottleHandle</object-name>	 
+		<property>controls/engines/engine[0]/throttle</property>
+		<factor>45</factor>
+		<offset-deg>-23</offset-deg>
+		<center>
+			<x-m>-15.60</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.81</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>	
+	
+	<!-- NOZZLE VECTOR LEVER -->
+	<animation>
+		<type>rotate</type>
+		<object-name>VectorLever.001</object-name>	
+		<object-name>VectorLeverHandle</object-name> 
+		<property>controls/engines/engine[0]/mixture</property>
+		<factor>45</factor>
+		<offset-deg>-23</offset-deg>
+		<center>
+			<x-m>-15.60</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.81</z-m>			
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>	
+	
+	<!-- AAR BOOM -->
+	<animation>
+		<type>select</type>
+		<object-name>FuelProbe</object-name>
+		<condition>			
+			<not-equals>
+				<property>sim/weight[7]/selected</property>
+				<value>none</value>
+			</not-equals>			
+		</condition>
+ 	</animation>	
+	
+	<!-- AAR BOOM -->
+	<animation>
+		<type>select</type>
+		<object-name>FuelProbe</object-name>
+		<condition>			
+			<not-equals>
+				<property>sim/weight[7]/selected</property>
+				<value>none</value>
+			</not-equals>			
+		</condition>
+ 	</animation>
+	
+	<!-- Air Brake -->
+	<animation>
+		<type>rotate</type>
+		<object-name>airBrake</object-name>
+		<property>surface-positions/speedbrake-pos-norm</property>
+		<factor>60</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-8.78491</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.42735</z-m>			
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+ 	</animation>
+	
+	<!-- Intake Doors -->
+	<animation>
+		<type>select</type>
+		<object-name>VentsL</object-name>	
+		<object-name>VentsR</object-name>		
+		<condition>   
+			<greater-than>
+				<property>controls/engines/engine/mixture</property>
+				<value>0.7</value>
+			</greater-than>
+		</condition>
+ 	</animation>
+	
+	<!-- nav lights -->
+	<animation>
+		<type>material</type>
+		<object-name>StarboardLight</object-name>
+		<emission>
+			<red>0.0</red>
+			<green>1.0</green>
+			<blue>0.0</blue>
+			<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>PortLight</object-name>
+		<object-name>TopLight</object-name>
+		<object-name>BottomLight</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
+			<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+		</emission>
+	</animation>
+	
+	<!-- fan blades -->
+	<animation>
+		<type>spin</type>
+		<object-name>FanBlades</object-name>
+		<property>engines/engine[0]/rpm</property>
+		<center>
+			<x-m>-14.1278</x-m>
+			<y-m>-0.05749</y-m>
+			<z-m>-5.89144</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+ 	</animation>
+ 	
+<animation>
+	<type>select</type>
+	<object-name>Pilot</object-name>
+	<object-name>Visor</object-name>
+	<object-name>Torso</object-name>
+	<object-name>Mask</object-name>
+	<object-name>Helmet</object-name> 
+	<condition>
+		<equals>
+	    		<property>sim/current-view/internal</property>
+	   		<value>false</value>
+	   	</equals>
+	</condition>
+</animation>
+
+<!--Wheel spin-->
+   <animation>
+    <type>spin</type>
+    <object-name>FrontTire</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor>30</factor>
+    <center>
+      <x-m>-13.49556</x-m>
+      <y-m>0</y-m>
+      <z-m>-7.51884</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>MiddleTires6</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor>30</factor>
+    <center>
+      <x-m>-10.10718</x-m>
+      <y-m>0</y-m>
+      <z-m>-7.07781</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>RightWheel</object-name>
+    <property>gear/gear[2]/rollspeed-ms</property>
+    <factor>30</factor>
+    <center>
+      <x-m>-9.42492</x-m>
+      <y-m>0</y-m>
+      <z-m>-7.18318</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>spin</type>
+	<object-name>LTire66</object-name>
+    <property>gear/gear[2]/rollspeed-ms</property>
+    <factor>30</factor>
+    <center>
+      <x-m>-9.42788</x-m>
+      <y-m>0</y-m>
+      <z-m>-7.18355</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <!--Wiper-->
+  <animation>
+		<type>rotate</type>
+		<object-name>Wiper</object-name>
+		<property>sim/multiplay/generic/float[10]</property>
+		<factor>30</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-16.2141</x-m>
+			<y-m>0.011</y-m>
+			<z-m>-5.487</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>-0.1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+<!--
+<animation>
+	<type>select</type>
+    	<object-name>Landing-light cone</object-name>      
+    	<condition>
+		<greater-than>
+			<property>/systems/electrical/outputs/landing-light</property>
+			<value>20</value>
+		</greater-than>
+      		<equals>
+        		<property>gear/gear[0]/position-norm</property>
+        		<value>1.0</value>
+      		</equals>
+    	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+    	<object-name>red-light</object-name> 
+    	<object-name>green-light</object-name>         
+    	<condition>
+		<greater-than>
+			<property>/systems/electrical/outputs/instrument-lights</property>
+			<value>20</value>
+		</greater-than>
+    	</condition>
+</animation>
+-->
+</PropertyList>

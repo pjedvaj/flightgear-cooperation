@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<model>
+		<name>gearLock</name>
+		<path>Aircraft/harrier/Models/Cockpit/gearLock/gearLockIndicator.xml</path>
+		<offsets>
+			<x-m>-15.690</x-m>
+			<y-m>-0.288</y-m>
+			<z-m>-5.52</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>diamond</name>
+		<path>Aircraft/harrier/Models/Cockpit/HUD/hud.xml</path>
+		<offsets>
+			<x-m>-15.8</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-5.2198</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	<model>
+	<path>Aircraft/Instruments-3d/rwr/rwr.xml</path>
+    	<offsets>
+      		<x-m>-15.68</x-m>
+      		<y-m>0.3132</y-m> 
+	    	<z-m>-5.611</z-m>
+		<pitch-deg>-51.5</pitch-deg>
+    	</offsets>
+</model>
+	
+	<model>
+	<path>Aircraft/harrier/Models/Cockpit/ccip/ccip.xml</path>
+    	<offsets>
+      		<x-m>-15.8</x-m>
+      		<y-m>0.0</y-m> 
+	    	<z-m>-5.2198</z-m> 
+    	</offsets>
+</model> 
+	
+	<model>
+		<name>radar</name>
+		<path>Aircraft/harrier/Models/Cockpit/radar/radar.xml</path>
+		<offsets>
+			<x-m>-15.747</x-m>
+			<y-m>0.163</y-m>
+			<z-m>-5.513</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>hdd</name>
+		<path>Aircraft/harrier/Models/Cockpit/hdd/hdd.xml</path>
+		<offsets>
+			<x-m>-15.748</x-m>
+			<y-m>-0.142</y-m>
+			<z-m>-5.507</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>vertical speed</name>
+		<path>Aircraft/harrier/Models/Cockpit/vsi-6/vsi-3d.xml</path>
+		<offsets>
+			<x-m>-15.767</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>-5.410</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>	
+	<model>
+		<name>attitude indicator</name>
+		<path>Aircraft/harrier/Models/Cockpit/ai/ai.xml</path>
+		<offsets>
+			<x-m>-15.73</x-m>
+			<y-m>-0.034</y-m>
+			<z-m>-5.545</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>direction</name>
+		<path>Aircraft/harrier/Models/Cockpit/remote/remote.xml</path>
+
+		<offsets>
+			<x-m>-15.72</x-m>
+			<y-m>-0.033</y-m>
+			<z-m>-5.630</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>Thrust Vector Indicator</name>
+		<path>Aircraft/harrier/Models/Cockpit/thrust_vector_indicator/tvi.xml</path>
+		<offsets>
+			<x-m>-15.768</x-m>
+			<y-m>0.125</y-m>
+			<z-m>-5.396</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+		
+	<model>
+		<name>SpeedIndicator</name>
+		<path>Aircraft/harrier/Models/Cockpit/asi600/asi600-3d.xml</path>
+		<offsets>
+			<x-m>-15.718</x-m>
+			<y-m>0.050</y-m>
+			<z-m>-5.630</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>Altimeter</name>
+		<path>Aircraft/Instruments-3d/alt/alt.xml</path>
+		<offsets>
+			<x-m>-15.73</x-m>
+			<y-m>0.049</y-m>
+			<z-m>-5.547</z-m>
+			<pitch-deg>-13</pitch-deg>
+		</offsets>
+ 	</model>				
+	<model>
+		<name>MagCompass</name>
+		<path>Aircraft/Instruments-3d/mag-compass.xml</path>
+		<offsets>
+			<x-m>-15.73</x-m>
+			<y-m>0.275</y-m>
+			<z-m>-5.560</z-m>
+			<pitch-deg>-28</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>WeaponsPanel</name>
+		<path>Aircraft/harrier/Models/Cockpit/weapons_panel/weapons_panel.xml</path>
+		<offsets>
+			<x-m>-15.73247</x-m>
+			<y-m>-0.1702</y-m>
+			<z-m>-5.60783</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	
+</PropertyList>

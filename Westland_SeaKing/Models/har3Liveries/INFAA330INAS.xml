@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Indian Fleet Air Arm 330 INAS</name>
+        <texture>har3Liveries/INFAA330INAS.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.45</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <submodel>
+    <name>Flare Release</name>
+    <model>Aircraft/F-18F/Models/Effects/Flares/flare-submodel.xml</model>
+    <trigger>controls/flares/released</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.35</delay>
+    <count>40</count>
+    <offsets>
+      <x-m> 1.3 </x-m>
+      <y-m>-0.7 </y-m>
+      <z-m> 1.0 </z-m>
+    </offsets>
+    <cd>1.2</cd>
+    <eda>100</eda>
+    <weight>0</weight>
+    <wind>true</wind>
+    <buoyancy>31</buoyancy>
+    <life>40</life>
+  </submodel>
+
+  <submodel>
+    <name>Flare Release</name>
+    <model>Aircraft/F-18F/Models/Effects/Flares/flare-submodel.xml</model>
+    <trigger>controls/flares/released</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.35</delay>
+    <count>40</count>
+    <offsets>
+      <x-m> 1.3 </x-m>
+      <y-m> 0.7 </y-m>
+      <z-m> 1.0 </z-m>
+    </offsets>
+    <cd>1.2</cd>
+    <eda>100</eda>
+    <weight>0</weight>
+    <wind>true</wind>
+    <buoyancy>31</buoyancy>
+    <life>40</life>
+  </submodel>
+
+  <cannon>
+    <model>Models/Geometry/tracer.xml</model>
+    <speed>3363.0</speed>
+    <cd>0.193</cd>
+    <weight>0.9369635</weight>
+    <eda>0.007609</eda>
+    <!--<pitch-offset>0</pitch-offset> 2755.9-->
+    <fuse-range>0</fuse-range>
+    <life>40</life>
+    <trigger>controls/armament/trigger</trigger>
+    <expiry>true</expiry>
+    <repeat>true</repeat>
+    <delay>0.04</delay>
+    <count>103</count>
+    <buoyancy>20</buoyancy>
+    <wind>false</wind>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
+    <submodel-path>Aircraft/F-18F/Models/Effects/Guns/bullet-submodel.xml</submodel-path>
+    <impact-reports>sim/ai/aircraft/collision/cannon</impact-reports>
+    <pitch-offset>0.0</pitch-offset>
+  </cannon>
+
+  <submodel>
+    <name>gun tracer</name>
+    <model alias="../../cannon/model"/>
+    <trigger alias="../../cannon/trigger"/>
+    <speed alias="../../cannon/speed"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <weight alias="../../cannon/weight"/>
+    <life alias="../../cannon/life"/>
+    <repeat alias="../../cannon/repeat"/>
+    <delay alias="../../cannon/delay"/>
+    <count alias="../../cannon/count"/>
+    <wind alias="../../cannon/wind"/>
+    <expiry alias="../../cannon/expiry"/>
+    <collision alias="../../cannon/collision"/>
+    <impact alias="../../cannon/impact"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
+    <offsets>
+      <x-m>-7.57</x-m>
+      <y-m>0</y-m>
+      <z-m>2.097</z-m>
+      <pitch-deg alias="../../cannon/pitch-offset"/>
+    </offsets>
+  </submodel>
+
+  <submodel>
+    <name>cannon bullet</name>
+    <model>Aircraft/F-18F/Models/Effects/Guns/bullet.xml</model>
+    <trigger alias="../../cannon/trigger"/>
+    <speed alias="../../cannon/speed"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <weight alias="../../cannon/weight"/>
+    <life alias="../../cannon/life"/>
+    <repeat alias="../../cannon/repeat"/>
+    <delay>0.01</delay>
+    <count>412</count>
+    <wind alias="../../cannon/wind"/>
+    <expiry alias="../../cannon/expiry"/>
+    <collision alias="../../cannon/collision"/>
+    <impact alias="../../cannon/impact"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
+    <offsets>
+      <x-m>-7.57</x-m>
+      <y-m>0</y-m>
+      <z-m>2.097</z-m>
+      <pitch-deg alias="../../cannon/pitch-offset"/>
+    </offsets>
+  </submodel>
+
+  <submodel>
+    <name>smoke</name>
+    <model>Aircraft/F-18F/Models/Effects/Guns/smoke.xml</model>
+    <trigger alias="../../cannon/trigger"/>
+    <speed>20</speed>
+    <repeat>true</repeat>
+    <delay>0.01</delay>
+    <count>412</count>
+    <offsets>
+      <x-m>-7.57</x-m>
+      <y-m>0</y-m>
+      <z-m>2.097</z-m>
+      <pitch-deg alias="../../cannon/pitch-offset"/>
+    </offsets>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>40</buoyancy>
+    <life>5</life>
+  </submodel>
+
+</PropertyList>

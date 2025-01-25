@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<path>Overheadpanel.ac</path>
+
+   <animation>
+        <type>rotate</type>
+        <object-name>Clutch</object-name>
+        <property>controls/rotor/brake</property>
+		<factor>-90</factor>
+      <axis>
+        <x> 0 </x>
+        <y> -1 </y>
+        <z> 0 </z>
+      </axis>
+      <center>
+        <x-m> -7.55677 </x-m>
+        <y-m> 0.29592 </y-m>
+        <z-m> 0.95489 </z-m>  
+      </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Clutch</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+	<binding>
+					<command>nasal</command>
+					<script>
+						var p = "/controls/rotor/brake";
+						setprop(p, !getprop(p));
+					</script>
+				</binding>
+        </action>
+    </animation>
+
+   <!-- light  knob -->
+
+ <animation>
+        <type>pick</type>
+        <object-name>knob4</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/instruments-norm</property>
+                <step>0.1</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>knob4</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/instruments-norm</property>
+                <step>-0.1</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>  
+
+ <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>knob4</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+	<command>property-toggle</command>
+	<property>controls/lighting/instruments-norm</property>
+      </binding>
+     
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>	
+	
+	
+<!-- Engine power levers -->
+
+
+
+ <animation>
+    <type>rotate</type>
+   <object-name>Switch.002</object-name>
+    <property>controls/engines/engine/power</property>
+   <factor>30</factor>
+    <center>
+       <x-m> -7.6</x-m>
+        <y-m> 0 </y-m>
+        <z-m> 0.93 </z-m>  
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>	
+	
+<animation>
+    <type>rotate</type>
+   <object-name>Switch.003</object-name>
+    <property>controls/engines/engine[1]/power</property>
+   <factor>30</factor>
+    <center>
+       <x-m> -7.6</x-m>
+        <y-m> 0 </y-m>
+        <z-m>0.93</z-m>  
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>	
+  
+  
+ <!-- Engine cut off levers -->	
+
+
+ <animation>
+    <type>rotate</type>
+   <object-name>Switch.001</object-name>
+    <property>controls/engines/engine/cutoff</property>
+   <factor>40</factor>
+    <center>
+       <x-m> -7.6</x-m>
+        <y-m> 0 </y-m>
+        <z-m> 0.93 </z-m>  
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+<type>pick</type>
+   <object-name>Switch.001</object-name>
+	<action>
+	<button>0</button>
+      <repeatable>false</repeatable>
+ 		  <binding>
+        <command>property-toggle</command>
+       <property>controls/engines/engine/cutoff</property>
+      </binding>	
+		
+	</action>
+	
+	</animation> 
+	
+	
+	<animation>
+    <type>rotate</type>
+   <object-name>Switch.004</object-name>
+    <property>controls/engines/engine[1]/cutoff</property>
+   <factor>40</factor>
+    <center>
+      <x-m> -7.6</x-m>
+        <y-m> 0 </y-m>
+        <z-m> 0.93 </z-m>  
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+<type>pick</type>
+   <object-name>Switch.004</object-name>
+	<action>
+	<button>0</button>
+      <repeatable>false</repeatable>
+ 		  <binding>
+        <command>property-toggle</command>
+       <property>controls/engines/engine[1]/cutoff</property>
+      </binding>	
+		
+	</action>
+</animation>		
+
+
+<!-- Switches -->
+
+<model>
+		<name>AC Gen2</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/gen2.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.391</x-m>
+   <y-m>0.195</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		<name>AC Gen1</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/gen1.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.391</x-m>
+   <y-m>0.142</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>Batery</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/batt-lights.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.391</x-m>
+   <y-m>0.099</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.7</x-offset>
+    <y-offset>1.4</y-offset>
+    <z-offset>1.4</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>motor gen</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.391</x-m>
+   <y-m>0.055</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.7</x-offset>
+    <y-offset>1.4</y-offset>
+    <z-offset>1.4</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>alt batt</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.391</x-m>
+   <y-m>0.01</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.7</x-offset>
+    <y-offset>1.4</y-offset>
+    <z-offset>1.4</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>gnd inv</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.39</x-m>
+   <y-m>-0.022</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		<name>xmfr rect</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.39</x-m>
+   <y-m>-0.052</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>ext pwr</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.39</x-m>
+   <y-m>-0.088</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>access drive</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.39</x-m>
+   <y-m>-0.126</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.7</x-offset>
+    <y-offset>1.4</y-offset>
+    <z-offset>1.4</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	
+	<model>
+		<name>something lts</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.39</x-m>
+   <y-m>-0.157</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>beep trim</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.39</x-m>
+   <y-m>-0.193</y-m>
+   <z-m>0.962</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		<name>landing lights</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/land-lights.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.388</x-m>
+   <y-m>-0.225</y-m>
+   <z-m>0.963</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>crew hoist</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.331</x-m>
+   <y-m>-0.228</y-m>
+   <z-m>0.98</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	
+
+	
+	<model>
+		<name>ignition1</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/ignition1.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.48</x-m>
+   <y-m>-0.222</y-m>
+   <z-m>0.935</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		<name>ignition2</name>
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/ignition2.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.48</x-m>
+   <y-m>-0.18</y-m>
+   <z-m>0.935</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<!-- ext lights -->
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/beacon.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.201</x-m>
+   <y-m>0.21</y-m>
+   <z-m>1.017</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/nav.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.203</x-m>
+   <y-m>0.14</y-m>
+   <z-m>1.017</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/strobe.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.203</x-m>
+   <y-m>0.107</y-m>
+   <z-m>1.017</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.203</x-m>
+   <y-m>0.074</y-m>
+   <z-m>1.017</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.211</x-m>
+   <y-m>0.01</y-m>
+   <z-m>1.015</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.223</x-m>
+   <y-m>-0.035</y-m>
+   <z-m>1.012</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/search-lights.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.141</x-m>
+   <y-m>-0.007</y-m>
+  <z-m>1.0362</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<!-- Cabin system switches -->
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.14</x-m>
+   <y-m>0.0372</y-m>
+   <z-m>1.0362</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.14</x-m>
+   <y-m>0.097</y-m>
+  <z-m>1.0362</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.142</x-m>
+   <y-m>0.133</y-m>
+   <z-m>1.0362</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/pito-lights.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.142</x-m>
+   <y-m>0.165</y-m>
+   <z-m>1.0362</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	
+		<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+      <x-m>-7.14</x-m>
+   <y-m>0.213</y-m>
+  <z-m>1.0362</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<!-- Blade system switches -->
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.151</x-m>
+   <y-m>-0.143</y-m>
+   <z-m>1.033</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	
+	<model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/tailfold.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.203</x-m>
+   <y-m>-0.143</y-m>
+   <z-m>1.015</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+	
+	<!-- tail fold warning -->
+	 <animation>
+    <type>material</type>
+    <object-name>orangelense</object-name>
+   <condition>
+   <equals>
+   <property>sim/model/bk117/door-positions/leftBackDoor/position-norm</property>
+   <value>1</value>
+   </equals>
+   </condition>
+    <emission>
+        <red>2</red>
+        <green>0.2</green>
+        <blue>0</blue>
+     
+    </emission>
+  </animation>
+  
+ <!-- Blade indicators  -->
+  <animation>
+    <type>material</type>
+    <object-name>redlense1</object-name>
+	 <object-name>redlense2</object-name>
+  
+    <emission>
+        <red>2</red>
+        <green>0.0</green>
+        <blue>0</blue>
+     
+    </emission>
+  </animation>
+  
+  <!-- instrument lighting -->
+  
+  <model>
+		
+  <path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/PanelLights/lights.xml</path>
+ 
+    <offsets> 
+     <x-m>-7.302</x-m>
+   <y-m>0.185</y-m>
+   <z-m>1.015</z-m>
+<pitch-deg>72</pitch-deg>
+
+    </offsets>
+	
+	<overlay>
+			
+			 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.3</x-offset>
+    <y-offset>4</y-offset>
+    <z-offset>4</z-offset>
+   </animation>
+		</overlay>
+	
+	
+	</model>
+
+	
+</PropertyList>
+

@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<text>
+	<name>HDD-label</name>
+	<type type="string">literal</type>
+	<text type="string">Heads Down Display</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7331</x-m>
+		<y-m>-0.1413</y-m>
+		<z-m>-5.5041</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>Radar-label</name>
+	<type type="string">literal</type>
+	<text type="string">Radar</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7331</x-m>
+		<y-m>0.1413</y-m>
+		<z-m>-5.5041</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>HUD-label</name>
+	<type type="string">literal</type>
+	<text type="string">Heads Up Display</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7058</x-m>
+		<y-m>0.0</y-m>
+		<z-m>-5.2149</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>compass-label</name>
+	<type type="string">literal</type>
+	<text type="string">Magnetic Compass</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7025</x-m>
+		<y-m>0.2702</y-m>
+		<z-m>-5.5347</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>tvi-label</name>
+	<type type="string">literal</type>
+	<text type="string">Thrust Vector Indicator</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7537</x-m>
+		<y-m>0.124</y-m>
+		<z-m>-5.3959</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>alt-label</name>
+	<type type="string">literal</type>
+	<text type="string">Altimeter</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7099</x-m>
+		<y-m>0.0488</y-m>
+		<z-m>-5.5455</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>ai-label</name>
+	<type type="string">literal</type>
+	<text type="string">Altitude Indicator</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7099</x-m>
+		<y-m>-0.0322</y-m>
+		<z-m>-5.5455</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>hi-label</name>
+	<type type="string">literal</type>
+	<text type="string">Heading Indicator</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7099</x-m>
+		<y-m>-0.0322</y-m>
+		<z-m>-5.6273</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>spd-label</name>
+	<type type="string">literal</type>
+	<text type="string">Speed Indicator</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7099</x-m>
+		<y-m>0.0488</y-m>
+		<z-m>-5.6273</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>vsi-label</name>
+	<type type="string">literal</type>
+	<text type="string">Vertical Speed Indicator</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7603</x-m>
+		<y-m>-0.1190</y-m>
+		<z-m>-5.4107</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>g-ind-label</name>
+	<type type="string">literal</type>
+	<text type="string">Gear Lock Indicator</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.6826</x-m>
+		<y-m>-0.2868</y-m>
+		<z-m>-5.5231</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>throt-label</name>
+	<type type="string">literal</type>
+	<text type="string">Throttle and Thrust Vector</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<axis-alignment>yz-plane</axis-alignment>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.5818</x-m>
+		<y-m>-0.3066</y-m>
+		<z-m>-5.629</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>panel_light-label</name>
+	<type type="string">literal</type>
+	<text type="string">Panel Lighting</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<axis-alignment>yz-plane</axis-alignment>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.6934</x-m>
+		<y-m>-0.2438</y-m>
+		<z-m>-5.4521</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>flaps-label</name>
+	<type type="string">literal</type>
+	<text type="string">Flaps</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<axis-alignment>yz-plane</axis-alignment>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.6983</x-m>
+		<y-m>-0.2281</y-m>
+		<z-m>-5.4314</z-m>
+	</offsets>
+</text>
+
+<text>
+	<name>arm_pan-label</name>
+	<type type="string">literal</type>
+	<text type="string">Armament Panel</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+	<character-size type="double">0.012</character-size>
+	<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<axis-alignment>yz-plane</axis-alignment>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m>-15.7231</x-m>
+		<y-m>-0.1620</y-m>
+		<z-m>-5.6074</z-m>
+	</offsets>
+</text>
+
+<animation>
+	<type>material</type>
+	<object-name>HDD-label</object-name>
+	<object-name>HUD-label</object-name>
+	<object-name>compass-label</object-name>
+	<object-name>tvi-label</object-name>
+	<object-name>alt-label</object-name>
+	<object-name>vsi-label</object-name>
+	<object-name>g-ind-label</object-name>
+	<object-name>spd-label</object-name>
+	<object-name>ai-label</object-name>
+	<object-name>hi-label</object-name>
+	<object-name>throt-label</object-name>
+	<object-name>Radar-label</object-name>
+	<object-name>on_off-label</object-name>
+	<object-name>panel_light-label</object-name>
+	<object-name>arm_pan-label</object-name>
+	<object-name>flaps-label</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>0.8</green>
+		<blue>0.0</blue>
+	</emission>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>HDD-label</object-name>
+	<object-name>HUD-label</object-name>
+	<object-name>compass-label</object-name>
+	<object-name>tvi-label</object-name>
+	<object-name>Radar-label</object-name>
+	<object-name>alt-label</object-name>
+	<object-name>ai-label</object-name>
+	<object-name>hi-label</object-name>
+	<object-name>spd-label</object-name>
+	<object-name>vsi-label</object-name>
+	<object-name>g-ind-label</object-name>
+	<object-name>throt-label</object-name>
+	<object-name>on_off-label</object-name>
+	<object-name>panel_light-label</object-name>
+	<object-name>arm_pan-label</object-name>
+	<object-name>flaps-label</object-name>
+	<condition>
+		<property>/sim/panel-hotspots</property>
+	</condition>
+</animation>
+
+</PropertyList>

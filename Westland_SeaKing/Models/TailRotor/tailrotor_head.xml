@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+<path>tailrotor_head.ac</path>
+
+	<animation>
+		<name>trotor_head</name>
+			<object-name>center_con_01</object-name>
+			<object-name>center_con_02</object-name>
+			<object-name>center_01</object-name>
+	</animation>
+	
+	<animation>
+		<name>trotor_head_con</name>
+			<object-name>center_con_01</object-name>
+			<object-name>center_con_02</object-name>
+	</animation>
+
+	<!-- Blades -->
+	<model>
+		<name>Blade0</name>
+		<path>tailrotor_blade.xml</path>
+	</model>
+
+	<model>
+		<name>Blade1</name>
+		<path>tailrotor_blade.xml</path>
+		<offsets>
+			<heading-deg>60</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Blade2</name>
+		<path>tailrotor_blade.xml</path>
+		<offsets>
+			<heading-deg>120</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Blade3</name>
+		<path>tailrotor_blade.xml</path>
+		<offsets>
+			<heading-deg>180</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Blade4</name>
+		<path>tailrotor_blade.xml</path>
+		<offsets>
+			<heading-deg>240</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Blade5</name>
+		<path>tailrotor_blade.xml</path>
+		<offsets>
+			<heading-deg>300</heading-deg>
+		</offsets>
+	</model>
+
+	<animation>
+		<name>rotor_complete</name>
+			<object-name>trotor_head</object-name>
+			<object-name>Blade0</object-name>
+			<object-name>Blade1</object-name>
+			<object-name>Blade2</object-name>
+			<object-name>Blade3</object-name>
+			<object-name>Blade4</object-name>
+			<object-name>Blade5</object-name>
+	</animation>
+
+	<!-- Rotor complete rotation -->
+	<animation>
+		<type>spin</type>
+		<object-name>rotor_complete</object-name>
+		 <property>rotors/tail/rpm</property>
+	<factor>1</factor>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z>-1 </z>
+		</axis>
+	</animation>
+	
+	
+	<!-- Rotor complete rotation -->
+	<animation>
+		<type>translate</type>
+		<object-name>trotor_head_con</object-name>
+		<property>/rotors/tail/blade/incidence-deg</property>
+		<interpolation>
+			<entry><ind>-29.00 </ind><dep>-0.035 </dep></entry>
+			<entry><ind>  0.00 </ind><dep> 0.000 </dep></entry>
+			<entry><ind> 29.00 </ind><dep> 0.035 </dep></entry>
+		</interpolation>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z>-1 </z>
+		</axis>
+	</animation>
+
+</PropertyList>

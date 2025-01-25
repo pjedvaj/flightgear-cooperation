@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Ukraine 10th Naval Aviation Brigade</name>
+        <texture>har3Liveries/Uk10NAB.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.25</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>

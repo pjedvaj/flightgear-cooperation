@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+<model>
+	<name>panel-rembrandt</name>
+	<path>Aircraft/harrier/Models/Lightsold/Rembrandt/panel-remb.xml</path>
+</model>
+
+<animation>
+	<type>select</type>
+    	<object-name>panel-rembrandt</object-name>
+   	<condition>
+      		<property>/sim/rendering/rembrandt/enabled</property>
+      		<property>/instrumentation/panel-lights</property>
+		<greater-than>
+			<property>/systems/electrical/outputs/panel-lights</property>
+			<value>20</value>
+		</greater-than>
+   	</condition>
+</animation>
+
+</PropertyList>

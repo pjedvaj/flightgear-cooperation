@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name type="string">harrier_sitting</name>
+  <loop-enabled type="bool">true</loop-enabled>
+  <loop-to type="int">0</loop-to>
+  <trigger-upon type="string">Disabled</trigger-upon>
+  <position>
+    <name type="string">Sitting pos for Sea Harrier</name>
+    <rest-sec type="double">0</rest-sec>
+    <transit-sec type="double">1</transit-sec>
+    <limb>
+      <y-deg type="double">13.5616</y-deg>
+      <z-m type="double">-0.8225</z-m>
+    </limb>
+    <limb n="1">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="2">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="3">
+      <x-deg type="double">-83.125</x-deg>
+      <y-deg type="double">-27.1552</y-deg>
+      <z-deg type="double">-43.4245</z-deg>
+    </limb>
+    <limb n="4">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">21.0191</z-deg>
+    </limb>
+    <limb n="5">
+      <x-deg type="double">11.9048</x-deg>
+      <y-deg type="double">31.2</y-deg>
+      <hand-pose type="double">1</hand-pose>
+    </limb>
+    <limb n="6">
+      <x-deg type="double">-70</x-deg>
+      <y-deg type="double">0.387939</y-deg>
+      <z-deg type="double">-16.3396</z-deg>
+    </limb>
+    <limb n="7">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">60.1911</z-deg>
+    </limb>
+    <limb n="8">
+      <x-deg type="double">32.8571</x-deg>
+      <y-deg type="double">-15.6</y-deg>
+      <hand-pose type="double">1</hand-pose>
+    </limb>
+    <limb n="9">
+      <x-deg type="double">0</x-deg>
+      <y-deg type="double">-135</y-deg>
+      <z-deg type="double">-7.5</z-deg>
+    </limb>
+    <limb n="10">
+      <y-deg type="double">87.3684</y-deg>
+    </limb>
+    <limb n="11">
+      <y-deg type="double">-8.80435</y-deg>
+    </limb>
+    <limb n="12">
+      <x-deg type="double">0</x-deg>
+      <y-deg type="double">-135</y-deg>
+      <z-deg type="double">3.68182</z-deg>
+    </limb>
+    <limb n="13">
+      <y-deg type="double">88.3158</y-deg>
+    </limb>
+    <limb n="14">
+      <y-deg type="double">-9.78261</y-deg>
+    </limb>
+  </position>
+</PropertyList>

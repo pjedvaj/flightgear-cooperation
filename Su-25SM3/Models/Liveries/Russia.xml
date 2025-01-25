@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Russian Air Force 01</name>
+                <texture>Liveries/Russia.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Russia.png</texture>
+            </livery-logo>
+            <fueltk>
+            	<name type="string">Russia01</name>
+            	<texture>Liveries/DroptankRU01.png</texture>
+            </fueltk>
+            <pilotsuit>
+                <name type="string">BlueFlightsuit</name>
+                <texture>Liveries/Pilot/pilot_blue.png</texture>
+            </pilotsuit>
+        </model>
+    </sim>
+
+</PropertyList>

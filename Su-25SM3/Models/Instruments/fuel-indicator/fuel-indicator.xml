@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>fuel-indicator.ac</path>
+
+<animation>
+ <type>material</type>
+ <object-name>ISTR4-2.DC1</object-name>
+ <object-name>ISTR4-2.DC2</object-name>
+ <object-name>ISTR4-2.DC3</object-name>
+ <object-name>ISTR4-2.DC4</object-name>
+ <object-name>feeder-scale</object-name>
+ <object-name>Overall-scale</object-name>
+ <object-name>face</object-name>
+	<emission>
+     	<factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.8</red>
+        <green>0.3</green>
+        <blue>0.1</blue>
+	</emission>
+	<condition>
+		<property>/controls/power/battery</property>
+		<property>/controls/lighting/nightmode</property>
+	</condition>
+</animation>
+
+<animation>
+  <type>material</type>
+  <object-name>ISTR4-2.DC1</object-name>
+  <object-name>ISTR4-2.DC2</object-name>
+  <object-name>ISTR4-2.DC3</object-name>
+  <object-name>ISTR4-2.DC4</object-name>
+  <object-name>feeder-scale</object-name>
+  <object-name>Overall-scale</object-name>
+  <object-name>face</object-name>
+    <emission>
+        <red>0.2</red>
+        <green>0.2</green>
+        <blue>0.2</blue>
+            <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+        <condition>
+        	<property>/controls/power/battery</property>
+          <not>
+           <property>/controls/lighting/nightmode</property>
+          </not>
+        </condition>
+</animation>
+
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>Overall-scale</object-name>
+  <property>consumables/fuel/total-fuel-kg</property>
+  <factor>0.00006352</factor>
+  <axis>
+   <x> 0</x>
+   <y>-1</y>
+   <z> 0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>feeder-scale</object-name>
+  <property>consumables/fuel/tank[1]/level-kg</property>
+  <factor>0.00032</factor>
+  <axis>
+   <x> 0</x>
+   <y>-1</y>
+   <z> 0</z>
+  </axis>
+ </animation>
+
+ <animation>
+ <type>textranslate</type>
+ <object-name>ISTR4-2.DC1</object-name>
+ <!-- <property>fdm/jsbsim/systems/fuel/tek</property> -->
+ <!-- <property>consumables/fuel/total-fuel-lbs</property> -->
+ <property>consumables/fuel/total-fuel-kg</property>
+ <factor>0.0001</factor>
+ <step>1000.0</step>
+ <axis>
+  <x> 0</x>
+  <y>-1</y>
+  <z> 0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>textranslate</type>
+ <object-name>ISTR4-2.DC2</object-name>
+ <!-- <property>fdm/jsbsim/systems/fuel/tek</property> -->
+ <!-- <property>consumables/fuel/total-fuel-lbs</property> -->
+ <property>consumables/fuel/total-fuel-kg</property>
+ <factor>0.001</factor>
+ <step>100.0</step>
+ <axis>
+  <x> 0</x>
+  <y>-1</y>
+  <z> 0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>textranslate</type>
+ <object-name>ISTR4-2.DC3</object-name>
+ <!-- <property>fdm/jsbsim/systems/fuel/tek</property> -->
+ <!-- <property>consumables/fuel/total-fuel-lbs</property> -->
+ <property>consumables/fuel/total-fuel-kg</property>
+ <factor>0.01</factor>
+ <step>10.0</step>
+ <axis>
+  <x> 0</x>
+  <y>-1</y>
+  <z> 0</z>
+ </axis>
+</animation>
+
+<!-- 
+I - inner two external tanks;
+
+II - outer two external tanks;
+
+КР - wing tanks;
+
+3/4 - third and fourth tanks;
+
+Ц - central fuselage tank; not implemented yet
+
+0.6 - emeregency fuel quantity - equal or less 600 kilogramms;
+-->
+ 
+<!-- Inner Drop tanks I -->
+
+ 	<animation>
+	 <type>select</type> 
+	 <object-name>Tnk41-led</object-name>
+	 <condition>
+		 <and>
+	   <less-than>
+		   <property>consumables/fuel/tank[5]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+	   <less-than>
+		   <property>consumables/fuel/tank[6]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+		 </and>
+	 </condition>
+	</animation>
+	
+	<animation>
+	 <type>material</type> 
+	 <object-name>Tnk41-led</object-name>
+	 <condition>
+		 <and>
+	   <less-than>
+		   <property>consumables/fuel/tank[5]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+	   <less-than>
+		   <property>consumables/fuel/tank[6]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+		 </and>
+	 </condition>
+	 <emission>	
+	  <red>0.8</red>	
+	  <green>0.8</green>	
+	  <blue>0.8</blue>
+	 </emission>
+	</animation>
+
+	<!-- Outer Drop tanks II -->
+	
+ 	<animation>
+	 <type>select</type> 
+	 <object-name>Tnk3-led</object-name>
+	 <condition>
+		 <and>
+	   <less-than>
+		   <property>consumables/fuel/tank[4]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+	   <less-than>
+		   <property>consumables/fuel/tank[7]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+		 </and>
+	 </condition>
+	</animation>
+
+	<animation>
+	 <type>material</type> 
+	 <object-name>Tnk3-led</object-name>
+	 <condition>
+		 <and>
+	   <less-than>
+		   <property>consumables/fuel/tank[4]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+	   <less-than>
+		   <property>consumables/fuel/tank[7]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+		 </and>
+	 </condition>
+	 <emission>	
+	  <red>0.8</red>	
+	  <green>0.8</green>	
+	  <blue>0.8</blue>
+	 </emission>
+	</animation>
+
+	<!-- Wing Tanks KP-->
+	
+ 	<animation>
+	 <type>select</type> 
+	 <object-name>Tnk15-led</object-name>
+	 <condition>
+		 <and>
+	   <less-than>
+		   <property>consumables/fuel/tank[3]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+	   <less-than>
+		   <property>consumables/fuel/tank[2]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+		 </and>
+	 </condition>
+	</animation>
+
+	<animation>
+	 <type>material</type> 
+	 <object-name>Tnk15-led</object-name>
+	 <condition>
+		 <and>
+	   <less-than>
+		   <property>consumables/fuel/tank[3]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+	   <less-than>
+		   <property>consumables/fuel/tank[2]/level-kg</property>
+		   <value>1</value>
+	   </less-than>
+		 </and>
+	 </condition>
+	 <emission>	
+	  <red>0.8</red>	
+	  <green>0.8</green>	
+	  <blue>0.8</blue>
+	 </emission>
+	</animation>
+	
+ 	<animation>
+	 <type>select</type> 
+	 <object-name>Tnk5-led</object-name>
+	 <condition>
+	   <less-than>
+		   <property>consumables/fuel/total-fuel-kg</property>
+		   <value>1200</value>
+	   </less-than>
+	 </condition>
+	</animation>
+
+	<animation>
+	 <type>material</type> 
+	 <object-name>Tnk5-led</object-name>
+	 <condition>
+	   <less-than>
+		   <property>consumables/fuel/total-fuel-kg</property>
+		   <value>1200</value>
+	   </less-than>
+	 </condition>
+	 <emission>	
+	  <red>0.8</red>	
+	  <green>0.8</green>	
+	  <blue>0.8</blue>
+	 </emission>
+	</animation>
+	
+ 	<animation>
+	 <type>select</type> 
+	 <object-name>Bingo-fuel-Led</object-name>
+	 <condition>
+	   <less-than>
+		   <property>consumables/fuel/total-fuel-kg</property>
+		   <value>600</value>
+	   </less-than>
+	 </condition>
+	</animation>
+
+	<animation>
+	 <type>material</type> 
+	 <object-name>Bingo-fuel-Led</object-name>
+	 <condition>
+	   <less-than>
+		   <property>consumables/fuel/total-fuel-kg</property>
+		   <value>600</value>
+	   </less-than>
+	 </condition>
+	 <emission>	
+	  <red>1.0</red>	
+	  <green>0.8</green>	
+	  <blue>0.8</blue>
+	 </emission>
+	</animation>
+</PropertyList>

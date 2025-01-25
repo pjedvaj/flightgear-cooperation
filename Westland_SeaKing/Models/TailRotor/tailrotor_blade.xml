@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+<path>tailrotor_blade.ac</path>
+
+	<animation>
+		<object-name>tblade_01</object-name>
+		<object-name>tblade_02</object-name>
+		<object-name>tblade_03</object-name>
+		<object-name>tblade_04</object-name>
+		<object-name>tblade_05</object-name>
+		<object-name>tblade_06</object-name>
+		<object-name>tblade_07</object-name>
+		<object-name>tblade_08</object-name>
+		<object-name>tblade_09</object-name>
+		
+		<object-name>tblade_con_01</object-name>
+		<object-name>tblade_con_02</object-name>
+		<object-name>tblade_con_03</object-name>
+		<object-name>tblade_con_04</object-name>
+
+		<!-- Transparence 
+		<object-name>propblur</object-name>
+		<object-name>propdisc</object-name>
+		-->
+	</animation>
+
+	
+	<!-- Object Groups -->
+	<animation>
+		<name>tblade_assy</name>
+			<object-name>tblade_01</object-name>
+			<object-name>tblade_02</object-name>
+			<object-name>tblade_03</object-name>
+			<object-name>tblade_04</object-name>
+			<object-name>tblade_05</object-name>
+			<object-name>tblade_07</object-name>
+	</animation>
+	
+	<animation>
+		<name>tblade_con_assy</name>
+			<object-name>tblade_con_01</object-name>
+			<object-name>tblade_con_02</object-name>
+			<object-name>tblade_con_03</object-name>
+			<object-name>tblade_con_04</object-name>
+	</animation>
+	
+	<!-- Incidence -->
+	<animation>
+		<type>rotate</type>
+		<object-name>tblade_assy</object-name>
+		<object-name>tblade_con_assy</object-name>
+		<property>/rotors/tail/blade/incidence-deg</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	
+	<!-- Incidence conector -->
+	<animation>
+		<type>rotate</type>
+		<object-name>tblade_con_assy</object-name>
+		<property>/rotors/tail/blade/incidence-deg</property>
+		<factor>0.85</factor>
+		<axis>
+			<x1-m> 0.069 </x1-m>
+			<y1-m> 0.197 </y1-m>
+			<z1-m> 0.000 </z1-m>
+			<x2-m> 0.069 </x2-m>
+			<y2-m> 0.181 </y2-m>
+			<z2-m> 0.000 </z2-m>
+		</axis>
+	</animation>
+	
+	 <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+       
+		<object-name>blurred1</object-name>
+  
+    </effect> 
+	
+	 <animation>
+    <type>select</type>
+   <object-name>blurred1</object-name>
+    
+    <condition>
+      <and>
+        <greater-than>
+          <property>/rotors/main/rpm</property>
+          <value>150</value>
+        </greater-than>
+       
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<type>material</type>
+	 <object-name>blurred1</object-name>
+		<transparency>
+			<alpha-prop>rotors/main/rpm</alpha-prop>
+			<factor>0.1</factor>
+			<offset>-0.25</offset>
+			<max>0.4</max>
+		</transparency>
+		<threshold>0.001</threshold>
+    </animation>
+	
+	<animation>
+    <type>select</type>
+    <object-name>tblade_01</object-name>
+    <condition>
+      <less-than>
+        <property>/rotors/main/rpm</property>
+	<value>150</value>
+      </less-than>
+    </condition>
+  </animation>
+<!--  
+  <animation>
+	<type>material</type>
+	 <object-name>blurred1</object-name>
+		<transparency>
+			<alpha-prop>rotors/main/rpm</alpha-prop>
+			<factor>0.1</factor>
+			<offset>-0.25</offset>
+			<max>0.4</max>
+		</transparency>
+		<threshold>0.01</threshold>
+    </animation>
+  -->
+
+	
+</PropertyList>

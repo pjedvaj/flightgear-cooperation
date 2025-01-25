@@ -1,0 +1,173 @@
+<?xml version="1.0" ?>
+
+<PropertyList>
+    <path>caution3.ac</path>
+
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>10</max-m>
+    </animation>
+	
+	<!--  basic red lighting -->
+	<animation>
+    <type>material</type>
+    <object-name>eng1antice</object-name>
+    <object-name>eng2antice</object-name>
+	 <object-name>1pitot</object-name>
+    <object-name>2pitot</object-name>
+	 <object-name>compassfail</object-name>
+    <object-name>spare</object-name>
+	 <object-name>leftld</object-name>
+    <object-name>rightld</object-name>
+	 <object-name>heaterhot</object-name>
+    <object-name>tailtakeoff</object-name>
+	 
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
+     
+    </emission>
+  </animation>
+ 
+
+<!--  warning animations -->
+
+ <!-- spare -->
+ <animation>
+        <type>select</type>
+        <object-name>spare</object-name>
+        <object-name>heaterhot</object-name>
+		<object-name>heaterhot</object-name>
+		<object-name>compassfail</object-name>
+		<object-name>tailtakeoff</object-name>
+        <condition>
+		
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+  
+			</condition>
+ </animation>
+
+
+
+	<!-- 1 engine anti ice -->
+	<animation>
+        <type>select</type>
+        <object-name>eng1antice</object-name>
+        
+        <condition>
+		
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+	
+			</condition>
+    </animation>
+	
+	
+<!-- 2 engine anti ice -->
+	<animation>
+        <type>select</type>
+        <object-name>eng2antice</object-name>
+        
+        <condition>
+		
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+			
+	   
+			</condition>
+    </animation>
+	
+	<!-- 1 pitot -->
+	<animation>
+        <type>select</type>
+        <object-name>1pitot</object-name>
+        
+        <condition>
+		<or>
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+		<and>
+			<not>
+				<property>controls/anti-ice/pitot-heat</property>
+						<value>true</value>
+					</not>
+					
+				  <less-than>
+            <property>environment/temperature-degc</property>
+            <value>4.0</value>
+          </less-than>			
+					
+			</and>			
+			
+</or>	   
+			</condition>
+    </animation>
+	
+	<!-- 2 pitot -->
+	<animation>
+        <type>select</type>
+        <object-name>2pitot</object-name>
+        
+        <condition>
+		<or>
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+		<and>
+			<not>
+				<property>controls/anti-ice/pitot-heat2</property>
+						<value>true</value>
+					</not>
+					
+				  <less-than>
+            <property>environment/temperature-degc</property>
+            <value>4.0</value>
+          </less-than>			
+					
+			</and>			
+			
+</or>	   
+			</condition>
+    </animation>
+	
+	<!--landing lights -->
+	<animation>
+        <type>select</type>
+        <object-name>leftld</object-name>
+         <object-name>rightld</object-name>
+        <condition>
+		<or>
+			<equals>
+				<property>controls/switches/landing-lights-switch</property>
+						<value>true</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+</PropertyList>

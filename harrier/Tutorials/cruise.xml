@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+
+
+ 
+<name>Cruise</name>
+<description>This tutorial tells you how to put the Harrier in a cruise condition.</description>
+
+<step>
+	<message>{Set your other systems as you desire.|}</message>
+	<wait>5</wait>
+</step>
+ 
+<step>
+	<message>{Put the engine power to about 75% power.|}</message>
+	<error>                    
+              	<message>Increase the thrust!</message>
+              	<condition>
+			 <less-than>
+ 				<property>/controls/engines/engine[0]/throttle</property>
+				<value>0.6</value>
+      			</less-than>
+              	</condition> 
+		<interval>2</interval>      
+	</error>
+	<error>                    
+              	<message>Decrease the thrust!</message>
+              	<condition>
+			 <greater-than>
+ 				<property>/controls/engines/engine[0]/throttle</property>
+				<value>0.9</value>
+      			</greater-than>
+              	</condition> 
+		<interval>2</interval>      
+	</error>
+	<exit>
+		<condition>
+        		<greater-than>
+          			<property>/controls/engines/engine[0]/throttle</property>
+				<value>0.7</value>
+        		</greater-than>
+      		</condition>
+	</exit>
+
+</step>
+     
+
+</PropertyList>

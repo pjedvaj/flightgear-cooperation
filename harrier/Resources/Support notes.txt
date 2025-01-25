@@ -1,0 +1,5 @@
+Canvas Mapstructure - new 3.2.0
+Canvas - new 2.8.0
+New failures - new 3.2.0 
+Canvas GUI - new 3.2.0
+maketimer() API - new 2.12.0

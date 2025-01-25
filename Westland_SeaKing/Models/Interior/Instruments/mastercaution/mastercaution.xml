@@ -1,0 +1,507 @@
+<?xml version="1.0" ?>
+
+<PropertyList>
+    <path>caution1.ac</path>
+
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>10</max-m>
+    </animation>
+	
+	<!--  basic red lighting -->
+	<animation>
+    <type>material</type>
+    <object-name>1gen</object-name>
+    <object-name>2gen</object-name>
+	 <object-name>ircm</object-name>
+    <object-name>dcgen</object-name>
+	 <object-name>rect</object-name>
+    <object-name>spare</object-name>
+	 <object-name>fuel1</object-name>
+    <object-name>fuel2</object-name>
+	 <object-name>fuel3</object-name>
+    <object-name>fuelbyp1</object-name>
+	 <object-name>fuelbyp2</object-name>
+    <object-name>bmi</object-name>
+	 <object-name>priservo</object-name>
+    <object-name>auxservo</object-name>
+	 <object-name>spare5</object-name>
+    <object-name>tranoilp</object-name>
+	 <object-name>tranolilhot</object-name>
+    <object-name>spare4</object-name>
+	 <object-name>1oilpress</object-name>
+    <object-name>2oilpress</object-name>
+	 <object-name>spare3</object-name>
+    <object-name>1antice</object-name>
+	 <object-name>2antice</object-name>
+    <object-name>spare2</object-name>
+	<object-name>eng1antice</object-name>
+	 <object-name>eng2antice</object-name>
+    <object-name>spare1</object-name>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
+     
+    </emission>
+  </animation>
+ 
+
+<!--  warning animations -->
+
+ <!-- spare -->
+ <animation>
+        <type>select</type>
+        <object-name>spare</object-name>
+        <object-name>spare1</object-name>
+		<object-name>spare2</object-name>
+		<object-name>spare3</object-name>
+		<object-name>spare4</object-name>
+		<object-name>spare5</object-name>
+        <condition>
+		
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+  
+			</condition>
+ </animation>
+
+<!-- #1 Generator -->
+ <animation>
+        <type>select</type>
+        <object-name>1gen</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>controls/electric/engine[0]/generator</property>
+						<value>1</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+ <!-- #2 Generator -->
+ <animation>
+        <type>select</type>
+        <object-name>2gen</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>controls/electric/engine[1]/generator</property>
+						<value>1</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+  <!-- Battery overy temp -->
+ <animation>
+        <type>select</type>
+        <object-name>ircm</object-name>
+        
+        <condition>
+		
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+  
+			</condition>
+ </animation>
+ 
+  <!-- DC Generator -->
+ <animation>
+        <type>select</type>
+        <object-name>dcgen</object-name>
+        
+        <condition>
+		
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+	   
+			</condition>
+ </animation>
+ 
+  <!-- Rectifier -->
+ <animation>
+        <type>select</type>
+        <object-name>rect</object-name>
+        
+        <condition>
+		
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+	   
+			</condition>
+ </animation>
+ 
+  <!-- fwd fuel low -->
+ <animation>
+        <type>select</type>
+        <object-name>fuel1</object-name>
+        
+        <condition>
+		<or>
+			<less-than>
+				<property>consumables/fuel/tank/level-gal_us</property>
+						<value>50</value>
+					</less-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+  <!-- aft fuel low -->
+ <animation>
+        <type>select</type>
+        <object-name>fuel2</object-name>
+        
+        <condition>
+		<or>
+			<less-than>
+				<property>consumables/fuel/tank[2]/level-gal_us</property>
+						<value>50</value>
+					</less-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+ <!-- centre tank overflow -->
+ <animation>
+        <type>select</type>
+        <object-name>fuel3</object-name>
+        
+        <condition>
+		<or>
+			<greater-than>
+				<property>consumables/fuel/tank[1]/level-gal_us</property>
+						<value>160.4</value>
+					</greater-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+  <!-- fwd fuel bypass -->
+ <animation>
+        <type>select</type>
+        <object-name>fuelbyp1</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>consumables/fuel/tank/selected</property>
+						<value>false</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+  <!-- fwd fuel bypass -->
+ <animation>
+        <type>select</type>
+        <object-name>fuelbyp2</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>consumables/fuel/tank[2]/selected</property>
+						<value>false</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+  <!-- bmi pressure -->
+ <animation>
+        <type>select</type>
+        <object-name>bmi</object-name>
+        
+        <condition>
+		
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+	   
+			</condition>
+ </animation>
+ 
+  <!-- primary servo pressure -->
+ <animation>
+        <type>select</type>
+        <object-name>priservo</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>controls/hydraulic/system/electric-pump</property>
+						<value>false</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+  <!-- Aux servo pressure -->
+ <animation>
+        <type>select</type>
+        <object-name>auxservo</object-name>
+        
+        <condition>
+		<or>
+			<equals>
+				<property>controls/hydraulic/system/engine-pump</property>
+						<value>false</value>
+					</equals>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+ </animation>
+ 
+ 
+ <!-- Tans oil pressure -->
+<animation>
+        <type>select</type>
+        <object-name>tranoilp</object-name>
+       
+        <condition>
+		<or>
+			<less-than>
+				<property>rotors/gear/mgb-oil-pressure-bar</property>
+						<value>0.8</value>
+					</less-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+<!-- Trans  Oil HOT-->	
+	<animation>
+        <type>select</type>
+        <object-name>tranolilhot</object-name>
+       
+        <condition>
+		<or>
+			<greater-than>
+				<property>engines/engine/oil-temperature-degc</property>
+						<value>115</value>
+					</greater-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+	<!-- Engine oil pressure -->
+	 <animation>
+        <type>select</type>
+        <object-name>1oilpress</object-name>
+        
+        <condition>
+		<or>
+			<less-than>
+				<property>engines/engine/oil-pressure-bar</property>
+						<value>1</value>
+					</less-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+	<!-- Engine2 oil pressure -->
+	 <animation>
+        <type>select</type>
+        <object-name>2oilpress</object-name>
+        
+        <condition>
+		<or>
+			<less-than>
+				<property>engines/engine[1]/oil-pressure-bar</property>
+						<value>1</value>
+					</less-than>
+							
+			 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+</or>	   
+			</condition>
+    </animation>
+	
+	<!-- 1 Inlet anti ice -->
+	<animation>
+        <type>select</type>
+        <object-name>1antice</object-name>
+        
+        <condition>
+		
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+		
+			
+	   
+			</condition>
+    </animation>
+	
+	<!-- 2 Inlet anti ice -->
+	<animation>
+        <type>select</type>
+        <object-name>2antice</object-name>
+        
+        <condition>
+		
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+		
+			</condition>
+    </animation>
+	
+	
+	<!-- 1 engine anti ice -->
+	<animation>
+        <type>select</type>
+        <object-name>eng1antice</object-name>
+        
+        <condition>
+		
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+	
+			</condition>
+    </animation>
+	
+	
+<!-- 2 engine anti ice -->
+	<animation>
+        <type>select</type>
+        <object-name>eng2antice</object-name>
+        
+        <condition>
+	
+		
+		 <equals>
+      <property>controls/electric/warningtest</property>
+	   <value>true</value>
+	   </equals>
+		
+	
+			</condition>
+    </animation>	
+	
+	<!-- switch -->
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/warntest.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.072</y-m>
+			<z-m>0.03</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.7</x-offset>
+    <y-offset>1.5</y-offset>
+    <z-offset>1.5</z-offset>
+   </animation>
+  </overlay>
+	</model>
+
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/switches/spare.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.072</y-m>
+			<z-m>-0.04</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.7</x-offset>
+    <y-offset>1.5</y-offset>
+    <z-offset>1.5</z-offset>
+   </animation>
+  </overlay>
+	</model>
+</PropertyList>

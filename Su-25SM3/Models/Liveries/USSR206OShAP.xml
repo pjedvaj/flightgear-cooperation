@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">USSR Air Force; 206 OShAP</name>
+                <texture>Liveries/USSR206OShAP.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/USSR206OShAP.png</texture>
+            </livery-logo>
+            <fueltk>
+            	<name type="string">DroptankSU206</name>
+            	<texture>Liveries/DroptankSU206.png</texture>
+            </fueltk>
+            <pilotsuit>
+                <name type="string">BlueFlightsuit</name>
+                <texture>Liveries/Pilot/pilot_camo.png</texture>
+            </pilotsuit>
+        </model>
+    </sim>
+
+</PropertyList>

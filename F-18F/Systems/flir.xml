@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Just a stopgap to make the flir move -->
+
+<PropertyList>
+
+  <filter>
+    <name>LITENING_pitch</name>
+    <type>gain</type>
+    <gain>-1.0</gain>
+    <input>
+      <property>orientation/pitch-deg</property>
+    </input>
+    <output>
+      <property>/aircraft/flir/swivel/pitch-deg</property>
+    </output>
+  </filter>
+
+  <filter>
+    <name>LITENING_roll</name>
+    <type>gain</type>
+    <gain>-1.0</gain>
+    <input>
+      <property>orientation/roll-deg</property>
+    </input>
+    <output>
+      <property>/aircraft/flir/swivel/roll-deg</property>
+    </output>
+  </filter>
+
+</PropertyList>

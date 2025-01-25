@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>GAZL_Pilot_MILM.ac</path>
+  
+  
+  <effect>
+    <inherits-from>Aircraft/Westland-Wessex-Mk5/Models/Effects/reflect-uber</inherits-from>
+     <object-name>visor2</object-name>
+       
+  </effect>
+
+  <animation>
+   <name>thehead</name>
+    <object-name>visor2</object-name>
+    <object-name>helmet</object-name>
+    <object-name>runner</object-name>
+    <object-name>adjuster</object-name>
+    <object-name>face</object-name>
+    <object-name>liner</object-name>
+    <object-name>rubber</object-name>
+    <object-name>friction</object-name>
+    <object-name>eyes</object-name>
+    <object-name>bobbin</object-name>
+    <object-name>sphere</object-name>
+    <object-name>mic</object-name>
+   
+  </animation>
+
+  
+<!--
+  
+
+  <animation>
+    <type>rotate</type>
+    <object-name>thehead</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -15 </factor> 
+    <center>
+      <x-m> 0.366 </x-m>
+      <y-m> 0.005 </y-m>
+      <z-m> 0.411 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>thehead</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> -25 </factor>
+    <center>
+      <x-m> 0.366 </x-m>
+      <y-m> 0.005 </y-m>
+      <z-m> 0.411 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>thehead</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> -10 </factor>
+    <center>
+      <x-m> 0.366 </x-m>
+      <y-m> 0.005 </y-m>
+      <z-m> 0.411 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+-->
+</PropertyList>

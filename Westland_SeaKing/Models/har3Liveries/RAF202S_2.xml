@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Royal Air Force 202 Sqn Falklands campaign</name>
+        <texture>har3Liveries/RAF202S_2.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.45</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>

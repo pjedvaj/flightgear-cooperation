@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+<path>weapons-panel.ac</path>
+
+<!-- left outbound -->
+    <animation>
+		<type>rotate</type>
+		<object-name>flip-4</object-name>
+		<property>controls/armament/station</property>
+		<factor>50</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.00751</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.01603</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>flip-4</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>weapons.set_pylon(0);</script>
+		</binding>
+	    </action>
+    </animation>
+	
+	<!-- left inbound -->
+    <animation>
+		<type>rotate</type>
+		<object-name>flip-5</object-name>
+		<property>controls/armament/station</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.00751</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.01603</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>flip-5</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>weapons.set_pylon(1);</script>
+		</binding>
+	    </action>
+    </animation>
+	
+	<!-- center -->
+    <animation>
+		<type>rotate</type>
+		<object-name>flip-7</object-name>
+		<property>controls/armament/station</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.00751</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.01603</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>flip-7</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>weapons.set_pylon(3);</script>
+		</binding>
+	    </action>
+    </animation>
+	
+	<!-- right inbound -->
+    <animation>
+		<type>rotate</type>
+		<object-name>flip-8</object-name>
+		<property>controls/armament/station</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.00751</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.01603</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>flip-8</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>weapons.set_pylon(5);</script>
+		</binding>
+	    </action>
+    </animation>
+	
+	<!-- right outbound -->
+    <animation>
+		<type>rotate</type>
+		<object-name>flip-9</object-name>
+		<property>controls/armament/station</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.00751</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.01603</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>flip-9</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>weapons.set_pylon(6);</script>
+		</binding>
+	    </action>
+    </animation>
+	
+	<!-- left cannon -->
+    <animation>
+		<type>rotate</type>
+		<object-name>flip-1</object-name>
+		<property>controls/armament/station</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.00754</x-m>
+			<y-m>0</y-m>
+			<z-m>0.01751</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>flip-1</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>weapons.set_pylon(2);</script>
+		</binding>
+	    </action>
+    </animation>
+	
+	<!-- right cannon -->
+    <animation>
+		<type>rotate</type>
+		<object-name>flip-2</object-name>
+		<property>controls/armament/station</property>
+		<factor>7</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.00754</x-m>
+			<y-m>0</y-m>
+			<z-m>0.01751</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	    <type>pick</type>
+	    <type>select</type>
+	    <object-name>flip-2</object-name>
+	    <action>
+    		<button>0</button>
+    		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>weapons.set_pylon(4);</script>
+		</binding>
+	    </action>
+    </animation>
+
+</PropertyList>

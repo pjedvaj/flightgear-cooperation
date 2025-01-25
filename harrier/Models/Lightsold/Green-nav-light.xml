@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+<model>
+	<name>green-nav-normal</name>
+	<path>Aircraft/harrier/Models/Lights/Normal/green-nav-norm.xml</path>
+</model>
+
+<model>
+	<name>green-nav-rembrandt</name>
+	<path>Aircraft/harrier/Models/Lights/Rembrandt/green-nav-remb.xml</path>
+</model>
+
+<animation>
+	<type>select</type>
+    	<object-name>green-nav-normal</object-name>
+   	<condition>
+		<not>
+      			<property>/sim/rendering/rembrandt/enabled</property>
+		</not>
+   	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+    	<object-name>green-nav-rembrandt</object-name>
+   	<condition>
+      		<property>/sim/rendering/rembrandt/enabled</property>
+   	</condition>
+</animation>
+
+</PropertyList>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<PropertyList>
+    <path>orange.ac</path>
+
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>10</max-m>
+    </animation>
+    
+<animation>
+<type>shader</type>
+<shader>chrome</shader>
+<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+<object-name>orangelense</object-name>
+</animation>
+
+<effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>orangelense</object-name>
+    
+    </effect>
+
+</PropertyList>

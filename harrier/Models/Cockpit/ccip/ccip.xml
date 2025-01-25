@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+	<path>ccip.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>ccip</object-name>
+		<condition>
+				<property>sim/hud/visibility[1]</property>
+				<property>instrumentation/hud/show-ccip</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>ccip</object-name>
+		<property>sim/hud/ccip_dev_m</property>
+		<axis>
+			<x>0.00</x>
+			<y>0.00</y>
+			<z>-1.00</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>ccip</object-name>
+  		<emission>
+   			<red>0.38</red>
+   			<green>0.75</green>
+   			<blue>0.02</blue>
+   			<!-- <factor-prop>controls/lighting/panel-norm</factor-prop> -->
+  		</emission>
+	</animation>
+
+</PropertyList>

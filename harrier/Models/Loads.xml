@@ -1,0 +1,752 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	
+
+	<!--station left 1 -->
+
+
+	<model>
+		<name>left-aim9-1</name>
+		<path>Aircraft/harrier/Models/Stores/aim-9/aim-9.xml</path>
+		<offsets>
+			 <x-m>-10.9</x-m>
+            <y-m>-2.83</y-m>
+            <z-m>-6.2</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			 <roll-deg>-45</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-aim9-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>AIM-9L Sidewinder</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	
+
+	<model>
+		<name>left-aim120-1</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			 <x-m>-11.4</x-m>
+            <y-m>-2.83</y-m>
+            <z-m>-6.2</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			 
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-aim120-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>AIM-120 AMRAAM</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+		
+	
+	<model>
+		<name>left-500lb-0</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			 <x-m>-10.9</x-m>
+            <y-m>-2.84</y-m>
+            <z-m>-6.28</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-500lb-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>500lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>left-1000lb-0</name>
+		<path>Aircraft/harrier/Models/Stores/mk83/mk83.xml</path>
+		<offsets>
+			 <x-m>-11.3</x-m>
+            <y-m>-2.84</y-m>
+            <z-m>-6.33</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-1000lb-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>1000lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+	
+	
+	 <model>
+        <name>LSNEB1</name>
+       <path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+        <offsets>
+            <x-m>-10.96</x-m>
+            <y-m>-2.84</y-m>
+            <z-m>-6.18</z-m>
+            <pitch-deg>0.0</pitch-deg>
+        </offsets>
+    </model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LSNEB1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>SNEB rocket pod</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+		
+
+	<!--station left 2 -->
+
+	
+<model>
+		<name>left-droptank1</name>
+		<path>Aircraft/harrier/Models/Stores/exTank.ac</path>
+		<offsets>
+			 <x-m>-11.0</x-m>
+            <y-m>-1.9</y-m>
+            <z-m>-6.2</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-droptank1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>190 Gallon Fuel Tank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+
+	
+<model>
+		<name>left-alarm</name>
+		<path>Aircraft/harrier/Models/Stores/ALARM/alarm.xml</path>
+		<offsets>
+			 <x-m>-11.6</x-m>
+            <y-m>-1.9</y-m>
+            <z-m>-6.0</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-alarm</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>ALARM Anti-radar Missile</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+	
+
+	
+	<model>
+		<name>left-10002</name>
+		<path>Aircraft/harrier/Models/Stores/mk83/mk83.xml</path>
+		<offsets>
+			 <x-m>-11.9</x-m>
+            <y-m>-1.9</y-m>
+            <z-m>-6.1</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-10002</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>1000lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+	
+
+
+		
+	<model>
+		<name>left-5001</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			 <x-m>-11.4</x-m>
+            <y-m>-1.9</y-m>
+            <z-m>-6.05</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-5001</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>500lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+
+	
+	<model>
+		<name>left-seaeagle</name>
+		<path>Aircraft/harrier/Models/Stores/SeaEagle/seaeagle.xml</path>
+		<offsets>
+			 <x-m>-11.6</x-m>
+            <y-m>-1.9</y-m>
+            <z-m>-6.05</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-seaeagle</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>Sea Eagle Anti-ship Missile</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+	
+	<model>
+		<name>left-sneb1</name>
+		<path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+		<offsets>
+			 <x-m>-11.3</x-m>
+            <y-m>-1.9</y-m>
+            <z-m>-5.96</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-sneb1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>SNEB rocket pod</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+
+
+
+	
+	
+	
+	
+	<!--station left 3 -->
+	<model>
+		<name>left-cannon</name>
+		<path>Aircraft/harrier/Models/L-aden.ac</path>
+		<offsets>
+		 <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.1</z-m>
+            <roll-deg>0</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-cannon</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[2]</property>
+					<value>ADEN 30mm Cannon</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation>
+
+	
+
+	<!-- centre station  -->
+	
+<model>
+		<name>centre-500</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			 <x-m>-12.2</x-m>
+            <y-m>0</y-m>
+            <z-m>-6.9</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>centre-500</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>500lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+	<model>
+		<name>centre-1000</name>
+		<path>Aircraft/harrier/Models/Stores/mk83/mk83.xml</path>
+		<offsets>
+			 <x-m>-12.4</x-m>
+            <y-m>0</y-m>
+            <z-m>-6.97</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>centre-1000</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>1000lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+		
+	<!--station right 3 -->
+
+	<model>
+		<name>right-cannon</name>
+		<path>Aircraft/harrier/Models/r-aden.ac</path>
+		<offsets>
+		 <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.1</z-m>
+            <roll-deg>0</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-cannon</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[4]</property>
+					<value>ADEN 30mm Cannon</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation>
+
+	
+
+	<!--station Right 2 -->
+
+<model>
+		<name>right-droptank1</name>
+		<path>Aircraft/harrier/Models/Stores/exTank.ac</path>
+		<offsets>
+			 <x-m>-11.0</x-m>
+            <y-m>1.77</y-m>
+            <z-m>-6.2</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-droptank1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[5]</property>
+					<value>190 Gallon Fuel Tank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation> 
+
+	
+<model>
+		<name>right-alarm</name>
+		<path>Aircraft/harrier/Models/Stores/ALARM/alarm.xml</path>
+		<offsets>
+			 <x-m>-11.6</x-m>
+            <y-m>1.8</y-m>
+            <z-m>-6.0</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-alarm</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[5]</property>
+					<value>ALARM Anti-radar Missile</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+<model>
+		<name>right-10002</name>
+		<path>Aircraft/harrier/Models/Stores/mk83/mk83.xml</path>
+		<offsets>
+			 <x-m>-11.9</x-m>
+            <y-m>1.8</y-m>
+            <z-m>-6.1</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-10002</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[5]</property>
+					<value>1000lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+	
+<model>
+		<name>right-5002</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+		    <x-m>-11.4</x-m>
+            <y-m>1.8</y-m>
+            <z-m>-6.05</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-5002</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[5]</property>
+					<value>500lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>		
+	
+	
+	<model>
+		<name>right-seaeagle</name>
+		<path>Aircraft/harrier/Models/Stores/SeaEagle/seaeagle.xml</path>
+		<offsets>
+			 <x-m>-11.6</x-m>
+            <y-m>1.8</y-m>
+            <z-m>-6.05</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-seaeagle</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[5]</property>
+					<value>Sea Eagle Anti-ship Missile</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+
+<model>
+		<name>right-sneb1</name>
+		<path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+		<offsets>
+			 <x-m>-11.3</x-m>
+            <y-m>1.8</y-m>
+            <z-m>-5.96</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-sneb1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[5]</property>
+					<value>SNEB rocket pod</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>		
+
+
+
+
+	
+	
+	
+
+
+	
+		
+	<!--station right 1 -->
+	 <model>
+        <name>RSNEB1</name>
+       <path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+        <offsets>
+            <x-m>-10.96</x-m>
+            <y-m>2.72</y-m>
+            <z-m>-6.2</z-m>
+            <pitch-deg>0.0</pitch-deg>
+        </offsets>
+    </model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RSNEB1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[6]</property>
+					<value>SNEB rocket pod</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>right-aim9-1</name>
+		<path>Aircraft/harrier/Models/Stores/aim-9/aim-9.xml</path>
+		<offsets>
+			 <x-m>-10.9</x-m>
+            <y-m>2.72</y-m>
+            <z-m>-6.2</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			 <roll-deg>-45</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-aim9-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[6]</property>
+					<value>AIM-9L Sidewinder</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>right-aim120-1</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			 <x-m>-11.4</x-m>
+            <y-m>2.72</y-m>
+            <z-m>-6.2</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			 
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-aim120-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[6]</property>
+					<value>AIM-120 AMRAAM</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>right-500lb-0</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			 <x-m>-10.9</x-m>
+            <y-m>2.72</y-m>
+            <z-m>-6.28</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-500lb-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[6]</property>
+					<value>500lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>right-1000lb-0</name>
+		<path>Aircraft/harrier/Models/Stores/mk83/mk83.xml</path>
+		<offsets>
+			 <x-m>-11.3</x-m>
+            <y-m>2.72</y-m>
+            <z-m>-6.31</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-1000lb-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[6]</property>
+					<value>1000lb bomb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+	
+
+	
+	<!-- fuel probe -->
+	<model>
+		<name>fuel</name>
+		 <path>Aircraft/harrier/Models/probe.ac</path>
+		<offsets>
+			<x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>fuel</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>Refueling boom attached</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation> 
+
+</PropertyList>

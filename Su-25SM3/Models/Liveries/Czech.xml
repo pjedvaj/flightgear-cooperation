@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Czech Air Force, 30th Attack Rgmt.</name>
+                <texture>Liveries/Czech.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Czech.png</texture>
+            </livery-logo>
+            <fueltk>
+            	<name type="string">DefaultDroptank</name>
+            	<texture>Liveries/Droptank.png</texture>
+            </fueltk>
+            <pilotsuit>
+                <name type="string">BlueFlightsuit</name>
+                <texture>Liveries/Pilot/pilot_green.png</texture>
+            </pilotsuit>
+        </model>
+    </sim>
+
+</PropertyList>

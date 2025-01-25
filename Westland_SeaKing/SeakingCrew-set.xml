@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<!-- $Id$ -->
+<!--
+  MD500 multiplayer passenger view.
+
+  Copyright (C) 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<!--
+  Usage: fgfs - -prop:/sim/remote/pilot-callsign="remote pilot callsign" - -aircraft=Fi-156-passenger
+-->
+<PropertyList>
+
+<sim include="Systems/views2.xml">
+
+  <description>Westland Seaking Multiplayer Crew</description>
+  <author>Alphasim ( 3d), StuartC, Algernon</author>
+  <status>v0.1a</status>
+  <aircraft-version>$Id$</aircraft-version>
+  
+  <flight-model>null</flight-model>
+
+  <presets>
+   <onground type="bool">false</onground>
+   <altitude-agl-ft type="double">30.0</altitude-agl-ft>
+  </presets>
+
+  <!-- 3d model -->
+ 
+  
+  <model>
+   <path>Aircraft/Westland_SeaKing/Models/SeaKing-Crew.xml</path>
+  </model>
+  
+  
+  <rendering>
+    <refl_correction type="string">-0.45</refl_correction>
+    </rendering>
+  
+		<multiplay>
+	<chat_display>1</chat_display>
+	<generic> 
+		
+		  <!-- Nav lights on -->
+      <int n="0" alias="/controls/switches/nav-lights-switch" />
+      <!-- Beacon on -->
+      <int n="1" alias="/controls/switches/beacon-switch" />
+      <!-- Landing lights on -->
+      <int n="2" alias="/controls/switches/landing-lights-switch" />
+	    <!-- Taxi light on -->
+      <int n="3" alias="/controls/switches/strobe-switch" />
+	 
+	  
+	   <int n="6" alias="/gear/gear/ground-is-solid"/><!-- rotor particles -->
+      <!-- Crashed -->
+      <int n="7" alias="/sim/crashed" />
+	   <int n="10"></int> <!--  Dual Control Reserved -->	
+        
+		
+		<!-- doors over MP -->
+	            <!-- <float n="0" alias="/sim/model/bo105/doors/door[0]/position-norm"/> -->
+				<float n="0" type="double">0</float>
+				<float n="1" alias="/sim/model/bo105/doors/door[1]/position-norm"/>
+				<float n="2" alias="/sim/model/bo105/doors/door[2]/position-norm"/>
+				<float n="3" alias="/sim/model/bo105/doors/door[3]/position-norm"/>
+				
+				<float n="6" alias="/orientation/pitch-deg"/>	<!-- rotor particles + AI -->
+	            <float n="7" alias="/position/gear-agl-m"/>	<!-- rotor particles -->
+	            <float n="8" alias="/orientation/roll-deg"/><!-- rotor particles + AI-->
+	            <float n="9" alias="/rotors/main/torque"/>	<!-- rotor particles -->
+	
+	 <float n="0" alias="/sim/model/bk117/door-positions/rightFrontDoor/position-norm"/>
+	<float n="1" alias="/sim/model/bk117/door-positions/leftFrontDoor/position-norm"/>
+	<float n="2" alias="/sim/model/bk117/door-positions/rightBackDoor/position-norm"/>
+	<float n="3" alias="/sim/model/bk117/door-positions/leftBackDoor/position-norm"/>
+	<float n="4" alias="/sim/model/bk117/door-positions/rightRearDoor/position-norm"/>
+	<float n="5" alias="/sim/model/bk117/door-positions/leftRearDoor/position-norm"/>
+	<float n="4" alias="/sim/model/rescue-lift"/><!-- winchman over MP -->
+
+	<float n="6" alias="/orientation/pitch-deg"/>	<!-- rotor particles -->
+	<float n="7" alias="/position/gear-agl-m"/>	<!-- rotor particles -->
+	<float n="8" alias="/orientation/roll-deg"/><!-- rotor particles -->
+	<float n="9" alias="/rotors/main/torque"/>	<!-- rotor particles -->
+	
+	<float n="12" alias="/sim/model/rescue"/><!--winchman over MP -->
+	<float n="13" alias="/sim/model/rescue-lift"/><!--winchman over MP -->
+
+	<!--<float n="10" alias="/instrumentation/doors/crewup/position-norm"/>
+	<float n="11" alias="/instrumentation/doors/crew/position-norm"/>
+	<float n="12" alias="/instrumentation/doors/cargo/position-norm"/>-->
+	</generic>
+	</multiplay>
+  
+  <menubar>
+   <default>
+    <menu n="100">
+     <label>Sea King</label>
+     <item>
+      <label>Select Pilot</label>
+      <binding>
+       <command>nasal</command>
+       <script>
+        dual_control_tools.
+          copilot_dialog.show(aircraft_dual_control.pilot_type);
+       </script>
+      </binding>
+     </item>
+    </menu>
+   </default>
+  </menubar>
+  
+ 
+ </sim>
+ 
+ 	<environment>
+ <turbulence>
+ <use-cloud-turbulence>true</use-cloud-turbulence>
+ </turbulence>
+ </environment>
+
+ <consumables>
+		<fuel>
+			<tank>
+				<name>Forward</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+
+			<tank>
+				<name>Supply</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+			
+			<tank>
+				<name>Aft</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+		</fuel>
+	</consumables>
+ 
+ <controls>
+
+ <gear> 
+		 <floats-inflat type="bool">true</floats-inflat> 
+		 <floats-armed type="bool">true</floats-armed> 
+		 <floats-deflate type="bool">false</floats-deflate> 
+		<brake-parking>1</brake-parking>
+		</gear>
+		
+		
+	
+	<rotor>
+			<reltarget type="double">0</reltarget>
+			<maxreltorque type="double">0</maxreltorque>
+		</rotor>
+
+
+
+</controls>
+ 
+<instrumentation>
+	<gsdi>
+	<serviceable type="bool">true</serviceable>
+	<enabled type="bool">true</enabled>
+	</gsdi>
+</instrumentation>
+
+ <nasal>
+ 
+ <doors>
+	<file>Aircraft/Westland_SeaKing/Nasal/doors.nas</file>
+	</doors>
+	<!--<sh3>
+	<file>Aircraft/Westland_SeaKing/Nasal/immat.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/light.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/sh3.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/har3liveries.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/engines.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/casdisable.nas</file>
+
+	</sh3>-->
+	
+	 <rotorwash>
+       <file>Aircraft/Westland_SeaKing/Nasal/rotorwash.nas</file>
+     </rotorwash>
+	
+	<bk117>
+	<file>Aircraft/Westland_SeaKing/Nasal/immat.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/fcs.nas</file>
+	
+	<file>Aircraft/Westland_SeaKing/Nasal/bk117.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/har3liveries.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/engines.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/casdisable.nas</file>
+	
+
+	</bk117>
+	
+	<floats>
+ <file>Aircraft/Westland_SeaKing/Nasal/floats.nas</file>
+ </floats>
+	
+	<lights>
+      <file>Aircraft/Westland_SeaKing/Nasal/Lights.nas</file>
+    </lights>
+	
+	
+	<sound-helper>
+      <file>Aircraft/Westland_SeaKing/Nasal/sound-helper.nas</file>
+    </sound-helper> 
+	
+ 
+  <dual_control_tools>
+   <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
+  </dual_control_tools>
+  <aircraft_dual_control>
+   <file>Aircraft/Westland_SeaKing/Nasal/seaking-dual-control.nas</file>
+  </aircraft_dual_control>
+  <dual_control>
+   <file>Aircraft/Generic/DualControl/copilot-dual-control.nas</file>
+  </dual_control>
+ 
+ </nasal>
+
+</PropertyList>

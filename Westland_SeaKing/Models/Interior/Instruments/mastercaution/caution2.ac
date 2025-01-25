@@ -1,0 +1,236 @@
+AC3Db
+MATERIAL "DefaultWhite.001" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+OBJECT world
+kids 11
+OBJECT poly
+name "spare3"
+loc 0.00280427 0.144636 -0.187212
+data 8
+Cube.009
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.122045 0.182314
+0 -0.133886 0.182314
+0 -0.122045 0.116423
+0 -0.133886 0.116423
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+1 0.796293 0.716069
+3 1.00037 0.716068
+2 1.00037 0.748482
+0 0.796295 0.748482
+kids 0
+OBJECT poly
+name "rotorbrake"
+loc 0.00280427 0.0803006 -0.0866997
+data 8
+Cube.003
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.0393145 0.0158116
+0 -0.0258802 0.0158116
+0 -0.0393145 0.0818202
+0 -0.0258802 0.0818202
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.796593 0.84753
+0 1.00067 0.847529
+1 1.00067 0.884312
+3 0.796595 0.884312
+kids 0
+OBJECT poly
+name "dcgen"
+loc 0.00280427 0.116903 -0.113694
+data 8
+Cube.008
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.121661 0.115711
+0 -0.10897 0.115711
+0 -0.121661 0.181198
+0 -0.10897 0.181198
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.796814 0.748466
+0 1.00089 0.748465
+1 1.00089 0.780879
+3 0.796816 0.780879
+kids 0
+OBJECT poly
+name "parkingbrake"
+loc 0.00280427 0.0559078 -0.0141239
+data 8
+Cube.004
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.0147577 0.0156703
+0 -0.00271268 0.0156703
+0 -0.0147577 0.0810885
+0 -0.00271268 0.0810885
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.795713 0.883454
+0 0.999792 0.883454
+1 0.999793 0.918881
+3 0.795714 0.918881
+kids 0
+OBJECT poly
+name "spare"
+loc 0.00280427 0.138706 -0.109554
+data 8
+Cube.009
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.127803 0.112211
+0 -0.1165 0.112211
+0 -0.127803 0.175716
+0 -0.1165 0.175716
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.796293 0.716069
+0 1.00037 0.716068
+1 1.00037 0.748482
+3 0.796295 0.748482
+kids 0
+OBJECT poly
+name "cabin"
+loc 0.00280427 0.131764 -0.0878249
+data 8
+Cube.016
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.136319 0.0160583
+0 -0.124207 0.0160583
+0 -0.136319 0.0830966
+0 -0.124207 0.0830966
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.795061 0.680677
+0 0.99914 0.680677
+1 0.999142 0.716857
+3 0.795063 0.716857
+kids 0
+OBJECT poly
+name "passdoor"
+loc 0.00280427 0.122092 -0.188856
+data 8
+Cube.007
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.0958132 0.117402
+0 -0.0837442 0.117402
+0 -0.0958132 0.183847
+0 -0.0837442 0.183847
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.795772 0.782406
+0 0.999851 0.782406
+1 0.999853 0.81482
+3 0.795774 0.81482
+kids 0
+OBJECT poly
+name "exppwr"
+loc 0.0028043 -0.144121 0.158088
+data 8
+Cube.006
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 0.200369 -0.15734
+0 0.211837 -0.15734
+0 0.200369 -0.091929
+0 0.211837 -0.091929
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.795621 0.954097
+0 0.9997 0.954097
+1 0.999701 0.998786
+3 0.795622 0.998786
+kids 0
+OBJECT poly
+name "nosedoor"
+loc 0.00280427 0.0507414 -0.0867021
+data 8
+Cube.005
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 0.00536409 0.0154938
+0 0.0176623 0.0154938
+0 0.00536409 0.0801753
+0 0.0176623 0.0801753
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.794875 0.918346
+0 0.998954 0.918345
+1 0.998955 0.957635
+3 0.794876 0.957635
+kids 0
+OBJECT poly
+name "cargodoor"
+loc 0.00280427 0.0839059 -0.115183
+data 8
+Cube.002
+texture "indicate-panel1.png"
+crease 30.000000
+numvert 4
+0 -0.0584894 0.116474
+0 -0.0458533 0.116474
+0 -0.0584894 0.182394
+0 -0.0458533 0.182394
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.795021 0.815623
+0 0.9991 0.815622
+1 0.999102 0.848036
+3 0.795023 0.848036
+kids 0
+OBJECT poly
+name "face"
+loc 0 0.0370729 0.00227998
+data 4
+Mesh
+texture "caution2.rgb"
+crease 45.000000
+numvert 4
+0 0.0519413 -0.0890498
+0 0.0519413 0.086536
+0 -0.050675 0.086536
+0 -0.050675 -0.0890498
+numsurf 1
+SURF 0x0
+mat 1
+refs 4
+0 0.999939 1
+1 3.0372e-008 1
+2 -3.1264e-007 0
+3 0.999938 0
+kids 0

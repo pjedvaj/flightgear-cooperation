@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+
+<PropertyList>
+
+  
+
+<path>baeAlarm.ac</path>
+	
+  
+
+<animation>
+
+	<type>range</type>
+   
+	<min-m>0</min-m>
+          
+	<max-m>12000</max-m>
+  
+</animation>
+	
+
+  
+
+<model>
+    
+	<path>smoke.xml</path>
+    
+	<offsets>
+      
+		<x-m> 3 </x-m>
+      
+		<y-m> 0 </y-m>
+      
+		<z-m> 0 </z-m>
+    
+	</offsets>
+  
+</model>
+
+
+
+
+
+</PropertyList>
+

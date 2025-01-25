@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>AIM9X.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>AIM-9X</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>Diffuse.jpg</texture>
+    <specular>
+      <red>   0.3 </red>
+      <green> 0.3 </green>
+      <blue>  0.3 </blue>
+    </specular>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/Bump/bumpspec</inherits-from>
+    <object-name>AIM-9X</object-name>
+  </effect>
+
+</PropertyList>

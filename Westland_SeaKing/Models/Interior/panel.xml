@@ -1,0 +1,1054 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+
+
+<animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>50</max-m>
+ </animation>
+ 
+
+ 
+  
+     <path>cockpit.ac</path>
+
+<!-- Main panel instruments -->	 
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/ai3/ai.xml</path>
+		<offsets>
+			<x-m>-8.027</x-m>
+			<y-m>0.56</y-m>
+			<z-m>0.215</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>0.1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/ai3/ai.xml</path>
+		<offsets>
+			<x-m>-8.026</x-m>
+			<y-m>-0.63</y-m>
+			<z-m>0.215</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>0.1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/ai6/ai.xml</path>
+		<offsets>
+			<x-m>-8.005</x-m>
+			<y-m>0.208</y-m>
+			<z-m>0.12</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>0.1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/ai6/ai.xml</path>
+		<offsets>
+			<x-m>-8.005</x-m>
+			<y-m>-0.74</y-m>
+			<z-m>0.15</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>0.1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/adf/rmi.xml</path>
+		<offsets>
+			<x-m>-8.0</x-m>
+			<y-m>0.565</y-m>
+			<z-m>0.08</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/adf/rmi.xml</path>
+		<offsets>
+			<x-m>-8.0</x-m>
+			<y-m>-0.63</y-m>
+			<z-m>0.08</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/asi/asi-gaz.xml</path>
+		<offsets>
+			<x-m>-8.03</x-m>
+			<y-m>0.44</y-m>
+			<z-m>0.258</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.6</y-offset>
+    <z-offset>1.6</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/asi/asi-gaz.xml</path>
+		<offsets>
+			<x-m>-8.02</x-m>
+			<y-m>-0.74</y-m>
+			<z-m>0.24</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.6</y-offset>
+    <z-offset>1.6</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	
+		 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/firewarn/firewarn.xml</path>
+		<offsets>
+			<x-m>-8.037</x-m>
+			<y-m>0.31</y-m>
+			<z-m>0.32</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/mastercaution/mastercaution.xml</path>
+		<offsets>
+			<x-m>-8.032</x-m>
+			<y-m>0.155</y-m>
+			<z-m>0.253</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		
+	</model>
+
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/mastercaution/aux2caution.xml</path>
+		<offsets>
+			<x-m>-8.032</x-m>
+			<y-m>-0.195</y-m>
+			<z-m>0.253</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		
+	</model>
+
+	
+	
+	
+		
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/alt/alt.xml</path>
+		<offsets>
+			<x-m>-8.015</x-m>
+			<y-m>0.445</y-m>
+			<z-m>0.05</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.1</y-offset>
+    <z-offset>1.1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/alt/alt.xml</path>
+		<offsets>
+			<x-m>-8.015</x-m>
+			<y-m>-0.74</y-m>
+			<z-m>0.05</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.1</y-offset>
+    <z-offset>1.1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/ralt/ralt.xml</path>
+		<offsets>
+			<x-m>-8.02</x-m>
+			<y-m>0.68</y-m>
+			<z-m>0.22</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/ralt/ralt.xml</path>
+		<offsets>
+				<x-m>-8.013</x-m>
+			<y-m>-0.51</y-m>
+			<z-m>0.24</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model> 
+	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/ILS/ils.xml</path>
+		<offsets>
+			<x-m>-7.985</x-m>
+			<y-m>0.11</y-m>
+			<z-m>-0.02</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.4</y-offset>
+    <z-offset>1.4</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/vor/vor.xml</path>
+		<offsets>
+				<x-m>-8.013</x-m>
+			<y-m>0.68</y-m>
+			<z-m>0.12</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/vor/vor.xml</path>
+		<offsets>
+				<x-m>-8.017</x-m>
+			<y-m>0.44</y-m>
+			<z-m>0.16</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/vor/vor.xml</path>
+		<offsets>
+				<x-m>-8.013</x-m>
+			<y-m>-0.51</y-m>
+			<z-m>0.14</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/torque-gaz/torque-gaz.xml</path>
+		<offsets>
+				<x-m>-8.019</x-m>
+			<y-m>0.34</y-m>
+			<z-m>0.16</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.6</y-offset>
+    <z-offset>1.6</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/torque-gaz/torque-gaz.xml</path>
+		<offsets>
+				<x-m>-8.015</x-m>
+			<y-m>-0.41</y-m>
+			<z-m>0.14</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.6</y-offset>
+    <z-offset>1.6</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/clock/chronograph.xml</path>
+		<offsets>
+			<x-m>-8.0075</x-m>
+			<y-m>0.208</y-m>
+			<z-m>0.03</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+
+
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Turn/Turn.xml</path>
+		<offsets>
+			<x-m>-7.993</x-m>
+			<y-m>0.208</y-m>
+			<z-m>-0.05</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.8.0</y-offset>
+    <z-offset>0.8</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/vsi/vsi-gaz.xml</path>
+		<offsets>
+				<x-m>-8.007</x-m>
+			<y-m>0.68</y-m>
+			<z-m>0.03</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.1</y-offset>
+    <z-offset>1.1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/vsi/vsi-gaz.xml</path>
+		<offsets>
+				<x-m>-8.007</x-m>
+			<y-m>-0.51</y-m>
+			<z-m>0.03</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.1</y-offset>
+    <z-offset>1.1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/tach/tach.xml</path>
+		<offsets>
+				<x-m>-8.008</x-m>
+			<y-m>0.343</y-m>
+			<z-m>0.041</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/tach/tach.xml</path>
+		<offsets>
+				<x-m>-8.004</x-m>
+			<y-m>-0.416</y-m>
+			<z-m>0.02</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+			<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.2</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	<!-- engine  stuff -->
+	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/n1_1.xml</path>
+		<offsets>
+			<x-m>-8.037</x-m>
+			<y-m>-0.056</y-m>
+			<z-m>0.301</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.75</y-offset>
+    <z-offset>1.75</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/n1_2.xml</path>
+		<offsets>
+			<x-m>-8.037</x-m>
+			<y-m>0.0275</y-m>
+			<z-m>0.301</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.75</y-offset>
+    <z-offset>1.75</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+ <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/temp.xml</path>
+		<offsets>
+			<x-m>-8.031</x-m>
+			<y-m>-0.056</y-m>
+			<z-m>0.233</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.7</y-offset>
+    <z-offset>1.7</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/temp.xml</path>
+		<offsets>
+			<x-m>-8.031</x-m>
+			<y-m>0.0275</y-m>
+			<z-m>0.233</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.7</y-offset>
+    <z-offset>1.7</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/oilpsi.xml</path>
+		<offsets>
+			<x-m>-8.02</x-m>
+			<y-m>-0.056</y-m>
+			<z-m>0.168</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.5</y-offset>
+    <z-offset>1.5</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/oilpsi.xml</path>
+		<offsets>
+			<x-m>-8.02</x-m>
+			<y-m>0.0275</y-m>
+			<z-m>0.168</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.5</y-offset>
+    <z-offset>1.5</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/oil_temp.xml</path>
+		<offsets>
+			<x-m>-8.015</x-m>
+			<y-m>-0.056</y-m>
+			<z-m>0.112</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/oil_temp.xml</path>
+		<offsets>
+			<x-m>-8.015</x-m>
+			<y-m>0.0275</y-m>
+			<z-m>0.112</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/engine/mgb_temp.xml</path>
+		<offsets>
+			<x-m>-8.008</x-m>
+			<y-m>0.0275</y-m>
+			<z-m>0.055</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1.3</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/fuel/fuelqty.xml</path>
+		<offsets>
+			<x-m>-7.995</x-m>
+			<y-m>-0.014</y-m>
+			<z-m>-0.073</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.85</y-offset>
+    <z-offset>0.85</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/gear/gear.xml</path>
+		<offsets>
+			<x-m>-7.993</x-m>
+			<y-m>-0.076</y-m>
+			<z-m>-0.098</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.85</y-offset>
+    <z-offset>0.85</z-offset>
+   </animation>
+  </overlay>
+	</model>	
+	
+	<!-- Main panel extra switches and warning lights -->
+<!-- Audio reset button -->	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/Switch/sparebutton.xml</path>
+		<offsets>
+			<x-m>-8.034</x-m>
+			<y-m>0.275</y-m>
+			<z-m>0.256</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.5</x-offset>
+    <y-offset>1.5</y-offset>
+    <z-offset>1.5</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+	
+	<!-- cargo release -->	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/warningbulbs/orange.xml</path>
+		<offsets>
+			<x-m>-8.034</x-m>
+			<y-m>0.318</y-m>
+			<z-m>0.272</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<!-- cargo on hook -->	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/warningbulbs/green.xml</path>
+		<offsets>
+			<x-m>-8.034</x-m>
+			<y-m>0.318</y-m>
+			<z-m>0.235</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<!-- trans down -->	
+	 <model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/warningbulbs/green.xml</path>
+		<offsets>
+			<x-m>-8.04</x-m>
+			<y-m>0.385</y-m>
+			<z-m>0.325</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<!-- centre console -->
+	
+
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/mastercaution/aux1caution.xml</path>
+		<offsets>
+			<x-m>-7.9</x-m>
+			<y-m>-0.0</y-m>
+			<z-m>-0.147</z-m>
+			<pitch-deg>-75</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/apx72/apx72.xml</path>
+		<offsets>
+			<x-m>-7.914</x-m>
+			<y-m>0.2</y-m>
+			<z-m>-0.143</z-m>
+			<pitch-deg>16</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/arc134/arc134.xml</path>
+		<offsets>
+			<x-m>-7.802</x-m>
+			<y-m>0.2</y-m>
+			<z-m>-0.174</z-m>
+			<pitch-deg>16</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/arc54/arc54.xml</path>
+		<offsets>
+			<x-m>-7.72</x-m>
+			<y-m>0.2</y-m>
+			<z-m>-0.195</z-m>
+			<pitch-deg>16</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/arc54/arc54.xml</path>
+		<offsets>
+			<x-m>-7.66</x-m>
+			<y-m>-0.22</y-m>
+			<z-m>-0.214</z-m>
+			<pitch-deg>16</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/arc134/arc134.xml</path>
+		<offsets>
+			<x-m>-7.75</x-m>
+			<y-m>-0.22</y-m>
+			<z-m>-0.187</z-m>
+			<pitch-deg>16</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+		<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/arn83/arn83.xml</path>
+		<offsets>
+			<x-m>-7.535</x-m>
+			<y-m>-0.2</y-m>
+			<z-m>-0.253</z-m>
+			<pitch-deg>16</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>0.1</z-offset>
+   </animation>
+  </overlay>
+	</model>
+	
+		<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/arn82/arn82.xml</path>
+		<offsets>
+			<x-m>-7.96</x-m>
+			<y-m>-0.22</y-m>
+			<z-m>-0.131</z-m>
+			<pitch-deg>16</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Interior/Instruments/lg/landingear.xml</path>
+		<offsets>
+			<x-m>-7.51</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.26</z-m>
+			<pitch-deg>-74</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.5</y-offset>
+    <z-offset>1.5</z-offset>
+   </animation>
+  </overlay>
+	</model>
+
+<!-- lighting -->
+
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Lights/GreenDashLight.xml</path>
+		<offsets>
+			<x-m>-7.9</x-m>
+			<y-m>-0.6</y-m>
+			<z-m>0.35</z-m>
+			 <pitch-deg>-80</pitch-deg>
+		</offsets>
+		
+	</model>
+
+<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Lights/GreenDashLight.xml</path>
+		<offsets>
+			<x-m>-7.9</x-m>
+			<y-m>-0.3</y-m>
+			<z-m>0.35</z-m>
+			 <pitch-deg>-80</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Lights/GreenDashLight.xml</path>
+		<offsets>
+			<x-m>-7.9</x-m>
+			<y-m>0</y-m>
+			<z-m>0.35</z-m>
+			 <pitch-deg>-80</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Lights/GreenDashLight.xml</path>
+		<offsets>
+			<x-m>-7.9</x-m>
+			<y-m>0.3</y-m>
+			<z-m>0.35</z-m>
+			 <pitch-deg>-80</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Lights/GreenDashLight.xml</path>
+		<offsets>
+			<x-m>-7.9</x-m>
+			<y-m>0.6</y-m>
+			<z-m>0.35</z-m>
+			 <pitch-deg>-80</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Lights/GreenDashLight.xml</path>
+		<offsets>
+			<x-m>-7.65</x-m>
+			<y-m>0</y-m>
+			<z-m>0.2</z-m>
+			 <pitch-deg>-80</pitch-deg>
+		</offsets>
+		
+	</model>
+	
+	<model>
+		
+		<path>Aircraft/Westland_SeaKing/Models/Lights/GreenDashLight.xml</path>
+		<offsets>
+			<x-m>-7.4</x-m>
+			<y-m>0</y-m>
+			<z-m>0.75</z-m>
+			 <pitch-deg>80</pitch-deg>
+		</offsets>
+		
+	</model>
+
+	
+</PropertyList>
+
+
+

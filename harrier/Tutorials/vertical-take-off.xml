@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+
+
+ 
+<name>Vertical take-off</name>
+<description>This tutorial tells you how to perform a vertical take-off in the Harrier.</description>
+
+<step>
+	<message>{Set the thrust vector to around 85 degrees.|}</message>
+ 	<error>                    
+              	<message>Decrease the thrust vector.</message>
+              	<condition>
+			 <greater-than>
+           			<property>/controls/engines/engine[0]/mixture</property>
+				<value>0.19</value>
+      			</greater-than>
+              	</condition> 
+		<interval>2</interval>      
+	</error>
+	<exit>
+		<condition>
+        		<less-than>
+          			<property>/controls/engines/engine[0]/mixture</property>
+				<value>0.19</value>
+        		</less-than>
+      		</condition>
+	</exit>
+</step>
+ 
+<step>
+	<message>{100% throttle!|}</message>
+ 	<error>                    
+              	<message>Increase the thrust!</message>
+              	<condition>
+			 <less-than>
+ 				<property>/controls/engines/engine[0]/throttle</property>
+				<value>90</value>
+      			</less-than>
+              	</condition> 
+		<interval>2</interval>      
+	</error>
+	<exit>
+		<condition>
+			<greater-than>
+				<property>/controls/engines/engine[0]/throttle</property>
+				<value>90</value>
+			</greater-than>			
+              	</condition>
+	</exit>
+</step>
+     
+
+</PropertyList>

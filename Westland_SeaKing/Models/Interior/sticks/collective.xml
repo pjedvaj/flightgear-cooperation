@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+ 
+ 
+
+    
+    <path>collective.ac</path>
+	
+	<animation>
+    <name>CollectiveComplete</name>
+  
+    <object-name>ID14582</object-name>
+    <object-name>ID14774.001</object-name>
+    <object-name>ID14616.001</object-name>
+     <object-name>ID14616</object-name>
+    <object-name>ID14616.009</object-name>
+    <object-name>ID14616.004</object-name>
+	<object-name>ID14616.003</object-name>
+    <object-name>ID14616.007</object-name>
+    <object-name>ID14616.010</object-name>
+     <object-name>ID14616.005</object-name>
+    <object-name>ID14616.006</object-name>
+    <object-name>ID14616.008</object-name>
+	<object-name>ID14583.001</object-name>
+     <object-name>ID14583</object-name>
+    <object-name>ID14583.005</object-name>
+    <object-name>ID14583.004</object-name>
+	<object-name>ID14705</object-name>
+    <object-name>ID14714</object-name>
+    <object-name>ID14762.001</object-name>
+	<object-name>ID14762</object-name>
+    <object-name>ID14726</object-name>
+    <object-name>ID14728</object-name>
+	<object-name>ID14726.001</object-name>
+	<object-name>ID14726.002</object-name>
+    <object-name>ID14728.001</object-name>
+    <object-name>ID14726.004</object-name>
+	<object-name>ID14726.005</object-name>
+    <object-name>ID14726.006</object-name>
+  </animation>
+	
+	
+	
+	
+	
+ 
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>CollectiveComplete</object-name>
+	
+    <property>controls/engines/engine[0]/throttle</property>
+    <factor> -20</factor>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

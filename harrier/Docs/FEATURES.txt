@@ -1,0 +1,23 @@
+Features of FlightGear's Sea Harrier FA2.
+
+A fully working weapons system, including realistic stores and gun behaviour.
+Semi-realistic start-up.
+Bombable support.
+Auto-Rembrandt support, with lights.
+Full electrical system, including switchable instruments. 
+Checklist and Tutorial system support.
+Realistic autopilot.
+Modelled limits.
+Canvas Heads-down display.
+Flare/chaff system.
+CCIP bombing system.
+RWR.
+Bombable-compatible AI version.
+Fuel System.
+Instant replay support
+Custom failures based on the new Failure Management framework.
+Pushback truck
+
+
+
+

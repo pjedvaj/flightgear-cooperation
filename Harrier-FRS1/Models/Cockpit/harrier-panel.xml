@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<model>
+        
+        <path>Aircraft/Harrier-FRS1/Models/Cockpit/tub.ac</path>
+		  <x-m>19.0</x-m>
+        <y-m>0</y-m>
+        <z-m>5.95</z-m>
+        <pitch-deg>0.0</pitch-deg>
+    </model>
+
+	<model>
+		<name>gearLock</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/gearLock/gearLockIndicator.xml</path>
+		<offsets>
+			<x-m>-15.722</x-m>
+			<y-m>-0.33</y-m>
+			<z-m>-5.634</z-m>
+			<pitch-deg>-17</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>diamond</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/HUD/hud.xml</path>
+		<offsets>
+			<x-m>-15.8</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-5.2198</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	<model>
+	<path>Aircraft/Harrier-FRS1/Models/Cockpit/TACAN/TACAN.xml</path>
+    	<offsets>
+      		<x-m>-15.63</x-m>
+      		<y-m>0.3132</y-m> 
+	    	<z-m>-5.665</z-m>
+		<pitch-deg>40</pitch-deg>
+    	</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.8</y-offset>
+    <z-offset>0.8</z-offset>
+   </animation>
+  </overlay>
+</model>
+
+
+<model>
+	<path>Aircraft/Instruments-3d/rwr/rwr.xml</path>
+    	<offsets>
+      		<x-m>-15.68</x-m>
+      		<y-m>0.3132</y-m> 
+	    	<z-m>-5.611</z-m>
+		<pitch-deg>-51.5</pitch-deg>
+    	</offsets>
+</model>
+	
+	<model>
+	<path>Aircraft/Harrier-FRS1/Models/Cockpit/ccip/ccip.xml</path>
+    	<offsets>
+      		<x-m>-15.8</x-m>
+      		<y-m>0.0</y-m> 
+	    	<z-m>-5.2198</z-m> 
+    	</offsets>
+</model> 
+	
+	<model>
+		<name>radar</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/radar/radar.xml</path>
+		<offsets>
+			<x-m>-15.747</x-m>
+			<y-m>0.163</y-m>
+			<z-m>-5.513</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	
+	<model>
+		<name>RPM</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/RPM/RPM.xml</path>
+		<offsets>
+			<x-m>-15.724</x-m>
+			<y-m>0.121</y-m>
+			<z-m>-5.6135</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.8</y-offset>
+    <z-offset>0.8</z-offset>
+   </animation>
+  </overlay>
+ 	</model>
+	
+	<model>
+		<name>EPR</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/EPR/EPR.xml</path>
+		<offsets>
+			<x-m>-15.728</x-m>
+			<y-m>0.17</y-m>
+			<z-m>-5.6135</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.8</y-offset>
+    <z-offset>0.8</z-offset>
+   </animation>
+  </overlay>
+ 	</model>
+	
+	<model>
+		<name>oil</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/Oil/Oil.xml</path>
+		<offsets>
+			<x-m>-15.723</x-m>
+			<y-m>0.23</y-m>
+			<z-m>-5.6145</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.0</y-offset>
+    <z-offset>1.0</z-offset>
+   </animation>
+  </overlay>
+ 	</model>
+	
+	<!--
+	<model>
+		<name>hdd</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/hdd/hdd.xml</path>
+		<offsets>
+			<x-m>-15.748</x-m>
+			<y-m>-0.142</y-m>
+			<z-m>-5.507</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	-->
+	
+	<model>
+		<name>vertical speed</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/vsi-6/vsi-3d.xml</path>
+		<offsets>
+			<x-m>-15.755</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>-5.455</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+
+<model>
+		<name>ASI</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/ASI/ASI.xml</path>
+		<offsets>
+			<x-m>-15.743</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>-5.535</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	
+<model>
+		<name>jpt</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/JPT/JPT.xml</path>
+		<offsets>
+			<x-m>-15.743</x-m>
+			<y-m>-0.19</y-m>
+			<z-m>-5.535</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>	
+	
+<model>
+		<name>duct</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/Duct/Duct.xml</path>
+		<offsets>
+			<x-m>-15.755</x-m>
+			<y-m>-0.19</y-m>
+			<z-m>-5.479</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.8</y-offset>
+    <z-offset>1.8</z-offset>
+   </animation>
+  </overlay>
+ 	</model>
+
+
+<model>
+		<name>fuel%</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/FuelPercent/FuelPercent.xml</path>
+		<offsets>
+			<x-m>-15.763</x-m>
+			<y-m>-0.192</y-m>
+			<z-m>-5.437</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.7</y-offset>
+    <z-offset>0.7</z-offset>
+   </animation>
+  </overlay>
+ 	</model>	
+	
+	<model>
+		<name>fuelflow</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/FuelFlow/FuelFlow.xml</path>
+		<offsets>
+			<x-m>-15.763</x-m>
+			<y-m>-0.162</y-m>
+			<z-m>-5.437</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.7</y-offset>
+    <z-offset>0.7</z-offset>
+   </animation>
+  </overlay>
+ 	</model>	
+	
+	
+	<model>
+		<name>G</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/GMeter/GMeter.xml</path>
+		<offsets>
+			<x-m>-15.768</x-m>
+			<y-m>-0.162</y-m>
+			<z-m>-5.409</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.4</y-offset>
+    <z-offset>0.4</z-offset>
+   </animation>
+  </overlay>
+ 	</model>	
+
+	
+	<model>
+		<name>attitude indicator</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/ai/ai.xml</path>
+		<offsets>
+			<x-m>-15.73</x-m>
+			<y-m>-0.034</y-m>
+			<z-m>-5.545</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>direction</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/remote/remote.xml</path>
+
+		<offsets>
+			<x-m>-15.72</x-m>
+			<y-m>-0.033</y-m>
+			<z-m>-5.630</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	<model>
+		<name>Thrust Vector Indicator</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/TVI/TVI.xml</path>
+		<offsets>
+			<x-m>-15.768</x-m>
+			<y-m>-0.125</y-m>
+			<z-m>-5.396</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.8</y-offset>
+    <z-offset>0.8</z-offset>
+   </animation>
+  </overlay>
+ 	</model>
+	
+	<model>
+		<name>Radar Altimeter</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/ralt/ralt.xml</path>
+		<offsets>
+			<x-m>-15.735</x-m>
+			<y-m>0.049</y-m>
+			<z-m>-5.543</z-m>
+			<pitch-deg>-13</pitch-deg>
+		</offsets>
+		<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.25</y-offset>
+    <z-offset>1.25</z-offset>
+   </animation>
+  </overlay>
+ 	</model>
+	
+	<model>
+		<name>Altimeter</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/ALT/ALT.xml</path>
+		<offsets>
+			<x-m>-15.715</x-m>
+			<y-m>0.049</y-m>
+			<z-m>-5.630</z-m>
+			<pitch-deg>-13</pitch-deg>
+		</offsets>
+ 	</model>				
+	<model>
+		<name>MagCompass</name>
+		<path>Aircraft/Instruments-3d/mag-compass.xml</path>
+		<offsets>
+			<x-m>-15.73</x-m>
+			<y-m>0.275</y-m>
+			<z-m>-5.560</z-m>
+			<pitch-deg>-28</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>WeaponsPanel</name>
+		<path>Aircraft/Harrier-FRS1/Models/Cockpit/weapons_panel/weapons_panel.xml</path>
+		<offsets>
+			<x-m>-15.73247</x-m>
+			<y-m>-0.1702</y-m>
+			<z-m>-5.60783</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	
+</PropertyList>

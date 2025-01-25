@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+************************************************************************
+Westland - Sea King Westland_SeaKing simulation config.
+************************************************************************
+-->
+
+<PropertyList>
+
+<sim include="Systems/views.xml">
+
+	<description>Westland Sea King HAR.3/MK43 (Yasim)</description>
+	<author>Simon Lister, MVDP (3D), Oliver Thurau (FDM and animations) Stuart C ( FDM), Garry Brown ( paint ) </author>
+	<status>Production  V1.0</status>
+	<minimum-fg-version>2017.2.0</minimum-fg-version>
+	<version>1.0</version>
+	<license>GPL v2</license>
+
+	<flight-model>yasim</flight-model>
+	<aero>sh3-yasim</aero>
+	<fuel-fraction>1</fuel-fraction>
+	
+	<previews>
+	  <preview>
+		<type>interior</type>
+		<splash type="bool">true</splash>
+		<path>S
+		splash/Scene 1 2024-01-01_14-50-05.jpg</path>
+	  </preview>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>splash/Scene 1 2024-01-01_14-49-18.jpg</path>
+	  </preview>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>splash/Scene 1 2024-01-01_14-55-10.jpg</path>
+	  </preview>
+	  
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>splash/Scene 1 2024-01-01_15-30-37.jpg</path>
+	  </preview>
+	  <preview>
+		<type>interior</type>
+		<splash type="bool">true</splash>
+		<path>splash/Scene 1 2024-01-01_15-16-14.jpg</path>
+	  </preview>
+	  
+
+	</previews>
+	
+
+ <tags>
+      <tag>Westland</tag>
+	   <tag>Westland Helicopters</tag>
+      <tag>helicopter</tag>
+	  <tag>rotorcraft</tag>
+	  <tag>rotary wing</tag>
+      <tag>twin-engine</tag>
+      <tag>Sea King</tag>
+      <tag>Ha.3</tag>
+	   <tag>Mk43</tag>
+	    <tag>SH3</tag>
+	  <tag>FGUK</tag>
+	  <tag>1960's</tag>
+      <tag>1970s</tag>
+	  <tag>1980s</tag>
+	  <tag>1990s</tag>
+      <tag>2000s</tag>
+    </tags>
+
+
+	<startup>
+	<splash-texture>Aircraft/Westland_SeaKing/sh3-splash.png</splash-texture>
+	</startup>
+
+	<flight-recorder include="Systems/flight-recorder.xml"/>
+
+	<systems>
+
+	 	  
+<autopilot n="101">
+
+        <path>Aircraft/Westland_SeaKing/Systems/seaking-autopilot.xml</path>
+      </autopilot>
+	 
+	  
+	  
+     <autopilot>   
+	   
+    <fdm>
+      <max-pitch>10</max-pitch>
+     
+      <max-speed>115</max-speed>
+      <min-speed>-15</min-speed>
+     
+    </fdm>
+    
+  
+  
+    <speed>
+    <enabled>true</enabled>
+    <target>100</target>
+    <mode>pitch-control</mode>
+    <pitch-control>
+      <gain>5</gain>
+    </pitch-control>
+  </speed>
+  
+ 
+    <fly-by-wire>
+      <enabled>true</enabled>
+      <mode>normal</mode>
+    </fly-by-wire>
+	
+	
+  </autopilot>
+	   <autopilot n="103">
+        <path>Aircraft/Westland_SeaKing/Systems/glass-rain.xml</path>
+      </autopilot>
+	  
+	  	<autopilot n="104">
+				<path>Aircraft/Westland_SeaKing/Systems/sound-rules.xml</path>
+			</autopilot>
+	  
+	  
+    </systems>
+	
+
+	<sound>
+	<path>Aircraft/Westland_SeaKing/Sounds/sh3-sound.xml</path>
+	</sound>
+
+	<model>
+	<path archive="y">Aircraft/Westland_SeaKing/Models/Westland_SeaKing-HAR3.xml</path>
+	<rescue-lift>0.1</rescue-lift>
+ <rescue type="bool">false</rescue>
+	<livery>
+	<file type="string">FGUK Rescue Services</file>
+	</livery>
+	
+	<bk117>
+				
+				<rotor-partcles>true</rotor-partcles>
+			 <headsetholder>
+					<position-deg type="float">90.0</position-deg>
+				</headsetholder>
+		
+			</bk117>
+	<fake-shaddow>0</fake-shaddow>
+	<rotor-particles>0</rotor-particles>
+	</model>
+	
+	<rendering>
+    <refl_correction type="string">-0.45</refl_correction>
+    </rendering>
+
+	<multiplay>
+	<chat_display>1</chat_display>
+	<generic> 
+		
+		  <!-- Nav lights on -->
+      <int n="0" alias="/controls/switches/nav-lights-switch" />
+      <!-- Beacon on -->
+      <int n="1" alias="/controls/switches/beacon-switch" />
+      <!-- Landing lights on -->
+      <int n="2" alias="/controls/switches/landing-lights-switch" />
+	    <!-- Taxi light on -->
+      <int n="3" alias="/controls/switches/strobe-switch" />
+	 
+	  
+	   <int n="6" alias="/gear/gear/ground-is-solid"/><!-- rotor particles -->
+      <!-- Crashed -->
+      <int n="7" alias="/sim/crashed" />
+	   <int n="10"></int> <!--  Dual Control Reserved -->	
+        
+		
+		<!-- doors over MP -->
+	            <!-- <float n="0" alias="/sim/model/bo105/doors/door[0]/position-norm"/> -->
+	<float n="0" alias="/sim/model/bk117/door-positions/rightFrontDoor/position-norm"/>
+	<float n="1" alias="/sim/model/bk117/door-positions/leftFrontDoor/position-norm"/>
+	<float n="2" alias="/sim/model/bk117/door-positions/rightBackDoor/position-norm"/>
+	<float n="3" alias="/sim/model/bk117/door-positions/leftBackDoor/position-norm"/>
+	<float n="4" alias="/sim/model/bk117/door-positions/rightRearDoor/position-norm"/>
+	<float n="5" alias="/sim/model/bk117/door-positions/leftRearDoor/position-norm"/>
+				
+				<float n="6" alias="/orientation/pitch-deg"/>	<!-- rotor particles + AI -->
+	            <float n="7" alias="/position/gear-agl-m"/>	<!-- rotor particles -->
+	            <float n="8" alias="/orientation/roll-deg"/><!-- rotor particles + AI-->
+	            <float n="9" alias="/rotors/main/torque"/>	<!-- rotor particles -->
+	
+	
+	
+	<float n="12" alias="/sim/model/rescue"/><!--winchman over MP -->
+	<float n="13" alias="/sim/model/rescue-lift"/><!--winchman over MP -->
+
+	
+	</generic>
+	</multiplay>
+
+	<weight n="0">
+	<name>Pilot</name>
+	<weight-lb>180</weight-lb>
+	<max-lb>300</max-lb>
+	</weight>
+
+	<weight n="1">
+	<name>Co-Pilot</name>
+	<weight-lb>180</weight-lb>
+	<max-lb>300</max-lb>
+	</weight>
+
+	<weight n="2">
+	<name>Right Passenger</name>
+	<weight-lb>0</weight-lb>
+	<max-lb>300</max-lb>
+	</weight>
+
+	<weight n="4">
+	<name>Internal Load</name>
+	<weight-lb>0</weight-lb>
+	<max-lb>20000</max-lb>
+	</weight>
+	
+	<weight n="3">
+<name>Long line</name>
+  <weight-lb>0</weight-lb>
+      <max-lb>6005.392</max-lb>
+</weight>
+
+	<help>
+	<title>Westland_SeaKing </title>
+	<line>To open/close doors, click on them</line>
+	<line>Lighting is controled from the overhead console </line>
+	<key>
+	<name>{</name>
+	<desc>Start engines</desc>
+	</key>
+	<key>
+	<name>}</name>
+	<desc>Shutdown engines</desc>
+	</key>
+
+	<key>
+	<name>r</name>
+	<desc>Activate Winchman ( only viewable with the rear door open )</desc>
+	</key>
+	<key>
+	<name>M/m</name>
+	<desc>Raise/lower Winchman</desc>
+	</key>
+	<key>
+	<name>Ctrl d</name>
+	<desc>Toggle S.A.S.</desc>
+	</key>
+	<key>
+	<name>u</name>
+	<desc>Tail fold</desc>
+	</key>
+	<line>AUTOPILOT V3 </line>
+<line>The Autopilot is now able to control  speed, altitude and heading. </line>
+<line>Heading modes can be used without any other Autopilot function being active.</line>
+<line>Speed modes can be used without any other Autopilot function being active. This   can be set  from  0 - 115kts</line>
+<line>****  Altitude modes can only be used in conjunction with speed mode being being active. This includes the use of Vertical Speed mode.  ***</line>
+<line>AUTOPILOT ISSUES !!!!!</line>
+<line>When disengaging the AP entirely or from a singe mode, the  control inputs will snap to your actual cyclic/colective/pedal positions as soon as you  move any of them.</line>
+<line>This is unavoidable as  the sim can not physically move your cyclic/colective/pedal positions to match the Autopilots input.</line>
+<line>The best advice to minimise the sudden change of input would be for you to  have your cyclic/colective/pedal positions ready in approximatly correct positions  to minimise the "snap".</line>
+
+	
+	
+	
+	</help>
+
+	<menubar include="Dialogs/sh3-menu.xml"/> 
+
+	<input>
+	<keyboard include="Systems/sh3-keyboard.xml"/>
+</input>
+
+</sim>
+
+	<environment>
+ <turbulence>
+ <use-cloud-turbulence>true</use-cloud-turbulence>
+ </turbulence>
+ </environment>
+
+ <consumables>
+		<fuel>
+			<tank>
+				<name>Forward</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+
+			<tank>
+				<name>Supply</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+			
+			<tank>
+				<name>Aft</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+		</fuel>
+	</consumables>
+	
+	
+ 
+ 
+<controls>
+
+<switches>
+	<landing-lights-switch type="bool">false</landing-lights-switch>
+	<search-lights-switch type="bool">false</search-lights-switch>
+	<nav-lights-switch type="bool">false</nav-lights-switch>
+	<beacon-switch type="bool">false</beacon-switch>
+	<strobe-switch type="bool">false</strobe-switch>
+	<white-light-switch type="bool">false</white-light-switch>
+	
+	
+	</switches>
+
+
+ <gear> 
+		 <floats-inflat type="bool">true</floats-inflat> 
+		 <floats-armed type="bool">true</floats-armed> 
+		 <floats-deflate type="bool">false</floats-deflate> 
+		<brake-parking>1</brake-parking>
+		</gear>
+		
+		
+	
+	<rotor>
+			<reltarget type="double">0</reltarget>
+			<maxreltorque type="double">0</maxreltorque>
+		</rotor>
+
+
+
+</controls>
+
+<instrumentation>
+	<gsdi>
+	<serviceable type="bool">true</serviceable>
+	<enabled type="bool">true</enabled>
+	</gsdi>
+</instrumentation>
+<input>
+ <keyboard include="Systems/sh3-keyboard.xml"/>
+</input>
+
+<!--
+<rotors>
+	<main>
+	<rpm type="double">0</rpm>
+	<cone-deg type="double">0</cone-deg>
+	<cone1-deg type="double">0</cone1-deg>
+	<cone2-deg type="double">0</cone2-deg>
+	<cone3-deg type="double">0</cone3-deg>
+	<cone4-deg type="double">0</cone4-deg>
+	</main>
+</rotors>
+-->
+<rotors>
+		<main>
+			<rpm type="double">0</rpm>
+		</main>
+	</rotors>
+
+<nasal>
+	<apx72>
+      <file>Aircraft/Westland_SeaKing/Nasal/apx72.nas</file>
+    </apx72>
+	 <arc134>
+      <file>Aircraft/Westland_SeaKing/Nasal/arc134.nas</file>
+    </arc134>
+	<arc51bx>
+      <file>Aircraft/Westland_SeaKing/Nasal/arc51bx.nas</file>
+    </arc51bx>
+	<arn82>
+      <file>Aircraft/Westland_SeaKing/Nasal/arn82.nas</file>
+    </arn82>
+	<arn83>
+      <file>Aircraft/Westland_SeaKing/Nasal/arn83.nas</file>
+    </arn83>
+
+	<doors>
+	<file>Aircraft/Westland_SeaKing/Nasal/doors.nas</file>
+	</doors>
+	<!--<sh3>
+	<file>Aircraft/Westland_SeaKing/Nasal/immat.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/light.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/sh3.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/har3liveries.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/engines.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/casdisable.nas</file>
+
+	</sh3>-->
+	
+	 <rotorwash>
+       <file>Aircraft/Westland_SeaKing/Nasal/rotorwash.nas</file>
+     </rotorwash>
+	
+	<bk117>
+	<!--<file>Aircraft/Westland_SeaKing/Nasal/immat.nas</file>-->
+	<file>Aircraft/Westland_SeaKing/Nasal/fcs.nas</file>
+	
+	<file>Aircraft/Westland_SeaKing/Nasal/bk117.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/har3liveries.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/engines.nas</file>
+	<file>Aircraft/Westland_SeaKing/Nasal/casdisable.nas</file>
+	
+
+	</bk117>
+	
+	<fgukelectrical>
+	<file>Aircraft/Westland_SeaKing/Nasal/fgukelectrical.nas</file>
+	</fgukelectrical>
+	
+	<floats>
+ <file>Aircraft/Westland_SeaKing/Nasal/floats.nas</file>
+ </floats>
+	
+	<lights>
+      <file>Aircraft/Westland_SeaKing/Nasal/Lights.nas</file>
+    </lights>
+	
+	
+	<sound-helper>
+      <file>Aircraft/Westland_SeaKing/Nasal/sound-helper.nas</file>
+    </sound-helper> 
+	
+	
+	<dual_control_tools>
+         <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
+        </dual_control_tools>
+        <aircraft_dual_control>
+         <file>Aircraft/Westland_SeaKing/Nasal/seaking-dual-control.nas</file>
+        </aircraft_dual_control>
+        <dual_control>
+		 <file>Aircraft/Generic/DualControl/pilot-dual-control.nas</file>
+		</dual_control>
+
+</nasal>
+
+<property name="autopilot">
+  <node>
+    <property name="mode">hover</property>
+    <property name="nasal">Aircraft/Westland_SeaKing/Nasal/autohover.nas</property>
+  </node>
+</property>
+
+<property name="hover_enabled">false</property>
+
+</PropertyList>
+

@@ -1,0 +1,1546 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+	
+	<!-- Info -->
+	
+		<description>Sukhoi Su-25SM3</description>
+		<author>Petar Jedvaj, Stuart Cassie, Raptor and Gary Brown, Sergei Solyshko</author>
+		<status>2.3.6</status>
+		<variant-of>Su-25</variant-of>
+		
+		<rating>
+			<FDM type="int">4</FDM>
+			<systems type="int">3</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">5</model>
+		</rating>
+		
+		<flight-model>yasim</flight-model>
+		<aero>Su-25SM3-yasim</aero>
+		<fuel-fraction>1</fuel-fraction>
+		
+		
+		
+		<startup>
+			<splash-texture>Aircraft/Su-25/SplashSM3.png</splash-texture>
+		</startup>
+
+		<previews>
+      		<preview>
+        		<type>panel</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview1.png</path>
+			</preview>
+			<preview>
+        		<type>exterior</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview2.png</path>
+			</preview>
+			<preview>
+        		<type>exterior</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview3.png</path>
+			</preview>
+			<preview>
+        		<type>exterior</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview4.png</path>
+			</preview>
+			<preview>
+        		<type>exterior</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview6.png</path>
+			</preview>
+			<preview>
+        		<type>exterior</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview7.png</path>
+			</preview>
+			<preview>
+        		<type>exterior</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview8.png</path>
+			</preview>
+			<preview>
+        		<type>exterior</type>
+        		<splash type="bool">false</splash>
+        		<path>gui/Previews/Preview5.png</path>
+			</preview>
+		</previews>
+		
+		<!-- Models -->
+		
+		<model>
+			<path>Aircraft/Su-25/Models/Su-25SM3.xml</path>
+			<hide-lights type="int">1</hide-lights>
+
+			<ground-equipment-e    type="int">1</ground-equipment-e> <!-- covers -->
+      		<ground-equipment-g    type="int">1</ground-equipment-g> <!-- chocks -->
+      		<ground-equipment-s    type="int">1</ground-equipment-s> <!-- ladder -->
+      		<ground-equipment-p    type="int">1</ground-equipment-p> <!-- power unit -->
+      		<ground-equipment-f    type="int">1</ground-equipment-f> <!-- fuel truck -->
+		</model>
+		
+		<!-- Submodels -->
+
+		<submodels>
+		     <serviceable type="bool">true</serviceable>
+		     <path>Aircraft/Su-25/SubmodelsSM3.xml</path>
+		</submodels>
+		
+		<!-- System settings -->
+		
+		<systems>
+			<autopilot>
+				<path>Aircraft/Su-25/Autopilot.xml</path>
+			</autopilot>
+			<electrical>
+				<path>Aircraft/Generic/generic-electrical.xml</path>
+			</electrical>
+		</systems>
+
+		<flaps>
+			<setting> 0.00 </setting>
+			<setting> 0.50 </setting>
+			<setting> 1.00 </setting>
+		</flaps>
+
+		<flight-recorder>
+    		<replay-config type="int">0</replay-config>
+    		<config n="0" 
+        		include="Aircraft/Su-25/Flightrecorder/Flightrecorder.xml">
+      			<name type="string">Su-25SM3 Flight Recorder</name>
+      	<!-- Custom properties examples-->
+
+      			<!-- <signal>
+        			<type>float</type>
+        			<property type="string">/controls/gear/nosegear-steering-cmd-norm</property>
+        			<interpolation>linear</interpolation>
+      			</signal>
+        		<signal>
+          			<type>float</type>
+          			<property type="string">/controls/gear/nosegear-steering-cmd-norm</property>
+        		</signal>
+        		<signal>
+          			<type>double</type>
+          			<interpolation>rotational-deg</interpolation>
+          			<property type="string">/ai/model/carrier/alpha-angle-deg</property>
+        		</signal>
+				<signal>
+          			<type>bool</type>
+          			<property type="string">/controls/panel/custom-switch</property>
+        		</signal> -->
+    		</config>
+  		</flight-recorder>
+
+		<sound>
+			<path>Aircraft/Su-25/Sounds/SoundsSM3.xml</path>
+		</sound>
+		
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+		
+		<panel>
+			<visibility archive="y">false</visibility>
+		</panel>
+		
+		<!-- Head Up Display -->
+
+    	<hud>
+      		<path n="1">Aircraft/Su-25/Hud/hud-c.xml</path>
+      		<visibility n="1">true</visibility>
+      		<palette>
+        		<color n="0">
+          			<alpha type="float">0.85</alpha>
+          			<antialiased type="bool">true</antialiased>
+          			<brightness type="float">0.85</brightness>
+          			<transparent type="bool">true</transparent>
+          			<red type="float">0.38</red>
+          			<green type="float">1.0</green>
+          			<blue type="float">0.22</blue>
+        			</color>
+        		<color n="1">
+          			<alpha type="float">0.85</alpha>
+          			<antialiased type="bool">true</antialiased>
+         			<brightness type="float">0.85</brightness>
+          			<transparent type="bool">true</transparent>
+          			<red type="float">1.0</red>
+          			<green type="float">0.2</green>
+          			<blue type="float">0.0</blue>
+        		</color>
+      		</palette>
+      		<clipping>
+        		<left type="double">-62</left>
+        		<right type="double">62</right>
+        		<top type="double">95</top>
+        		<bottom type="double">-63</bottom>
+      		</clipping>
+    	</hud>
+		
+		<!-- View settings -->
+		
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">0.00</x-offset-m><!-- Right -->
+				<y-offset-m archive="y">2.655</y-offset-m><!-- Up    -->
+				<z-offset-m archive="y">-3.42</z-offset-m><!-- Back  -->
+				<pitch-offset-deg>-16</pitch-offset-deg>
+				<default-field-of-view-deg>90</default-field-of-view-deg>
+			</config>
+		</view>
+		
+		<view n="1">
+			<config>
+				<target-y-offset-m archive="y" type="double">2.0</target-y-offset-m>
+			</config>
+		</view>
+		
+		<view n="2">
+			<config>
+				<target-y-offset-m archive="y" type="double">2.0</target-y-offset-m>
+			</config>
+		</view>
+		
+		<view n="3">
+			<config>
+				<target-y-offset-m archive="y" type="double">2.0</target-y-offset-m>
+			</config>
+		</view>
+		
+		<view n="4">
+			<config>
+				<target-y-offset-m archive="y" type="double">2.0</target-y-offset-m>
+			</config>
+		</view>
+		
+		<view n="5">
+			<config>
+				<target-y-offset-m archive="y" type="double">2.0</target-y-offset-m>
+			</config>
+		</view>
+		
+		<view n="6">
+			<config>
+				<target-y-offset-m archive="y" type="double">2.0</target-y-offset-m>
+			</config>
+		</view>
+		
+		<view n="7">
+			<config>
+				<target-y-offset-m archive="y" type="double">2.0</target-y-offset-m>
+			</config>
+		</view>
+		
+		<current-view>
+			<field-of-view>86.3</field-of-view>
+		</current-view>
+		
+		<rendering>
+			<redout>
+				<parameters>
+					<blackout-complete-g>6.5</blackout-complete-g>
+					<blackout-onset-g>5.2</blackout-onset-g>
+				</parameters>
+			</redout>
+		</rendering>
+		
+		<!-- External stores -->
+		
+		<weight n="0">
+			<name>Pylon 1 L</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>R-60M</name>
+				<lbs>96</lbs>
+			</opt>
+			<opt>
+				<name>L-370-3S pod</name>
+				<lbs>96</lbs>
+			</opt>
+		</weight>
+		
+		<weight n="1">
+			<name>Pylon 2 L</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+		</weight>
+		
+		<weight n="2">
+			<name>Pylon 3 L</name>
+			<tank>4</tank>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>S-13 rockets</name>
+				<lbs>1102</lbs>
+			</opt>
+			<opt>
+				<name>Kh-25 missile</name>
+				<lbs>659</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+			<opt>
+				<name>Fuel droptank</name>
+				<lbs>308.647</lbs>
+				<gals>211.34</gals>
+			</opt>
+		</weight>
+		
+		<weight n="3">
+			<name>Pylon 4 L</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>S-13 rockets</name>
+				<lbs>1102</lbs>
+			</opt>
+			<opt>
+				<name>Kh-25 missile</name>
+				<lbs>659</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+		</weight>
+		
+		<weight n="4">
+			<name>Pylon 5 L</name>
+			<tank>5</tank>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+			<opt>
+				<name>KAB-500L bomb</name>
+				<lbs>1157</lbs>
+			</opt>
+			<opt>
+				<name>Kh-29T missile</name>
+				<lbs>1512</lbs>
+			</opt>
+			<opt>
+				<name>Fuel droptank</name>
+				<lbs>308.647</lbs>
+				<gals>211.34</gals>
+			</opt>
+		</weight>
+		
+		<weight n="5">
+			<name>Pylon 5 R</name>
+			<tank>6</tank>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+			<opt>
+				<name>KAB-500L bomb</name>
+				<lbs>1157</lbs>
+			</opt>
+			<opt>
+				<name>Kh-29T missile</name>
+				<lbs>1512</lbs>
+			</opt>
+			<opt>
+				<name>Fuel droptank</name>
+				<lbs>308.647</lbs>
+				<gals>211.34</gals>
+			</opt>
+		</weight>
+		
+		<weight n="6">
+			<name>Pylon 4 R</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>S-13 rockets</name>
+				<lbs>1102</lbs>
+			</opt>
+			<opt>
+				<name>Kh-25 missile</name>
+				<lbs>659</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+		</weight>
+		
+		<weight n="7">
+			<name>Pylon 3 R</name>
+			<tank>7</tank>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>S-13 rockets</name>
+				<lbs>1102</lbs>
+			</opt>
+			<opt>
+				<name>Kh-25 missile</name>
+				<lbs>659</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+			<opt>
+				<name>Fuel droptank</name>
+				<lbs>308.647</lbs>
+				<gals>211.34</gals>
+			</opt>
+		</weight>
+		
+		<weight n="8">
+			<name>Pylon 2 R</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>S-8 rockets</name>
+				<lbs>580</lbs>
+			</opt>
+			<opt>
+				<name>FAB-250 bomb</name>
+				<lbs>590</lbs>
+			</opt>
+		</weight>
+		
+		<weight n="9">
+			<name>Pylon 1 R</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>R-60M</name>
+				<lbs>96</lbs>
+			</opt>
+			<opt>
+				<name>L-370-3S pod</name>
+				<lbs>96</lbs>
+			</opt>
+		</weight>
+		
+		<!-- Menu -->
+		
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Su-25</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Payload</label>
+							<binding>
+							<command>nasal</command>
+				 			<script>CanvasPylonsDlg.showPylonsDlg()</script>
+							</binding>
+					</item>
+					<item>
+						<label>Reload rockets</label>
+						<binding>
+							<command>nasal</command>
+							<script>weapons.Rreload()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Reload cannon</label>
+						<binding>
+							<command>nasal</command>
+							<script>cannon.reload()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Reload flares</label>
+						<binding>
+							<command>nasal</command>
+							<script>weapons.Freload()</script>
+						</binding>
+					</item>
+					<item>
+            			<label>COM1 setup</label>
+            			<name>config</name>
+            			<binding>
+              				<command>dialog-show</command>
+              				<dialog-name>COM1</dialog-name>
+            			</binding>
+          			</item>
+					<item>
+            			<label>ARK-19 setup</label>
+            			<name>config</name>
+            			<binding>
+              				<command>dialog-show</command>
+              				<dialog-name>ARK-19</dialog-name>
+            			</binding>
+          			</item>
+					<item>
+            			<label>RSBN setup</label>
+            			<name>config</name>
+            			<binding>
+              				<command>dialog-show</command>
+              				<dialog-name>RSBN</dialog-name>
+            			</binding>
+          			</item>
+					<item>
+            			<label>PRMG setup</label>
+            			<name>config</name>
+            			<binding>
+              				<command>dialog-show</command>
+              				<dialog-name>PRMG</dialog-name>
+            			</binding>
+          			</item>
+          <item>
+            <label>Ground Equipment Toggle</label>
+            <binding>
+              <command>property-toggle</command>
+              <property>sim/model/ground-equipment-e</property>
+            </binding>
+            <binding>
+              <command>property-toggle</command>
+              <property>sim/model/ground-equipment-g</property>
+            </binding>
+            <binding>
+              <command>property-toggle</command>
+              <property>sim/model/ground-equipment-s</property>
+            </binding>
+            <binding>
+              <command>property-toggle</command>
+              <property>sim/model/ground-equipment-p</property>
+            </binding>
+            <binding>
+              <command>property-toggle</command>
+              <property>sim/model/ground-equipment-f</property>
+            </binding>
+          </item>
+				</menu>
+			</default>
+		</menubar>
+		
+		<!-- Help -->
+		
+		<help>
+			<key>
+				<name>c</name>
+				<desc>Toggle canopy and ladder</desc>
+			</key>
+
+			<key>
+				<name>}</name>
+				<desc>Engines start/stop</desc>
+			</key>
+			
+			<key>
+				<name>N/n</name>
+				<desc>Toggle speedbrakes</desc>
+			</key>
+
+			<key>
+				<name>O</name>
+				<desc>Break chute deploy/retract</desc>
+			</key>
+			
+			<!-- <key>
+				<name>e</name>
+				<desc>Eject</desc>
+			</key> -->
+
+			<key>
+				<name>m</name>
+				<desc>Master Arm</desc>
+			</key>
+
+			<key>
+				<name>f</name>
+				<desc>Gun trigger</desc>
+			</key>
+			
+			<key>
+				<name>d</name>
+				<desc>Fire selected weapon</desc>
+			</key>
+
+			<key>
+				<name>D</name>
+				<desc>Cycle weapons</desc>
+			</key>
+			
+			<key>
+				<name>q</name>
+				<desc>Deploy countermeasures</desc>
+			</key>
+			
+			<line>Parking brake is on</line>
+		</help>
+		
+		<!-- Multiplayer -->
+    
+		<multiplay>
+			<chat_display>1</chat_display>
+			<generic> 
+				<int n="0" alias="/sim/crashed" />
+				<!-- Beacon on -->
+				<int n="1" alias="/controls/lighting/beacon-switch" />
+				<!-- Landing lights on -->
+				<int n="2" alias="/controls/lighting/landing-lights-switch" />
+				<!-- Taxi light on -->
+				<int n="3" alias="/controls/lighting/taxi-light" />
+				<!-- Nav lights on -->
+				<int n="4" alias="/controls/lighting/nav-lights-switch" />
+				<!-- Engine status -->
+				<int n="5" alias="/engines/engine[0]/state" />
+				<int n="6" alias="/engines/engine[1]/state" />
+				<int n="7" alias="/sim/crashed" />
+				<int n="8" alias="/controls/armament/trigger-GSh-30-2" />
+				<int n="9" alias="/controls/armament/trigger-S-8" />
+				<int type="int" n="11">0</int>
+				<float n="0" alias="/surface-positions/left-taileron-pos-norm"/>
+				<float n="1" alias="/surface-positions/right-taileron-pos-norm"/>
+				<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
+				<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
+				<float n="4"  alias="/position/gear-agl-m">0</float>
+				<!-- <float n="4" alias="/sim/model/nozzle-animation"/> -->
+				<!-- <float n="8" alias="/engines/engine[0]/afterburner" /> Reheat left engine -->
+				<!-- <float n="9" alias="/engines/engine[1]/afterburner" />  Reheat right engine -->
+			</generic>
+		</multiplay>
+		
+		<mp-systems>
+			<combat-enabled type="bool">true</combat-enabled>
+		</mp-systems>
+		
+	</sim>
+	
+	<!-- Keyboard shortcuts -->
+	
+	<input>
+		<keyboard>
+		
+			<!-- <key n="107">
+				<name>k</name>
+				<desc>Drop bomb</desc>
+				<binding>
+					<condition>
+						<and>
+						<property>controls/armament/masterarm</property>
+						<value>1</value>
+						<equals>
+								<property>controls/armament/selectedweapon</property>
+								<value>3</value>
+						</equals>
+						</and>
+					</condition>
+      				<command>nasal</command>
+      				<script>suo.FAB250_PO_ALL()</script>
+				</binding>
+				<mod-up>
+					<binding>
+        				<command>nasal</command>
+        				<script>switchclicksound.click("switch")</script>
+      				</binding>
+				</mod-up>				
+			</key>
+			<key n="108">
+				<name>l</name>
+				<desc>Drop bomb</desc>
+				<binding>
+					<condition>
+						<property>controls/armament/masterarm</property>
+					</condition>
+					<command>property-assign</command>
+					<property>/controls/armament/station[1]/release</property>
+					<value type="bool">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/armament/station[8]/release</property>
+					<value type="bool">1</value>
+				</binding>
+			</key>
+			<key n="106">
+				<name>j</name>
+				<desc>Drop bomb</desc>
+				<binding>
+					<condition>
+						<property>controls/armament/masterarm</property>
+					</condition>
+					<command>property-assign</command>
+					<property>/controls/armament/station[3]/release</property>
+					<value type="bool">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/armament/station[6]/release</property>
+					<value type="bool">1</value>
+				</binding>
+			</key>
+						<key n="105">
+				<name>i</name>
+				<desc>Drop bomb</desc>
+				<binding>
+					<condition>
+						<property>controls/armament/masterarm</property>
+					</condition>
+					<command>property-assign</command>
+					<property>/controls/armament/station[5]/release</property>
+					<value type="bool">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/armament/station[4]/release</property>
+					<value type="bool">1</value>
+				</binding>
+			</key> -->
+
+			<key n="68">
+      			<name>D</name>
+      			<desc>Select weapon</desc>
+      			<binding>
+          			<command>property-adjust</command>
+          			<property>controls/armament/selectedweapon</property>
+          			<step>1</step>
+          			<min>2.0</min>
+          			<max>4.0</max> <!--Increase this numer once more usable weapons added-->
+          			<wrap>true</wrap>
+        		</binding>
+    		</key>
+
+			<key n="76">
+          		<name>Shift-L</name>
+          		<desc>LightsToggle</desc>
+          		<binding>
+        			<command>property-toggle</command>
+        			<property>/controls/lighting/beacon-switch</property>
+				</binding>
+				<binding>
+        			<command>property-toggle</command>
+        			<property>/controls/lighting/landing-lights-switch</property>
+				</binding>
+				<binding>
+        			<command>property-toggle</command>
+        			<property>/controls/lighting/taxi-lights-switch</property>
+				</binding>
+				<binding>
+        			<command>property-toggle</command>
+        			<property>/controls/lighting/nav-lights-switch</property>
+				</binding>
+       		</key>
+			
+			<key n="78">
+				<name>N</name>
+				<desc>Extend speedbrakes</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/flight/speedbrake</property>
+					<step type="double">0.2</step>
+					<min type="double">0</min>
+					<max type="double">1</max>
+				</binding>
+			</key>
+
+			<key n="79">
+        		<name>O</name>
+        		<desc>Deploy braking parachute</desc>
+        		<binding>
+				<command>property-toggle</command>
+          		<property>controls/flight/chute_deploy</property>
+        		</binding>
+      		</key>
+			
+			<key n="99">
+				<name>c</name>
+				<desc>Toggle canopy</desc>
+				<binding>
+					<command>nasal</command>
+					<script>canopy.canopy_switch(2)</script>
+				</binding>
+			</key>
+			
+			<key n="100">
+				<name>d</name>
+				<desc>Fire selected weapons</desc>
+				<!-- <binding>
+					<condition>
+						<property>controls/armament/masterarm</property>
+						<equals>
+							<property>controls/armament/selectedweapon</property>
+							<value>2</value>
+						</equals>
+					</condition>
+					<command>nasal</command>
+					<script>weapons.fire_Rocket()</script>
+				</binding>
+
+				<binding>
+					<condition>
+						<and>
+						<property>controls/armament/masterarm</property>
+						<value>1</value>
+						<equals>
+								<property>controls/armament/selectedweapon</property>
+								<value>3</value>
+						</equals>
+						</and>
+					</condition>
+      				<command>nasal</command>
+      				<script>suo.FAB250_PO_ALL()</script>
+				</binding> -->
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/pickle</property>
+					<value>true</value>
+					<condition>
+						<property>controls/armament/masterarm</property>
+						<greater-than>
+							<property>controls/armament/selectedweapon</property>
+							<value>1</value>
+						</greater-than>
+					</condition>
+				</binding>
+
+				<binding>
+        			<command>nasal</command>
+        			<script>switchclicksound.click("switch2")</script>
+      			</binding>
+
+				<mod-up>
+					<!-- <binding>
+						<command>nasal</command>
+						<script>weapons.stop_Rocket()</script>
+						<condition>
+							<equals>
+							<property>controls/armament/selectedweapon</property>
+							<value>2</value>
+						</equals>
+						</condition>
+					</binding> -->
+					<binding>
+						<command>property-assign</command>
+						<property>controls/armament/pickle</property>
+						<value>false</value>
+					</binding>
+					<binding>
+        				<command>nasal</command>
+        				<script>switchclicksound.click("switch")</script>
+      				</binding>
+				</mod-up>
+			</key>
+			
+			<key n="101">
+				<name>e</name>
+				<desc>Eject</desc>
+				<binding>
+					<command>nasal</command>
+					<script>Eject.eject();</script>
+				</binding>
+			</key>
+			
+			
+			<key n="102">
+				<name>f</name>
+				<desc>Gun trigger</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>true</value>
+					<condition>
+						<property>controls/armament/masterarm</property>
+						<equals>
+							<property>controls/armament/selectedweapon</property>
+							<value>1</value>
+						</equals>
+					</condition>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/selectedweapon</property>
+					<value>1</value>
+					<condition>
+						<not-equals>
+							<property>controls/armament/selectedweapon</property>
+							<value>1</value>
+						</not-equals>
+					</condition>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>false</value>
+					</binding>
+				</mod-up>
+			</key>
+
+    		<key n="109">
+        		<name>m</name>
+        		<desc>Masterarm</desc>
+        		<binding>
+            		<command>nasal</command>
+            		<script><![CDATA[
+                		setprop("controls/armament/masterarm",!getprop("controls/armament/masterarm"));
+                		screen.log.write("Master-arm "~(getprop("controls/armament/masterarm")==0?"OFF":"ON"), 0.1, 0.9, 0.4);
+                		]]>
+				    </script>
+        		</binding>
+				<binding>
+        			<command>nasal</command>
+        			<script>switchclicksound.click("switch")</script>
+      			</binding>
+				<binding>
+        			<command>property-cycle</command>
+        			<property>controls/hud/hudmode</property>
+        			<value>4</value>
+        			<value>0</value>
+        			<wrap>true</wrap>
+      			</binding>
+    		</key>
+			
+			<key n="110">
+				<name>n</name>
+				<desc>Retract speedbrakes</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/flight/speedbrake</property>
+					<step type="double">-0.2</step>
+					<min type="double">0</min>
+					<max type="double">1</max>
+				</binding>
+			</key>
+			
+			<key n="113">
+				<name>q</name>
+				<desc>Deploy countermeasures</desc>
+				<binding>
+					<not-equals>
+								<property>controls/armament/trigger2</property>
+								<value>1</value>
+					</not-equals>
+					<command>nasal</command>
+					<script>weapons.fire_FL()</script>
+				</binding>
+				<binding>
+					<condition>
+						<property>controls/armament/trigger2</property>
+					</condition>
+					<command>nasal</command>
+					<script>weapons.stop_FL()</script>
+				</binding>
+				<!-- <mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>guns.stop_FL()</script>
+					</binding>
+				</mod-up> -->
+			</key>
+
+			<key n="125">
+				<name>}</name>
+				<desc>Engine start/stop</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						yasimengines.autostart();
+					</script>
+				</binding>
+			</key>
+			
+		</keyboard>
+	</input>
+	
+	<!-- System settings -->
+	
+	<!-- <engines>
+		<engine n="0">
+			<engine-num type="int">0</engine-num>
+			<running>false</running>
+		</engine>
+		
+		<engine n="1">
+			<engine-num type="int">1</engine-num>
+			<running>false</running>
+		</engine>
+	</engines> -->
+
+	<engines>
+    	<engine n="0">
+      	<running>false</running>
+    	</engine>
+    	<engine n="0">
+      	<spooldown>false</spooldown>
+    	</engine>
+		<engine n="1">
+      	<running>false</running>
+    	</engine>
+    	<engine n="1">
+      	<spooldown>false</spooldown>
+    	</engine>
+  	</engines>
+	
+	<controls>
+		<flight>
+			<chute_deploy type="bool">false</chute_deploy>
+		</flight>
+
+		<!-- Power switches -->
+		<power>
+			<battery type="bool">true</battery>
+			<fuelpump3 type="bool">true</fuelpump3>
+      		<fuelpump1 type="bool">true</fuelpump1>
+      		<fuelpump0 type="bool">true</fuelpump0>
+      		<rsbn type="bool">false</rsbn>
+			<rsbn-ark type="bool">false</rsbn-ark>
+
+		<sound>
+        	<click-switch type="bool">false</click-switch>
+			<click-switch2 type="bool">false</click-switch2>
+     	</sound>
+
+		</power>
+	
+		<gear>
+			<brake-parking type="double">1.0</brake-parking>
+		</gear>
+		
+		<armament>
+			<masterarm type="bool">false</masterarm>
+			<selectedweapon type="double">2</selectedweapon>
+			<laserrange type="double">0.0</laserrange>
+			<pipperoffset type="double">0.001</pipperoffset>
+			<larange type="double">3000.0</larange>
+			<releaseq type="double">1</releaseq>
+			<releasei type="double">0.1</releasei>
+			<flares_loaded type="double">240.0</flares_loaded>
+		
+			<trigger>0</trigger>
+			<trigger1>0</trigger1>
+			<trigger2>0</trigger2>
+      <pickle type="bool">false</pickle>
+			
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="5">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="6">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="7">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="8">
+				<release type="bool">false</release>
+			</station>
+			
+			<station n="9">
+				<release type="bool">false</release>
+			</station>
+			
+		</armament>
+		
+		<lighting>
+			<instruments-norm>0.4</instruments-norm>
+			<panels-norm>0.1</panels-norm>
+			<sight-norm>0.85</sight-norm>
+			<nightmode type="bool">false</nightmode>
+			<strobe-switch type="bool">true</strobe-switch>
+			<beacon-switch type="bool">true</beacon-switch>
+			<landing-lights-switch type="bool">true</landing-lights-switch>
+			<taxi-lights-switch type="bool">true</taxi-lights-switch>
+			<nav-lights-switch type="bool">true</nav-lights-switch>
+		</lighting>
+
+		<ventilation>
+      		<windshield-antiice-lever type="bool">false</windshield-antiice-lever>
+      		<airconditioning-type type="int">0</airconditioning-type><!-- cold for 12s: -1 auto: 0 warm for 12s: 1 -->
+      		<airconditioning-enabled type="bool">true</airconditioning-enabled>
+      		<airconditioning-temperature type="double">16.0</airconditioning-temperature><!-- used for auto -->
+    	</ventilation>
+
+		<hud>
+			<hudmode type="double">0</hudmode>
+		</hud>
+
+		<navigation>
+			<target-range type="double">0.0</target-range>
+		</navigation>
+
+		<mfd>
+      		<mfdpage type="double">0</mfdpage>
+      		<hdgbugset type="double">0</hdgbugset>
+      		<displays>
+        		<live-map type="bool">true</live-map>
+        		<scale type="double">0</scale>
+				<brightness-mm type="double">0</brightness-mm>
+      		</displays>
+    	</mfd>
+		
+	</controls>
+	
+	<consumables>
+		<fuel>
+		
+			<tank n="0">
+				<tank-num type="int">0</tank-num>
+				<level-gal_us archive="y">335</level-gal_us>
+			</tank>
+			
+			<tank n="1">
+				<tank-num type="int">1</tank-num>
+				<level-gal_us archive="y">335</level-gal_us>
+			</tank>
+			
+			<tank n="2">
+				<tank-num type="int">2</tank-num>
+				<level-gal_us archive="y">140</level-gal_us>
+			</tank>
+			
+			<tank n="3">
+				<tank-num type="int">3</tank-num>
+				<level-gal_us archive="y">140</level-gal_us>
+			</tank>
+			
+			<tank n="4">
+				<name>Left Outer Tank</name>
+				<selected type="bool">false</selected>
+			</tank>
+			
+			<tank n="5">
+				<name>Left Inner Tank</name>
+				<selected type="bool">false</selected>
+			</tank>
+			
+			<tank n="6">
+				<name>Right Inner Tank</name>
+				<selected type="bool">false</selected>
+			</tank>
+			
+			<tank n="7">
+				<name>Right Outer Tank</name>
+				<selected type="bool">false</selected>
+			</tank>
+			
+		</fuel>
+	</consumables>
+	
+	<limits>
+		<max-positive-g>6.5</max-positive-g>
+		<max-negative-g>-3.0</max-negative-g>
+	</limits>
+	
+	<canopy>
+		<position-norm type="float">1.0</position-norm>
+	</canopy>
+	
+	<!-- Instrumentation -->
+	
+	<instrumentation>
+		<enav>
+			<selected type="int">3</selected>
+		</enav>
+
+		<rwr>
+    		<display-lighting-intens type="double">0.4</display-lighting-intens>
+    		<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+   		</rwr>
+
+   		<radar>
+    		<range type="int" archive="y">20</range>
+    		<range-factor type="double" archive="n">0.001888</range-factor>
+    		<minimized type="bool" archive="y">false</minimized>
+    		<selected type="int">3</selected>
+    		<enabled type="bool">true</enabled>
+    		<az-field type="double">120</az-field>
+    		<range type="double">150</range>
+    		<range-selected type="double">20</range-selected>
+    		<radar2-range type="double">150</radar2-range>
+    		<display-rdr type="bool">true</display-rdr>
+    		<radar-standby type="int">0</radar-standby>
+    		<mode>
+     			<rws type="bool">true</rws>
+     			<tws-auto type="bool">false</tws-auto>
+    		</mode>
+   		</radar>
+
+   		<radar2>
+    		<sweep-width-m type="double">0.0844</sweep-width-m>
+    		<range-width-m type="double">0.0846</range-width-m>
+    		<radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+    		<hud-eye-dist-m type="double">0.766</hud-eye-dist-m>
+   			<hud-radius-m type="double">0.071</hud-radius-m>
+    		<hud-vertical-offset-m type="double">-0.025</hud-vertical-offset-m>
+   		</radar2>
+
+		<efis>
+			<ecam>
+				<display-mode type="string">FUEL</display-mode>
+			</ecam>
+			<nd>
+				<display-mode type="string">VOR</display-mode>
+				<display-mode-knob type="int">2</display-mode-knob>
+				<display-range type="int">40</display-range>
+			</nd>
+			<input>
+				<vor-adf-1 type="int">1</vor-adf-1>
+				<vor-adf-2 type="int">1</vor-adf-2>
+				<CSTR type="bool">1</CSTR>
+				<WPT type="bool">1</WPT>
+				<VORD type="bool">1</VORD>
+				<NDB type="bool">1</NDB>
+				<ARPT type="bool">1</ARPT>
+				<WX type="bool">1</WX>
+				<TERR type="bool">1</TERR>
+				<TRAF type="bool">1</TRAF>
+				<taxi type="bool">1</taxi>
+			</input>
+		</efis>
+
+    	<tcas>
+      			<!-- http://wiki.flightgear.org/index.php/TCAS -->
+      		<serviceable type="bool">true</serviceable>
+      			<!-- TCAS ENABLE -->
+      		<inputs>
+        		<mode type="int">3</mode>
+        		<!-- 0=off, 1=standby, 2=TA-only, 3=auto(TA/RA) -->
+      		</inputs>
+      		<speaker>
+        		<!-- Speaker Configuration -->
+        		<max-dist> 2 </max-dist>
+        		<!-- Max. distance where speaker is heard -->
+        		<reference-dist> 1 </reference-dist>
+        		<!-- Distance to pilot -->
+        		<volume> 1.0 </volume>
+        		<!-- Volume at reference distance -->
+      		</speaker>
+    	</tcas>
+
+	</instrumentation>
+	
+	<!-- Effects -->
+
+<!-- 	<environment>
+		<turbulence>
+			<use-cloud-turbulence>true</use-cloud-turbulence>
+		</turbulence>
+	</environment> -->
+
+	<environment>
+   		<damage type="bool">false</damage>
+    	<damage-smoke type="bool">false</damage-smoke>
+    	<turbulence>
+      		<use-cloud-turbulence>true</use-cloud-turbulence>
+    	</turbulence>
+
+    	<aircraft-effects>
+      		<splash-vector-x type="float" userarchive="n">0.0</splash-vector-x>
+      		<splash-vector-y type="float" userarchive="n">0.1</splash-vector-y>
+      		<splash-vector-z type="float" userarchive="n">1.0</splash-vector-z>
+      		<frost-level type="float" userarchive="n">0.0</frost-level>
+      		<fog-level type="float" userarchive="n">0.0</fog-level>
+      		<ground-splash-norm type="float" userarchive="n">0.0</ground-splash-norm>
+      		<use-wipers type="int" userarchive="n">0</use-wipers>
+      		<use-overlay type="int" userarchive="n">0</use-overlay>
+      		<overlay-alpha type="float" userarchive="n">1.0</overlay-alpha>
+      		<use-mask type="int" userarchive="n">0</use-mask>
+      		<dewpoint-inside-degC type="float" userarchive="n">0.0</dewpoint-inside-degC>
+      		<temperature-inside-degC type="float" userarchive="n">15.0</temperature-inside-degC>
+      		<temperature-glass-degC type="float" userarchive="n">15.0</temperature-glass-degC>
+      		<glass-temperature-index type="float" userarchive="n">0.51</glass-temperature-index>
+      		<fog-inside type="float" userarchive="n">0.0</fog-inside>
+      		<fog-outside type="float" userarchive="n">0.0</fog-outside>
+      		<frost-inside type="float" userarchive="n">0.0</frost-inside>
+      		<frost-outside type="float" userarchive="n">0.0</frost-outside>
+    	</aircraft-effects>
+
+    	<precipitation-control>
+      		<clip-distance type="double">1.75</clip-distance>
+    	</precipitation-control>
+    	<pressure-inhg type="double">30</pressure-inhg>
+    	<weather-scenarios>
+      	<scenario n="17">
+        	<description type="string">
+          		ISA standard atmosphere.
+          		Be sure to use basic weather for flight testing with this.
+        	</description>
+        	<metar type="string">XXXX 012345Z 00000KT 35SM 15/05 Q1013.25 NOSIG</metar>
+        	<name type="string">ISA</name>
+      	</scenario>
+      	<scenario n="18">
+        	<description type="string">
+          		ISA +10 standard atmosphere.
+          		Be sure to use basic weather for flight testing with this.
+        	</description>
+        	<metar type="string">XXXX 012345Z 00000KT 35SM 25/15 Q1013.25 NOSIG</metar>
+        	<name type="string">ISA +10</name>
+      	</scenario>
+      	<scenario n="19">
+        	<description type="string">
+          		ISA -15 standard atmosphere.
+          		Be sure to use basic weather for flight testing with this.
+        	</description>
+        	<metar type="string">XXXX 012345Z 00000KT 35SM 00/M10 Q1013.25 NOSIG</metar>
+        	<name type="string">ISA -15</name>
+      		</scenario>
+    	</weather-scenarios>
+  	</environment>
+	
+	<gear>
+		<gear n="0">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		
+		<gear n="1">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		
+		<gear n="2">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+	</gear>
+	
+	<!-- Nasal scripts -->
+	
+	<nasal>
+		<Su-25>
+			<file>Aircraft/Su-25/Nasal/liveries.nas</file>
+			<file>Aircraft/Su-25/Nasal/hud.nas</file>
+			<file>Aircraft/Su-25/Nasal/metric.nas</file>
+		</Su-25>
+		
+	    <lights>
+	    	<file>Aircraft/Su-25/Nasal/lights.nas</file>
+	    </lights>
+
+		<eno>
+			<file>Aircraft/Su-25/Nasal/eno.nas</file>
+		</eno>
+
+		<maintenance>
+			<file>Aircraft/Su-25/Nasal/maintenance.nas</file>
+		</maintenance>
+		
+		<canopy>
+			<file>Aircraft/Su-25/Nasal/canopy.nas</file>
+		</canopy>
+
+		<!-- default values: (n, running = 0, idle_throttle = 0.01, max_start_n1 = 5.21, start_threshold = 5, spool_time = 43, start_time = 2, shutdown_time = 23) -->
+
+		<yasimengines>
+      		<file>Aircraft/Su-25/Nasal/yasim-engines.nas</file>
+			  <!-- <script>
+			  var engine1 = engines.Jet.new(0, 0 , 0.005 , 12.8 , 10 , 6.9 , 0.05 , 2);
+			  var engine2 = engines.Jet.new(1, 0 , 0.005 , 12.8 , 10 , 6.9 , 0.05 , 2);
+        		setlistener("sim/signals/fdm-initialized", func
+        		{
+        		engine1.init();
+				engine2.init();
+        		}, 0, 0);
+      		</script> -->
+     	</yasimengines>
+
+		<fuel>
+			<file>Aircraft/Su-25/Nasal/fuel.nas</file>
+		</fuel>
+
+		<radiocfg>
+      		<file>Aircraft/Su-25/Nasal/radiocfg.nas</file>
+    	</radiocfg>
+		
+		<!-- <Eject>
+			<file>Aircraft/Su-25/Nasal/eject.nas</file>
+		</Eject> -->
+		
+		<tyresmoke>
+			<file>Aircraft/Su-25/Nasal/tyresmoke.nas</file>
+		</tyresmoke>
+		
+		<weapons>
+			<file>Aircraft/Su-25/Nasal/weapons.nas</file>
+		</weapons>
+
+		<payload>
+			<file>Aircraft/Su-25/Nasal/payload.nas</file>
+		</payload>
+
+		<mpencode>
+			<file>Aircraft/Su-25/Nasal/mpencode.nas</file>
+		</mpencode>
+
+		<!-- 
+
+		 -->
+		
+		<!-- <rwr>
+			<file>Aircraft/Su-25/Nasal/rwr.nas</file>
+		</rwr> -->
+
+		<low>
+			<file>Aircraft/Su-25/Nasal/low.nas</file>
+		</low>
+
+		<CanvasPylonsDlg>
+			<file>Aircraft/Su-25/Nasal/canvas-pylons-cfg.nas</file>
+		</CanvasPylonsDlg>
+
+		<su25>
+			<file>Aircraft/Su-25/Nasal/su-25.nas</file>
+		</su25>
+
+		<environment>
+      		<file>Aircraft/Su-25/Nasal/environment.nas</file>
+    	</environment>
+
+		<switchclicksound>
+      		<file>Aircraft/Su-25/Nasal/switchclicksound.nas</file>
+    	</switchclicksound>
+
+		<mm>
+      		<file>Aircraft/Su-25/Nasal/moving-map.nas</file>
+    	</mm>
+
+		<nd>
+      		<file>Aircraft/Su-25/Nasal/nd.nas</file>
+    	</nd>
+
+		<rockets>
+			<file>Aircraft/Su-25/Nasal/rockets.nas</file>
+		</rockets>
+
+		<cannon>
+			<file>Aircraft/Su-25/Nasal/cannon.nas</file>
+		</cannon>
+
+		<launchauthorizer>
+			<file>Aircraft/Su-25/Nasal/launchauthorizer.nas</file>
+    	</launchauthorizer>
+
+		<suo>
+			<file>Aircraft/Su-25/Nasal/suo.nas</file>
+		</suo>
+
+		<hud>
+    		<file>Aircraft/Su-25/Nasal/MiscRwr.nas</file>
+   		</hud>
+   		<radardist>
+    		<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+   		</radardist>
+   		<radar>
+    		<file>Aircraft/Su-25/Nasal/radar2.nas</file>
+   		</radar>
+
+	</nasal>
+	
+</PropertyList>

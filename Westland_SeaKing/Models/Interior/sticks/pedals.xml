@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<!-- for UH-60 HD -->
+ 
+ 
+
+    
+    <path>pedals.ac</path>
+ 
+ 
+ 
+<!-- left pedal -->
+  
+   <animation>
+    <type>rotate</type>
+    <object-name>BN_LOD_100</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> 8 </factor>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  -0.03 </y-m>
+      <z-m> 0.0</z-m>
+    </offsets>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  
+  <!-- right pedal -->
+  
+   <animation>
+    <type>rotate</type>
+    <object-name>BK_LOD_100</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> -8 </factor>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.03 </y-m>
+      <z-m> 0.0</z-m>
+    </offsets>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+ 
+
+</PropertyList>
+

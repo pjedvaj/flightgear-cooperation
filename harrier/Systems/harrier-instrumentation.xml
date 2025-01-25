@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<airspeed-indicator>
+	<name>airspeed-indicator</name>
+	<number>0</number>
+	<total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
+	<static-pressure>/systems/static/pressure-inhg</static-pressure>
+</airspeed-indicator>
+
+<altimeter>
+    <name>altimeter</name>
+    <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+</altimeter>
+
+<attitude-indicator>
+    <name>attitude-indicator</name>
+    <number>0</number>
+    <suction>/systems/electrical/outputs/ai</suction>
+</attitude-indicator>
+
+<vertical-speed-indicator>
+    <name>vertical-speed-indicator</name>
+    <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+</vertical-speed-indicator>
+  
+<heading-indicator>
+	<name>heading-indicator</name>
+	<number>0</number>
+	<suction>/systems/vacuum[0]/suction-inhg</suction>
+</heading-indicator>
+  
+<magnetic-compass>
+	<name>magnetic-compass</name>
+	<number>0</number>
+</magnetic-compass>
+
+<tacan>
+	<name>tacan</name>
+	<number>0</number>
+</tacan>
+
+</PropertyList>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Empire Test Pilots School / Qinetiq</name>
+        <texture>har3Liveries/ETPS.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.45</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>

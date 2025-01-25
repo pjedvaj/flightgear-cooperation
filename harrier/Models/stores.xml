@@ -1,0 +1,586 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+
+	<!--back-->
+	<!--right -->
+	<!--up -->
+	
+	<!-- External Tanks -->
+	<model>
+		<name>LeftExTank</name>
+		<path>Aircraft/harrier/Models/Stores/exTank.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>	
+	<model>
+		<name>RightExTank</name>
+		<path>Aircraft/harrier/Models/Stores/exTank.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- ADEN Pods -->	
+	<model>
+		<name>RAden</name>
+		<path>Aircraft/harrier/Models/Stores/ADENpod.ac</path>
+			<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>27</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>LAden</name>
+		<path>Aircraft/harrier/Models/Stores/ADENpod.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>-0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>-27</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>RGunPylon</name>
+		<path>Aircraft/harrier/Models/Stores/optionalPylon.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>27</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>LGunPylon</name>
+		<path>Aircraft/harrier/Models/Stores/optionalPylon.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>-0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>-27</roll-deg>
+		</offsets>
+	</model>
+	
+	<!-- Sidewinder -->	
+	<model>
+		<name>Sidewinder1</name>
+		<path>Aircraft/harrier/Models/Stores/aim9LM.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>
+		</offsets>
+	</model>	
+	<model>
+		<name>Sidewinder4</name>
+		<path>Aircraft/harrier/Models/Stores/aim9LM.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>2.84</y-m>
+			<z-m>-6.2</z-m>
+		</offsets>
+	</model>	
+	<model>
+		<name>Sidewinder2</name>
+		<path>Aircraft/harrier/Models/Stores/aim9LM.ac</path>
+		<offsets>
+			<x-m>-11.5</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.0</z-m>
+		</offsets>
+	</model>	
+	<model>
+		<name>Sidewinder3</name>
+		<path>Aircraft/harrier/Models/Stores/aim9LM.ac</path>
+		<offsets>
+			<x-m>-11.5</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.0</z-m>
+		</offsets>
+	</model>	
+	<!-- AIM-120 AMRAAM -->
+	<model>
+		<name>AMRAAM1</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.08</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>AMRAAM2</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			<x-m>-12.75</x-m>
+			<y-m>-0.59</y-m>
+			<z-m>-6.85</z-m>
+			<roll-deg>-20</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>AMRAAM3</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			<x-m>-12.75</x-m>
+			<y-m>0.59</y-m>
+			<z-m>-6.85</z-m>
+			<roll-deg>20</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>AMRAAM4</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.08</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>AMRAAM5</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>
+			<roll-deg>20</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>AMRAAM6</name>
+		<path>Aircraft/harrier/Models/Stores/aim120.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>2.84</y-m>
+			<z-m>-6.2</z-m>
+		</offsets>
+	</model>
+	<!-- ALARM Anti-radar -->
+	<model>
+		<name>ALARM1</name>
+		<path>Aircraft/harrier/Models/Stores/baeAlarm.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.08</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>ALARM2</name>
+		<path>Aircraft/harrier/Models/Stores/baeAlarm.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.08</z-m>
+		</offsets>
+	</model>	
+	<!-- Sea Eagle -->
+	
+	<model>
+		<name>SeaEagle1</name>
+		<path>Aircraft/harrier/Models/Stores/seaEagle.ac</path>
+		<offsets>
+			<x-m>-11.5</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.0</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>SeaEagle5</name>
+		<path>Aircraft/harrier/Models/Stores/seaEagle.ac</path>
+		<offsets>
+			<x-m>-11.5</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.0</z-m>
+		</offsets>
+	</model>
+	
+	
+	<!-- bombs -->	
+	<model>
+		<name>bomb3</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m>-12.2</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.8</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>bomb2</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m>-11.6</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.1</z-m>
+		</offsets>
+	</model>	
+	<model>
+		<name>bomb4</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m>-11.6</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.1</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>bomb1</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>
+		</offsets>
+	</model>	
+	<model>
+		<name>bomb5</name>
+		<path>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>2.84</y-m>
+			<z-m>-6.2</z-m>
+		</offsets>
+	</model>
+	<!-- fuselage pylon -->
+	<model>
+		<name>FuselagePylon</name>
+		<path>Aircraft/harrier/Models/Stores/optionalPylon.ac</path>
+		<offsets>
+			<x-m>-12.2</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.7</z-m>
+		</offsets>
+	</model>
+	<!-- SNEB rocket pods -->	
+	<model>
+		<name>pod2</name>
+		<path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+		<offsets>
+			<x-m>-11.6</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.1</z-m>
+		</offsets>
+	</model>	
+	<model>
+		<name>pod4</name>
+		<path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+		<offsets>
+			<x-m>-11.6</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.1</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>pod1</name>
+		<path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>
+		</offsets>
+	</model>	
+	<model>
+		<name>pod5</name>
+		<path>Aircraft/harrier/Models/Stores/FFAR/pod.xml</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>2.84</y-m>
+			<z-m>-6.2</z-m>
+		</offsets>
+	</model>
+	
+	
+	<!--+++++++++++++++++++++++++++++++++++++++++++++-->
+	<!--++++++++++++  ANIMATIONS  +++++++++++++++++++-->
+	<!--+++++++++++++++++++++++++++++++++++++++++++++-->
+	<!-- Pylons 1 and 5 -->
+	<animation>
+		<type>select</type>
+		<object-name>bomb1</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[0]</property>
+				<value>1000lb bomb</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>bomb5</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[6]</property>
+				<value>1000lb bomb</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>pod1</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[0]</property>
+				<value>SNEB rocket pod</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>pod5</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[6]</property>
+				<value>SNEB rocket pod</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Sidewinder1</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[0]</property>
+				<value>AIM-9L Sidewinder</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Sidewinder4</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[6]</property>
+				<value>AIM-9L Sidewinder</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>AMRAAM5</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[0]</property>
+				<value>AIM-120 AMRAAM</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>AMRAAM6</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[6]</property>
+				<value>AIM-120 AMRAAM</value>
+			</equals>
+		</condition>
+ 	</animation>	
+	<!-- PYLONS 2 and 4 -->
+	<animation>
+		<type>select</type>
+		<object-name>LeftExTank</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[1]</property>
+				<value>190 Gallon Fuel Tank</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>RightExTank</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[5]</property>
+				<value>190 Gallon Fuel Tank</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Sidewinder2</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[1]</property>
+				<value>AIM-9L Sidewinder</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Sidewinder3</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[5]</property>
+				<value>AIM-9L Sidewinder</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>AMRAAM1</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[1]</property>
+				<value>AIM-120 AMRAAM</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>AMRAAM4</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[5]</property>
+				<value>AIM-120 AMRAAM</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>ALARM1</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[1]</property>
+				<value>ALARM Anti-radar Missile</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>ALARM2</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[5]</property>
+				<value>ALARM Anti-radar Missile</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>bomb2</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[1]</property>
+				<value>1000lb bomb</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>bomb4</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[5]</property>
+				<value>1000lb bomb</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>pod2</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[1]</property>
+				<value>SNEB rocket pod</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>pod4</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[5]</property>
+				<value>SNEB rocket pod</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>SeaEagle1</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[1]</property>
+				<value>Sea Eagle Anti-ship Missile</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>SeaEagle5</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[5]</property>
+				<value>Sea Eagle Anti-ship Missile</value>
+			</equals>
+		</condition>
+ 	</animation>
+	
+	<!-- PYLON 3 -->
+	<animation>
+		<type>select</type>
+		<object-name>FuselagePylon</object-name>
+		<object-name>bomb3</object-name>
+		<condition>
+			<equals>
+				<property>sim/multiplay/generic/string[3]</property>
+				<value>1000lb bomb</value>
+			</equals>			
+		</condition>
+ 	</animation>
+	<!-- GUN PODS -->
+	<animation>
+		<type>select</type>
+		<object-name>RAden</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[4]</property>
+				<value>ADEN 30mm Cannon</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LAden</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[2]</property>
+				<value>ADEN 30mm Cannon</value>
+			</equals>
+		</condition>
+ 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LGunPylon</object-name>
+		<object-name>AMRAAM2</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[2]</property>
+				<value>AIM-120 AMRAAM</value>
+			</equals>
+		</condition>
+ 	</animation>	
+	<animation>
+		<type>select</type>
+		<object-name>RGunPylon</object-name>
+		<object-name>AMRAAM3</object-name>
+		<condition>   
+			<equals>
+				<property>sim/multiplay/generic/string[4]</property>
+				<value>AIM-120 AMRAAM</value>
+			</equals>
+		</condition>
+ 	</animation>
+</PropertyList>

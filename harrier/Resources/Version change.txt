@@ -1,0 +1,32 @@
+This file shows the actions to be done when upgrading the version number.
+
+Step 1.
+	Update TODO.txt (harrier/Docs), removing things done and add things to do.
+
+Step 2.
+	Update FEATURES.txt (harrier/Docs) with any new features.
+
+Step 3.
+	Update CHANGELOG.txt (harrier/Docs) with the structure below:
+
+	Version ?.?.?	Change
+	Author		Change
+	dd/mm/yyyy	Change
+
+Step 4 (optional).
+	Go to the FlightGear wiki and formalize the aircraft status.
+
+Step 5 (optional).
+	Update harrier-set.xml in the following place:
+	<sim>
+		<aircraft-version>?.?.?</aircraft-version>
+		<rating>
+			<FDM type="int">?</FDM>
+			<systems type="int">?</systems>
+			<cockpit type="int">?</cockpit>
+			<model type="int">?</model>
+		</rating>
+	</sim>
+
+Step 6.
+	Update the wiki page (http://wiki.flightgear.org/British_Aerospace_Sea_Harrier).

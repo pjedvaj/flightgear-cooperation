@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>remote.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>Needle1</object-name>
+  <object-name>Needle2</object-name>
+  <emission>
+    <factor-prop>sim/model/material/instruments/factor</factor-prop>
+    <red>1.0</red>
+    <green>0.2</green>
+    <blue>0.00</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle1</object-name>
+  <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle2</object-name>
+  <property>instrumentation/magnetic-compass/bookmark-heading-deg</property>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+<animation>
+   <type>knob</type>
+   <object-name>cylinder</object-name>
+   <visible>true</visible>
+   
+   <action>
+
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/magnetic-compass/bookmark-heading-deg</property>
+       <factor>1</factor>
+       <min>0</min>
+       <max>360</max>
+       <wrap>true</wrap>
+     </binding>
+   </action>
+   
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>hdg-setting</tooltip-id>
+      <label>Bookmark heading: %3d</label>
+      <property>/instrumentation/magnetic-compass/bookmark-heading-deg</property>
+   </binding>
+   </hovered>
+   
+  </animation>
+   
+
+
+</PropertyList>
+
+

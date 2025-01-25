@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+<!--
+"AGM-154 JSOW missile" (https://skfb.ly/WWLL) by rickslash is licensed under Creative Commons Attribution
+  (http://creativecommons.org/licenses/by/4.0/).
+-->
+
+  <path>agm154.ac</path>
+  <offsets>
+    <heading-deg>-90</heading-deg>
+  </offsets>
+
+</PropertyList>

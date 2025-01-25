@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+ <Autopilot.AutoHover>
+      <binding>Alt+q</binding>
+      <repeat>no</repeat>
+    </Autopilot.AutoHover>
+
+<key n="4">
+    <name>Ctrl-d</name>
+    <desc>Toggle SAS enabled</desc>
+    <binding>
+      <command>nasal</command>
+      <script>bk117.sas.toggleEnable();</script>
+    </binding>
+  </key>
+	
+  <!--<key id="toggle_autohover" repeat="no" state="down">
+        <modifiers>
+          <modifier id="alt" state="down" />
+        </modifiers>
+        <function>autopilot.toggle_autohover()</function>
+        <default>key-alt-q</default>
+      </key>-->
+	
+		<key n="123">
+				<name>{</name>
+				<desc>Shutdown Engines</desc>
+				<binding>
+					<command>nasal</command>
+					<script>bk117.shutdown()</script>
+					<condition>
+						<property>/sim/signals/fdm-initialized</property>
+					</condition>
+				</binding>
+				<!-- <binding>
+      <command>nasal</command>
+      <script>ec135.cas.toggleEnable();</script>
+    </binding>-->
+			</key>
+
+			<key n="125">
+				<name>}</name>
+				<desc>Start Engines</desc>
+				<binding>
+					<command>nasal</command>
+					<script>bk117.startup()</script>
+					<condition>
+						<property>/sim/signals/fdm-initialized</property>
+					</condition>
+				</binding>
+				<!-- <binding>
+      <command>nasal</command>
+      <script>ec135.cas.toggleEnable();</script>
+    </binding>-->
+			</key>
+
+	
+	<key n="117">
+		<name>u</name>
+		<desc>Fold Tail</desc>
+		<binding>
+			<command>nasal</command>
+			<script>doors.doorsystem.stowexport();</script>
+		</binding>
+	</key>
+	
+		<key n="114">
+                                <name>r</name>
+                                <desc>Toggle Rescue</desc>
+                                <binding>
+                                        <command>property-toggle</command>
+                                        <property>/sim/model/rescue</property>
+                                </binding>
+                        </key>
+                        <key n="109">
+                                <name>m</name>
+                                <desc>Lift Winch</desc>
+                                <repeatable type="bool">true</repeatable>
+                                <binding>
+                                        <command>property-adjust</command>
+                                        <property>/sim/model/rescue-lift</property>
+                                        <step type="double">-0.01</step>
+                                        <min>0.0</min>
+                                        <max>1</max>
+                                </binding>
+                        </key>
+                        <key n="77">
+                                <name>M</name>
+                                <desc>Down Winch</desc>
+                                <repeatable type="bool">true</repeatable>
+                                <binding>
+                                        <command>property-adjust</command>
+                                        <property>/sim/model/rescue-lift</property>
+                                        <step type="double">0.01</step>
+                                        <min>0.0</min>
+                                        <max>1</max>
+                                </binding>
+                        </key>
+
+</PropertyList>
+

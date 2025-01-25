@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>PSVUM.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>face</object-name>
+        <!--<object-name>needle</object-name>-->
+		<object-name>alt.001</object-name>
+		<object-name>alt.002</object-name>
+		<object-name>alt.003</object-name>
+		<object-name>alt.004</object-name>
+		<object-name>alt.005</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
+            <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        </emission>
+      <condition>
+        <property>/controls/power/battery</property>
+      </condition>
+    </animation>
+  
+  <animation>
+    <type>select</type>
+		<object-name>alt.001</object-name>
+		<object-name>alt.002</object-name>
+		<object-name>alt.003</object-name>
+		<object-name>alt.004</object-name>
+		<object-name>alt.005</object-name>
+    <condition>
+      <property>/controls/power/battery</property>
+      <property>/controls/power/radioalt</property>
+      <not>
+        <or>
+          <less-than>
+            <property>orientation/roll-deg</property>
+            <value>-45</value>
+          </less-than>
+          <greater-than>
+            <property>orientation/roll-deg</property>
+            <value>45</value>
+          </greater-than>
+          <less-than>
+            <property>orientation/pitch-deg</property>
+            <value>-45</value>
+          </less-than>
+          <greater-than>
+            <property>orientation/pitch-deg</property>
+            <value>45</value>
+          </greater-than>
+          <greater-than>
+            <property>position/altitude-agl-ft</property>
+            <value>3000</value>
+          </greater-than>
+        </or>
+      </not>
+    </condition>
+    </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>face</object-name>
+    <condition>
+      <property>/controls/power/radioalt</property>
+    </condition>
+  </animation>
+    
+	<!--<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.36</factor>
+        <center>
+            <x-m>-0.0060</x-m>
+            <y-m> 0.0000</y-m>
+            <z-m>-0.0041</z-m>
+        </center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>-->
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.005</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.00001</factor>
+		<step>10000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.005</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>10000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.004</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.004</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.003</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.002</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.001</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>ralt_btn_2</object-name>
+    <property>/controls/power/sound/pulup-alert</property>
+    <factor>0.0020</factor>
+    <offset-m>-0.002</offset-m>
+    <center>
+      <x-m>0.01037</x-m>
+      <y-m>0.01687</y-m>
+      <z-m>-0.01908</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>ralt_btn_2</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/power/sound/pulup-alert</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>switchclicksound.click("switch")</script>
+      </binding>
+    </action>
+
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>pulup-alert</tooltip-id>
+        <label>Pullup Alert Toggle</label>
+      </binding>
+    </hovered>
+    
+  </animation>
+	
+<!-- Label text -->
+
+<text>
+	<name>LabelText</name>
+	<type type="string">literal</type>
+		<text type="string">PSV-UM Radio Altimeter Alert Switch</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+		<character-size type="double">0.012</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m> 0.01</x-m>
+		<y-m> 0.0 </y-m>
+		<z-m> 0.0 </z-m>
+	</offsets>
+</text>
+
+<animation>
+	<type>material</type>
+		<object-name>LabelText</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>0.8</green>
+		<blue>0.0</blue>
+	</emission>
+</animation>
+
+<animation>
+	<type>select</type>
+		<object-name>LabelText</object-name>
+	<condition>
+		<property>/sim/panel-hotspots</property>
+	</condition>
+</animation>
+
+</PropertyList>

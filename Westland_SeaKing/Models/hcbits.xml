@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+<path>hcbits.ac</path>
+
+	<effect>
+		<inherits-from>Aircraft/Westland_SeaKing/Models/Effects/reflect-uber</inherits-from>
+		
+		<object-name>wavefront.014</object-name>
+		<object-name>wavefront.011</object-name>
+		<object-name>wavefront.007</object-name>
+		<object-name>wavefront.008</object-name>
+		<object-name>wavefront.012</object-name>
+		<object-name>wavefront.004</object-name>
+		<object-name>pantsstbd</object-name>
+		<object-name>pantsport</object-name>
+		
+	</effect>
+
+</PropertyList>

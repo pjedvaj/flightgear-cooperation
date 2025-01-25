@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <model>
+    <name>Pylon</name>
+    <path>pylon.xml</path>
+    <offsets>
+      <x-m> 0.00 </x-m>
+      <y-m> 0.15 </y-m>
+      <z-m> 0.15 </z-m>
+      <roll-deg>-45</roll-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>scale</type>
+    <object-name>Pylon</object-name>
+    <x-offset>0.75</x-offset>
+    <y-offset>1.0</y-offset>
+    <z-offset>1.0</z-offset>
+  </animation>
+
+  <model>
+    <path>Aircraft/F-18F/Models/Stores/AN-AAQ-28/AN-AAQ-28.xml</path>
+  </model>
+
+</PropertyList>

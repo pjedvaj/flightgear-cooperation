@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim>
+    
+    <model>
+      <livery>
+        <name type="string">FG squadron - Low vis</name>
+        <texture>Liveries/FG.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+        <dirt-factor>0.5</dirt-factor>
+      </livery>
+    </model>
+    
+  </sim>
+
+</PropertyList>

@@ -1,0 +1,71 @@
+=== Heads Down display ===
+
+Page 1 - Navigation
+	Subpage 1 - TACAN		     		     
+	Subpage 2 - Autopilot
+
+Page 2 - SMS
+Page 3 - Mission Computer
+Page 4 - Systems
+	Subpage 1 - Engine
+	Subpage 2 - Air data
+	Subpage 3 - Fuel
+			      
+
+Switchable stuff in the Mission Computer page. ________________________________________________________________________________________________________________
+|Switch			|Description				|Default property	|Accepted values	|
+|-----------------------|---------------------------------------|-----------------------|-----------------------|
+|toggle_airports 	|Display airports on the map  		|/inputs/arpt  		|true, false  		|
+|toggle_centered 	|Center ND modes  			|/inputs/nd-centered  	|true, false 		|
+|toggle_data  		|Display way point data on the map  	|/inputs/data  		|true, false		|
+|toggle_display_mode  	|Change display mode  			|/mfd/display-mode  	|APP, MAP, PLAN, VOR	|
+|toggle_range  		|Range of the maps in nautical miles 	|/inputs/range-nm	|any positive number	|
+|toggle_true_north  	|Toggle true or magnetic north  	|/mfd/true-north  	|true, false		|
+|toggle_waypoints  	|Display waypoints (fixes) on the map   |/inputs/wpt  		|true, false		|
+|toggle_weather  	|Weather radar  			|/inputs/wxr  		|true, false  		|
+|toggle_stations  	|Show/hide stations (VOR/DME/NDB)  	|/inputs/sta  		|true, false  		|
+|_______________________|_______________________________________|_______________________|_______________________|
+
+ _______________________________________________________________
+|Property nodes used in Systems > Air data subpage		|
+|---------------------------------------------------------------|
+|/environment/config/boundary/entry[0]/pressure-sea-level-inhg	|
+|/environment/config/aloft/entry[0]/wind-speed-kt		|
+|/environment/config/aloft/entry[0]/temperature-degc		|
+|/environment/config/aloft/entry[0]/dewpoint-degc		|
+|_______________________________________________________________|
+
+The Canvas should be placed on "navBase.002" in harrier\Panel\hdd\hdd.ac
+
+=== Radar ===
+
+Should be placed on "radarBase.004" in harrier\Panel\radar\radar.ac
+
+Will use Mapstructre TFC layer for radar until Canvas Radar becomes available.
+
+From [http://wiki.flightgear.org/Canvas_MapStructure#Demonstration]
+var MapStructure_demo = func() {
+  var temp = {};
+  temp.dlg = canvas.Window.new([600,400],"dialog");
+  temp.canvas = temp.dlg.createCanvas().setColorBackground(1,1,1,0.5);
+  temp.root = temp.canvas.createGroup();
+  var TestMap = temp.root.createChild("map");
+  TestMap.setController("Aircraft position");
+  TestMap.setRange(25); 
+ 
+  TestMap.setTranslation(
+                           temp.canvas.get("view[0]")/2,
+                           temp.canvas.get("view[1]")/2
+                        );
+ var r = func(name,vis=1,zindex=nil) return caller(0)[0];
+ foreach(var type; [r('TFC'),r('APT'), r('APS') ] )
+        TestMap.addLayer(factory: canvas.SymbolLayer, type_arg: type.name, visible: type.vis, priority: type.zindex,);
+}; # MapStructure_demo
+MapStructure_demo();
+
+
+=== Heads Up Display ===
+Need to make it.
+
+Should be placed on "HUD" in harrier\Models\harrier.ac
+Need to make Canvas HUD framework ideally.

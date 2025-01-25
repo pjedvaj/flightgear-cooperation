@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+
+
+<model>
+    
+    <path>Aircraft/Westland_SeaKing/Models/bench/benches.xml</path>
+    <offsets>
+      <x-m>1 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.2 </z-m>
+    </offsets>
+	
+  </model>
+  
+  <model>
+    
+    <path>Aircraft/Westland_SeaKing/Models/bench/benches.xml</path>
+    <offsets>
+      <x-m>-6 </x-m>
+      <y-m> 1.15</y-m>
+      <z-m> -0.2 </z-m>
+	  <heading-deg>90</heading-deg>
+    </offsets>
+	
+  </model>
+  
+  <model>
+    
+    <path>Aircraft/Westland_SeaKing/Models/bench/benches.xml</path>
+    <offsets>
+      <x-m>-4.5 </x-m>
+      <y-m> 1.15</y-m>
+      <z-m> -0.2 </z-m>
+	  <heading-deg>90</heading-deg>
+    </offsets>
+	
+  </model>
+    <model>
+    
+    <path>Aircraft/Westland_SeaKing/Models/bench/benches.xml</path>
+    <offsets>
+      <x-m>-3 </x-m>
+      <y-m> 1.15</y-m>
+      <z-m> -0.2 </z-m>
+	  <heading-deg>90</heading-deg>
+    </offsets>
+	
+  </model>
+
+
+
+
+  <model>
+    
+    <path>Aircraft/Westland_SeaKing/Models/bench/benches.xml</path>
+    <offsets>
+      <x-m>-4.5 </x-m>
+      <y-m> -1.15</y-m>
+      <z-m> -0.2 </z-m>
+	  <heading-deg>-90</heading-deg>
+    </offsets>
+	
+  </model>
+    <model>
+    
+    <path>Aircraft/Westland_SeaKing/Models/bench/benches.xml</path>
+    <offsets>
+      <x-m>-3 </x-m>
+      <y-m> -1.15</y-m>
+      <z-m> -0.2 </z-m>
+	  <heading-deg>-90</heading-deg>
+    </offsets>
+	
+  </model>
+</PropertyList>

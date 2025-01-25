@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>flame.ac</path>
+  <nopreview/>
+
+  <animation>
+    <object-name>Reheat</object-name>
+    <object-name>flammeDay</object-name>
+    <object-name>flammeDusk</object-name>
+    <object-name>flammeNight</object-name>
+    <type>select</type>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/afterburner</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Reheat</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>Reheat</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>Reheat</object-name>
+    <emission>
+      <property>controls/engines/engine[0]/throttle</property>
+      <red>   1.000 </red>
+      <green> 0.800 </green>
+      <blue>  0.000 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>Reheat</object-name>
+    <property>engines/engine[0]/n1</property>
+    <factor> 3 </factor>   <!-- FACTOR DE ROTACIÓN ó VELOCIDAD DE ROTACIÓN (Valor original era 3) -->
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Afterburner -->
+  <model>
+    <name>flammeDay</name>
+    <path>combustion_Day.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>flammeDusk</name>
+    <path>combustion_Dusk.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>flammeNight</name>
+    <path>combustion_Night.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ******************************************** -->
+  <animation>
+    <type>select</type>
+    <object-name>flammeDay</object-name>
+    <condition>
+      <less-than>
+        <property>sim/time/sun-angle-rad</property>
+        <value>1.45</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>flammeDusk</object-name>
+    <condition>
+      <and>
+        <less-than>
+          <property>sim/time/sun-angle-rad</property>
+          <value>1.7</value>
+        </less-than>
+        <greater-than>
+          <property>sim/time/sun-angle-rad</property>
+          <value>1.45</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>flammeNight</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/time/sun-angle-rad</property>
+        <value>1.7</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>scale</type>
+    <object-name>flammeDay</object-name>
+    <object-name>flammeDusk</object-name>
+    <object-name>flammeNight</object-name>
+    <property>engines/engine[0]/afterburner</property>
+    <x-min> 0.0 </x-min>
+    <y-min> 1.0 </y-min>
+    <z-min> 1.0 </z-min>
+    <x-factor> 2 </x-factor>
+    <y-factor> 1 </y-factor>
+    <z-factor> 1 </z-factor>
+  </animation>
+
+</PropertyList>

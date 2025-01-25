@@ -1,0 +1,1137 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- 1 Pylon 1 L -->
+
+	<model>
+		<name>1LR-60</name>
+		<path>Aircraft/Su-25/Models/Payload/R-60.ac</path>
+		<offsets>
+			<x-m>1.00</x-m>
+			<y-m>-5.12</y-m>
+			<z-m>1.57</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>1LR-60</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[0]/selected</property>
+					<value>R-60M</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[0]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>1LL-370-3S</name>
+		<path>Aircraft/Su-25/Models/Payload/L-370-3S.ac</path>
+		<offsets>
+			<x-m>1.24</x-m>
+			<y-m>-5.12</y-m>
+			<z-m>1.603</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>1LL-370-3S</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[0]/selected</property>
+					<value>L-370-3S pod</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[0]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 2 Pylon 2 L -->
+	
+	<model>
+		<name>2LB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-1.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-1.xml</path>
+		<offsets>
+			<x-m>0.80</x-m>
+			<y-m>-4.43</y-m>
+			<z-m>1.37</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>2LB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[1]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[1]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	
+
+	<!-- FAB-250 bomb 1 -->
+
+	<model>
+		<name>P2-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-1.xml</path>
+		<offsets>
+			<x-m>0.80</x-m>
+			<y-m>-4.43</y-m>
+			<z-m>1.49</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P2-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[1]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[1]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 3 Pylon 3 L -->
+	
+	<model>
+		<name>3LDroptank</name>
+		<path>Aircraft/Su-25/Models/Payload/Droptank.ac</path>
+		<offsets>
+			<x-m>0.60</x-m>
+			<y-m>-3.66</y-m>
+			<z-m>1.52</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>3LDroptank</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[2]/selected</property>
+					<value>Fuel droptank</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>3LB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-2.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-2.xml</path>
+		<offsets>
+			<x-m>0.50</x-m>
+			<y-m>-3.66</y-m>
+			<z-m>1.43</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>3LB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[2]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>3LKh-25</name>
+		<path>Aircraft/Su-25/Models/Payload/Kh-25.ac</path>
+		<offsets>
+			<x-m>0.60</x-m>
+			<y-m>-3.66</y-m>
+			<z-m>1.52</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>3LKh-25</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[2]/selected</property>
+					<value>Kh-25 missile</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- FAB-250 bomb 2 -->
+
+	<model>
+		<name>P3-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-2.xml</path>
+		<offsets>
+			<x-m>0.60</x-m>
+			<y-m>-3.66</y-m>
+			<z-m>1.54</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P3-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[2]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>P3-BL-13</name>
+		<path>Aircraft/Su-25/Models/Payload/BL-13/BL-13-1.xml</path>
+		<offsets>
+			<x-m>0.50</x-m>
+			<y-m>-3.66</y-m>
+			<z-m>1.50</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P3-BL-13</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[2]/selected</property>
+					<value>S-13 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 4 Pylon 4 L -->
+	
+	<model>
+		<name>4LB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-3.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-3.xml</path>
+		<offsets>
+			<x-m>0.14</x-m>
+			<y-m>-2.86</y-m>
+			<z-m>1.50</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>4LB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[3]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[3]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>4LKh-25</name>
+		<path>Aircraft/Su-25/Models/Payload/Kh-25.ac</path>
+		<offsets>
+			<x-m>0.40</x-m>
+			<y-m>-2.86</y-m>
+			<z-m>1.52</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>4LKh-25</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[3]/selected</property>
+					<value>Kh-25 missile</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[3]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- FAB-250 bomb 3 -->
+
+	<model>
+		<name>P4-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-3.xml</path>
+		<offsets>
+			<x-m>0.40</x-m>
+			<y-m>-2.86</y-m>
+			<z-m>1.59</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P4-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[3]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[3]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>P4-BL-13</name>
+		<path>Aircraft/Su-25/Models/Payload/BL-13/BL-13-2.xml</path>
+		<offsets>
+			<x-m>0.14</x-m>
+			<y-m>-2.86</y-m>
+			<z-m>1.57</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P4-BL-13</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[3]/selected</property>
+					<value>S-13 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[3]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 5 Pylon 5 L -->
+	
+	<model>
+		<name>5LDroptank</name>
+		<path>Aircraft/Su-25/Models/Payload/Droptank.ac</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>-2.06</y-m>
+			<z-m>1.57</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5LDroptank</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[4]/selected</property>
+					<value>Fuel droptank</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[4]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>5LB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-4.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-4.xml</path>
+		<offsets>
+			<x-m>-0.10</x-m>
+			<y-m>-2.06</y-m>
+			<z-m>1.54</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5LB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[4]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[4]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- FAB-250 bomb 4 -->
+
+	<model>
+		<name>P5-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-4.xml</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>-2.06</y-m>
+			<z-m>1.64</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P5-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[4]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[4]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>5LKAB-500L</name>
+		<path>Aircraft/Su-25/Models/Payload/kab-500l.ac</path>
+		<offsets>
+			<x-m>-0.35</x-m>
+			<y-m>-2.06</y-m>
+			<z-m>1.59</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5LKAB-500L</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[4]/selected</property>
+					<value>KAB-500L bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[4]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>5LKh-29T</name>
+		<path>Aircraft/Su-25/Models/Payload/kh-29t.ac</path>
+		<offsets>
+			<x-m>-0.17</x-m>
+			<y-m>-2.06</y-m>
+			<z-m>1.62</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5LKh-29T</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[4]/selected</property>
+					<value>Kh-29T missile</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[4]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 6 Pylon 5 R -->
+	
+	<model>
+		<name>5RDroptank</name>
+		<path>Aircraft/Su-25/Models/Payload/Droptank.ac</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>2.06</y-m>
+			<z-m>1.57</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5RDroptank</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[5]/selected</property>
+					<value>Fuel droptank</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[5]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>5RB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-5.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-5.xml</path>
+		<offsets>
+			<x-m>-0.10</x-m>
+			<y-m>2.06</y-m>
+			<z-m>1.54</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5RB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[5]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[5]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- FAB-250 bomb 5 -->
+
+	<model>
+		<name>P6-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-5.xml</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>2.06</y-m>
+			<z-m>1.64</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P6-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[5]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[5]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>5RKAB-500L</name>
+		<path>Aircraft/Su-25/Models/Payload/kab-500l.ac</path>
+		<offsets>
+			<x-m>-0.35</x-m>
+			<y-m>2.06</y-m>
+			<z-m>1.59</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5RKAB-500L</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[5]/selected</property>
+					<value>KAB-500L bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[5]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>5RKh-29T</name>
+		<path>Aircraft/Su-25/Models/Payload/kh-29t.ac</path>
+		<offsets>
+			<x-m>-0.17</x-m>
+			<y-m>2.06</y-m>
+			<z-m>1.62</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>5RKh-29T</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[5]/selected</property>
+					<value>Kh-29T missile</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[5]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 7 Pylon 4 R -->
+	
+	<model>
+		<name>4RB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-6.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-6.xml</path>
+		<offsets>
+			<x-m>0.14</x-m>
+			<y-m>2.86</y-m>
+			<z-m>1.50</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>4RB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[6]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[6]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>4RKh-25</name>
+		<path>Aircraft/Su-25/Models/Payload/Kh-25.ac</path>
+		<offsets>
+			<x-m>0.40</x-m>
+			<y-m>2.86</y-m>
+			<z-m>1.52</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>4RKh-25</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[6]/selected</property>
+					<value>Kh-25 missile</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[6]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- FAB-250 bomb 6 -->
+
+	<model>
+		<name>P7-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-6.xml</path>
+		<offsets>
+			<x-m>0.40</x-m>
+			<y-m>2.86</y-m>
+			<z-m>1.59</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P7-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[6]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[6]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>P7-BL-13</name>
+		<path>Aircraft/Su-25/Models/Payload/BL-13/BL-13-3.xml</path>
+		<offsets>
+			<x-m>0.14</x-m>
+			<y-m>2.86</y-m>
+			<z-m>1.57</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P7-BL-13</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[6]/selected</property>
+					<value>S-13 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[6]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 8 Pylon 3 R -->
+	
+	<model>
+		<name>3RDroptank</name>
+		<path>Aircraft/Su-25/Models/Payload/Droptank.ac</path>
+		<offsets>
+			<x-m>0.60</x-m>
+			<y-m>3.66</y-m>
+			<z-m>1.52</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>3RDroptank</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[7]/selected</property>
+					<value>Fuel droptank</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[7]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>3RB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-7.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-7.xml</path>
+		<offsets>
+			<x-m>0.50</x-m>
+			<y-m>3.66</y-m>
+			<z-m>1.43</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>3RB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[7]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[7]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>3RKh-25</name>
+		<path>Aircraft/Su-25/Models/Payload/Kh-25.ac</path>
+		<offsets>
+			<x-m>0.60</x-m>
+			<y-m>3.66</y-m>
+			<z-m>1.52</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>3RKh-25</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[7]/selected</property>
+					<value>Kh-25 missile</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[7]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- FAB-250 bomb 7 -->
+
+	<model>
+		<name>P8-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-7.xml</path>
+		<offsets>
+			<x-m>0.60</x-m>
+			<y-m>3.66</y-m>
+			<z-m>1.54</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P8-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[7]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[7]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>P8-BL-13</name>
+		<path>Aircraft/Su-25/Models/Payload/BL-13/BL-13-4.xml</path>
+		<offsets>
+			<x-m>0.50</x-m>
+			<y-m>3.66</y-m>
+			<z-m>1.50</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P8-BL-13</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[7]/selected</property>
+					<value>S-13 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[7]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- 9 Pylon 2 R -->
+	
+	<model>
+		<name>2RB-8M1</name>
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/ub-32.ac</path> -->
+		<!-- <path>Aircraft/Su-25/Models/Payload/UB-32/UB-32-8.xml</path> -->
+		<path>Aircraft/Su-25/Models/Payload/B-8M1/B-8M1-8.xml</path>
+		<offsets>
+			<x-m>0.80</x-m>
+			<y-m>4.43</y-m>
+			<z-m>1.37</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>2RB-8M1</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[8]/selected</property>
+					<value>S-8 rockets</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[8]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- FAB-250 bomb 8 -->
+
+	<model>
+		<name>P9-FAB-250</name>
+		<path>Aircraft/Su-25/Models/Payload/FAB-250/FAB-250-8.xml</path>
+		<offsets>
+			<x-m>0.80</x-m>
+			<y-m>4.43</y-m>
+			<z-m>1.49</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P9-FAB-250</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[8]/selected</property>
+					<value>FAB-250 bomb</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[8]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- pylon 1 R -->
+	
+	<model>
+		<name>1RR-60</name>
+		<path>Aircraft/Su-25/Models/Payload/R-60.ac</path>
+		<offsets>
+			<x-m>1.00</x-m>
+			<y-m>5.12</y-m>
+			<z-m>1.57</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>1RR-60</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[9]/selected</property>
+					<value>R-60M</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[9]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>1RL-370-3S</name>
+		<path>Aircraft/Su-25/Models/Payload/L-370-3S.ac</path>
+		<offsets>
+			<x-m>1.24</x-m>
+			<y-m>5.12</y-m>
+			<z-m>1.603</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>1RL-370-3S</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[9]/selected</property>
+					<value>L-370-3S pod</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[9]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- Parachute -->
+
+	<model>
+  		<name>Drag_Parachute L</name>
+  		<path>Aircraft/Su-25/Models/TPK-27/TPK-27L.xml</path>
+  		<offsets>
+  			<x-m>7.39095</x-m>
+   			<y-m>0.0</y-m>
+   			<z-m>2.14613</z-m>
+			<roll-deg>5</roll-deg>
+			<heading-deg>15</heading-deg>
+  		</offsets>
+ 	</model>
+
+	<model>
+  		<name>Drag_Parachute R</name>
+  		<path>Aircraft/Su-25/Models/TPK-27/TPK-27R.xml</path>
+  		<offsets>
+  			<x-m>7.39095</x-m>
+   			<y-m>0.0</y-m>
+   			<z-m>2.14613</z-m>
+			<roll-deg>-5</roll-deg>
+			<heading-deg>-15</heading-deg>
+  		</offsets>
+ 	</model>
+	
+</PropertyList>

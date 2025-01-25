@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- Effects for the Sea Harrier FA2 -->
+
+  <model>
+   <path>Aircraft/harrier/Models/Effects/smoketrail-light.xml</path>
+    <offsets>
+     <x-m>-10</x-m>
+     <y-m>-0.6</y-m>
+     <z-m>-6.4</z-m>
+     <pitch-deg>90</pitch-deg>
+     </offsets>
+  </model>
+  <model>
+    <path>Aircraft/harrier/Models/Effects/smoketrail-light.xml</path>
+    <offsets>
+     <x-m>-10</x-m>
+     <y-m>0.6</y-m>
+     <z-m>-6.4</z-m>
+     <pitch-deg>90</pitch-deg>
+    </offsets>
+   </model>
+
+<model>
+  <path>Aircraft/harrier/Models/Effects/wingtip-vortex.xml</path>
+   <offsets>
+     <x-m> -9.45 </x-m>
+     <y-m> -3.6 </y-m>
+     <z-m>-5.95</z-m>
+     <pitch-deg>0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/harrier/Models/Effects/wingtip-vortex.xml</path>
+   <offsets>
+     <x-m> -9.45 </x-m>
+     <y-m> 3.6 </y-m>
+     <z-m> -5.95 </z-m>
+     <pitch-deg>0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <!--  Contrails  -->
+  <model>
+    <path>Aircraft/harrier/Models/Effects/contrail.xml</path>
+    <offsets>
+     <x-m>-2</x-m>
+     <y-m>-0.6</y-m>
+     <z-m>-6.01</z-m>
+    </offsets>
+  </model>
+  <model>
+    <path>Aircraft/harrier/Models/Effects/contrail.xml</path>
+    <offsets>
+     <x-m>-2</x-m>
+     <y-m>0.6</y-m>
+     <z-m>-6.01</z-m>
+    </offsets>
+  </model>
+
+<!-- Tyre smoke/spray -->
+
+<model>
+	<path>Aircraft/harrier/Models/Effects/Tyresmoke/tyre-smoke-nose.xml</path>
+  	<name>tyre-smoke-n</name>
+   	<offsets>
+   		<x-m>-13.7488</x-m>
+   		<y-m>0.0</y-m>
+   		<z-m>-7.718</z-m>
+  	</offsets>
+</model>
+ 
+<model>
+	<path>Aircraft/harrier/Models/Effects/Tyresmoke/tyre-smoke-mid.xml</path>
+  	<name>tyre-smoke-m</name>
+  	<offsets>
+ 		<x-m>-10.3488</x-m>
+		<y-m>0.0</y-m>
+		<z-m>-7.3124</z-m>
+  	</offsets>
+</model>
+ 
+<model>
+	<path>Aircraft/harrier/Models/Effects/Tyresmoke/tyre-smoke-stbd.xml</path>
+  	<name>tyre-smoke-s</name>
+   	<offsets>
+ 		<x-m>-9.8</x-m>
+		<y-m>3.362</y-m>
+		<z-m>-7.2298</z-m>
+  	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/harrier/Models/Effects/Tyresmoke/tyre-smoke-port.xml</path>
+  	<name>tyre-smoke-p</name>
+  	<offsets>
+ 		<x-m>-9.8</x-m>
+		<y-m>-3.362</y-m>
+		<z-m>-7.2298</z-m>
+  	</offsets>
+</model>
+
+  <!-- Impact explosion -->
+  <model>
+  <path>Aircraft/harrier/Models/Effects/Explosion/Explode.xml</path>
+  <condition>
+    <property>sim/multiplay/generic/int[7]</property>
+  </condition>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+  
+  <!-- Impact fire -->
+  <model>
+  <path>Aircraft/harrier/Models/Effects/Explosion/ImpactFire.xml</path>
+  <condition>
+    <equals>
+      <property>sim/multiplay/generic/int[8]</property>
+      <value>1</value>
+    </equals>
+  </condition>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+  
+  <!-- Impact fire smoke -->
+  <model>
+  <path>Aircraft/harrier/Models/Effects/Explosion/ImpactFireSmoke.xml</path>
+  <condition>
+    <equals>
+      <property>sim/multiplay/generic/int[8]</property>
+      <value>1</value>
+    </equals>
+  </condition>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+  
+  <!-- Flight fire -->
+  <model>
+  <path>Aircraft/harrier/Models/Effects/Explosion/FlightFire.xml</path>
+  <condition>
+    <equals>
+      <property>sim/multiplay/generic/int[8]</property>
+      <value>2</value>
+    </equals>
+  </condition>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+    </offsets>
+
+  </model>
+  
+
+  <!-- Flight fire smoke -->
+  <model>
+  <path>Aircraft/harrier/Models/Effects/Explosion/FlightFireSmoke.xml</path>
+  <condition>
+    <equals>
+      <property>sim/multiplay/generic/int[8]</property>
+      <value>2</value>
+    </equals>
+  </condition>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+    </offsets>
+  </model> 
+
+</PropertyList>

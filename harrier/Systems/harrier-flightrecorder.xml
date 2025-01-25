@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+
+<PropertyList>   
+  
+<name type="string">Harrier flight recorder setup</name>
+
+<signals include="/Aircraft/Generic/flightrecorder/components/environment.xml"/>
+<signals include="/Aircraft/Generic/flightrecorder/components/position.xml"/>
+<signals include="/Aircraft/Generic/flightrecorder/components/controls.xml"/>
+<signals include="/Aircraft/Generic/flightrecorder/components/surfaces.xml"/>
+<signals include="/Aircraft/Generic/flightrecorder/components/engine-jet.xml"/>
+<signals include="/Aircraft/Generic/flightrecorder/components/tanks.xml">
+	<count type="int">4</count>
+</signals>
+<signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
+	<count type="int">3</count>
+</signals>
+  
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/crashed</property>
+       
+</signal> 
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/sound/explode</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/multiplay/generic/int[7]</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>int8</type>
+          
+	<property type="string">/sim/multiplay/generic/int[8]</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/pilot-g</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/shutdown</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>float</type>
+          
+	<property type="string">/sim/sound/missile-vol</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>float</type>
+          
+	<property type="string">/sim/sound/gunfire-vol</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>float</type>
+          
+	<property type="string">/sim/sound/startup-sound-factor</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/sound/high-g</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/sound/low-g</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>float</type>
+          
+	<property type="string">/sim/hud/ccip_dev_m</property>
+       
+</signal>
+      
+<signal>
+          	
+	<type>bool</type>
+          
+	<property type="string">/sim/hud/visibility[1]</property>
+       
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/sim/model/click</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/sim/model/lights/beacon</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/sim/model/flaps-broken</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/sim/model/canopy-broken</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/sim/model/aircraft-broken</property>
+</signal>
+
+<signal>
+	<type>float</type>
+	<property type="string">/canopy/position-norm</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/controls/armament/missile-explode</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/controls/armament/missile-explode2</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/controls/armament/flare-release</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/controls/armament/flare-release2</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/controls/armament/missile-sound</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/controls/switches/landing-light</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/instrumentation/panel-lights</property>
+</signal>
+
+<signal>
+	<type>int</type>
+	<property type="string">/instrumentation/hdd/volts</property>
+</signal>
+
+<signal>
+	<type>int</type>
+	<property type="string">/instrumentation/radar/volts</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/instrumentation/rwr/serviceable</property>
+</signal>
+
+<signal>
+	<type>bool</type>
+	<property type="string">/instrumentation/hud/show-ccip</property>
+</signal>
+
+<signal>
+	<type>float</type>
+	<property type="string">/controls/engines/engine[0]/mixture</property>
+</signal>
+
+</PropertyList>

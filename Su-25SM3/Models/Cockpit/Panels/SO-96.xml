@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>so-96.ac</path>
+
+<!-- base1
+base2
+kontrlightbase
+kontrlightbutton
+knob1
+knob2
+knob3
+switch1
+switch2
+switch3
+switch4
+so96-screws -->
+
+ <animation>
+  <type>material</type>
+  <object-name>kontrlightbutton</object-name>
+  <object-name>switchtext</object-name>
+  <object-name>button_restart</object-name>
+  <object-name>radio_sw.001</object-name>
+  <object-name>radio_sw.002</object-name>
+  <object-name>radio_sw.003</object-name>
+  <object-name>radio_sw.004</object-name>
+  <object-name>radio_sw.005</object-name>
+  <object-name>radio_sw.006</object-name>
+  <object-name>radio_sw.007</object-name>
+  <object-name>radio_sw.008</object-name>
+  <object-name>radio_sw.009</object-name>
+  <object-name>radio_sw.010</object-name>
+   <emission>
+        <red>0.2</red>
+        <green>0.2</green>
+        <blue>0.2</blue>
+            <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        </emission>
+        <condition>
+        	<property>/controls/power/battery</property>
+          <not>
+           <property>/controls/lighting/nightmode</property>
+          </not>
+        </condition>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>kontrlightbutton</object-name>
+  <object-name>switchtext</object-name>
+  <object-name>button_restart</object-name>
+  <object-name>radio_sw.001</object-name>
+  <object-name>radio_sw.002</object-name>
+  <object-name>radio_sw.003</object-name>
+  <object-name>radio_sw.004</object-name>
+  <object-name>radio_sw.005</object-name>
+  <object-name>radio_sw.006</object-name>
+  <object-name>radio_sw.007</object-name>
+  <object-name>radio_sw.008</object-name>
+  <object-name>radio_sw.009</object-name>
+  <object-name>radio_sw.010</object-name>
+   <emission>
+        <red>0.8</red>
+        <green>0.3</green>
+        <blue>0.1</blue>
+            <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        </emission>
+        <condition>
+        <and>
+        	<property>/controls/power/battery</property>
+          <property>/controls/lighting/nightmode</property>
+        </and>
+        </condition>
+ </animation>
+
+ <animation>
+    <type>material</type>
+    <object-name>base1</object-name>
+    <object-name>base2</object-name>
+    <object-name>base3</object-name>
+    	<emission>
+      		<red>0.05</red>
+      		<green>0.03</green>
+      		<blue>0.02</blue>
+      		<!-- <factor-prop>controls/lighting/panels-norm</factor-prop> -->
+	        <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    	</emission>
+      	<condition>
+    		<property>/controls/power/battery</property>
+    		<property>/controls/lighting/nightmode</property>
+  		</condition>
+  	</animation>
+
+ <!-- <animation>
+    <type>material</type>
+    <object-name>knob1</object-name>
+    <object-name>knob2</object-name>
+    <object-name>knob3</object-name>
+    <object-name>knob_volume</object-name>
+    <object-name>knob_volume2</object-name>
+    <object-name>switch1</object-name>
+    <object-name>switch2</object-name>
+    <object-name>switch3</object-name>
+    <object-name>switch4</object-name>
+    <object-name>switches2</object-name>
+    <emission>
+      <red>0.1</red>
+      <green>0.1</green>
+      <blue>0.1</blue>
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+      <condition>
+        <property>/controls/power/battery</property>
+      </condition>
+  </animation> -->
+
+  <animation>
+	 	<type>material</type> 
+	 	<object-name>switchesbase</object-name>
+	 	<object-name>switchesbase2</object-name>
+     <object-name>so96-screws</object-name>
+     <object-name>so96-screws.001</object-name>
+  		<specular>
+   		<red>1.0</red>
+   		<green>1.0</green>
+   		<blue>1.0</blue>
+  		</specular>
+  		<shininess>105</shininess>
+	</animation>
+
+  <animation>
+      <type>rotate</type>
+      <object-name>radio_sw.001</object-name>
+      <property>/controls/power/rsbn-ark</property>
+      <offset-deg>-25</offset-deg>
+      <factor>50</factor>
+      <center>
+        <x-m>0.07199</x-m>
+        <y-m>0</y-m>
+        <z-m>0.00533</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+ 
+   <text>
+    <name>transponder_id</name>
+    <font>lcd.txf</font>
+    <character-size type="double">0.005</character-size>
+    <offsets>
+      <x-m>-0.03017</x-m>
+      <y-m>0.0235</y-m>
+      <z-m>0.00868</z-m>
+      <pitch-deg>-75</pitch-deg>
+    </offsets>
+    <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">number-value</type>
+    <format type="string">%3.0f</format>
+    <truncate type="bool">false</truncate>
+    <!--<property>instrumentation/nav[0]/frequencies/standby-mhz</property>-->
+    <property>instrumentation/transponder/id-code</property>
+    <draw-text type="bool">true</draw-text>
+    <alignment>left-top</alignment>
+  </text>
+
+  <text>
+    <name>ac_longitude</name>
+    <font>lcd.txf</font>
+    <character-size type="double">0.005</character-size>
+    <offsets>
+      <x-m>0.008</x-m>
+      <y-m>-0.02342</y-m>
+      <z-m>0.01076</z-m>
+      <pitch-deg>-75</pitch-deg>
+    </offsets>
+    <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">number-value</type>
+    <format type="string">%3.4f</format>
+    <truncate type="bool">false</truncate>
+    <property>/position/longitude-deg</property>
+    <draw-text type="bool">true</draw-text>
+    <alignment>left-top</alignment>
+  </text>
+
+  <text>
+    <name>ac_latitude</name>
+    <font>lcd.txf</font>
+    <character-size type="double">0.005</character-size>
+    <offsets>
+      <x-m>0.0145</x-m>
+      <y-m>-0.02342</y-m>
+      <z-m>0.01076</z-m>
+      <pitch-deg>-75</pitch-deg>
+    </offsets>
+    <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">number-value</type>
+    <format type="string">%3.4f</format>
+    <truncate type="bool">false</truncate>
+    <property>/position/latitude-deg</property>
+    <draw-text type="bool">true</draw-text>
+    <alignment>left-top</alignment>
+  </text>
+
+  <animation>
+    <type>pick</type>
+    <object-name>radio_sw.001</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/power/rsbn-ark</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>switchclicksound.click("switch2")</script>
+      </binding>
+    </action>
+    <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>rsbn-ark-switch-lbl</tooltip-id>
+                <label>Mode: %s</label>
+                <property>/controls/power/rsbn-ark</property>
+                <mapping>nasal</mapping>
+                <script>
+                    var modes = ['ARK', 'RSBN'];
+                    return modes[arg[0]];
+                </script>
+            </binding>
+    </hovered>
+  </animation>
+
+
+</PropertyList>

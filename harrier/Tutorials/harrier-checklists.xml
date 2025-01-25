@@ -1,0 +1,605 @@
+<PropertyList>
+
+<checklist>  
+	<title>Startup</title>
+    	<item>
+      		<name>Primary bus battery connection</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/battery</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/battery</property>
+			<value>true</value>
+		</binding>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/attitude-indicator/serviceable</property>
+			<value>true</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Anti-collision beacon lights</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/controls/lighting/beacon</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/lighting/beacon</property>
+			<value>true</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Engine</name>
+      		<value>On</value>
+		<condition>
+        		<greater-than>
+          			<property>/engines/engine[0]/rpm</property>
+				<value>50</value>
+        		</greater-than>
+      		</condition>
+		<binding>
+        		<command>nasal</command>
+			<script>engines.Pegasus_mk106.autostart();</script>
+		</binding>
+		<marker>
+        		<x-m>-15.5190</x-m>
+        		<y-m>-0.3165</y-m>
+        		<z-m>-5.6256</z-m>
+        		<scale>2.3719</scale>
+      		</marker>
+    	</item>
+    	<item>
+      		<name>Primary bus alternator connection</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/alternator</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/alternator</property>
+			<value>true</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Primary bus battery connection</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/battery</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/battery</property>
+			<value>false</value>
+		</binding>
+    	</item>
+   	<item>
+      		<name>HUD</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/hud/on</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/hud/on</property>
+			<value>true</value>
+		</binding>
+		 <marker>
+        		<x-m>-15.8</x-m>
+        		<y-m>0.0</y-m>
+        		<z-m>-5.2</z-m>
+        		<scale>11.0</scale>
+      		</marker>  
+    	</item>
+  	<item>
+      		<name>HDD</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/hdd/on</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/hdd/on</property>
+			<value>true</value>
+		</binding>
+		<marker>
+        		<x-m>-15.7455</x-m>
+        		<y-m>-0.2008</y-m>
+        		<z-m>-5.4802</z-m>
+        		<scale>1.0</scale>
+      		</marker>
+    	</item>
+  	<item>
+      		<name>Radar</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/radar/on</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+          		<property>/instrumentation/radar/on</property>
+			<value>true</value>
+		</binding>
+		<marker>
+        		<x-m>-15.7455</x-m>
+        		<y-m>0.1769</y-m>
+        		<z-m>-5.4355</z-m>
+        		<scale>1.0</scale>
+      		</marker>
+    	</item>
+    	<item>
+      		<name>Landing light</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/landing-light</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/landing-light</property>
+			<value>true</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Panel lights (optional)</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/panel-lights</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/panel-lights</property>
+			<value>true</value>
+		</binding>
+    	</item>
+</checklist>
+
+<checklist>  
+	<title>Taxi</title>
+    	<item>
+      		<name>Parking brake</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/controls/gear/brake-parking</property>
+				<value>0</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/gear/brake-parking</property>
+			<value>0</value>
+		</binding>
+    	</item>
+   	<item>
+      		<name>Engine power</name>
+      		<value>1%</value>
+		<condition>
+        		<greater-than-equals>
+          			<property>/controls/engines/engine[0]/throttle</property>
+				<value>0.01</value>
+        		</greater-than-equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/throttle</property>
+			<value>0.03</value>
+		</binding>
+    	</item>
+  	<item>
+      		<name>Canopy</name>
+      		<value>As required</value>
+		<binding>
+        		<command>nasal</command>
+			<script>harrier.canopy.toggle();</script>
+		</binding>
+    	</item>
+</checklist>
+
+<checklist>  
+	<title>Horizontal take-off</title>
+    	<item>
+      		<name>Flaps</name>
+      		<value>As desired</value>
+		<marker>
+        		<x-m>-15.7140</x-m>
+        		<y-m>-0.2256</y-m>
+        		<z-m>-5.4347</z-m>
+        		<scale>1.1157</scale>
+      		</marker>
+    	</item>
+   	<item>
+      		<name>Engine power</name>
+      		<value>Maximum</value>
+		<condition>
+        		<equals>
+          			<property>/controls/engines/engine[0]/throttle</property>
+				<value>1</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/throttle</property>
+			<value>1</value>
+		</binding>
+    	</item>
+</checklist>
+
+<checklist>  
+	<title>Short take-off</title>
+    	<item>
+      		<name>Flaps</name>
+      		<value>As desired</value>
+		<marker>
+        		<x-m>-15.7140</x-m>
+        		<y-m>-0.2256</y-m>
+        		<z-m>-5.4347</z-m>
+        		<scale>1.1157</scale>
+      		</marker>
+    	</item>
+   	<item>
+      		<name>Thrust vector</name>
+      		<value>45 degrees</value>
+		<condition>
+        		<less-than-equals>
+          			<property>/controls/engines/engine[0]/mixture</property>
+				<value>0.6</value>
+        		</less-than-equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/mixture</property>
+			<value>0.5</value>
+		</binding>
+    	</item>
+   	<item>
+      		<name>Engine power</name>
+      		<value>100%</value>
+		<condition>
+        		<equals>
+          			<property>/controls/engines/engine[0]/throttle</property>
+				<value>1</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/throttle</property>
+			<value>1</value>
+		</binding>
+    	</item>
+</checklist>
+
+<checklist>  
+	<title>Vertical take-off</title>
+   	<item>
+      		<name>Thrust vector</name>
+      		<value>85 degrees</value>
+		<condition>
+        		<less-than-equals>
+          			<property>/controls/engines/engine[0]/mixture</property>
+				<value>0.2</value>
+        		</less-than-equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/mixture</property>
+			<value>0.26</value>
+		</binding>
+    	</item>
+   	<item>
+      		<name>Engine power</name>
+      		<value>100%</value>
+		<condition>
+        		<equals>
+          			<property>/controls/engines/engine[0]/throttle</property>
+				<value>1</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/throttle</property>
+			<value>1</value>
+		</binding>
+    	</item>
+</checklist>
+  
+<checklist>  
+	<title>Cruise</title>
+   	<item>
+      		<name>Other systems</name>
+      		<value>As desired</value>
+    	</item>
+   	<item>
+      		<name>Engine power</name>
+      		<value>75%</value>
+		<condition>
+        		<greater-than-equals>
+          			<property>/controls/engines/engine[0]/throttle</property>
+				<value>0.6</value>
+        		</greater-than-equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/throttle</property>
+			<value>0.75</value>
+		</binding>
+    	</item>
+</checklist>
+
+<checklist>  
+	<title>Horizontal landing</title>
+   	<item>
+      		<name>Engine power</name>
+      		<value>As desired</value>
+    	</item>
+   	<item>
+      		<name>Flaps</name>
+      		<value>As desired</value>
+		<marker>
+        		<x-m>-15.7140</x-m>
+        		<y-m>-0.2256</y-m>
+        		<z-m>-5.4347</z-m>
+        		<scale>1.1157</scale>
+      		</marker>
+    	</item>
+</checklist>
+
+<checklist>  
+	<title>Vertical landing</title>
+   	<item>
+      		<name>Thrust vector</name>
+      		<value>85 degrees</value>
+		<condition>
+        		<less-than-equals>
+          			<property>/controls/engines/engine[0]/mixture</property>
+				<value>0.2</value>
+        		</less-than-equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/mixture</property>
+			<value>0.26</value>
+		</binding>
+    	</item>
+   	<item>
+      		<name>Engine power</name>
+      		<value>90% or higher</value>
+		<condition>
+        		<greater-than-equals>
+          			<property>/controls/engines/engine[0]/throttle</property>
+				<value>0.9</value>
+        		</greater-than-equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+         		<property>/controls/engines/engine[0]/throttle</property>
+			<value>0.9</value>
+		</binding>
+    	</item>
+  	<item>
+      		<name>Flaps</name>
+      		<value>As desired</value>
+		<marker>
+        		<x-m>-15.7140</x-m>
+        		<y-m>-0.2256</y-m>
+        		<z-m>-5.4347</z-m>
+        		<scale>1.1157</scale>
+      		</marker>
+    	</item>
+  	<item>
+      		<name>Airbrake</name>
+      		<value>As desired</value>
+    	</item>
+</checklist>
+
+<checklist>  
+	<title>Shutdown</title>
+    	<item>
+      		<name>Panel lights (optional)</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/panel-lights</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/panel-lights</property>
+			<value>false</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Landing light</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/landing-light</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/landing-light</property>
+			<value>false</value>
+		</binding>
+    	</item>
+   	<item>
+      		<name>HUD</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/hud/on</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/hud/on</property>
+			<value>false</value>
+		</binding>
+		<marker>
+        		<x-m>-15.8</x-m>
+        		<y-m>0.0</y-m>
+        		<z-m>-5.2</z-m>
+        		<scale>11.0</scale>
+      		</marker>
+    	</item>
+  	<item>
+      		<name>HDD</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/hdd/on</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/hdd/on</property>
+			<value>false</value>
+		</binding>
+		<marker>
+        		<x-m>-15.7455</x-m>
+        		<y-m>-0.2008</y-m>
+        		<z-m>-5.4802</z-m>
+        		<scale>1.0</scale>
+      		</marker>
+    	</item>
+  	<item>
+      		<name>Radar</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/instrumentation/radar/on</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+          		<property>/instrumentation/radar/on</property>
+			<value>false</value>
+		</binding>
+		 <marker>
+        		<x-m>-15.7455</x-m>
+        		<y-m>0.1769</y-m>
+        		<z-m>-5.4355</z-m>
+        		<scale>1.0</scale>
+      		</marker>
+    	</item>
+    	<item>
+      		<name>Primary bus battery connection</name>
+      		<value>On</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/battery</property>
+				<value>true</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/battery</property>
+			<value>true</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Primary bus alternator connection</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/alternator</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/alternator</property>
+			<value>false</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Engine</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/engines/engine[0]/rpm</property>
+				<value>0</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>nasal</command>
+			<script>engines.Pegasus_mk106.autostart();</script>
+		</binding>
+		<marker>
+        		<x-m>-15.5190</x-m>
+        		<y-m>-0.3165</y-m>
+        		<z-m>-5.6256</z-m>
+        		<scale>2.3719</scale>
+      		</marker>
+    	</item>
+   	<item>
+      		<name>Anti-collision beacons</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/controls/lighting/beacon</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/lighting/beacon</property>
+			<value>false</value>
+		</binding>
+    	</item>
+    	<item>
+      		<name>Primary bus battery connection</name>
+      		<value>Off</value>
+		<condition>
+        		<equals>
+          			<property>/controls/switches/battery</property>
+				<value>false</value>
+        		</equals>
+      		</condition>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/controls/switches/battery</property>
+			<value>false</value>
+		</binding>
+		<binding>
+        		<command>property-assign</command>
+        		<property>/instrumentation/attitude-indicator/serviceable</property>
+			<value>false</value>
+		</binding>
+    	</item>
+</checklist>
+
+</PropertyList>

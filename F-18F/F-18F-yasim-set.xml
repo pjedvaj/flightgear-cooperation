@@ -1,0 +1,679 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <!--
+      This work is released under under the GNU General Public License V2.0 or any later version (GPL2+),
+      see https://www.gnu.org/licenses/old-licenses/gpl-2.0.html .
+      Some elements may come from a broader license compatible with GPL, e.g. "CC0" or "CC-BY",
+      this is mentioned in their folder or file.
+      3D model by Petar Jedvaj, see Models folder.
+      Many many elements from Helijah's GPL planes.
+      Some elements borrowed from FGUK GPL planes.
+      Cockpit completely not representative! It was just to avoid an empty one.
+      Two displays from Gijs de Rooy's GPL 747 (it's Boeing too, after all...).
+      Thanks to them!
+ -->
+
+  <sim include="Systems/views.xml">
+
+    <description>Boeing F/A-18F Super Hornet (YASim)</description>
+
+    <authors>
+      <author n="0">
+        <name>Petar Jedvaj (3D)</name>
+      </author>
+      <author n="1">
+        <name>F-GTUX and many others to make it alive and flying</name>
+      </author>
+    </authors>
+
+    <status>beta</status>
+    <rating>
+      <FDM type="int">3</FDM>
+      <systems type="int">1</systems>
+      <cockpit type="int">2</cockpit>
+      <model type="int">4</model>
+    </rating>
+
+    <tags>
+      <tag>boeing</tag>
+      <tag>fighter</tag>
+      <tag>bomber</tag>
+      <tag>1990s</tag>
+      <tag>retractable-gear</tag>
+      <tag>supersonic</tag>
+      <tag>jet</tag>
+      <tag>afterburner</tag>
+      <tag>twin-engine</tag>
+    </tags>
+
+    <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/f18f-0.png</path>
+      </preview>
+    </previews>
+
+    <fuel-fraction>1</fuel-fraction>
+
+    <flight-model>yasim</flight-model>
+    <aero>F-18F-yasim</aero>
+
+    <flaps>
+      <setting>0.00</setting>
+      <setting>0.50</setting>
+      <setting>1.00</setting>
+    </flaps>
+
+    <help>
+      <title>Boeing F-18F Super Hornet 'Rhino'</title>
+      <line>Warning: flying with 5x480 gallons drop tanks is technically possible but out of specs and qualifications.</line>    <key>
+        <name>}</name>
+        <desc>AutoStart/AutoStop</desc>
+      </key>
+      <key>
+        <name>c</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>f</name>
+        <desc>Wing fold/unfold</desc>
+      </key>
+      <key>
+        <name>Shift+c (C)</name>
+        <desc>Catapult Launch Command</desc>
+      </key>
+      <key>
+        <name>Shift+l (L)</name>
+        <desc>Launch-bar engage</desc>
+      </key>
+      <key>
+        <name>Shift+o (O)</name>
+        <desc>Hook down</desc>
+      </key>
+      <key>
+        <name>o</name>
+        <desc>Hook up</desc>
+      </key>
+      <key>
+        <name>e</name>
+        <desc>Fire cannon</desc>
+      </key>
+      <key>
+        <name>r</name>
+        <desc>Flares release</desc>
+      </key>
+    </help>
+
+    <hud>
+      <path n="1">Aircraft/F-18F/Models/Interior/HUD/hud.xml</path>
+      <visibility n="1">true</visibility>
+      <palette>
+        <color n="0">
+          <alpha type="float">0.85</alpha>
+          <antialiased type="bool">true</antialiased>
+          <brightness type="float">0.85</brightness>
+          <transparent type="bool">true</transparent>
+          <red type="float">0.38</red>
+          <green type="float">1.0</green>
+          <blue type="float">0.22</blue>
+        </color>
+        <color n="1">
+          <alpha type="float">0.85</alpha>
+          <antialiased type="bool">true</antialiased>
+          <brightness type="float">0.85</brightness>
+          <transparent type="bool">true</transparent>
+          <red type="float">1.0</red>
+          <green type="float">0.2</green>
+          <blue type="float">0.0</blue>
+        </color>
+      </palette>
+      <clipping>
+        <left type="double">-70</left>
+        <right type="double">70</right>
+        <top type="double">40</top>
+        <bottom type="double">-120</bottom>
+      </clipping>
+    </hud>
+
+    <model>
+      <path>Aircraft/F-18F/Models/F-18F.xml</path>
+      <livery><dirt-factor type="float">0.5</dirt-factor></livery>
+    </model>
+
+    <submodels>
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/F-18F/Models/Effects/Submodels/submodels.xml</path>
+    </submodels>
+
+    <sound>
+      <path>Aircraft/F-18F/Sounds/F-18F-sound.xml</path>
+    </sound>
+
+    <systems>
+      <autopilot>
+        <path>Aircraft/F-18F/Systems/autopilot-yasim.xml</path>
+      </autopilot>
+
+      <property-rule n="100">
+        <path>Aircraft/F-18F/Systems/glass-rain.xml</path>
+      </property-rule>
+
+      <property-rule n="101">
+        <path>Aircraft/F-18F/Systems/flir.xml</path>
+      </property-rule>
+
+    </systems>
+
+    <menubar include="Dialogs/F-18F-yasim-menu.xml"/>
+
+    <weight n="0">
+      <name>Left wing tip</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9</name>
+        <lbs>190.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="1">
+      <name>Left wing outer</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-120</name>
+        <lbs>330.0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65</name>
+        <lbs>670</lbs>
+      </opt>
+      <opt>
+        <name>AGM-88</name>
+        <lbs>796</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1000</lbs>
+      </opt>
+    </weight>
+
+    <weight n="2">
+      <name>Left wing middle</name>
+      <tank>6</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65</name>
+        <lbs>670</lbs>
+      </opt>
+      <opt>
+        <name>AGM-84</name>
+        <lbs>1523</lbs>
+      </opt>
+      <opt>
+        <name>AGM-88</name>
+        <lbs>796</lbs>
+      </opt>
+      <opt>
+        <name>AGM-154</name>
+        <lbs>1095</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1000</lbs>
+      </opt>
+      <opt>
+        <name>GBU-10</name>
+        <lbs>2055</lbs>
+      </opt>
+      <opt>
+        <name>480 Gal Droptank</name>
+        <lbs>380.0</lbs>
+        <gals>480</gals>
+      </opt>
+      <opt>
+        <name>2xAIM-9</name>
+        <lbs>400.0</lbs>
+      </opt>
+      <opt>
+        <name>2xAIM-120</name>
+        <lbs>680.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="3">
+      <name>Left wing inner</name>
+      <tank>7</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>480 Gal Droptank</name>
+        <lbs>380.0</lbs>
+        <gals>480</gals>
+      </opt>
+      <opt>
+        <name>2xAIM-9</name>
+        <lbs>400.0</lbs>
+      </opt>
+      <opt>
+        <name>2xAIM-120</name>
+        <lbs>680.0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65</name>
+        <lbs>670</lbs>
+      </opt>
+      <opt>
+        <name>AGM-84</name>
+        <lbs>1523</lbs>
+      </opt>
+      <opt>
+        <name>AGM-88</name>
+        <lbs>796</lbs>
+      </opt>
+      <opt>
+        <name>AGM-154</name>
+        <lbs>1095</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1000</lbs>
+      </opt>
+      <opt>
+        <name>GBU-10</name>
+        <lbs>2055</lbs>
+      </opt>
+    </weight>
+
+    <weight n="4">
+      <name>Left fuselage</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-120</name>
+        <lbs>330.0</lbs>
+      </opt>
+      <opt>
+        <name>LITENING pod</name>
+        <lbs>480.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="5">
+      <name>Center</name>
+      <tank>8</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1000</lbs>
+      </opt>
+      <opt>
+        <name>GBU-10</name>
+        <lbs>2055</lbs>
+      </opt>
+      <opt>
+        <name>480 Gal Droptank</name>
+        <lbs>380.0</lbs>
+        <gals>480</gals>
+      </opt>
+    </weight>
+
+    <weight n="6">
+      <name>Right fuselage</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-120</name>
+        <lbs>330.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="7">
+      <name>Right wing inner</name>
+      <tank>9</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65</name>
+        <lbs>670</lbs>
+      </opt>
+      <opt>
+        <name>AGM-84</name>
+        <lbs>1523</lbs>
+      </opt>
+      <opt>
+        <name>AGM-88</name>
+        <lbs>796</lbs>
+      </opt>
+      <opt>
+        <name>AGM-154</name>
+        <lbs>1095</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1000</lbs>
+      </opt>
+      <opt>
+        <name>GBU-10</name>
+        <lbs>2055</lbs>
+      </opt>
+      <opt>
+        <name>480 Gal Droptank</name>
+        <lbs>380.0</lbs>
+        <gals>480</gals>
+      </opt>
+      <opt>
+        <name>2xAIM-9</name>
+        <lbs>400.0</lbs>
+      </opt>
+      <opt>
+        <name>2xAIM-120</name>
+        <lbs>680.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="8">
+      <name>Right wing middle</name>
+      <tank>10</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65</name>
+        <lbs>670</lbs>
+      </opt>
+      <opt>
+        <name>AGM-84</name>
+        <lbs>1523</lbs>
+      </opt>
+      <opt>
+        <name>AGM-88</name>
+        <lbs>796</lbs>
+      </opt>
+      <opt>
+        <name>AGM-154</name>
+        <lbs>1095</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1000</lbs>
+      </opt>
+      <opt>
+        <name>GBU-10</name>
+        <lbs>2055</lbs>
+      </opt>
+      <opt>
+        <name>480 Gal Droptank</name>
+        <lbs>380.0</lbs>
+        <gals>480</gals>
+      </opt>
+      <opt>
+        <name>2xAIM-9</name>
+        <lbs>400.0</lbs>
+      </opt>
+      <opt>
+        <name>2xAIM-120</name>
+        <lbs>680.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="9">
+      <name>Right wing outer</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-120</name>
+        <lbs>330.0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65</name>
+        <lbs>670</lbs>
+      </opt>
+      <opt>
+        <name>AGM-88</name>
+        <lbs>796</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1000</lbs>
+      </opt>
+    </weight>
+
+    <weight n="10">
+      <name>Right wing tip</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9</name>
+        <lbs>190.0</lbs>
+      </opt>
+    </weight>
+
+    <multiplay>
+      <generic>
+        <string n="0" alias="/sim/weight[0]/selected"/>
+        <string n="1" alias="/sim/weight[1]/selected"/>
+        <string n="2" alias="/sim/weight[2]/selected"/>
+        <string n="3" alias="/sim/weight[3]/selected"/>
+        <string n="4" alias="/sim/weight[4]/selected"/>
+        <string n="5" alias="/sim/weight[5]/selected"/>
+        <string n="6" alias="/sim/weight[6]/selected"/>
+        <string n="7" alias="/sim/weight[7]/selected"/>
+        <string n="8" alias="/sim/weight[8]/selected"/>
+        <string n="9" alias="/sim/weight[9]/selected"/>
+        <string n="10" alias="/sim/weight[10]/selected"/>
+      </generic>
+    </multiplay>
+
+  </sim>
+
+  <input include="Systems/F-18F-yasim-keyboard.xml"/>
+
+  <consumables>
+    <fuel>
+      <tank           n="0">
+        <name         type="string">Fuselage tank 1</name>
+        <tank-num     type="int">0</tank-num>
+        <level-gal_us archive="y">212</level-gal_us>
+      </tank>
+      <tank           n="1">
+        <name         type="string">Fuselage tank 2</name>
+        <tank-num     type="int">1</tank-num>
+        <level-gal_us archive="y">383</level-gal_us>
+      </tank>
+      <tank           n="2">
+        <name         type="string">Fuselage tank 3</name>
+        <tank-num     type="int">2</tank-num>
+        <level-gal_us archive="y">385</level-gal_us>
+      </tank>
+      <tank           n="3">
+        <name         type="string">Fuselage tank 4</name>
+        <tank-num     type="int">3</tank-num>
+        <level-gal_us archive="y">555</level-gal_us>
+      </tank>
+      <tank           n="4">
+        <name         type="string">Left wing internal tank</name>
+        <tank-num     type="int">4</tank-num>
+        <level-gal_us archive="y">244</level-gal_us>
+      </tank>
+      <tank           n="5">
+        <name         type="string">Right wing internal tank</name>
+        <tank-num     type="int">5</tank-num>
+        <level-gal_us archive="y">244</level-gal_us>
+      </tank>
+      <tank           n="6">
+        <name         type="string">Left wing ext tank</name>
+        <selected     type="bool">false</selected>
+      </tank>
+      <tank           n="7">
+        <name         type="string">Left wing int tank</name>
+        <selected     type="bool">false</selected>
+      </tank>
+      <tank           n="8">
+        <name         type="string">Center tank</name>
+        <selected     type="bool">false</selected>
+      </tank>
+      <tank           n="9">
+        <name         type="string">Right wing int tank</name>
+        <selected     type="bool">false</selected>
+      </tank>
+      <tank           n="10">
+        <name         type="string">Right wing ext tank</name>
+        <selected     type="bool">false</selected>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <engines>
+    <engine       n="0">
+      <engine-num type="int">0</engine-num>
+      <running    type="bool">false</running>
+      <rpm>2500</rpm>
+    </engine>
+    <engine       n="1">
+      <engine-num type="int">1</engine-num>
+      <running    type="bool">false</running>
+      <rpm>2500</rpm>
+    </engine>
+  </engines>
+
+  <controls>
+    <gear>
+      <brake-parking type="bool">true</brake-parking>
+      <tailwheel-lock type="bool">false</tailwheel-lock>
+      <cat-acceleration-norm type="float">0.5</cat-acceleration-norm>
+    </gear>
+    <flight>
+      <wing-fold type="bool">true</wing-fold>
+      <canopy type="bool">true</canopy>
+    </flight>
+    <lighting>
+      <beacon type="bool">false</beacon>
+      <formation-lights type="bool">false</formation-lights>
+    </lighting>
+    <armament>
+      <trigger type="bool">false</trigger>
+    </armament>
+    <flares>
+      <released type="bool">false</released>
+    </flares>
+    <engines>
+      <engine n="0">
+        <condition>0</condition>
+      </engine>
+      <engine n="1">
+        <condition>0</condition>
+      </engine>
+    </engines>
+  </controls>
+
+  <systems>
+    <electrical>
+      <path>Aircraft/Generic/generic-electrical.xml</path>
+    </electrical>
+    <refuel>
+      <type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+  </systems>
+
+  <instrumentation>
+    <radar>
+      <minimized      type="bool">0</minimized>
+      <range          type="double">150</range>
+      <range-control  type="int">5</range-control>
+      <serviceable    type="bool">1</serviceable>
+      <switch         type="string">ON</switch>
+      <display-rdr    type="bool">true</display-rdr>
+      <az-field       type="double">120</az-field>
+      <range-selected type="double">50</range-selected>
+      <radar-standby  type="int">3</radar-standby>
+    </radar>
+  </instrumentation>
+
+  <nasal>
+    <aar>
+      <file>Aircraft/Generic/aar.nas</file>
+    </aar>
+    <radardist>
+      <file>Aircraft/F-18F/Nasal/radardist.nas</file>
+    </radardist>
+    <f18>
+      <file>Aircraft/F-18F/Nasal/light.nas</file>
+      <file>Aircraft/F-18F/Nasal/convert.nas</file>
+      <file>Aircraft/F-18F/Nasal/electrical.nas</file>
+      <file>Aircraft/F-18F/Nasal/tanks.nas</file>
+      <file>Aircraft/F-18F/Nasal/tyresmoke.nas</file>
+      <file>Aircraft/F-18F/Nasal/terrain-map.nas</file>
+      <file>Aircraft/F-18F/Nasal/radar.nas</file>
+      <file>Aircraft/F-18F/Nasal/radar2.nas</file>
+      <file>Aircraft/F-18F/Nasal/drag_stores.nas</file>
+      <script>
+        aircraft.livery.init("Aircraft/F-18F/Models/Liveries");
+        setlistener("/gear/gear[0]/wow",func{setprop("/controls/gear/launchbar",0);},1,0);
+      </script>
+    </f18>
+    <engines>
+      <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
+      <file>Aircraft/F-18F/Nasal/engines-yasim.nas</file>
+    </engines>
+   </nasal>
+
+</PropertyList>
+

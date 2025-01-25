@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+<path>shadow.ac</path>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>shadowfuselage</object-name>
+		<object-name>shadowrotor</object-name>
+	</animation>
+	
+	<animation>
+		<object-name>shadowfuselage</object-name>
+		<object-name>shadowrotor</object-name>
+		<nopreview/>
+	</animation>
+	
+	<animation>
+		<name>shadow</name>
+		<object-name>shadowfuselage</object-name>
+		<object-name>shadowrotor</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>shadow</object-name>
+		<property>sim/multiplay/generic/float[1]</property>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>shadow</object-name>
+		<property>sim/multiplay/generic/float[2]</property>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>shadow</object-name>
+		<property>sim/multiplay/generic/float[0]</property>
+		<!-- <factor>0.3048</factor> only if agl feet is used -->
+		<factor>1.0</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>shadow</object-name>
+		<condition>
+			<less-than>
+				<property>sim/multiplay/generic/float[0]</property>
+				<value>50</value>
+			</less-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>shadowrotor</object-name>
+		<property>rotors/main/blade[0]/position-deg</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+</PropertyList>

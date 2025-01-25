@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<path>rpm.ac</path>
+	<animation>
+		<type>noshadow</type>
+		<object-name>vitre</object-name>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<object-name>Lneedle</object-name>
+		<object-name>Rneedle</object-name>
+		<emission>
+			<red>   0.5 </red>
+			<green> 0.2 </green>
+			<blue>  0.2 </blue>
+			<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Lneedle</object-name>
+		<property>/engines/engine/n1-rpm</property>
+		<interpolation>
+		<!-- Calibrated so that 43,500 indicated = 49,440 actual = *1.137-->
+			<entry><ind>     0 </ind><dep> -240 </dep></entry>
+			<entry><ind> 11370 </ind><dep> -180 </dep></entry>
+			<entry><ind> 22740 </ind><dep> -120 </dep></entry>
+			<entry><ind> 34110 </ind><dep>  -60 </dep></entry>
+			<entry><ind> 45480 </ind><dep>    0 </dep></entry>
+			<entry><ind> 56850 </ind><dep>   60 </dep></entry>
+		</interpolation>
+		<axis>
+			<x> -1 </x>
+			<y>  0 </y>
+			<z>  0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Rneedle</object-name>
+		<property>rotors/main/rpm</property>
+		<interpolation>
+			<entry><ind>   0 </ind><dep> -240 </dep></entry>
+			<entry><ind> 100 </ind><dep> -175 </dep></entry>
+			<entry><ind> 175 </ind><dep> -120 </dep></entry>
+			<entry><ind> 260 </ind><dep>  -60 </dep></entry>
+			<entry><ind> 350 </ind><dep>    0 </dep></entry>
+			<entry><ind> 430 </ind><dep>   60 </dep></entry>
+		</interpolation>
+		<axis>
+			<x> -1 </x>
+			<y>  0 </y>
+			<z>  0 </z>
+		</axis>
+	</animation>
+</PropertyList>

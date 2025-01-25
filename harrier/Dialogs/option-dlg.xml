@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+   
+<name>shar_options</name>
+<modal type="bool">false</modal>
+<layout>vbox</layout>
+
+<group>
+	<layout>hbox</layout>
+
+    	<text>
+      		<label>Sea Harrier FA2 options</label>
+    	</text>
+</group>
+ 
+<hrule/>
+
+<group>
+	<layout>hbox</layout>
+
+	<group>
+		<layout>vbox</layout>
+
+		<checkbox>
+			<label>Flaps breakable</label>
+        		<property>/sim/model/flaps-breakable</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox>
+
+		<checkbox>
+			<label>Canopy breakable</label>
+        		<property>/sim/model/canopy-breakable</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox>
+
+		<checkbox>
+			<label>Aircraft breakable</label>
+        		<property>/sim/model/aircraft-breakable</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox>
+
+		<checkbox>
+			<label>Use Canvas HDD</label>
+        		<property>/sim/use-hdd</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox>
+		
+		<button>
+			<legend>Extra failures</legend>
+			<binding>
+				<command>nasal</command>
+				<script>
+					if(!getprop("sim/supported/new-custom-fails")){
+						dialogs.shar_dlg_syst_fail.open();
+					}else{
+						dialogs.sys_fail_new();
+					}
+				</script>
+			</binding>
+		</button>
+		
+ 
+		<hrule/>
+
+    		<text>
+      			<label>Update loop speed</label>
+    		</text>
+
+		<slider>
+			<name>slide</name>
+			<property>sim/update_loop_speed</property>
+			<legend></legend>
+			<pref-width>50</pref-width>
+			<step>0.01</step>
+			<live>1</live>
+			<min>0.02</min>
+			<max>1</max>
+			<binding>
+				<command>dialog-apply</command>
+				<object-name>slide</object-name>
+			</binding>
+		</slider>
+
+    		<input>
+      			<row>2</row>
+      			<col>1</col>
+      			<halign>center</halign>
+     			<name>update-period</name>
+      			<property>sim/update_loop_speed</property>
+				<binding>
+					<command>dialog-apply</command>
+        			<object-name>update-period</object-name>
+				</binding>
+      			<live type="bool">true</live>
+    		</input>
+
+	</group>
+ 
+	<vrule/>
+
+	<group>
+		<layout>vbox</layout>
+
+		<button>
+			<legend>Toggle MP missile report</legend>
+			<binding>
+				<command>nasal</command>
+				<script>missile.MPReport()</script>
+			</binding>
+		</button>
+
+
+		<button>
+			<legend>Unlimited guns</legend>
+			<binding>
+				<command>nasal</command>
+				<script>weapons.unlimited_guns();</script>
+			</binding>
+		</button>
+
+		<button>
+			<legend>Reload guns</legend>
+			<binding>
+				<command>nasal</command>
+				<script>weapons.reload_guns();</script>
+			</binding>
+		</button>
+
+		<button>
+			<legend>Reload countermeasures</legend>
+			<binding>
+				<command>nasal</command>
+				<script>
+					setprop("/ai/submodels/submodel[92]/count", 100);
+					setprop("/ai/submodels/submodel[93]/count", 100);
+					gui.popupTip("Countermeasures reloaded.", 7);
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<legend>Fillup</legend>
+			<binding>
+				<command>nasal</command>
+				<script>
+					fuel.fillup();
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<legend>Pushback</legend>
+			<binding>
+				<command>dialog-show</command>
+				<dialog-name>pushback</dialog-name>
+			</binding>
+		</button>
+
+	</group>
+
+</group>
+
+<hrule/>
+
+
+<button>
+	<legend>Close</legend>
+	<binding>
+		<command>dialog-apply</command>
+	</binding>
+	<binding>
+		<command>dialog-close</command>
+	</binding>
+</button>
+
+</PropertyList>

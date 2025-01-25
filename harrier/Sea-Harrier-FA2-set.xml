@@ -1,0 +1,1565 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<sim>
+
+	<description>BAe Sea Harrier FA2</description>
+	<aircraft-version>2.5.0</aircraft-version>
+	<author>Andy R, Steve H, Stuart C, Red Leader</author>
+	<status>Early production</status>
+	<rating>
+		<FDM type="int">3</FDM>
+		<systems type="int">3</systems>
+		<cockpit type="int">3</cockpit>
+		<model type="int">4</model>
+	</rating>    
+
+	<pilot-g type="bool">false</pilot-g>
+	<shutdown type="bool">false</shutdown>
+	<update_loop_speed type="float">0.25</update_loop_speed>
+	<mp-messaging type="string">false</mp-messaging>
+	<use-hdd type="bool">false</use-hdd>
+
+	<tutorials>
+		<tutorial include="Tutorials/startup.xml"/>
+        <tutorial include="Tutorials/taxi.xml"/>
+		<tutorial include="Tutorials/horizontal-take-off.xml"/>
+		<tutorial include="Tutorials/short-take-off.xml"/>
+		<tutorial include="Tutorials/vertical-take-off.xml"/>
+		<tutorial include="Tutorials/cruise.xml"/>
+		<tutorial include="Tutorials/horizontal-landing.xml"/>
+		<tutorial include="Tutorials/vertical-landing.xml"/>
+		<tutorial include="Tutorials/shutdown.xml"/>
+	</tutorials>
+
+	<checklists include="Tutorials/harrier-checklists.xml"/>
+
+	<flight-model>yasim</flight-model>
+	<aero>harrier-fdm</aero>
+	<fuel-fraction>1</fuel-fraction>    
+	<startup>
+		<splash-texture>Aircraft/harrier/harrier-splash.png</splash-texture>
+	</startup>
+		
+	<supported>
+		<new-menu type="bool">false</new-menu>
+		<new-custom-fails type="bool">false</new-custom-fails>
+		<canvas-mapstructure type="bool">false</canvas-mapstructure>
+		<canvas type="bool">false</canvas>
+		<maketimer type="bool">false</maketimer>
+		<fap-dialog type="bool">false</fap-dialog>
+	</supported>
+	
+    <sound>
+      	<path>Aircraft/harrier/Sounds/harrier-sound.xml</path>
+		<startup-sound-factor type="float">0.0</startup-sound-factor>
+		<startup-sound-factor-mp type="float">0.0</startup-sound-factor-mp>
+		<high-g type="bool">false</high-g>
+		<low-g type="bool">false</low-g>
+		<missile-vol type="float">0.007</missile-vol>
+		<gunfire-vol type="float">0.007</gunfire-vol>
+		<explode type="bool">false</explode>
+		<enabled type="bool">false</enabled>
+    </sound>  
+    
+	<!-- HUD Settings -->
+	<hud>
+		<path n="1">Aircraft/harrier/Systems/harrier-HUD.xml</path>
+		<visibility n="0" type="bool">false</visibility>
+		<visibility n="1" type="bool">false</visibility>
+		<current-color>0</current-color>
+		<color>
+			<transparent type="bool">true</transparent>
+			<antialiased type="bool">true</antialiased>
+			<brightness type="float">1.0</brightness>
+			<alpha type="float">0.7</alpha>
+		</color>
+		<palette>
+			<color n="0">
+				<red type="float">0.5</red>
+				<green type="float">1.0</green>
+				<blue type="float">0.0</blue>
+			</color>
+		</palette>
+		<clipping>
+			<left type="double">-110</left>
+			<right type="double">110</right>
+			<top type="double">120</top>
+			<bottom type="double">-95</bottom>
+		</clipping>
+		<ccip_dev_m type="float">0.0</ccip_dev_m>
+	</hud>
+
+    <submodels>
+    	<serviceable type="bool">true</serviceable>
+		<path>Aircraft/harrier/Models/submodels.xml</path>		
+    </submodels>
+
+    <model>
+		<click type="bool">false</click>
+		<path>Aircraft/harrier/Models/Sea-Harrier-FA2.xml</path>
+		<flaps-breakable type="bool">false</flaps-breakable>
+		<flaps-broken type="bool">false</flaps-broken>
+		<canopy-breakable type="bool">false</canopy-breakable>
+		<canopy-broken type="bool">false</canopy-broken>
+		<aircraft-breakable type="bool">false</aircraft-breakable>
+		<aircraft-broken type="bool">false</aircraft-broken>
+		<livery>
+   			<file type="string">Royal Navy</file>
+			<name type="string">Royal Navy</name>
+			<texture type="string">Liveries/royalnavy.rgb</texture>
+ 		</livery>
+    </model>
+   
+   	<flaps>
+    	<setting>0.0</setting>
+    	<setting>0.2</setting>
+    	<setting>0.4</setting>
+    	<setting>0.6</setting>
+    	<setting>0.8</setting>
+    	<setting>1.00</setting>
+   	</flaps>
+	
+	<!-- x/y/z == right/up/back -->
+    <view n="0">
+      	<internal archive="y">true</internal>
+      	<config>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.68</y-offset-m>
+			<z-offset-m>3.98</z-offset-m>
+			<pitch-offset-deg>0</pitch-offset-deg>
+			 <default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
+			<limits>
+				<enabled type="bool">true</enabled>
+				<left>
+					<heading-max-deg>95</heading-max-deg>
+					<x-offset-threshold-deg>2</x-offset-threshold-deg>
+					<x-offset-max-m>0.1</x-offset-max-m>
+				</left>
+				<right>
+					<heading-max-deg>95</heading-max-deg>
+					<x-offset-threshold-deg>2</x-offset-threshold-deg>
+					<x-offset-max-m>0.1</x-offset-max-m>
+				</right>
+			</limits>
+		</config>
+    </view>
+	
+   	<view n="1">
+      	<config>
+			<target-z-offset-m archive="y">8</target-z-offset-m>
+			<pitch-offset-deg archive="y">10</pitch-offset-deg>     
+      	</config>
+    </view>  
+	
+    <view n="2">
+      	<config>
+			<target-z-offset-m archive="y">8</target-z-offset-m>
+			<pitch-offset-deg archive="y">10</pitch-offset-deg>     
+      	</config>
+    </view> 
+	
+    <view n="3">
+      	<config>
+			<target-z-offset-m archive="y">8</target-z-offset-m>
+			<pitch-offset-deg archive="y">10</pitch-offset-deg>     
+      	</config>
+    </view> 
+	
+    <view n="4">
+      	<config>
+			<target-z-offset-m archive="y">8</target-z-offset-m>
+			<pitch-offset-deg archive="y">10</pitch-offset-deg>     
+      	</config>
+    </view> 
+	
+    <view n="5">
+    	<config>
+			<target-z-offset-m archive="y">8</target-z-offset-m>
+			<pitch-offset-deg archive="y">10</pitch-offset-deg>     
+    	</config>
+    </view>  
+    <view n="6">
+    	<config>
+			<target-z-offset-m archive="y">8</target-z-offset-m>
+			<pitch-offset-deg archive="y">10</pitch-offset-deg>     
+    	</config>
+    </view>   
+    <view n="101">
+    	<name>Missile View</name>
+    	<type>LookFrom</type>
+    	<config>
+      		<eye-lat-deg-path>/ai/models/missile[0]/position/latitude-deg</eye-lat-deg-path>
+      		<eye-lon-deg-path>/ai/models/missile[0]/position/longitude-deg</eye-lon-deg-path>
+      		<eye-alt-ft-path>/ai/models/missile[0]/position/altitude-ft</eye-alt-ft-path>
+      		<eye-heading-deg-path>/ai/models/missile[0]/orientation/true-heading-deg</eye-heading-deg-path>
+      		<eye-pitch-deg-path>/ai/models/missile[0]/orientation/pitch-deg</eye-pitch-deg-path>
+      		<x-offset-m type="double">1</x-offset-m>
+      		<y-offset-m type="double">1</y-offset-m>
+      		<z-offset-m type="double">5</z-offset-m>
+    	</config>
+	</view> 
+
+ 	<flight-recorder>
+		<replay-config type="int">0</replay-config>
+		<config n="0" include="/Aircraft/harrier/Systems/harrier-flightrecorder.xml"/>
+	</flight-recorder> 
+
+   	<help>
+      	<title>British Aerospace Sea Harrier FA2</title>
+      	<key>
+			<name>m</name>
+			<desc>Vector thrust upwards</desc>
+      	</key>
+      	<key>
+			<name>Shift + m</name>
+			<desc>Vector thrust downwards</desc>
+      	</key>
+      	<key>
+			<name>h</name>
+			<desc>Toggle HUD on/off</desc>
+      	</key>
+      	<key>
+			<name>j</name>
+			<desc>Decrease air brake</desc>
+      	</key>
+      	<key>
+			<name>k</name>
+			<desc>Increase air brake</desc>
+      	</key>      
+      	<key>
+			<name>e</name>
+			<desc>Release ordinance</desc>
+      	</key>
+     	<key>
+			<name>w</name>
+			<desc>Cycle stick mode selector</desc>
+      	</key>
+     	<key>
+			<name>Ctrl + w</name>
+			<desc>Toggle station arming</desc>
+      	</key>
+     	<key>
+			<name>Ctrl + f</name>
+			<desc>Release countermeasure</desc>
+      	</key>
+     	<key>
+			<name>1/2/3/4/5/6/7</name>
+			<desc>Select station</desc>
+      	</key>
+		<key>
+			<name>Shift + ]</name>
+			<desc>Autostart</desc>
+      	</key>
+		<key>
+			<name>Shift + c</name>
+			<desc>Toggle Canopy</desc>
+      	</key>
+		<key>
+			<name>n</name>
+			<desc>Next target</desc>
+      	</key>
+		<key>
+			<name>Ctrl + n</name>
+			<desc>Previous target</desc>
+      	</key>
+
+		<text>The British Aerospace Sea Harrier is a naval short take-off and vertical-landing/vertical take-off and landing jet fighter, reconnaissance and attack aircraft, a development of the Hawker Siddeley Harrier. It first entered service with the Royal Navy in April 1980 as the Sea Harrier FRS1 and became informally known as the "Shar". Unusual in an era in which most naval and land-based air superiority fighters were large and supersonic, the principal role of the subsonic Sea Harrier was to provide air defence of the fleet from Royal Navy aircraft carriers.
+		
+== Flying ==
+
+Startup:
+Press Shift + ] to start the engine and wait for about 6 seconds.
+
+Shutdown:
+Hit Shift + ] and wait for about 6 seconds.
+
+Taxi:
+Apply a small amount of throttle. Don't go to fast.
+
+Horizontal take-off:
+Apply full throttle and disengage the parking brake. Keep the stick pulled back while speeding down the runway. When airborne retract the gear.
+
+Short take-off:
+As above but vector the thrust to about 45 degrees.
+
+Vertical take-off:
+Set the thrust vector to about 75 degrees and apply max throttle. Be ready to move the stick to correct unwanted movement. When you have gained about one hundred feet in altitude and are stable, slowly decrease the thrust vector back down to 0. As you pick up speed, your wings will keep you airborne. When that happens, you can retract the gear. Do not decrease the thrust vector too quickly.
+
+Cruise:
+Set the throttle to about 75% and engage autopilot as desired.
+
+Horizontal landing:
+Adjust throttle and use flaps to control the descent rate. Apply airbrake on landing, and use the brake when below 60 kts.
+
+Vertical landing:
+This is very difficult. Increase the thrust vector to about 85 degrees slowly and decrease the throttle slowly. You may use greater than 90 degree thrust vector to slow down, but don't forget about it, or else you may end up flying backwards. If you are dropping like a rock, slam the throttle to 100% right away. The slower you go, the more vertical thrust you will need. Once you are under 100 kts, your throttle will remain at about 80% or above. Find a good descent rate that isn't too fast and be patient. Right before you hit the ground, point the nose upwards to about 8 degrees to accomodate the front landing gear being longer.
+
+Hovering:
+This is the most difficult manoeuvre to accomplish. Keeping your nose level, increase the thrust vector to 90 degrees. You may use greater than 90 degree thrust vector to slow down, but don't forget about it, or else you may end up flying backwards. Flaps and air-brake are optional, but be careful as they will make you rise. If you are dropping like a rock, slam the throttle to 100% right away. The slower you go, the more vertical thrust you will need.  Once you are under 100 kts, your throttle will remain at about 80% or above.  Stabalise yourself and try not to move to much. Beginners can cheat by looking for the thrust property (/engines/engine[0]/thrust-lbs) in the internal properties browser and match it to the aircraft's weight (/yasim/gross-weight-lbs).
+
+VIFF:
+Vectoring In Forward Flight is one of the Harrier's specialities. For turns, vector downwards in the turn to increase the turn rate, and use flaps to further increase it. Beware though; you will slow down very quickly. You can also just slam the vector downwards in level flight to slow yourself down fast.
+ 
+
+== Weapons Operation ==
+See Weapon system.pdf in the Docs folder
+
+== Cockpit ==
+
+HDD:
+The Heads Down Display is located on the left of the panel. Press Ctrl + c to highlight the hotspots. The bottom-rleft button switches the HDD on or off. It requires electrical power to operate. The four upper buttons select a mode.
+
+Radar:
+The Radar is located on the right of the panel. Press Ctrl + c to highlight the hotspots. There is a switch to turn the Radar on or off. It requires electrical power to operate. The four buttons on the right select a mode, and the lower buttons select a range.
+
+HUD:
+The Heads Up Display is located directly ahead. Clicking the HUD turns it on or off. It requires electrical power to operate.
+		</text>
+	</help>
+
+	<systems include="Systems/harrier-systems.xml">
+		<electrical include="Systems/harrier-electrical.xml"/>
+      	<autopilot>        
+			<path>Aircraft/harrier/Systems/harrier-autopilot.xml</path>
+      	</autopilot>
+    </systems>
+
+	<weight n="0">
+     	<name>Left Outboard</name>
+      	<weight-lb>0</weight-lb>
+      	<selected>none</selected>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>			
+		</offsets>
+      	<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+	  	<opt>
+			<name>AIM-9L Sidewinder</name>
+			<lbs>190</lbs>
+		</opt>
+		<opt>
+			<name>AIM-120 AMRAAM</name>
+			<lbs>335</lbs>
+		</opt>
+		<opt>
+			<name>1000lb bomb</name>
+			<lbs>1000</lbs>
+		</opt>
+		<opt>
+                <name>500lb bomb</name>
+                <lbs>500</lbs>
+            </opt>
+		<opt>
+			<name>SNEB rocket pod</name>
+			<lbs>230</lbs>
+		</opt>
+	</weight>
+		
+    <weight n="1">
+      	<name>Left Inboard</name>
+		<!-- FDM tank index on this pylon -->
+      	<tank>1</tank>
+      	<weight-lb>0</weight-lb>
+      	<selected>none</selected>
+		<offsets>
+			<x-m>-11.5</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.0</z-m>
+		</offsets>
+      	<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+      	<opt>
+			<name>190 Gallon Fuel Tank</name>
+        	<lbs>1550.4</lbs>
+			<gals>228</gals>
+      	</opt>
+	 	
+	  	<opt>
+			<name>ALARM Anti-radar Missile</name>
+			<lbs>590</lbs>
+		</opt>
+	  	<opt>
+			<name>1000lb bomb</name>
+			<lbs>1000</lbs>
+		</opt>
+		<opt>
+                <name>500lb bomb</name>
+                <lbs>500</lbs>
+            </opt>
+		<opt>
+			<name>Sea Eagle Anti-ship Missile</name>
+			<lbs>1276</lbs>
+		</opt>
+		<opt>
+			<name>SNEB rocket pod</name>
+			<lbs>230</lbs>
+		</opt>
+    	</weight>
+		
+    	<weight n="2">
+     		<name>Left Fuselage</name>
+      		<weight-lb>192</weight-lb>
+      		<selected>ADEN 30mm Cannon</selected>
+		<offsets>
+			<x-m>-12.75</x-m>
+			<y-m>-0.59</y-m>
+			<z-m>-6.85</z-m>			
+		</offsets>
+      		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+	  	<opt>
+			<name>ADEN 30mm Cannon</name>
+			<lbs>192</lbs>
+		</opt>
+		<!--<opt>
+			<name>AIM-120 AMRAAM</name>
+			<lbs>335</lbs>
+		</opt>-->
+    	</weight>
+		
+   	<weight n="3">
+      		<name>Center Fuselage</name>
+      		<weight-lb>0</weight-lb>
+      		<selected>none</selected>
+		<offsets>
+			<x-m>-12.2</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.8</z-m>			
+		</offsets>
+      		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+			<opt>
+			<name>500lb bomb</name>
+			<lbs>500</lbs>
+		</opt>
+	  	<opt>
+			<name>1000lb bomb</name>
+			<lbs>1000</lbs>
+		</opt>
+    	</weight>
+		
+    	<weight n="4">
+      		<name>Right Fuselage</name>
+      		<weight-lb>192</weight-lb>
+      		<selected>ADEN 30mm Cannon</selected>
+		<offsets>
+			<x-m>-12.75</x-m>
+			<y-m>0.59</y-m>
+			<z-m>-6.85</z-m>			
+		</offsets>
+      		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+	  	<opt>
+			<name>ADEN 30mm Cannon</name>
+			<lbs>192</lbs>
+		</opt>
+		<!--<opt>
+			<name>AIM-120 AMRAAM</name>
+			<lbs>335</lbs>
+		</opt>-->
+    	</weight>
+    	<weight n="5">
+      		<name>Right Inboard</name>
+      		<tank>2</tank> <!-- FDM tank index on this pylon -->
+      		<weight-lb>0</weight-lb>
+      		<selected>none</selected>
+		<offsets>
+			<x-m>-11.5</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.0</z-m>
+		</offsets>
+      		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+      		<opt>
+			<name>190 Gallon Fuel Tank</name>
+        		<lbs>1550.4</lbs>
+			<gals>228</gals>
+      		</opt>
+	  
+	 	 <opt>
+			<name>ALARM Anti-radar Missile</name>
+			<lbs>590</lbs>
+		</opt>
+	 	<opt>
+			<name>1000lb bomb</name>
+			<lbs>1000</lbs>
+		</opt>
+		<opt>
+                <name>500lb bomb</name>
+                <lbs>500</lbs>
+            </opt>
+		<opt>
+			<name>Sea Eagle Anti-ship Missile</name>
+			<lbs>1276</lbs>
+		</opt>
+		<opt>
+			<name>SNEB rocket pod</name>
+			<lbs>230</lbs>
+		</opt>
+    	</weight>
+    	<weight n="6">
+      		<name>Right Outboard</name>
+      		<weight-lb>0</weight-lb>
+      		<selected>none</selected>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>2.84</y-m>
+			<z-m>-6.2</z-m>			
+		</offsets>
+      		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+	  	<opt>
+			<name>AIM-9L Sidewinder</name>
+			<lbs>190</lbs>
+		</opt>
+		<opt>
+			<name>AIM-120 AMRAAM</name>
+			<lbs>190</lbs>
+		</opt>
+		<opt>
+			<name>1000lb bomb</name>
+			<lbs>1000</lbs>
+		</opt>
+		<opt>
+                <name>500lb bomb</name>
+                <lbs>500</lbs>
+            </opt>
+		<opt>
+			<name>SNEB rocket pod</name>
+			<lbs>230</lbs>
+		</opt>
+    	</weight>
+	<weight n="7">
+      		<name>Refueling Boom</name>
+      		<weight-lb>0</weight-lb>
+      		<selected>none</selected>
+      		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+      		<opt>
+			<name>Refueling boom attached</name>
+			<lbs>60</lbs>
+		</opt>
+    	</weight>
+ 
+	<multiplay>
+   		<generic>
+			<!-- For Bombable -->
+			<string n="9" type="string"/>
+     		<int n="10" alias="/controls/armament/trigger"/>
+
+		 <!-- Nav lights on -->
+      		<int n="0" alias="/controls/lighting/nav-lights-switch" />
+      		<!-- Beacon on -->
+      		<int n="1" alias="/controls/lighting/beacon-switch" />
+      
+      		<!-- int[2] reserved for radar -->
+      
+      		<!-- Landing lights on -->
+      		<int n="3" alias="/controls/lighting/landing-lights-switch" />
+	    	<!-- Taxi light on -->
+      		<int n="4" alias="/controls/lighting/taxi-light-switch" />
+
+			<!-- breakages -->
+     		<int n="5" alias="/sim/model/canopy-broken"/>
+     		<int n="6" alias="/sim/model/flaps-broken"/>
+			<int n="11" alias="/sim/crashed" />
+			<int n="7" type="bool"/>
+	 		<int n="8" type="double"/>
+
+			
+			<!-- missiles -->
+			<int n="9" type="bool"/>
+			<float n="0" alias="/controls/engines/engine[0]/mixture"/>
+			<float n="1" alias="/systems/electrical/outputs/landing-light"/>
+			<float n="2" alias="/systems/electrical/outputs/instrument-lights"/>
+			<float n="7" alias="/controls/engines/engine/mixture" /> <!-- vectored nozel over mp -->
+			<float n="16" alias="/engines/engine[0]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
+
+    		<string n="0" alias="/sim/weight[0]/selected"/>
+    		<string n="1" alias="/sim/weight[1]/selected"/>
+    		<string n="2" alias="/sim/weight[2]/selected"/>
+    		<string n="3" alias="/sim/weight[3]/selected"/>
+    		<string n="4" alias="/sim/weight[4]/selected"/>
+    		<string n="5" alias="/sim/weight[5]/selected"/>
+    		<string n="6" alias="/sim/weight[6]/selected"/>
+    		<string n="7" alias="/sim/weight[7]/selected"/>
+     	</generic>
+	</multiplay>
+
+
+	<menubar>
+		<default>
+			<menu n="3">
+     				<item n="0">
+					<binding>
+						<command>nasal</command>
+						<script>
+							if(!getprop("sim/supported/new-menu")){
+								dialogs.shar_ap_dlg.open();
+							}
+							#else{
+							#}
+						</script>	
+						<dialog-name/>
+					</binding>
+      				</item>
+			</menu>
+			<menu n="15">
+				<label>Harrier</label>
+				<enabled type="bool">true</enabled>
+     				<item n="0">
+        				<label>Autostart/stop</label>
+       					<binding>
+      						<command>nasal</command>
+          					<script>
+								harrier.autostart();
+							</script>
+       					</binding>
+      				</item>
+     				<item n="1">
+     					<label>Select Livery</label>
+     					<binding>
+      						<command>nasal</command>
+      						<script>
+								aircraft.livery.dialog.open();
+							</script>
+     					</binding>
+    				</item>
+					<item n="2">
+     					<label>MP Shot reporting</label>
+     					<binding>
+      						  <command>nasal</command>
+                              <script>missile.MPReport()</script>
+     					</binding>
+    				</item>
+		
+				 <item n="3">
+                     <label>Clean configuration</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.clean()</script>
+                     </binding>
+                     </item>
+					 
+				 <item n="4">
+                     <label>Ferry configuration</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.Ferry()</script>
+                     </binding>
+                     </item>
+
+				<item n="5">
+                     <label>CAP. IR Missiles</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.CAP()</script>
+                     </binding>
+                     </item>	
+				<item n="6">
+                     <label>CAP. Radar Guided Missiles</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.CAP1()</script>
+                     </binding>
+                     </item>	
+				<item n="7">
+                     <label>Bomb load</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.bomb()</script>
+                     </binding>
+                     </item>
+				<item n="8">
+                     <label>Bomb load. Extended range</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.bombext()</script>
+                     </binding>
+                     </item>
+					 
+				<item n="9">
+                     <label>Heavy Bomb load. </label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.bombheavy()</script>
+                     </binding>
+                     </item>	 
+					 
+				<item n="10">
+                     <label>Heavy Bomb load. Extended range</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.bombheavyext()</script>
+                     </binding>
+                     </item>
+
+				<item n="11">
+                     <label>Ground Attack. Rockets.</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.rocket()</script>
+                     </binding>
+                     </item>	 
+				<item n="12">
+                     <label>Ground Attack. Rockets. Extended range</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.rocketext()</script>
+                     </binding>
+                     </item>
+				<item n="13">
+                     <label>CAS</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.cas()</script>
+                     </binding>
+                     </item>
+				<item n="14">
+                     <label>Anti Ship</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.ship()</script>
+                     </binding>
+                     </item>	 
+				<item n="15">
+                     <label>Anti Radar</label>
+                     <binding>
+                     <command>nasal</command>
+                     <script>load.radar()</script>
+                     </binding>
+                     </item>
+					 
+			<item n="16">
+					<label>Options</label>
+					<binding>
+						<command>nasal</command>
+						<script>
+							if(!getprop("sim/supported/new-menu")){
+								dialogs.op_dlg.open();
+							}
+							#else{
+							#}
+						</script>
+					</binding>
+				</item>
+				
+			</menu>
+		</default>
+	</menubar>
+
+	<weapons>
+		<weapon>
+			<name type="string">AIM-120 AMRAAM</name>
+			<smoke_path type="string">Aircraft/harrier/Models/Stores/AIM-120/AIM-120_smoke.xml</smoke_path>
+			<model_path type="string">Aircraft/harrier/Models/Stores/AIM-120/AIM-120.xml</model_path>
+			<explosion_path type="string">Aircraft/harrier/Models/Effects/Explosion/Explode.xml</explosion_path> 
+			<max_detection_rng_nm type="double">38.8</max_detection_rng_nm>
+			<fov_deg type="double">25</fov_deg>
+			<detection_fov_deg type="double">180</detection_fov_deg>
+			<track_max_deg type="double">110</track_max_deg>
+			<max_g type="double">15</max_g>
+			<thrust_lbs type="double">701</thrust_lbs>
+			<thrust_duration_sec type="double">39</thrust_duration_sec>
+			<weight_launch_lbs type="double">291</weight_launch_lbs>
+			<weight_warhead_lbs type="double">44</weight_warhead_lbs>
+			<drag_coeff type="float">0.088</drag_coeff>
+			<drag_area type="float">0.075</drag_area>
+			<max_explosion_range type="double">50</max_explosion_range>
+			<max_speed type="double">4</max_speed>
+			<life type="double">115</life>
+			<fox type="string">Fox 3</fox>
+			<rail type="string">false</rail>
+			<cruise_alt type="double">0</cruise_alt>
+		</weapon>
+
+		<weapon>
+			<name type="string">AIM-9L Sidewinder</name>
+			<smoke_path type="string">Aircraft/harrier/Models/Stores/aim-9/aim-9_smoke.xml</smoke_path>
+			<model_path type="string">Aircraft/harrier/Models/Stores/aim-9/aim-9.xml</model_path>
+			<explosion_path type="string">Aircraft/harrier/Models/Effects/Explosion/Explode.xml</explosion_path>
+			<max_detection_rng_nm type="double">9</max_detection_rng_nm>
+			<fov_deg type="double">25</fov_deg>
+			<detection_fov_deg type="double">180</detection_fov_deg>
+			<track_max_deg type="double">110</track_max_deg>
+			<max_g type="double">21</max_g>
+			<thrust_lbs type="double">250</thrust_lbs>
+			<thrust_duration_sec type="double">15</thrust_duration_sec>
+			<weight_launch_lbs type="double">191</weight_launch_lbs>
+			<weight_warhead_lbs type="double">20.8</weight_warhead_lbs>
+			<drag_coeff type="float">0.05</drag_coeff>
+			<drag_area type="float">0.043</drag_area>
+			<max_explosion_range type="double">40</max_explosion_range>
+			<max_speed type="double">2.5</max_speed>
+			<life type="double">44</life>
+			<fox type="string">Fox 2</fox>
+			<rail type="string">true</rail>
+			<cruise_alt type="double">0</cruise_alt>
+		</weapon>
+
+		<weapon>
+			<name type="string">Sea Eagle Anti-ship Missile</name>
+			<smoke_path type="string">Aircraft/harrier/Models/Stores/SeaEagle/seaeagle_smoke.xml</smoke_path>
+			<model_path type="string">Aircraft/harrier/Models/Stores/SeaEagle/seaeagle.xml</model_path>
+			<explosion_path type="string">Aircraft/harrier/Models/Effects/Explosion/Explode.xml</explosion_path>
+			<max_detection_rng_nm type="double">134</max_detection_rng_nm>
+			<fov_deg type="double">25</fov_deg>
+			<detection_fov_deg type="double">180</detection_fov_deg>
+			<track_max_deg type="double">110</track_max_deg>
+			<max_g type="double">15</max_g>
+			<thrust_lbs type="double">1000</thrust_lbs>
+			<thrust_duration_sec type="double">1000</thrust_duration_sec>
+			<weight_launch_lbs type="double">1320</weight_launch_lbs>
+			<weight_warhead_lbs type="double">505</weight_warhead_lbs>
+			<drag_coeff type="float">0.478</drag_coeff>
+			<drag_area type="float">0.411</drag_area>
+			<max_explosion_range type="double">80</max_explosion_range>
+			<max_speed type="double">0.8</max_speed>
+			<life type="double">1000</life>
+			<fox type="string">A/G</fox>
+			<rail type="string">false</rail>
+			<cruise_alt type="double">40</cruise_alt>
+		</weapon>
+
+		<weapon>
+			<name type="string">ALARM Anti-radar Missile</name>
+			<smoke_path type="string">Aircraft/harrier/Models/Stores/ALARM/ALARM_smoke.xml</smoke_path>
+			<model_path type="string">Aircraft/harrier/Models/Stores/ALARM/alarm.xml</model_path>
+			<explosion_path type="string">Aircraft/harrier/Models/Effects/Explosion/Explode.xml</explosion_path>
+			<max_detection_rng_nm type="double">14</max_detection_rng_nm>
+			<fov_deg type="double">25</fov_deg>
+			<detection_fov_deg type="double">180</detection_fov_deg>
+			<track_max_deg type="double">110</track_max_deg>
+			<max_g type="double">15</max_g>
+			<thrust_lbs type="double">785</thrust_lbs>
+			<thrust_duration_sec type="double">60</thrust_duration_sec>
+			<weight_launch_lbs type="double">400</weight_launch_lbs>
+			<weight_warhead_lbs type="double">200</weight_warhead_lbs>
+			<drag_coeff type="float">0.157</drag_coeff>
+			<drag_area type="float">0.135</drag_area>
+			<max_explosion_range type="double">50</max_explosion_range>
+			<max_speed type="double">1</max_speed>
+			<life type="double">90</life>
+			<fox type="string">A/G</fox>
+			<rail type="string">false</rail>
+			<cruise_alt type="double">0</cruise_alt>
+		</weapon>
+	</weapons>
+
+  	<instrumentation>
+    	<path>Systems/harrier-instrumentation.xml</path>
+  	</instrumentation>
+
+	<rendering>
+		<redout>
+			<parameters>
+				<blackout-onset-g type="double">9</blackout-onset-g>
+				<blackout-complete-g type="double">11</blackout-complete-g>
+				<redout-onset-g type="double">-2.5</redout-onset-g>
+				<redout-complete-g type="double">-3.5</redout-complete-g>
+			</parameters>
+			<enabled type="bool">true</enabled>
+		</redout>
+	</rendering>
+	
+</sim>
+
+<limits>
+
+	<max-flap-extension-speed>
+   		<flaps>0.2</flaps>
+   		<speed>400</speed>
+  	</max-flap-extension-speed>
+  	<max-flap-extension-speed>
+   		<flaps>0.4</flaps>
+   		<speed>350</speed>
+  	</max-flap-extension-speed>
+  	<max-flap-extension-speed>
+   		<flaps>0.6</flaps>
+   		<speed>300</speed>
+  	</max-flap-extension-speed>
+ 	<max-flap-extension-speed>
+   		<flaps>0.8</flaps>
+   		<speed>250</speed>
+  	</max-flap-extension-speed>
+  	<max-flap-extension-speed>
+   		<flaps>1.0</flaps>
+   		<speed>200</speed>
+  	</max-flap-extension-speed>
+ 
+  	<vne>1500</vne>
+ 
+  	<max-gear-extension-speed>270</max-gear-extension-speed>
+ 
+  	<max-positive-g>11</max-positive-g>
+  	<max-negative-g>-3</max-negative-g>
+
+	<mass-and-balance>
+      	<maximum-takeoff-mass-lbs>26200</maximum-takeoff-mass-lbs>
+    </mass-and-balance>
+
+</limits>
+
+<autopilot>
+	<locks>
+		<altitude type="string">altitude-hold</altitude>
+	</locks>
+	<volts type="double">0</volts>
+	<serviceable type="bool">true</serviceable>
+	<enabled type="bool">false</enabled>
+	<mode type="string">attitude</mode>
+	<settings>
+		<target-altitude-ft type="double">0</target-altitude-ft>
+		<target-pitch-deg type="double">0</target-pitch-deg>
+		<heading-bug-deg type="double">0</heading-bug-deg>
+	</settings>
+</autopilot>
+
+<canopy>
+	<position-norm type="double">1.0</position-norm>
+</canopy>
+
+<controls>
+	<gear>
+      	<brake-parking type="double">1.0</brake-parking>
+    </gear>
+    <armament>
+		<missile-explode type="bool">true</missile-explode>
+		<missile-explode2 type="bool">false</missile-explode2>
+		<missile-sound type="bool">false</missile-sound>
+		<flare-release type="bool">true</flare-release>
+		<flare-release2 type="bool">false</flare-release2>
+      	<missile>
+        	<name>none</name>
+        	<address>nil</address>
+        	<addressNoSmoke>nil</addressNoSmoke>
+        	<addressExplosion>nil</addressExplosion>
+        	<count type="int">0</count>
+        	<nearest-target type="int">0</nearest-target>
+        	<sound-on-off type="bool">false</sound-on-off>
+        	<sound-volume type="double">0.12</sound-volume>
+        	<target-range-nm type="double">0</target-range-nm>
+        	<max-detection-rng-nm type="int">0</max-detection-rng-nm>
+        	<fov-deg type="int">0</fov-deg>
+        	<detection-fov-deg type="int">0</detection-fov-deg>
+        	<track-max-deg type="int">0</track-max-deg>
+        	<max-g type="int">0</max-g> 
+        	<thrust-lbs type="double">0</thrust-lbs>
+        	<thrust-duration-sec type="int">0</thrust-duration-sec>
+        	<weight-launch-lbs>0</weight-launch-lbs>
+        	<weight-warhead-lbs>0</weight-warhead-lbs>
+        	<drag-coeff type="double">0</drag-coeff>
+        	<drag-area type="double">0</drag-area>
+        	<maxExplosionRange type="int">0</maxExplosionRange>
+        	<maxspeed type="double">0</maxspeed>
+        	<life>0</life>
+        	<fox>nil</fox>
+       		<rail type="bool">false</rail>
+        	<cruise_alt type="int">0</cruise_alt>
+        	<current-pylon>0</current-pylon>
+			<armed type="bool">false</armed>
+      	</missile>
+      	<trigger type="bool">false</trigger>
+      	<master-arm type="bool">true</master-arm>
+		<stick-selector type="int">0</stick-selector>
+		<station n="0">
+			<fire-rocket n="0" type="bool">false</fire-rocket>
+			<fire-rocket n="1" type="bool">false</fire-rocket>
+			<fire-rocket n="2" type="bool">false</fire-rocket>
+			<fire-rocket n="3" type="bool">false</fire-rocket>
+			<fire-rocket n="4" type="bool">false</fire-rocket>
+			<fire-rocket n="5" type="bool">false</fire-rocket>
+			<fire-rocket n="6" type="bool">false</fire-rocket>
+			<fire-rocket n="7" type="bool">false</fire-rocket>
+			<fire-rocket n="8" type="bool">false</fire-rocket>
+			<fire-rocket n="9" type="bool">false</fire-rocket>
+			<fire-rocket n="10" type="bool">false</fire-rocket>
+			<fire-rocket n="11" type="bool">false</fire-rocket>
+			<fire-rocket n="12" type="bool">false</fire-rocket>
+			<fire-rocket n="13" type="bool">false</fire-rocket>
+			<fire-rocket n="14" type="bool">false</fire-rocket>
+			<fire-rocket n="15" type="bool">false</fire-rocket>
+			<fire-rocket n="16" type="bool">false</fire-rocket>
+			<fire-rocket n="17" type="bool">false</fire-rocket>		
+			<release-bomb1 type="bool">true</release-bomb1>
+			<release-bomb2 type="bool">false</release-bomb2>
+			<armed type="bool">false</armed>	
+      	</station>
+      	<station n="1">
+				<fire-rocket n="0" type="bool">false</fire-rocket>
+				<fire-rocket n="1" type="bool">false</fire-rocket>
+				<fire-rocket n="2" type="bool">false</fire-rocket>
+				<fire-rocket n="3" type="bool">false</fire-rocket>
+				<fire-rocket n="4" type="bool">false</fire-rocket>
+				<fire-rocket n="5" type="bool">false</fire-rocket>
+				<fire-rocket n="6" type="bool">false</fire-rocket>
+				<fire-rocket n="7" type="bool">false</fire-rocket>
+				<fire-rocket n="8" type="bool">false</fire-rocket>
+				<fire-rocket n="9" type="bool">false</fire-rocket>
+				<fire-rocket n="10" type="bool">false</fire-rocket>
+				<fire-rocket n="11" type="bool">false</fire-rocket>
+				<fire-rocket n="12" type="bool">false</fire-rocket>
+				<fire-rocket n="13" type="bool">false</fire-rocket>
+				<fire-rocket n="14" type="bool">false</fire-rocket>
+				<fire-rocket n="15" type="bool">false</fire-rocket>
+				<fire-rocket n="16" type="bool">false</fire-rocket>
+				<fire-rocket n="17" type="bool">false</fire-rocket>
+				<release-bomb1 type="bool">true</release-bomb1>
+				<release-bomb2 type="bool">false</release-bomb2>	
+				<drop-tank type="bool">true</drop-tank>
+				<drop-tank2 type="bool">false</drop-tank2>
+				<armed type="bool">false</armed>
+      		</station>
+      		<station n="2">
+       			<release type="bool">false</release>
+				<armed type="bool">false</armed>
+      		</station>
+      		<station n="3">
+       			<release-bomb1 type="bool">true</release-bomb1>
+       			<release-bomb2 type="bool">false</release-bomb2>
+				<armed type="bool">false</armed>			
+      		</station>
+      		<station n="4">
+       			<release type="bool">false</release>
+				<armed type="bool">false</armed>			
+      		</station>
+      		<station n="5">
+				<fire-rocket n="0" type="bool">false</fire-rocket>
+				<fire-rocket n="1" type="bool">false</fire-rocket>
+				<fire-rocket n="2" type="bool">false</fire-rocket>
+				<fire-rocket n="3" type="bool">false</fire-rocket>
+				<fire-rocket n="4" type="bool">false</fire-rocket>
+				<fire-rocket n="5" type="bool">false</fire-rocket>
+				<fire-rocket n="6" type="bool">false</fire-rocket>
+				<fire-rocket n="7" type="bool">false</fire-rocket>
+				<fire-rocket n="8" type="bool">false</fire-rocket>
+				<fire-rocket n="9" type="bool">false</fire-rocket>
+				<fire-rocket n="10" type="bool">false</fire-rocket>
+				<fire-rocket n="11" type="bool">false</fire-rocket>
+				<fire-rocket n="12" type="bool">false</fire-rocket>
+				<fire-rocket n="13" type="bool">false</fire-rocket>
+				<fire-rocket n="14" type="bool">false</fire-rocket>
+				<fire-rocket n="15" type="bool">false</fire-rocket>
+				<fire-rocket n="16" type="bool">false</fire-rocket>
+				<fire-rocket n="17" type="bool">false</fire-rocket>
+				<release-bomb1 type="bool">true</release-bomb1>
+				<release-bomb2 type="bool">false</release-bomb2>	
+				<drop-tank type="bool">true</drop-tank>
+				<drop-tank2 type="bool">false</drop-tank2>
+				<armed type="bool">false</armed>
+      		</station>
+			<station n="6">
+				<fire-rocket n="0" type="bool">false</fire-rocket>
+				<fire-rocket n="1" type="bool">false</fire-rocket>
+				<fire-rocket n="2" type="bool">false</fire-rocket>
+				<fire-rocket n="3" type="bool">false</fire-rocket>
+				<fire-rocket n="4" type="bool">false</fire-rocket>
+				<fire-rocket n="5" type="bool">false</fire-rocket>
+				<fire-rocket n="6" type="bool">false</fire-rocket>
+				<fire-rocket n="7" type="bool">false</fire-rocket>
+				<fire-rocket n="8" type="bool">false</fire-rocket>
+				<fire-rocket n="9" type="bool">false</fire-rocket>
+				<fire-rocket n="10" type="bool">false</fire-rocket>
+				<fire-rocket n="11" type="bool">false</fire-rocket>
+				<fire-rocket n="12" type="bool">false</fire-rocket>
+				<fire-rocket n="13" type="bool">false</fire-rocket>
+				<fire-rocket n="14" type="bool">false</fire-rocket>
+				<fire-rocket n="15" type="bool">false</fire-rocket>
+				<fire-rocket n="16" type="bool">false</fire-rocket>
+				<fire-rocket n="17" type="bool">false</fire-rocket>
+				<release-bomb1 type="bool">true</release-bomb1>
+				<release-bomb2 type="bool">false</release-bomb2>
+				<armed type="bool">false</armed>			
+      		</station>
+		<guns-umlimited type="bool">false</guns-umlimited>
+	</armament>
+	<switches>
+		<landing-light type="bool">false</landing-light>
+		<alternator type="bool">false</alternator>
+		<battery type="bool">false</battery>
+		<weapons-pylon n="0" type="bool">false</weapons-pylon>
+		<weapons-pylon n="1" type="bool">false</weapons-pylon>
+		<weapons-pylon n="2" type="bool">false</weapons-pylon>
+		<weapons-pylon n="3" type="bool">false</weapons-pylon>
+		<weapons-pylon n="4" type="bool">false</weapons-pylon>
+		<weapons-pylon n="5" type="bool">false</weapons-pylon>
+		<weapons-pylon n="6" type="bool">false</weapons-pylon>
+	</switches>	
+</controls>
+  
+<!-- fuel Settings -->
+<consumables>
+	<fuel>
+		<tank n="0">
+        		<tank-num type="int">0</tank-num>
+        		<level-gal_us>756</level-gal_us>
+			<name>Internal tank</name>
+      		</tank>
+		<tank n="1">
+        		<tank-num type="int">1</tank-num>
+        		<level-gal_us>228</level-gal_us>
+			<name>Left droptank</name>
+      		</tank>
+		<tank n="2">
+        		<tank-num type="int">2</tank-num>
+        		<level-gal_us>228</level-gal_us>
+			<name>Right droptank</name>
+      	</tank>
+		<tank n="3">
+			<hidden type="bool">true</hidden>
+		</tank>
+	</fuel>
+</consumables>
+  
+<instrumentation>
+	<ecm>
+		<on-off type="bool">true</on-off>
+	</ecm>
+	<panel-lights type="bool">false</panel-lights>
+	<hdd>
+		<mis-com>
+			<arpt type="bool">false</arpt>
+			<nd-centered type="bool">false</nd-centered>
+			<data type="bool">false</data>
+			<display-mode type="string">MAP</display-mode>
+			<range-nm type="int">10</range-nm>
+			<true-north type="bool">true</true-north>
+			<wpt type="bool">false</wpt>
+			<wxr type="bool">false</wxr>
+			<sta type="bool">false</sta>
+			<constants>
+				<tfc type="bool">false</tfc>
+				<display-type type="string">LCD</display-type>
+				<pos type="bool">false</pos>
+				<terr type="bool">false</terr>
+				<lh-vor-adf type="int">0</lh-vor-adf>
+				<rh-vor-adf type="int">0</rh-vor-adf>
+				<rangearc type="bool">false</rangearc>
+				<hdg-trk-selected type="bool">false</hdg-trk-selected>
+			</constants>
+		</mis-com>
+		<serviceable type="bool">true</serviceable>
+		<on type="bool">false</on>
+		<volts type="double">0</volts>
+		<page type="double">0</page>
+		<!-- Modes: 0 = Nav, 1 = SMS, 2 = Mission computer, and 3 = Systems -->
+		<sub_page type="double">0</sub_page>
+	</hdd>
+	<beacons>
+		<serviceable type="bool">true</serviceable>
+	</beacons>
+	<landing-light>
+		<serviceable type="bool">true</serviceable>
+	</landing-light>
+    <radar>
+      	<range type="int">40</range>
+      	<range-factor type="double">0.001888</range-factor>
+      	<minimized type="bool">false</minimized>
+      	<selected type="int">3</selected>
+      	<enabled type="bool">true</enabled>
+      	<az-field type="double">120</az-field>
+      	<range type="double">150</range>
+      	<range-selected type="double">50</range-selected>
+      	<radar2-range type="double">150</radar2-range>
+      	<display-rdr type="bool">true</display-rdr>
+      	<radar-standby type="bool">false</radar-standby>
+		<lock type="double">0</lock>
+		<on type="bool">false</on>
+		<volts type="double">0</volts>
+		<serviceable type="bool">true</serviceable>
+      	<mode>
+        	<rws type="bool">false</rws>
+        	<tws-auto type="bool">true</tws-auto>
+      	</mode>
+    </radar>
+    <radar2>
+      	<sweep-width-m type="double">0.0844</sweep-width-m>
+      	<range-width-m type="double">0.0846</range-width-m>
+      	<radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+      	<hud-eye-dist-m type="double">0.766</hud-eye-dist-m>
+      	<hud-radius-m type="double">0.071</hud-radius-m>
+      	<hud-vertical-offset-m type="double">0.0</hud-vertical-offset-m>
+    </radar2>
+	<rwr>
+		<serviceable type="bool">true</serviceable>			
+		<display-lighting-intens type="double">0.4</display-lighting-intens>
+		<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+	</rwr>
+	<hud>
+		<aim>
+			<active type="bool">false</active>
+			<tachy type="bool">false</tachy>
+			<align type="bool">false</align>
+			<offsets>
+				<x type="float">0</x>
+				<y type="float">0</y>
+			</offsets>
+			<speed-fps type="int">0</speed-fps>
+			<range-yds type="int">0</range-yds>
+			<radius type="int">0</radius>
+			<arc>
+				<start-deg type="int">0</start-deg>
+				<stop-deg type="int">0</stop-deg>
+			</arc>
+		</aim>
+		<volts type="double">0</volts>
+		<on type="bool">false</on>
+		<serviceable type="bool">true</serviceable>
+		<show-ccip type="bool">false</show-ccip>
+	</hud>
+   	<attitude-indicator>
+      	<config>
+        	<tumble-flag type="bool">false</tumble-flag>
+      	</config>
+    </attitude-indicator>
+</instrumentation>
+  
+<systems include="Systems/harrier-systems.xml">
+    <refuel>
+		<type>probe</type>
+   		<serviceable type="bool">false</serviceable>
+   		<max-fuel-transfer-lbs-min>6000</max-fuel-transfer-lbs-min>
+   		<offset-x-m>-16.9421</offset-x-m>
+   		<offset-y-m>-1.2587</offset-y-m>
+   		<offset-z-m>-4.6851</offset-z-m>
+    </refuel>
+		<electrical include="Systems/harrier-electrical.xml"/>
+      	<autopilot>        
+			<path>Aircraft/harrier/Systems/harrier-autopilot.xml</path>
+      	</autopilot>
+   
+</systems>
+
+<!-- keyboard -->
+<input> 
+	<keyboard>
+ 
+      		<key n="104">
+			<name>h</name>
+			<desc>toggle HUD</desc>
+			<binding>
+        			<command>nasal</command>
+        			<script>hud.hud_toggle();</script>
+      			</binding>
+      		</key>
+
+          	<key n="101">
+    			<name>e</name>
+    			<desc>Guns</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>weapons.fire_MG()</script>
+    			</binding>
+    			<mod-up>
+      				<binding>
+        				<command>nasal</command>
+        				<script>weapons.stop_MG()</script>
+      				</binding>
+    			</mod-up>
+  		</key>
+
+    		<key n="119">
+    			<name>w</name>
+    			<desc>Cycle Stick Weapon Mode Selector</desc>
+			<binding>
+ 				<command>property-cycle</command>
+ 				<property>controls/armament/stick-selector</property>
+ 				<value type="int">0</value>
+ 				<value type="int">1</value>
+ 				<value type="int">2</value>
+			</binding>        		
+  		</key>
+
+   		<key n="23">
+    			<name>Ctrl + w</name>
+    			<desc>Toggle arming</desc>
+      			<binding>
+        			<command>nasal</command>
+        			<script>main_loop.ctrl_w();</script>
+      			</binding>        		
+  		</key>
+
+		<key n="49">
+    			<name>1</name>
+    			<desc>Station 1</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>weapons.set_pylon(0);</script>
+    			</binding>
+  		</key>
+  
+  		<key n="50">
+    			<name>2</name>
+    			<desc>Station 2</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>weapons.set_pylon(1);</script>
+    			</binding>
+  		</key>
+  
+  		<key n="51">
+    			<name>3</name>
+    			<desc>Station 3</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>weapons.set_pylon(2);</script>
+    			</binding>
+ 		</key>
+
+  		<key n="52">
+    			<name>4</name>
+    			<desc>Center Station</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>weapons.set_pylon(3);</script>
+    			</binding>
+  		</key>
+
+  		<key n="53">
+    			<name>5</name>
+    			<desc>Station 5</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>main_loop.key_5();</script>
+    			</binding>
+  		</key>
+		
+		<key n="54">
+    			<name>6</name>
+    			<desc>Station 6</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>weapons.set_pylon(5);</script>
+    			</binding>
+  		</key>
+
+  		<key n="55">
+    			<name>7</name>
+    			<desc>Station 7</desc>
+    			<binding>
+      				<command>nasal</command>
+      				<script>weapons.set_pylon(6);</script>
+    			</binding>
+  		</key>
+
+		<key n="125">
+     			<name>}</name>
+     			<desc>Autostart</desc>
+			<binding>
+				<command>nasal</command>
+				<script>harrier.autostart();</script>
+			</binding>
+ 		</key>
+
+		<key n="67">
+			<name>Shift-c</name>
+	        	<desc>Toggle Canopy</desc>
+	          	<binding> 
+	          		<command>nasal</command>
+				<script>harrier.switch_canopy(2);</script>
+			</binding>
+		</key>
+		<key n="267">
+  			<name>F11</name>
+  			<desc>Pop up autopilot dialog</desc>
+			<binding>
+				<command>nasal</command>
+				<script>
+					if(!getprop("sim/supported/new-menu")){
+						dialogs.shar_ap_dlg.open();
+					}
+					#else{
+					#}
+				</script>	
+			</binding>
+ 		</key>
+
+		<key n="6">
+  			<name>Ctrl + f</name>
+  			<desc>Fire flare</desc>
+			<binding>
+				<command>nasal</command>
+				<script>load.fire_flare();</script>
+			</binding>
+ 		</key>
+
+		<key n="106">
+  			<name>j</name>
+  			<desc>Decrease speedbrake</desc>
+			<binding>
+ 				<command>property-adjust</command>
+ 				<property>/controls/flight/speedbrake</property>
+ 				<step>-0.25</step>
+ 				<min>0</min>
+ 				<max>1</max>
+			</binding>
+ 		</key>
+
+ 		<key n="107">
+  			<name>k</name>
+  			<desc>Increase speedbrake</desc>
+			<binding>
+ 				<command>property-adjust</command>
+ 				<property>/controls/flight/speedbrake</property>
+ 				<step>0.25</step>
+ 				<min>0</min>
+ 				<max>1</max>
+			</binding>
+ 		</key>  
+		<key n="110">
+    		<name>n</name>
+    		<desc>Changes Target</desc>
+    		<binding>
+      			<command>nasal</command>
+      			<script>radar.next_Target_Index()</script>
+    		</binding>
+  		</key>
+  
+  		<key n="14">
+    		<name>Ctrl-n</name>
+    		<desc>Changes Target</desc>
+    		<binding>
+      			<command>nasal</command>
+      			<script>radar.previous_Target_Index()</script>
+    		</binding>
+  		</key>
+		
+		<key n="108">
+           <name>l</name>
+           <desc>Wiper</desc>
+           <binding>
+               <command>property-toggle</command>
+               <property>/controls/switches/windscreen-wiper</property>
+           </binding>
+       </key>
+		
+	</keyboard>
+</input>
+
+<ai>
+	<closest>
+      		<callsign type="string"></callsign>
+      		<ai-name type="string"></ai-name>
+      		<range type="double">0</range>
+      		<heading type="int">0</heading>
+      		<bearing type="int">0</bearing>
+      		<altitude type="int">0</altitude>
+      		<speed type="int">0</speed>
+      		<longitude type="double">0</longitude>
+      		<latitude type="double">0</latitude>
+			<pitch type="double">0</pitch>
+			<total-elevation type="double">0</total-elevation>
+			<elevation type="double">0</elevation>
+			<deviation type="double">0</deviation>
+    </closest>
+</ai>
+
+<nasal>
+
+	<dialogs>
+		<file>Aircraft/harrier/Nasal/dialogs.nas</file>
+	</dialogs>
+
+	<harrier>
+		<file>Aircraft/harrier/Nasal/harrier.nas</file>
+	</harrier>
+	
+	  <lights>
+        	<file>Aircraft/harrier/Nasal/Lights.nas</file>
+        </lights>
+
+    <aar> 
+    	<file>Aircraft/Generic/aar.nas</file>
+    </aar>
+
+    <radar>
+      	<file>Aircraft/harrier/Nasal/radar.nas</file>
+    </radar>
+
+    <radardist>		
+      	<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+
+	<hud>
+		<file>Aircraft/harrier/Nasal/hud.nas</file>
+	</hud>
+
+    <weapons>
+      	<file>Aircraft/harrier/Nasal/weapons.nas</file>
+    </weapons>
+
+    <missile>
+		<file>Aircraft/harrier/Nasal/missile.nas</file>
+    </missile>
+
+	<main_loop>
+		<file>Aircraft/harrier/Nasal/main-loop.nas</file>
+	</main_loop>
+	
+	<engines>
+		<file>Aircraft/harrier/Nasal/engine.nas</file>
+		<script>
+			var Pegasus_mk106 = engines.Jet.new(0, 0, 0.03, 5.21, 3, 5, 4, 16);
+		</script>
+	</engines>
+	
+	<electrical>
+      	<file>Aircraft/harrier/Nasal/electrical.nas</file>
+    </electrical>
+
+	<limits>
+		<file>Aircraft/harrier/Nasal/limits.nas</file>	
+	</limits>
+
+	<hdd>
+		<file>Aircraft/harrier/Nasal/hdd.nas</file> 
+	</hdd>
+
+	<sounds>
+		<file>Aircraft/harrier/Nasal/sounds.nas</file> 
+	</sounds>
+
+	<fuel>
+		<file>Aircraft/harrier/Nasal/fuel.nas</file> 
+	</fuel>
+
+	<rwr>		
+      	<file>Aircraft/Instruments-3d/rwr/rwr.nas</file>
+	</rwr>
+
+	<oxygen>
+		<file>Aircraft/Generic/Oxygen/oxygen.nas</file> 
+	</oxygen>
+
+	<mis_com>
+		<file>Aircraft/harrier/Nasal/mission-computer.nas</file> 
+	</mis_com>
+	
+	
+		<load>
+      <file>Aircraft/harrier/Nasal/ext_stores.nas</file>
+    </load>
+
+</nasal>
+ 
+</PropertyList>

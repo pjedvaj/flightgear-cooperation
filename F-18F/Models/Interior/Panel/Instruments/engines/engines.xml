@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- From Helijah EA-6B -->
+
+<PropertyList>
+
+  <path>engines.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>L-rpm-tape</object-name>
+    <object-name>R-rpm-tape</object-name>
+    <object-name>L-egt-tape</object-name>
+    <object-name>R-egt-tape</object-name>
+    <object-name>L-ff-tape</object-name>
+    <object-name>R-ff-tape</object-name>
+    <object-name>L-pt-needle</object-name>
+    <object-name>R-pt-needle</object-name>
+    <object-name>L-op-needle</object-name>
+    <object-name>R-op-needle</object-name>
+    <object-name>markers</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>L-rpm-tape</object-name>
+    <object-name>R-rpm-tape</object-name>
+    <object-name>L-egt-tape</object-name>
+    <object-name>R-egt-tape</object-name>
+    <object-name>L-ff-tape</object-name>
+    <object-name>R-ff-tape</object-name>
+    <object-name>L-pt-needle</object-name>
+    <object-name>R-pt-needle</object-name>
+    <object-name>L-op-needle</object-name>
+    <object-name>R-op-needle</object-name>
+    <object-name>markers</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>L-rpm-tape</object-name>
+    <object-name>R-rpm-tape</object-name>
+    <object-name>L-egt-tape</object-name>
+    <object-name>R-egt-tape</object-name>
+    <object-name>L-ff-tape</object-name>
+    <object-name>R-ff-tape</object-name>
+    <object-name>L-pt-needle</object-name>
+    <object-name>R-pt-needle</object-name>
+    <object-name>L-op-needle</object-name>
+    <object-name>R-op-needle</object-name>
+    <object-name>markers</object-name>
+    <condition>
+      <property>controls/lighting/instrument-lights</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   1.00 </red>
+      <green> 1.00 </green>
+      <blue>  1.00 </blue>
+    </emission>
+  </animation>
+
+  <!-- RPM tapes -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>L-rpm-tape</object-name>
+    <property>engines/engine[0]/n2</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>  0.000 </dep></entry>
+      <entry><ind>  30 </ind><dep> -0.069 </dep></entry>
+      <entry><ind>  60 </ind><dep> -0.140 </dep></entry>
+      <entry><ind>  70 </ind><dep> -0.155 </dep></entry>
+      <entry><ind>  80 </ind><dep> -0.245 </dep></entry>
+      <entry><ind> 110 </ind><dep> -0.501 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>R-rpm-tape</object-name>
+    <property>engines/engine[1]/n2</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>  0.000 </dep></entry>
+      <entry><ind>  30 </ind><dep> -0.069 </dep></entry>
+      <entry><ind>  60 </ind><dep> -0.140 </dep></entry>
+      <entry><ind>  70 </ind><dep> -0.155 </dep></entry>
+      <entry><ind>  80 </ind><dep> -0.245 </dep></entry>
+      <entry><ind> 110 </ind><dep> -0.501 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- EGT tapes -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>L-egt-tape</object-name>
+    <property>engines/engine[0]/egt-degC</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 400 </ind><dep> -0.150 </dep></entry>
+      <entry><ind> 700 </ind><dep> -0.432 </dep></entry>
+      <entry><ind> 800 </ind><dep> -0.503 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>R-egt-tape</object-name>
+    <property>engines/engine[1]/egt-degC</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 400 </ind><dep> -0.150 </dep></entry>
+      <entry><ind> 700 </ind><dep> -0.432 </dep></entry>
+      <entry><ind> 800 </ind><dep> -0.503 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- fuel flow tapes -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>L-ff-tape</object-name>
+    <property>engines/engine[0]/fuel-flow-gph</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind>   0  </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 6200 </ind><dep> -0.503 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>R-ff-tape</object-name>
+    <property>engines/engine[1]/fuel-flow-gph</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind>   0  </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 6200 </ind><dep> -0.503 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>L-op-needle</object-name>
+    <property>engines/engine[0]/oilp-norm</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  000 </dep></entry>
+      <entry><ind> 1 </ind><dep> -330 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m> 0.0164 </y-m>
+      <z-m>-0.0747 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>R-op-needle</object-name>
+    <property>engines/engine[1]/oilp-norm</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  000 </dep></entry>
+      <entry><ind> 1 </ind><dep> -330 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m> 0.0478 </y-m>
+      <z-m>-0.0747 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>L-pt-needle</object-name>
+    <property>engines/engine[0]/n1</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind> 30 </ind><dep>  30 </dep></entry>
+      <entry><ind> 60 </ind><dep>  00 </dep></entry>
+      <entry><ind>100 </ind><dep> -10 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m>-0.0472 </y-m>
+      <z-m>-0.0744 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>R-pt-needle</object-name>
+    <property>engines/engine[1]/n1</property>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <interpolation>
+      <entry><ind> 30 </ind><dep>  30 </dep></entry>
+      <entry><ind> 60 </ind><dep>  00 </dep></entry>
+      <entry><ind>100 </ind><dep> -10 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m>-0.0155 </y-m>
+      <z-m>-0.0744 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

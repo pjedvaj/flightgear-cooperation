@@ -1,0 +1,82 @@
+<PropertyList>
+
+
+    <!--
+    Usable with FlightGear
+    Property of Gerard Robin (C) 2008-2010
+    Copyright 
+    -->
+    
+    <path>rescue-op.ac</path>
+       <!-- <texture-path>Aircraft/Alouette-III/Models/Textures</texture-path>-->
+
+	<offsets>
+            <pitch-deg>0</pitch-deg>
+            <z-m>10</z-m>
+            <x-m>0.0</x-m>
+            <heading-deg>180</heading-deg>
+        </offsets>
+
+
+
+        <animation>
+		<type>select</type>
+		<object-name>Rope</object-name>
+		<object-name>Rescued-Person</object-name>
+		<object-name>Crown</object-name>
+		<condition>
+			<equals>
+				<property>/sim/model/rescue</property>
+				<value>1</value>
+			</equals>
+		</condition>
+        </animation>
+
+
+
+
+
+
+
+	<animation>
+    <type>rotate</type>
+   <object-name>Rope</object-name>
+		<object-name>Rescued-Person</object-name>
+		<object-name>Crown</object-name>
+    <property>/orientation/roll-deg</property>
+    <factor>0.7</factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+   <animation>
+    <type>rotate</type>
+   <object-name>Rope</object-name>
+		<object-name>Rescued-Person</object-name>
+		<object-name>Crown</object-name>
+    <property>/orientation/pitch-deg</property>
+    <factor>0.7</factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+    <animation>
+    <type>rotate</type>
+   <object-name>Rope</object-name>
+		<object-name>Rescued-Person</object-name>
+		<object-name>Crown</object-name>
+    <property>/orientation/yaw-rate-degps</property>
+    <factor>-5</factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+
+</PropertyList>

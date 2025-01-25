@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Royal Navy 845NAS #2 SFOR</name>
+        <texture>hc4Liveries/RN845NAS_2.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.55</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>

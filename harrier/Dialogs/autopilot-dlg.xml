@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+   
+<name>shar_autopilot</name>
+<modal type="bool">false</modal>
+<layout>vbox</layout>
+
+<group>
+	<layout>hbox</layout>
+
+    	<text>
+      		<label>Auto Pilot</label>
+    	</text>
+</group>
+ 
+<hrule/>
+ 
+<group>
+	<layout>hbox</layout>
+
+	<button>
+		<legend>On</legend>
+		<binding>
+ 			<command>property-assign</command>
+ 			<property>/autopilot/enabled</property>
+ 			<value>true</value>
+		</binding>
+	</button>
+
+	<button>
+		<legend>Attitude</legend>
+		<binding>
+ 			<command>property-assign</command>
+ 			<property>/autopilot/mode</property>
+ 			<value>attitude</value>
+		</binding>
+      		<binding>
+			<command>property-assign</command>
+			<property>autopilot/locks/altitude</property>
+   			<value></value>
+      		</binding>
+	</button>
+</group>
+
+<group>
+	<layout>hbox</layout>
+
+	<button>
+		<legend>Off</legend>
+		<binding>
+ 			<command>property-assign</command>
+ 			<property>/autopilot/enabled</property>
+ 			<value>false</value>
+		</binding>
+	</button>
+
+	<button>
+		<legend>Height</legend>
+      		<binding>
+ 			<command>property-assign</command>
+			<property>autopilot/locks/altitude</property>
+   			<value>altitude-hold</value>
+      		</binding>
+      		<binding>
+ 			<command>property-assign</command>
+			<property>autopilot/locks/heading</property>
+   			<value></value>
+      		</binding>
+		<binding>
+ 			<command>property-assign</command>
+ 			<property>/autopilot/mode</property>
+ 			<value>altitude</value>
+		</binding>
+	</button>
+</group>
+
+<hrule/>
+
+<group>
+	<layout>hbox</layout>
+
+	<group>
+		<layout>table</layout>
+      		<halign>center</halign>
+      		<valign>top</valign>
+
+
+    		<text>
+      			<row>0</row>
+      			<col>0</col>
+      			<label>Altitude:</label>
+    		</text>
+
+    		<input>
+      			<row>1</row>
+      			<col>0</col>
+     			<name>altitude</name>
+      			<property>/autopilot/settings/target-altitude-ft</property>
+      			<binding>
+        			<command>dialog-apply</command>
+        			<object-name>altitude</object-name>
+      			</binding>
+      			<live type="bool">true</live>
+    		</input>
+	</group>
+
+	<vrule/>
+
+	<group>
+		<layout>table</layout>
+
+		<button>
+      			<row>0</row>
+      			<col>0</col>
+			<legend>Pitch:</legend>
+			<binding>
+ 				<command>property-assign</command>
+				<property>autopilot/locks/altitude</property>
+   				<value>pitch-hold</value>
+				<condition>
+   					<equals>
+						<property>autopilot/mode</property>
+   						<value>attitude</value>
+					</equals>
+				</condition>
+			</binding>
+			<binding>
+ 				<command>property-assign</command>
+				<property>autopilot/locks/heading</property>
+   				<value></value>
+				<condition>
+   					<equals>
+						<property>autopilot/mode</property>
+   						<value>attitude</value>
+					</equals>
+				</condition>
+			</binding>
+		</button>
+
+    		<input>
+      			<row>1</row>
+      			<col>0</col>
+     			<name>pitch</name>
+      			<property>/autopilot/settings/target-pitch-deg</property>
+      			<binding>
+        			<command>dialog-apply</command>
+        			<object-name>pitch</object-name>
+      			</binding>
+      			<live type="bool">true</live>
+    		</input>
+
+		<button>
+      			<row>2</row>
+      			<col>0</col>
+			<legend>Heading:</legend>
+			<binding>
+ 				<command>property-assign</command>
+				<property>autopilot/locks/altitude</property>
+   				<value></value>
+				<condition>
+   					<equals>
+						<property>autopilot/mode</property>
+   						<value>attitude</value>
+					</equals>
+				</condition>
+			</binding>
+			<binding>
+ 				<command>property-assign</command>
+				<property>autopilot/locks/heading</property>
+   				<value>dg-heading-hold</value>
+				<condition>
+   					<equals>
+						<property>autopilot/mode</property>
+   						<value>attitude</value>
+					</equals>
+				</condition>
+			</binding>
+		</button>
+
+    		<input>
+      			<row>3</row>
+      			<col>0</col>
+     			<name>heading</name>
+      			<property>/autopilot/settings/heading-bug-deg</property>
+      			<binding>
+        			<command>dialog-apply</command>
+        			<object-name>heading</object-name>
+      			</binding>
+      			<live type="bool">true</live>
+    		</input>
+	</group>
+
+</group>
+
+<hrule/>
+
+<group>
+	<layout>hbox</layout>
+
+	<button>
+      		<default>true</default>
+		<legend>Apply</legend>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+	</button>
+
+	<button>
+		<legend>Close</legend>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+</group>
+
+</PropertyList>

@@ -1,0 +1,2267 @@
+<?xml version="1.0"?>
+ 
+
+<PropertyList>
+
+<!--
+
+station 0 
+	-35.761155
+	-9.2175853
+	-20.341207
+
+station 1 
+	-38.057743
+	-6.1351706
+	-20.013123
+
+station 3 
+	-40.026247
+	0
+	-22.309711
+
+station 5 
+	-38.057743
+	6.1351706
+	-20.013123
+
+station 6 
+	-35.761155
+	9.2175853
+	-20.341207
+	
+
+-->
+
+<!-- guns -->
+ 
+<submodel>
+    <name>tracer right</name> 
+    <model>Aircraft/harrier/Models/tracer.xml</model>
+    <trigger>controls/armament/triggerr</trigger>
+    <speed>2430</speed>
+    <repeat>true</repeat>
+    <delay>0.05</delay>
+    <count>130</count>
+    <x-offset> -21 </x-offset>
+    <y-offset> 1.5 </y-offset>
+    <z-offset> -2.68</z-offset>
+    <pitch-offset> 0.5 </pitch-offset>
+    <life>10.0</life>
+    <wind>false</wind>
+    <weight>0.485</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/impact/cannon</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/cannon</impact-report> 
+   </submodel>
+
+   <submodel>
+    <name>cannon right</name>
+    <model>Models/Geometry/null.ac</model>
+    <trigger>controls/armament/triggerr</trigger>
+    <speed>2430</speed>
+    <repeat>true</repeat>
+    <delay>0.05</delay>
+    <count>130</count>
+    <x-offset> -21</x-offset>
+    <y-offset> 1.5 </y-offset>
+    <z-offset> -2.68 </z-offset>
+    <pitch-offset> 0.5 </pitch-offset>
+    <life>10.0</life>
+    <wind>false</wind>
+    <weight>0.485</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/impact/cannon</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/cannon</impact-report>
+    <submodel-path>Aircraft/harrier/Models/subsubmodels.xml</submodel-path>
+  </submodel>
+  
+   <submodel>
+    <name>tracer left</name> 
+    <model>Aircraft/harrier/Models/tracer.xml</model>
+    <trigger>controls/armament/triggerl</trigger>
+    <speed>2430</speed>
+    <repeat>true</repeat>
+    <delay>0.05</delay>
+    <count>130</count>
+    <x-offset> -21 </x-offset>
+    <y-offset> -1.5 </y-offset>
+    <z-offset> -2.68</z-offset>
+    <pitch-offset> 0.5 </pitch-offset>
+    <life>10.0</life>
+    <wind>false</wind>
+    <weight>0.485</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/impact/cannon</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/cannon</impact-report> 
+   </submodel>
+
+   <submodel>
+    <name>cannon left</name>
+    <model>Models/Geometry/null.ac</model>
+    <trigger>controls/armament/triggerl</trigger>
+    <speed>2430</speed>
+    <repeat>true</repeat>
+    <delay>0.05</delay>
+    <count>130</count>
+    <x-offset> -21</x-offset>
+    <y-offset> -1.5 </y-offset>
+    <z-offset> -2.68 </z-offset>
+    <pitch-offset> 0.5 </pitch-offset>
+    <life>10.0</life>
+    <wind>false</wind>
+    <weight>0.485</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/impact/cannon</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/cannon</impact-report>
+    <submodel-path>Aircraft/harrier/Models/subsubmodels.xml</submodel-path>
+  </submodel>
+
+    
+
+
+  <submodel> 
+    <name>gunsmoke-L</name>
+    <model>Aircraft/harrier/Models/Effects/smoke.xml</model>
+    <trigger>controls/armament/triggerl</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.01</delay>
+    <count>130</count>
+    <x-offset> -19 </x-offset>
+    <y-offset> -1.5 </y-offset>
+    <z-offset> -2.68</z-offset>
+    <pitch-offset> 0 </pitch-offset>
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0 </pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>1</life>
+  </submodel>
+
+
+  <submodel> 
+    <name>gunsmoke-R</name>
+    <model>Aircraft/harrier/Models/Effects/smoke.xml</model>
+    <trigger>controls/armament/triggerr</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.01</delay>
+    <count>130</count>
+    <x-offset> -19</x-offset>
+    <y-offset> 1.5 </y-offset>
+    <z-offset> -2.68 </z-offset>
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0 </pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>1</life>
+  </submodel>
+ 
+
+<!-- unguided rockets -->    
+
+	<submodel>
+		<name>rocket 0-1</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[0]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-2</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[1]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-3</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[2]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-4</name>
+		<trigger>/controls/armament/station[0]/fire-rocket[3]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-5</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[4]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-6</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[5]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-7</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[6]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-8</name>
+		<trigger>/controls/armament/station[0]/fire-rocket[7]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-9</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[8]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-10</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[9]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-11</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[10]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-12</name>
+		<trigger>/controls/armament/station[0]/fire-rocket[11]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+		<submodel>
+		<name>rocket 0-13</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[12]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-14</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[13]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-15</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[14]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-16</name>
+		<trigger>/controls/armament/station[0]/fire-rocket[15]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+	<submodel>
+		<name>rocket 0-17</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[16]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 0-18</name>		
+		<trigger>/controls/armament/station[0]/fire-rocket[17]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+	
+<submodel>
+		<name>rocket 1-1</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[0]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-2</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[1]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-3</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[2]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-4</name>
+		<trigger>/controls/armament/station[1]/fire-rocket[3]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-5</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[4]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-6</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[5]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-7</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[6]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-8</name>
+		<trigger>/controls/armament/station[1]/fire-rocket[7]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-9</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[8]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-10</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[9]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-11</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[10]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-12</name>
+		<trigger>/controls/armament/station[1]/fire-rocket[11]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+		<submodel>
+		<name>rocket 1-13</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[12]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-14</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[13]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-15</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[14]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>	
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-16</name>
+		<trigger>/controls/armament/station[1]/fire-rocket[15]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+	<submodel>
+		<name>rocket 1-17</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[16]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 1-18</name>		
+		<trigger>/controls/armament/station[1]/fire-rocket[17]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-1</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[0]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-2</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[1]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-3</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[2]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-4</name>
+		<trigger>/controls/armament/station[5]/fire-rocket[3]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-5</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[4]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-6</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[5]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-7</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[6]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-8</name>
+		<trigger>/controls/armament/station[5]/fire-rocket[7]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-9</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[8]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-10</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[9]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-11</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[10]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-12</name>
+		<trigger>/controls/armament/station[5]/fire-rocket[11]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+		<submodel>
+		<name>rocket 5-13</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[12]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-14</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[13]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-15</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[14]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-16</name>
+		<trigger>/controls/armament/station[5]/fire-rocket[15]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+	<submodel>
+		<name>rocket 5-17</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[16]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 5-18</name>		
+		<trigger>/controls/armament/station[5]/fire-rocket[17]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+<submodel>
+		<name>rocket 6-1</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[0]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>			
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-2</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[1]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-3</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[2]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-4</name>
+		<trigger>/controls/armament/station[6]/fire-rocket[3]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-5</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[4]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-6</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[5]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-7</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[6]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-8</name>
+		<trigger>/controls/armament/station[6]/fire-rocket[7]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-9</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[8]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-10</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[9]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-11</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[10]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-12</name>
+		<trigger>/controls/armament/station[6]/fire-rocket[11]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+		<submodel>
+		<name>rocket 6-13</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[12]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-14</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[13]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-15</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[14]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-16</name>
+		<trigger>/controls/armament/station[6]/fire-rocket[15]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+	<submodel>
+		<name>rocket 6-17</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[16]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>		
+	</submodel>
+
+	<submodel>
+		<name>rocket 6-18</name>		
+		<trigger>/controls/armament/station[6]/fire-rocket[17]</trigger>
+		<model>Aircraft/harrier/Models/Stores/FFAR/rocket.xml</model>		
+		<speed>3200.0</speed>
+		<repeat>false</repeat>		
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>		
+		<weight>18.5</weight>
+		<fuse-range>2.2</fuse-range>
+		<eda>0.01</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<wind>false</wind>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-impact</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+	</submodel>
+
+<!-- unguided "dumb" bombs -->
+
+	<submodel>
+		<name>1000 pound 0</name>
+		<trigger>controls/armament/station[0]/release-bomb1</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+
+	<submodel>
+		<name>1000 pound 1</name>
+		<trigger>controls/armament/station[1]/release-bomb1</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+
+	<submodel>
+		<name>1000 pound 3</name>
+		<trigger>controls/armament/station[3]/release-bomb1</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-40.026247</x-offset>
+  		<y-offset>0</y-offset>
+  		<z-offset>-22.309711</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+	
+	<submodel>
+		<name>1000 pound 5</name>
+		<trigger>controls/armament/station[5]/release-bomb1</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+	
+	<submodel>
+		<name>1000 pound 6</name>
+		<trigger>controls/armament/station[6]/release-bomb1</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+
+<submodel>
+		<name>1000 pound 0-2</name>
+		<trigger>controls/armament/station[0]/release-bomb2</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>-9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+
+	<submodel>
+		<name>1000 pound 1-2</name>
+		<trigger>controls/armament/station[1]/release-bomb2</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>-6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+
+	<submodel>
+		<name>1000 pound 3-2</name>
+		<trigger>controls/armament/station[3]/release-bomb2</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-40.026247</x-offset>
+  		<y-offset>0</y-offset>
+  		<z-offset>-22.309711</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+	
+	<submodel>
+		<name>1000 pound 5-2</name>
+		<trigger>controls/armament/station[5]/release-bomb2</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+     		<x-offset>-38.057743</x-offset>
+    		<y-offset>6.1351706</y-offset>
+    		<z-offset>-20.013123</z-offset> 
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel>
+	
+	<submodel>
+		<name>1000 pound 6-2</name>
+		<trigger>controls/armament/station[6]/release-bomb2</trigger>
+		<model>Aircraft/harrier/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-35.761155</x-offset>
+  		<y-offset>9.2175853</y-offset>
+  		<z-offset>-20.341207</z-offset>
+		<cd>0.16</cd>
+		<weight>500</weight>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>	
+	</submodel> 
+
+ <submodel>
+	<name>left-tank</name>
+    	<model>Aircraft/harrier/Models/Stores/exTank.ac</model>
+    	<trigger>controls/armament/station[1]/drop-tank</trigger>
+    	<speed>0</speed>
+    	<cd>0.035</cd>
+    	<eda>2.8</eda>
+    	<weight>250</weight>
+    	<repeat>false</repeat>
+    	<count>-1</count>
+    	<wind>false</wind>
+    	<x-offset>-38.057743</x-offset>
+    	<y-offset>-6.1351706</y-offset>
+    	<z-offset>-20.013123</z-offset>    	
+    	<contents>consumables/fuel/tank[1]</contents>
+    	<life>1000</life>
+    	<collision>true</collision>
+    	<collision-report>sim/armament/weapons/impact</collision-report>
+    	<impact>true</impact>
+    	<impact-report>sim/armament/weapons/impact</impact-report>
+	<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+<submodel>
+	<name>right-tank</name>
+    	<model>Aircraft/harrier/Models/Stores/exTank.ac</model>
+    	<trigger>controls/armament/station[5]/drop-tank</trigger>
+    	<speed>0</speed>
+    	<cd>0.035</cd>
+    	<eda>2.8</eda>
+    	<weight>250</weight>
+    	<repeat>false</repeat>
+    	<count>-1</count>
+    	<wind>false</wind>
+     	<x-offset>-38.057743</x-offset>
+    	<y-offset>6.1351706</y-offset>
+    	<z-offset>-20.013123</z-offset>     	
+    	<contents>consumables/fuel/tank[2]</contents>
+    	<life>1000</life>
+    	<collision>true</collision>
+    	<collision-report>sim/armament/weapons/impact</collision-report>
+    	<impact>true</impact>
+    	<impact-report>sim/armament/weapons/impact</impact-report>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+ <submodel>
+	<name>left-tank2</name>
+    	<model>Aircraft/harrier/Models/Stores/exTank.ac</model>
+    	<trigger>controls/armament/station[1]/drop-tank2</trigger>
+    	<speed>0</speed>
+    	<cd>0.035</cd>
+    	<eda>2.8</eda>
+    	<weight>250</weight>
+    	<repeat>false</repeat>
+    	<count>-1</count>
+    	<wind>false</wind>
+    	<x-offset>-38.057743</x-offset>
+    	<y-offset>-6.1351706</y-offset>
+    	<z-offset>-20.013123</z-offset>    	
+    	<contents>consumables/fuel/tank[1]</contents>
+    	<life>1000</life>
+    	<collision>true</collision>
+    	<collision-report>sim/armament/weapons/impact</collision-report>
+    	<impact>true</impact>
+    	<impact-report>sim/armament/weapons/impact</impact-report>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+<submodel>
+	<name>right-tank2</name>
+    	<model>Aircraft/harrier/Models/Stores/exTank.ac</model>
+    	<trigger>controls/armament/station[5]/drop-tank2</trigger>
+    	<speed>0</speed>
+    	<cd>0.035</cd>
+    	<eda>2.8</eda>
+    	<weight>250</weight>
+    	<repeat>false</repeat>
+    	<count>-1</count>
+    	<wind>false</wind>
+     	<x-offset>-38.057743</x-offset>
+    	<y-offset>6.1351706</y-offset>
+    	<z-offset>-20.013123</z-offset>     	
+    	<contents>consumables/fuel/tank[2]</contents>
+    	<life>1000</life>
+    	<collision>true</collision>
+    	<collision-report>sim/armament/weapons/impact</collision-report>
+    	<impact>true</impact>
+    	<impact-report>sim/armament/weapons/impact</impact-report>
+		<submodel-path>Aircraft/harrier/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+<submodel>
+    <name>flares</name>
+    <model>Aircraft/harrier/Models/Effects/Countermeasures/flare.xml</model>
+    <trigger>/controls/armament/flare-release</trigger>
+    <speed>10</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>100</count>
+    <x-offset>-15.8</x-offset>
+    <y-offset>0.0</y-offset>
+    <z-offset>-17.6</z-offset>
+    <yaw-offset>180.0</yaw-offset>
+	<pitch-offset>-70</pitch-offset> 
+    <life>5</life>
+    <buoyancy>8</buoyancy>
+    <eda>1.0</eda>
+  </submodel>
+
+<submodel>
+    <name>flares-2</name>
+    <model>Aircraft/harrier/Models/Effects/Countermeasures/flare.xml</model>
+    <trigger>/controls/armament/flare-release2</trigger>
+    <speed>10</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>100</count>
+    <x-offset>-15.8</x-offset>
+    <y-offset>0.0</y-offset>
+    <z-offset>-17.6</z-offset>
+    <yaw-offset>180.0</yaw-offset>
+	<pitch-offset>-70</pitch-offset> 
+    <life>5</life>
+    <buoyancy>8</buoyancy>
+    <eda>1.0</eda>
+  </submodel>
+
+</PropertyList>

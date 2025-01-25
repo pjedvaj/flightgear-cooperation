@@ -1,0 +1,10 @@
+A big thank you to all those who have helped in the development of FlightGear's Harrier...
+
+Andy Ross - FDM 
+Steve Havlir - 3D Model and cockpit 
+Stuart Cassie - Porting to Rembrandt and new canopy
+Red Leader - Developer since early 2014
+
+...and all those who have indirectly helped in the development of this amazing aircraft.
+
+FlightGear - Fly Free!

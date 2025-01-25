@@ -1,0 +1,26 @@
+TODO for Sea Harrier FA2
+
+For next release (2.5.0):
+	More MP optimization
+	Change paths to relative (Aircraft/harrier/Models/harrier.ac -> Models/harrier.ac)
+
+Cockpit:
+	More realistic cockpit - need more info
+
+Model:
+	New, more detailed model
+	Model proper 1000lb bomb
+	
+Systems:
+	New radar (Canvas Radar?)
+	Autoland system
+	Realistic SMS
+	
+FDM:
+	More realistic - need data
+
+General:
+	New Canvas-based GUI (wait for FG 3.4)
+
+Issues:
+	Aircraft swings on the ground

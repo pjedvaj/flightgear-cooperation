@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+https://info.publicintelligence.net/F18-EF-000.pdf
+https://en.wikipedia.org/wiki/Boeing_F/A-18E/F_Super_Hornet
+https://en.wikipedia.org/wiki/General_Electric_F414
+-->
+
+<airplane mass="32081" version="YASIM_VERSION_CURRENT" mtow-lbs="66000">
+
+  <!-- Approach configuration -->
+  <approach speed="135" aoa="8.1" fuel="0.3">
+    <control-setting axis="/FBW/controls/engines/engine[0]/throttle" value="0.5"/>
+    <control-setting axis="/FBW/controls/engines/engine[1]/throttle" value="0.5"/>
+    <control-setting axis="/FBW/controls/flight/flaps"               value="1.0"/>
+    <control-setting axis="/controls/gear/gear-down"                 value="1"/>
+  </approach>
+
+  <!-- Cruise configuration -->
+  <cruise speed="710" alt="1000"  fuel="0.6">
+    <control-setting axis="/FBW/controls/engines/engine[0]/throttle" value="0.925"/>
+    <control-setting axis="/FBW/controls/engines/engine[1]/throttle" value="0.925"/>
+    <control-setting axis="/FBW/controls/flight/flaps"               value="0"/>
+    <control-setting axis="/controls/gear/gear-down"                 value="0"/>
+  </cruise>
+
+  <!-- pilot eyepoint -->
+  <cockpit x="3.48" y="0.0" z="2.97"/>
+
+  <!-- Fuselage down -->
+  <fuselage ax=" 9.084" ay=" 0.000" az=" 1.418" bx=" 8.502" by=" 0.000" bz=" 1.492" width="0.536" taper="0.05" midpoint="1" idrag="0"/>
+  <fuselage ax=" 8.502" ay=" 0.000" az=" 1.492" bx=" 7.921" by=" 0.000" bz=" 1.525" width="0.697" taper="0.74" midpoint="1" idrag="0"/>
+  <fuselage ax=" 7.921" ay=" 0.000" az=" 1.525" bx=" 7.337" by=" 0.000" bz=" 1.591" width="0.853" taper="0.82" midpoint="1" idrag="0"/>
+  <fuselage ax=" 7.337" ay=" 0.000" az=" 1.591" bx=" 5.776" by=" 0.000" bz=" 1.680" width="0.945" taper="0.90" midpoint="1" idrag="0"/>
+  <fuselage ax=" 5.776" ay=" 0.000" az=" 1.680" bx="-2.422" by=" 0.000" bz=" 1.996" width="0.945" taper="1.00" midpoint="1" idrag="0"/>
+  <fuselage ax="-2.422" ay=" 0.000" az=" 1.996" bx="-7.199" by=" 0.000" bz=" 2.024" width="0.945" taper="0.50" midpoint="0" idrag="0"/>
+
+  <!-- Fuselage up -->
+  <fuselage ax=" 8.502" ay=" 0.000" az=" 1.492" bx=" 7.934" by=" 0.000" bz=" 1.621" width="0.697" taper="0.74" midpoint="1" idrag="0"/>
+  <fuselage ax=" 7.934" ay=" 0.000" az=" 1.621" bx=" 7.354" by=" 0.000" bz=" 1.717" width="0.853" taper="0.82" midpoint="1" idrag="0"/>
+  <fuselage ax=" 7.354" ay=" 0.000" az=" 1.717" bx=" 5.834" by=" 0.000" bz=" 2.085" width="0.945" taper="0.90" midpoint="1" idrag="0"/>
+  <fuselage ax=" 5.834" ay=" 0.000" az=" 2.085" bx="-2.358" by=" 0.000" bz=" 2.512" width="0.945" taper="1.00" midpoint="1" idrag="0"/>
+  <fuselage ax="-2.358" ay=" 0.000" az=" 2.512" bx="-7.199" by=" 0.000" bz=" 2.424" width="0.945" taper="0.50" midpoint="0" idrag="0"/>
+
+  <!-- Cockpit -->
+  <fuselage ax=" 5.818" ay=" 0.000" az=" 2.311" bx=" 4.678" by=" 0.000" bz=" 2.761" width="0.700" taper="0.70" midpoint="1" idrag="0"/>
+  <fuselage ax=" 4.733" ay=" 0.000" az=" 2.745" bx=" 3.793" by=" 0.000" bz=" 2.978" width="0.798" taper="0.87" midpoint="1" idrag="0"/>
+  <fuselage ax=" 3.861" ay=" 0.000" az=" 2.966" bx=" 2.863" by=" 0.000" bz=" 3.042" width="0.848" taper="0.94" midpoint="1" idrag="0"/>
+  <fuselage ax=" 2.919" ay=" 0.000" az=" 3.042" bx=" 1.880" by=" 0.000" bz=" 2.992" width="0.848" taper="0.88" midpoint="0" idrag="0"/>
+  <fuselage ax=" 1.935" ay=" 0.000" az=" 2.992" bx=" 0.354" by=" 0.000" bz=" 2.676" width="0.746" taper="1.00" midpoint="1" idrag="0"/>
+  <fuselage ax=" 0.354" ay=" 0.000" az=" 2.676" bx="-2.362" by=" 0.000" bz=" 2.632" width="0.746" taper="0.95" midpoint="0" idrag="0"/>
+
+  <!-- Engines -->
+  <fuselage ax=" 0.679" ay=" 0.761" az=" 1.566" bx="-7.522" by=" 0.486" bz=" 2.206" width="0.861" taper="1.00" midpoint="1" idrag="0"/>
+  <fuselage ax=" 0.679" ay="-0.761" az=" 1.566" bx="-7.522" by="-0.486" bz=" 2.206" width="0.861" taper="1.00" midpoint="1" idrag="0"/>
+
+  <wing x="-2.20" y="1.20" z="2.20"
+        taper="0.40"
+        incidence="1.0"
+        twist="-2.0"
+        length="5.3"
+        chord="4.5"
+        sweep="11.0"
+        dihedral="-2"
+        camber="0.027">
+        <stall     aoa="25"  width="6"    peak="1.3"/>
+        <flap0   start="0.0"   end="0.63" lift="1.5"  drag="1.65"/>
+        <flap1   start="0.63"  end="1.0"  lift="1.5"  drag="1.65"/>
+        <slat      aoa="4"   start="0.0"   end="1.0"  drag="1.10"/>
+        <spoiler start="0.63"  end="1.0"   lift="0.0" drag="1.0"/>
+
+        <control-input  control="FLAP0"   axis="/FBW/controls/flight/flaps"    src0="0" src1="1" dst0="0" dst1="1.0"/>
+        <control-input  control="FLAP1"   axis="/FBW/controls/flight/flaps"    src0="0" src1="1" dst0="0" dst1="0.5"/>
+        <control-input  control="FLAP0"   axis="/controls/flight/speedbrake"   src0="0" src1="1" dst0="0" dst1="0.35"/>
+        <control-input  control="SLAT"    axis="/controls/flight/speedbrake"   src0="0" src1="1" dst0="0" dst1="0.35"/>
+        <control-input  control="FLAP1"   axis="/controls/flight/speedbrake"   src0="0" src1="1" dst0="0" dst1="-0.65"/>
+        <control-input  control="FLAP0"   axis="/FBW/controls/flight/aileron"  split="true" src0="-1" src1="1" dst0="-0.25" dst1="0.25"/>
+        <control-input  control="FLAP0"   axis="/controls/flight/aileron-trim" split="true" src0="-1" src1="1" dst0="-0.25" dst1="0.25"/>
+        <control-input  control="FLAP1"   axis="/FBW/controls/flight/aileron"  split="true"/>
+        <control-input  control="FLAP1"   axis="/controls/flight/aileron-trim" split="true"/>
+        <control-input  control="SLAT"    axis="/FBW/controls/flight/slats"    src0="0" src1="1" dst0="0" dst1="1.0"/>
+        <control-input  control="SPOILER" axis="/controls/flight/wing-fold"    src0="0" src1="1" dst0="0" dst1="1.0"/>
+
+        <control-output control="FLAP0"   prop="/surface-positions/left-flap-pos-norm"     side="left" min="-1" max="1"/>
+        <control-output control="FLAP0"   prop="/surface-positions/right-flap-pos-norm"    side="right" min="-1" max="1"/>
+        <control-output control="FLAP1"   prop="/surface-positions/left-aileron-pos-norm"  side="left" min="-1" max="1"/>
+        <control-output control="FLAP1"   prop="/surface-positions/right-aileron-pos-norm" side="right" min="-1" max="1"/>
+        <control-output control="SLAT"    prop="/surface-positions/slat-pos-norm"      min="0" max="1"/>
+        <control-output control="SPOILER" prop="/surface-positions/wing-fold-pos-norm" min="0" max="1"/>
+
+        <control-speed  control="SLAT"    transition-time="0.75"/>
+        <control-speed  control="FLAP0"   transition-time="1.00"/>
+        <control-speed  control="FLAP1"   transition-time="0.75"/>
+        <control-speed  control="SPOILER" transition-time="3.00"/>
+  </wing>
+
+  <!-- apex -->
+  <mstab x="2.40" y="0.56" z="2.20"
+         chord="4.20"
+         length="2.60"
+         taper="0.25"
+         incidence="0"
+         sweep="57"
+         dihedral="-2"
+         camber="0.026"
+         twist="0">
+         <stall     aoa="30" width="10"  peak="1.2"/>
+         <flap0   start="0.0"  end="1.0" lift="1.0" drag="10.0"/>
+         <spoiler start="0.0"  end="1.0" lift="1.0" drag="10.0"/>
+         <control-input  control="FLAP0"   axis="/controls/flight/speedbrake"/>
+         <control-input  control="SPOILER" axis="/controls/flight/canopy"/>
+
+         <control-output control="FLAP0"   prop="/surface-positions/speedbrake-pos-norm"/>
+         <control-output control="SPOILER" prop="/surface-positions/canopy-pos-norm"/>
+
+         <control-speed  control="FLAP0"   transition-time="1"/>
+         <control-speed  control="SPOILER" transition-time="4"/>
+  </mstab>
+
+  <hstab x="-6.50" y="1.05" z="2.10"
+         taper="0.60"
+         length="3.35"
+         chord="2.8"
+         sweep="44"
+         dihedral="0"
+         camber="-0.0">
+         <stall aoa="27" width="10" peak="1.1"/>
+         <flap0 start="0" end="1.0" lift="1.50" drag="1.65"/>
+         <spoiler start="0" end="1.0" lift="1.00" drag="12"/>
+         <control-input  control="FLAP0"   axis="/FBW/controls/flight/elevator" square="false"/>
+         <control-input  control="FLAP0"   axis="/controls/flight/elevator-trim"/>
+         <control-input  control="SPOILER" axis="/controls/flight/drag-stores"/>
+         <control-input  control="FLAP0"   axis="/FBW/controls/flight/aileron"  split="true" src0="-1" src1="1" dst0="-0.5" dst1="0.5"/>
+         <control-input  control="FLAP0"   axis="/controls/flight/aileron-trim" split="true" src0="-1" src1="1" dst0="-0.5" dst1="0.5"/>
+
+         <control-output control="FLAP0"   prop="/surface-positions/left-elevator-pos-norm"  side="left"/>
+         <control-output control="FLAP0"   prop="/surface-positions/right-elevator-pos-norm" side="right"/>
+
+         <control-speed  control="FLAP0"   transition-time="0.75"/>
+  </hstab>
+
+  <vstab x="-4.80" y="1.0" z="2.54"
+         taper="0.43"
+         length="3.1"
+         chord="3.0"
+         sweep="26"
+         dihedral="72">
+         <stall aoa="22" width="8" peak="1.2"/>
+         <flap0 start="0" end=".8" lift="1.3" drag="1.4"/>
+         <control-input  control="FLAP0" axis="/FBW/controls/flight/rudder"     invert="true"/>
+         <control-input  control="FLAP0" axis="/FBW/controls/flight/yaw-damper" invert="true"/>
+         <control-input  control="FLAP0" axis="/controls/flight/rudder-trim"    invert="true"/>
+         <control-input  control="FLAP0" axis="/controls/flight/speedbrake"     src0="0" src1="1" dst0="0" dst1="-0.75"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/left-rudder-pos-norm"/>
+
+         <control-speed  control="FLAP0" transition-time="0.5"/>
+  </vstab>
+
+  <vstab x="-4.80" y="-1.0" z="2.54"
+         taper="0.43"
+         length="3.1"
+         chord="3.0"
+         sweep="26"
+         dihedral="108">
+         <stall aoa="22" width="8" peak="1.2"/>
+         <flap0 start="0" end=".8" lift="1.3" drag="1.4"/>
+         <control-input  control="FLAP0" axis="/FBW/controls/flight/rudder"     invert="true"/>
+         <control-input  control="FLAP0" axis="/FBW/controls/flight/yaw-damper" invert="true"/>
+         <control-input  control="FLAP0" axis="/controls/flight/rudder-trim"    invert="true"/>
+         <control-input  control="FLAP0" axis="/controls/flight/speedbrake"     src0="0" src1="1" dst0="0" dst1="0.75"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/right-rudder-pos-norm"/>
+
+         <control-speed  control="FLAP0" transition-time="0.5"/>
+  </vstab>
+
+  <jet x="-5.5" y="0.48" z="2.20"
+       mass="2445"
+       thrust="13000"
+       afterburner="22000"
+       epr="30"
+       egt="1050"
+       exhaust-speed="2550"
+       tsfc="0.84"
+       atsfc="1.85">
+       <actionpt x="-6.00" y="0.48" z="2.20"/>
+       <control-input  control="THROTTLE" axis="/FBW/controls/engines/engine[0]/throttle" src0="0.00" dst0="0.02" src1="0.84" dst1="1.0"/>
+       <control-input  control="REHEAT"   axis="/FBW/controls/engines/engine[0]/throttle" src0="0.85" dst0="0.00" src1="1.00" dst1="1.0"/>
+       <control-output control="REHEAT"   prop="engines/engine[0]/afterburner" />
+  </jet>
+
+  <jet x="-5.5" y="-0.48" z="2.20"
+       mass="2445"
+       thrust="13000"
+       afterburner="22000"
+       epr="30"
+       egt="1050"
+       exhaust-speed="2550"
+       tsfc="0.84"
+       atsfc="1.85">
+       <actionpt x="-6.00" y="-0.48" z="2.20"/>
+       <control-input  control="THROTTLE" axis="/FBW/controls/engines/engine[1]/throttle" src0="0.00" dst0="0.02" src1="0.84" dst1="1.0"/>
+       <control-input  control="REHEAT"   axis="/FBW/controls/engines/engine[1]/throttle" src0="0.85" dst0="0.00" src1="1.00" dst1="1.0"/>
+       <control-output control="REHEAT"   prop="engines/engine[1]/afterburner" />
+  </jet>
+
+  <!-- gear -->
+  <!-- nose -->
+  <gear x="3.57" y="0" z="-0"
+        compression="0.6"
+        stiction="1"
+        stiction-abs="1">
+        <control-input  control="STEER"  axis="/controls/flight/rudder" square="false"/>
+        <control-input  control="EXTEND" axis="/controls/gear/gear-down"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+
+        <control-speed  control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- left main -->
+  <gear x="-2.50" y="1.570" z="-0"
+        compression="0.4"
+        stiction="1"
+        stiction-abs="1">
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-left"/>
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-parking"/>
+        <control-input  control="EXTEND" axis="/controls/gear/gear-down"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+
+        <control-speed  control="EXTEND" transition-time="8"/>
+        <control-speed  control="BRAKE"  transition-time="1"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="-2.50" y="-1.570" z="-0"
+        retract-time="8"
+        compression="0.4"
+        stiction="1"
+        stiction-abs="1">
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-right"/>
+        <control-input  control="BRAKE"  axis="/controls/gear/brake-parking"/>
+        <control-input  control="EXTEND" axis="/controls/gear/gear-down"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+
+        <control-speed  control="EXTEND" transition-time="8"/>
+        <control-speed  control="BRAKE"  transition-time="1"/>
+  </gear>
+
+  <!-- Internal tanks -->
+  <tank x=" 1.00" y=" 0.0" z="2.15" jet="true" capacity="1440"/>
+  <tank x=" 0.00" y=" 0.0" z="2.15" jet="true" capacity="2600"/>
+  <tank x="-1.00" y=" 0.0" z="2.15" jet="true" capacity="2620"/>
+  <tank x="-2.05" y=" 0.0" z="2.20" jet="true" capacity="3780"/>
+  <tank x="-2.50" y=" 2.5" z="2.18" jet="true" capacity="1660"/>
+  <tank x="-2.50" y="-2.5" z="2.18" jet="true" capacity="1660"/>
+
+  <!-- drop Tanks -->
+  <tank x="-1.75" y=" 3.32" z="1.10" jet="true" capacity="0"/>
+  <tank x="-1.25" y=" 2.39" z="1.10" jet="true" capacity="0"/>
+  <tank x="-0.05" y=" 0.00" z="0.80" jet="true" capacity="0"/>
+  <tank x="-1.25" y="-2.39" z="1.10" jet="true" capacity="0"/>
+  <tank x="-1.75" y="-3.32" z="1.10" jet="true" capacity="0"/>
+
+  <!-- external loads -->
+  <!-- left  -->
+  <weight x="-2.50" y="6.71" z="1.99" size="0.25" mass-prop="sim/weight[0]/weight-lb"/>
+  <weight x="-1.95" y="4.28" z="1.31" size="0.50" mass-prop="sim/weight[1]/weight-lb"/>
+  <weight x="-1.85" y="3.32" z="1.27" size="0.50" mass-prop="sim/weight[2]/weight-lb"/>
+  <weight x="-1.35" y="2.38" z="1.16" size="0.70" mass-prop="sim/weight[3]/weight-lb"/>
+  <weight x="-1.00" y="1.20" z="1.15" size="0.50" mass-prop="sim/weight[4]/weight-lb"/>
+
+  <!-- Centre -->
+  <weight  x="-0.1" y="0" z="0.68" size="0.7" mass-prop="sim/weight[5]/weight-lb"	/>
+
+  <!--right -->
+  <weight x="-1.00" y="-1.20" z="1.15" size="0.50" mass-prop="sim/weight[6]/weight-lb"/>
+  <weight x="-1.35" y="-2.38" z="1.16" size="0.70" mass-prop="sim/weight[7]/weight-lb"/>
+  <weight x="-1.85" y="-3.32" z="1.27" size="0.50" mass-prop="sim/weight[8]/weight-lb"/>
+  <weight x="-1.95" y="-4.28" z="1.31" size="0.50" mass-prop="sim/weight[9]/weight-lb"/>
+  <weight x="-2.50" y="-6.71" z="1.99" size="0.25" mass-prop="sim/weight[10]/weight-lb"/>
+
+  <!-- Hook -->
+  <hook x="-6.4" y="0.0" z="1.49"
+        length="2.1"
+        down-angle="55"
+        up-angle="-13">
+        <control-input control="HEXTEND" axis="/controls/gear/tailhook"/>
+        <control-speed control="HEXTEND" transition-time="5"/>
+  </hook>
+
+  <!-- Launch-bar -->
+  <launchbar x="3.803" y="0.000" z="0.564"
+             length="1.00"
+             down-angle="50" >
+             <control-input control="LEXTEND" axis="/controls/gear/launchbar"/>
+             <control-input control="LACCEL"  axis="/controls/gear/cat-acceleration-norm"/>
+             <control-speed control="LEXTEND" transition-time="1"/>
+  </launchbar>
+
+  <!-- ballast -->
+
+  <ballast x="-7.4" y="0"    z="1.85" mass="4531.8333"/>
+  <ballast x="4.6"  y="0"    z="2.15" mass="4531.8333"/>
+  <ballast x="-1.4" y="-2.1" z="2.0" mass="4531.8333"/>
+  <ballast x="-1.4" y="2.1"  z="2.0" mass="4531.8333"/>
+  <ballast x="-1.4" y="0"    z="1.2" mass="4531.8333"/>
+  <ballast x="-1.4" y="0"    z="2.8" mass="4531.8333"/>
+
+</airplane>

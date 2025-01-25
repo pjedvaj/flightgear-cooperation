@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+			<!-- Clear the path that we don't use the default system -->
+			<path></path>
+	
+			<!-- #### Components #### -->
+ 			<component>
+    				<kind type="string">battery</kind>
+    				<name type="string">Battery</name>
+    				<volts type="float">24</volts>
+    				<prop type="string">/systems/electrical/suppliers/battery</prop>
+  			</component>
+
+  			<component>
+    				<kind type="string">alternator</kind>
+    				<name type="string">Alternator</name>
+    				<volts type="float">28</volts>
+    				<prop type="string">/systems/electrical/suppliers/alternator</prop>
+    				<source-prop type="string">/engines/engine[0]/rpm</source-prop>
+    				<source-min type="float">55</source-min>
+  			</component>
+
+  			<component>
+   				<kind type="string">output</kind>
+    			<name type="string">Primary Bus</name>
+   				<prop type="string">/systems/electrical/outputs/primary-bus</prop>
+  			</component>
+
+  			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">Starter</name>
+    				<prop type="string">/systems/electrical/outputs/starter</prop>
+  			</component>
+
+  			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">Landing Light</name>
+    				<prop type="string">/systems/electrical/outputs/landing-light</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">HUD</name>
+    				<prop type="string">/instrumentation/hud/volts</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">HDD</name>
+    				<prop type="string">/instrumentation/hdd/volts</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">Radar</name>
+    				<prop type="string">/instrumentation/radar/volts</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">anti-coll beacons</name>
+    				<prop type="string">/systems/electrical/outputs/instrument-lights</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">panel lights</name>
+    				<prop type="string">/systems/electrical/outputs/panel-lights</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">Autopilot</name>
+    				<prop type="string">autopilot/volts</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">ai</name>
+    				<prop type="string">/systems/electrical/outputs/ai</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">rwr</name>
+    				<prop type="string">/systems/electrical/outputs/rwr</prop>
+  			</component>
+
+			<component>
+    				<kind type="string">output</kind>
+    				<name type="string">tacan</name>
+    				<prop type="string">/systems/electrical/outputs/tacan</prop>
+  			</component>
+
+			<!-- #### Conectors #### -->
+
+  			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">HUD</output>
+    				<switch type="string">/instrumentation/hud/on</switch>
+    				<switch type="string">/instrumentation/hud/serviceable</switch>
+			</connector>
+
+  			<connector>
+    				<input type="string">Battery</input>
+    				<output type="string">Primary Bus</output>
+    				<switch type="string">/controls/switches/battery</switch>
+  			</connector>
+
+  			<connector>
+    				<input type="string">Alternator</input>
+    				<output type="string">Primary Bus</output>
+    				<switch type="string">/controls/switches/alternator</switch>
+  			</connector>
+
+  			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">Starter</output>
+    				<switch type="string">/controls/engines/engine[0]/starter</switch>
+  			</connector>
+
+  			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">Landing Light</output>
+    				<switch type="string">/controls/switches/landing-light</switch>
+    				<switch type="string">/instrumentation/landing-light/serviceable</switch>
+  			</connector>
+
+ 			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">HDD</output>
+    				<switch type="string">/instrumentation/hdd/on</switch>
+    				<switch type="string">/instrumentation/hdd/serviceable</switch>
+  			</connector>
+
+ 			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">Radar</output>
+    				<switch type="string">/instrumentation/radar/on</switch>
+    				<switch type="string">/instrumentation/radar/serviceable</switch>
+  			</connector>
+
+ 			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">anti-coll beacons</output>
+    				<switch type="string">/controls/lighting/beacon</switch>
+    				<switch type="string">/instrumentation/beacons/serviceable</switch>
+  			</connector>
+
+ 			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">panel lights</output>
+    				<switch type="string">/instrumentation/panel-lights</switch>
+  			</connector>
+
+ 			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">Autopilot</output>
+    				<switch type="string">autopilot/serviceable</switch>
+  			</connector>
+
+ 			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">tacan</output>
+    				<switch type="string">/instrumentation/tacan/serviceable</switch>
+  			</connector>
+
+ 			<connector>
+    				<input type="string">Primary Bus</input>
+    				<output type="string">ai</output>
+    				<switch type="string">/instrumentation/attitude-indicator/serviceable</switch>
+  			</connector>
+
+<connector>
+	<input type="string">Primary Bus</input>
+	<output type="string">rwr</output>
+	<switch type="string">/instrumentation/rwr/serviceable</switch>
+</connector>
+
+</PropertyList>

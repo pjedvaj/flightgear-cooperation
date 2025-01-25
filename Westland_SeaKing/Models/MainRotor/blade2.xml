@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+	<!-- Main blade is split in 5 parts. 
+	
+					Axe 0				Axe 1               Axe 2               Axe 3
+	center	blade	+		blade_01	+		blade_02	+		blade_03	+		blade_04
+	of
+	rotor
+	
+	-->
+	
+<path>blade.ac</path>
+
+	<animation>
+		<object-name>blade</object-name>
+		<object-name>blade_01</object-name>
+		<object-name>blade_02</object-name>
+		<object-name>blade_03</object-name>
+		<object-name>blade_04</object-name>
+		<object-name>attach_01</object-name>
+		<object-name>attach_02</object-name>
+		<object-name>fold_01</object-name>
+		<object-name>fold_02</object-name>
+		<object-name>wires</object-name>
+
+		<!-- Transparence -->
+		<object-name>propblur</object-name>
+		<object-name>propblur_01</object-name>
+		<object-name>propblur_02</object-name>
+		<object-name>propblur_03</object-name>
+		<object-name>propblur_04</object-name>
+		<object-name>propdisc</object-name>
+		<object-name>propdisc_01</object-name>
+		<object-name>propdisc_02</object-name>
+		<object-name>propdisc_03</object-name>
+		<object-name>propdisc_04</object-name>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>propblur</object-name>
+		<object-name>propblur_01</object-name>
+		<object-name>propblur_02</object-name>
+		<object-name>propblur_03</object-name>
+		<object-name>propblur_04</object-name>
+		<object-name>propdisc</object-name>
+		<object-name>propdisc_01</object-name>
+		<object-name>propdisc_02</object-name>
+		<object-name>propdisc_03</object-name>
+		<object-name>propdisc_04</object-name>
+	</animation>
+	
+		<effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+		<object-name>propblur</object-name>
+			<object-name>propblur_01</object-name>
+			<object-name>propblur_02</object-name>
+			<object-name>propblur_03</object-name>
+			<object-name>propblur_04</object-name>
+        <object-name>propdisc</object-name>
+			<object-name>propdisc_01</object-name>
+			<object-name>propdisc_02</object-name>
+			<object-name>propdisc_03</object-name>
+			<object-name>propdisc_04</object-name>
+  </effect> 
+
+	<!-- Selection blade/blur/disc main rotor-->
+	<animation>
+		<name>DiscComplet</name>
+			<object-name>propdisc</object-name>
+			<object-name>propdisc_01</object-name>
+			<object-name>propdisc_02</object-name>
+			<object-name>propdisc_03</object-name>
+			<object-name>propdisc_04</object-name>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>DiscComplet</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>rotors/main/rpm</property>
+					<value>150</value>
+				</greater-than>
+				<not>
+					<property>/sim/rendering/rembrandt/enabled</property>
+				</not>
+				<not>
+					<property>rotors/main/bladesvisible</property>
+				</not>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<name>BlurComplet</name>
+			<object-name>propblur</object-name>
+			<object-name>propblur_01</object-name>
+			<object-name>propblur_02</object-name>
+			<object-name>propblur_03</object-name>
+			<object-name>propblur_04</object-name>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>BlurComplet</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>rotors/main/rpm</property>
+					<value>60</value>
+				</greater-than>
+				<less-than>
+					<property>rotors/main/rpm</property>
+					<value>150.001</value>
+				</less-than>
+				<not>
+					<property>/sim/rendering/rembrandt/enabled</property>
+				</not>
+				<not>
+					<property>rotors/main/bladesvisible</property>
+				</not>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<name>PaleComplete</name>
+			<object-name>blade</object-name>
+			<object-name>blade_01</object-name>
+			<object-name>blade_02</object-name>
+			<object-name>blade_03</object-name>
+			<object-name>blade_04</object-name>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>PaleComplete</object-name>
+		<condition>
+			<or>
+				<less-than>
+					<property>rotors/main/rpm</property>
+					<value>150</value>
+				</less-than>
+				<equals>
+					<property>rotors/main/bladesvisible</property>
+					<value>1</value>
+				</equals>
+				<property>/sim/rendering/rembrandt/enabled</property>
+			</or>
+		</condition>
+	</animation>
+
+	<!-- Blade bend 0 -->
+	<animation>
+		<name>Total0</name>
+			<object-name>blade_04</object-name>
+			<object-name>propblur_04</object-name>
+			<object-name>propdisc_04</object-name>
+			<object-name>blade_03</object-name>
+			<object-name>propblur_03</object-name>
+			<object-name>propdisc_03</object-name>
+			<object-name>blade_02</object-name>
+			<object-name>propblur_02</object-name>
+			<object-name>propdisc_02</object-name>
+			<object-name>blade_01</object-name>
+			<object-name>propblur_01</object-name>
+			<object-name>propdisc_01</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Total0</object-name>
+		 <property>rotors/main/cone-deg</property>
+        <factor>0.2</factor>
+		<center>
+			<x-m> -1.880 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -0.000 </z-m>
+		</center>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+
+	<!-- Blade bend 1 -->
+	<animation>
+		<name>Total1</name>
+			<object-name>blade_04</object-name>
+			<object-name>propblur_04</object-name>
+			<object-name>propdisc_04</object-name>
+			<object-name>blade_03</object-name>
+			<object-name>propblur_03</object-name>
+			<object-name>propdisc_03</object-name>
+			<object-name>blade_02</object-name>
+			<object-name>propblur_02</object-name>
+			<object-name>propdisc_02</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Total1</object-name>
+		 <property>rotors/main/cone-deg</property>
+        <factor>0.3</factor>
+		<center>
+			<x-m> -3.772 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -0.000 </z-m>
+		</center>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+
+	<!-- Blade bend 2 -->
+	<animation>
+		<name>Total2</name>
+			<object-name>blade_04</object-name>
+			<object-name>propblur_04</object-name>
+			<object-name>propdisc_04</object-name>
+			<object-name>blade_03</object-name>
+			<object-name>propblur_03</object-name>
+			<object-name>propdisc_03</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Total2</object-name>
+		 <property>rotors/main/cone-deg</property>
+        <factor>0.5</factor>
+		<center>
+			<x-m> -5.664 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -0.000 </z-m>
+		</center>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+
+	<!-- Blade bend 3 -->
+	<animation>
+		<name>Total3</name>
+			<object-name>blade_04</object-name>
+			<object-name>propblur_04</object-name>
+			<object-name>propdisc_04</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Total3</object-name>
+		 <property>rotors/main/cone-deg</property>
+        <factor>0.8</factor>
+		<center>
+			<x-m> -7.556 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -0.000 </z-m>
+		</center>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<!-- Incidence -->
+	<animation>
+		<name>TotalBlade</name>
+			<object-name>blade</object-name>
+			<object-name>blade_01</object-name>
+			<object-name>blade_02</object-name>
+			<object-name>blade_03</object-name>
+			<object-name>blade_04</object-name>
+			<object-name>attach_01</object-name>
+			<object-name>attach_02</object-name>
+			<object-name>fold_01</object-name>
+			<object-name>fold_02</object-name>
+			<object-name>wires</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>TotalBlade</object-name>
+		<property>rotors/main/blade[1]/incidence-deg</property>
+		<center>
+			<x-m> 0.702 </x-m>
+			<y-m> 0.000 </y-m>
+			<z-m> 0.000 </z-m>
+		</center>
+		<axis>
+			<x>-1 </x>
+			<y> 0 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+
+</PropertyList>

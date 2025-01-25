@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">FGUK Rescue Services</name>
+        <texture>har3Liveries/FGUK.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.25</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>

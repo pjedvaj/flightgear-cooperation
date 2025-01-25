@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+
+
+ 
+<name>Taxi</name>
+<description>This tutorial shows you how to taxi up the Harrier.</description>
+
+<step>
+	<message>{Unlock the parking the brake.|}</message>
+	<exit>
+		<condition>
+			<less-than>
+				<property>/controls/gear/brake-parking</property>
+				<value>0.5</value>
+			</less-than>			
+              	</condition>
+	</exit>
+</step>
+ 
+<step>
+	<message>{Set the engine to taxi power.|}</message>
+	<wait>5</wait>
+</step>
+ 
+<step>
+	<message>{Open or close the canopy depending on situation.|}</message>
+	<wait>3</wait>
+</step>
+     
+
+</PropertyList>

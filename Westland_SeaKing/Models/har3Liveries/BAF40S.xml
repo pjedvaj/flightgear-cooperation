@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Belgian Air Force 40 Sqn</name>
+        <texture>har3Liveries/BAF40S.png</texture>
+
+      </livery>
+    </model>
+	<rendering>
+    <refl_correction type="string">-0.35</refl_correction>
+    </rendering>
+  </sim>
+</PropertyList>
